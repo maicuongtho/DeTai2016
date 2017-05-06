@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevComponents.DotNetBar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,50 +23,50 @@ namespace NTU.Webgen
       
         private void mnuWeb_ChonMau_Click(object sender, EventArgs e)
         {
-            HienTab("chonmau");
+           // HienTab("chonmau");
         }
 
         private void mnuWeb_HieuChinh_Click(object sender, EventArgs e)
         {
-            HienTab("hieuchinh");
+          //  HienTab("hieuchinh");
         }
 
         // Lý lịch khoa học Tab
         private void ribbonTabItem3_Click(object sender, EventArgs e)
         {
 
-            HienTab("lylich");
+            //HienTab("lylich");
 
         }
-
+      
         void HienTab(String tenTab)
         {
-            for (int i = 0; i < superTabControlWebsite.Tabs.Count; i++) superTabControlWebsite.Tabs[i].Visible = false;
-            superTabControlWebsite.Tabs[tenTab].Visible = true;
+        //    for (int i = 0; i < superTabControlWebsite.Tabs.Count; i++) superTabControlWebsite.Tabs[i].Visible = false;
+      //      superTabControlWebsite.Tabs[tenTab].Visible = true;
         }
         // Tải dữ liệu lên điều khiển
         private void mnuLL_btnTaiLaiXML_Click(object sender, EventArgs e)
         {
-            XmlReader xmlReader = XmlReader.Create(cvXMLFile);
-            StringBuilder s = new StringBuilder();
-            while (xmlReader.Read())
-            {
-                if (xmlReader.NodeType == XmlNodeType.Element) {
-                    switch (xmlReader.Name) {
-                        case "HoVaTen": ll_txtHoTen.Text = xmlReader.ReadInnerXml(); break;
-                        case "NamSinh": ll_txtNamSinh.Text = xmlReader.ReadInnerXml(); break;
-                        case "GioiTinh": ll_txtGioiTinh.Text = xmlReader.ReadInnerXml(); break;
-                        case "LoaiHocVi": ll_txtHocvi.Text = xmlReader.ReadInnerXml(); break;
-                        case "NamDatHocVi": ll_txtHocviNamDat.Text = xmlReader.ReadInnerXml(); break;
-                        case "HocHam": ll_txtHocHam.Text = xmlReader.ReadInnerXml(); break;
-                        case "ChucDanh": ll_txtChucDanh.Text = xmlReader.ReadInnerXml(); break;
-                        case "NN1": ll_txtNgoaiNgu.Text = xmlReader.ReadInnerXml(); break;
-                    }
-                }
+            //XmlReader xmlReader = XmlReader.Create(cvXMLFile);
+            //StringBuilder s = new StringBuilder();
+            //while (xmlReader.Read())
+            //{
+            //    if (xmlReader.NodeType == XmlNodeType.Element) {
+            //        switch (xmlReader.Name) {
+            //            case "HoVaTen": ll_txtHoTen.Text = xmlReader.ReadInnerXml(); break;
+            //            case "NamSinh": ll_txtNamSinh.Text = xmlReader.ReadInnerXml(); break;
+            //            case "GioiTinh": ll_txtGioiTinh.Text = xmlReader.ReadInnerXml(); break;
+            //            case "LoaiHocVi": ll_txtHocvi.Text = xmlReader.ReadInnerXml(); break;
+            //            case "NamDatHocVi": ll_txtHocviNamDat.Text = xmlReader.ReadInnerXml(); break;
+            //            case "HocHam": ll_txtHocHam.Text = xmlReader.ReadInnerXml(); break;
+            //            case "ChucDanh": ll_txtChucDanh.Text = xmlReader.ReadInnerXml(); break;
+            //            case "NN1": ll_txtNgoaiNgu.Text = xmlReader.ReadInnerXml(); break;
+            //        }
+            //    }
                   
-            }
-            xmlReader.Close();
-            MessageBox.Show("Tải thành công!");
+            //}
+            //xmlReader.Close();
+            //MessageBox.Show("Tải thành công!");
 
        
         }
@@ -95,6 +96,13 @@ namespace NTU.Webgen
             IEnumerable<XElement> settings = xelement.Elements();
 
             return settings.FirstOrDefault(x => x.Name == name);
+        }
+
+        private void mnuWeb_TaoMoi_Click(object sender, EventArgs e)
+        {
+            ChonMau ctrlChonMau = new ChonMau();
+            CongCu.AddTab("tabChonMau", "Tạo mới website", superTabControlWindows, ctrlChonMau, true,30);
+
         }
     }
    

@@ -50,12 +50,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AAAFunctionTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AAAFunctionTest.Designer.cs">
+      <DependentUpon>AAAFunctionTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChonMau.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChonMau.Designer.cs">
+      <DependentUpon>ChonMau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CongCu.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,8 +77,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Publication_Sach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Publication_Sach.Designer.cs">
+      <DependentUpon>Publication_Sach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publication_TapChi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Publication_TapChi.Designer.cs">
+      <DependentUpon>Publication_TapChi.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AAAFunctionTest.resx">
+      <DependentUpon>AAAFunctionTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChonMau.resx">
+      <DependentUpon>ChonMau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -89,6 +111,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Publication_Sach.resx">
+      <DependentUpon>Publication_Sach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publication_TapChi.resx">
+      <DependentUpon>Publication_TapChi.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
