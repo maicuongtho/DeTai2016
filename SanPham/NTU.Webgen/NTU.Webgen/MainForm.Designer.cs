@@ -33,11 +33,9 @@
             this.ribbonPanel8 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
             this.buttonItem4 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem5 = new DevComponents.DotNetBar.ButtonItem();
+            this.mnuWeb_LayLaiTuMayChu = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
-            this.mnuWeb_ChonMau = new DevComponents.DotNetBar.ButtonItem();
-            this.mnuWeb_HieuChinh = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
+            this.mnuWeb_MoLai = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar5 = new DevComponents.DotNetBar.RibbonBar();
             this.mnuLL_btnCapNhat = new DevComponents.DotNetBar.ButtonItem();
@@ -65,6 +63,8 @@
             this.superTabItemChaoMung = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanelWelcome = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.mnuWeb_LuuTru = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel8.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
@@ -83,13 +83,13 @@
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
             this.ribbonControl1.Controls.Add(this.ribbonPanel8);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel7);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel7);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.ribbonTabItem8,
@@ -166,12 +166,13 @@
             this.ribbonBar3.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBar3.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.buttonItem4,
-            this.buttonItem5});
-            this.ribbonBar3.Location = new System.Drawing.Point(331, 0);
+            this.mnuWeb_LayLaiTuMayChu});
+            this.ribbonBar3.Location = new System.Drawing.Point(260, 0);
             this.ribbonBar3.Name = "ribbonBar3";
-            this.ribbonBar3.Size = new System.Drawing.Size(206, 95);
+            this.ribbonBar3.Size = new System.Drawing.Size(277, 95);
             this.ribbonBar3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar3.TabIndex = 1;
+            this.ribbonBar3.Text = "Đồng bộ";
             // 
             // 
             // 
@@ -184,18 +185,19 @@
             // buttonItem4
             // 
             this.buttonItem4.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.buttonItem4.Enabled = false;
             this.buttonItem4.Image = global::NTU.Webgen.Properties.Resources._1491336610_icon_93_inbox_upload;
             this.buttonItem4.Name = "buttonItem4";
             this.buttonItem4.SubItemsExpandWidth = 14;
-            this.buttonItem4.Text = "Upload";
+            this.buttonItem4.Text = "Đưa lên máy chủ";
             // 
-            // buttonItem5
+            // mnuWeb_LayLaiTuMayChu
             // 
-            this.buttonItem5.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.buttonItem5.Image = global::NTU.Webgen.Properties.Resources._1491336673_icon_92_inbox_download;
-            this.buttonItem5.Name = "buttonItem5";
-            this.buttonItem5.SubItemsExpandWidth = 14;
-            this.buttonItem5.Text = "Download";
+            this.mnuWeb_LayLaiTuMayChu.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.mnuWeb_LayLaiTuMayChu.Image = global::NTU.Webgen.Properties.Resources._1491336673_icon_92_inbox_download;
+            this.mnuWeb_LayLaiTuMayChu.Name = "mnuWeb_LayLaiTuMayChu";
+            this.mnuWeb_LayLaiTuMayChu.SubItemsExpandWidth = 14;
+            this.mnuWeb_LayLaiTuMayChu.Text = "Lấy lại từ máy chủ";
             // 
             // ribbonBar2
             // 
@@ -212,14 +214,14 @@
             this.ribbonBar2.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.mnuWeb_TaoMoi,
-            this.mnuWeb_ChonMau,
-            this.mnuWeb_HieuChinh,
-            this.buttonItem3});
+            this.mnuWeb_MoLai,
+            this.mnuWeb_LuuTru});
             this.ribbonBar2.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar2.Name = "ribbonBar2";
-            this.ribbonBar2.Size = new System.Drawing.Size(328, 95);
+            this.ribbonBar2.Size = new System.Drawing.Size(257, 95);
             this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar2.TabIndex = 0;
+            this.ribbonBar2.Text = "Thao tác";
             // 
             // 
             // 
@@ -229,31 +231,14 @@
             // 
             this.ribbonBar2.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // mnuWeb_ChonMau
+            // mnuWeb_MoLai
             // 
-            this.mnuWeb_ChonMau.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.mnuWeb_ChonMau.Image = global::NTU.Webgen.Properties.Resources._1491336216_folder;
-            this.mnuWeb_ChonMau.Name = "mnuWeb_ChonMau";
-            this.mnuWeb_ChonMau.SubItemsExpandWidth = 14;
-            this.mnuWeb_ChonMau.Text = "Chọn mẫu";
-            this.mnuWeb_ChonMau.Click += new System.EventHandler(this.mnuWeb_ChonMau_Click);
-            // 
-            // mnuWeb_HieuChinh
-            // 
-            this.mnuWeb_HieuChinh.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.mnuWeb_HieuChinh.Image = global::NTU.Webgen.Properties.Resources._1491336378_edit;
-            this.mnuWeb_HieuChinh.Name = "mnuWeb_HieuChinh";
-            this.mnuWeb_HieuChinh.SubItemsExpandWidth = 14;
-            this.mnuWeb_HieuChinh.Text = "Hiệu chỉnh";
-            this.mnuWeb_HieuChinh.Click += new System.EventHandler(this.mnuWeb_HieuChinh_Click);
-            // 
-            // buttonItem3
-            // 
-            this.buttonItem3.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.buttonItem3.Image = global::NTU.Webgen.Properties.Resources._1491336195_domain_template;
-            this.buttonItem3.Name = "buttonItem3";
-            this.buttonItem3.SubItemsExpandWidth = 14;
-            this.buttonItem3.Text = "Xuất bản";
+            this.mnuWeb_MoLai.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.mnuWeb_MoLai.Image = global::NTU.Webgen.Properties.Resources._1491336216_folder;
+            this.mnuWeb_MoLai.Name = "mnuWeb_MoLai";
+            this.mnuWeb_MoLai.SubItemsExpandWidth = 14;
+            this.mnuWeb_MoLai.Text = "Mở lại";
+            this.mnuWeb_MoLai.Click += new System.EventHandler(this.mnuWeb_MoLai_Click);
             // 
             // ribbonPanel3
             // 
@@ -457,10 +442,10 @@
             // 
             this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel5.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel5.Location = new System.Drawing.Point(0, 53);
             this.ribbonPanel5.Name = "ribbonPanel5";
             this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel5.Size = new System.Drawing.Size(793, 151);
+            this.ribbonPanel5.Size = new System.Drawing.Size(793, 98);
             // 
             // 
             // 
@@ -480,10 +465,10 @@
             // 
             this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel4.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel4.Location = new System.Drawing.Point(0, 53);
             this.ribbonPanel4.Name = "ribbonPanel4";
             this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel4.Size = new System.Drawing.Size(793, 151);
+            this.ribbonPanel4.Size = new System.Drawing.Size(793, 98);
             // 
             // 
             // 
@@ -503,10 +488,10 @@
             // 
             this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel2.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel2.Location = new System.Drawing.Point(0, 53);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(793, 151);
+            this.ribbonPanel2.Size = new System.Drawing.Size(793, 98);
             // 
             // 
             // 
@@ -654,6 +639,20 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.DefaultExt = "ntu";
+            this.openFileDialog1.Filter = "NTU webgen file| *.ntu";
+            this.openFileDialog1.Title = "Mở Website đã có";
+            // 
+            // mnuWeb_LuuTru
+            // 
+            this.mnuWeb_LuuTru.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.mnuWeb_LuuTru.Image = global::NTU.Webgen.Properties.Resources._1491336195_domain_template;
+            this.mnuWeb_LuuTru.Name = "mnuWeb_LuuTru";
+            this.mnuWeb_LuuTru.SubItemsExpandWidth = 14;
+            this.mnuWeb_LuuTru.Text = "Lưu trữ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -704,10 +703,8 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.RibbonBar ribbonBar3;
         private DevComponents.DotNetBar.ButtonItem buttonItem4;
-        private DevComponents.DotNetBar.ButtonItem buttonItem5;
-        private DevComponents.DotNetBar.ButtonItem mnuWeb_HieuChinh;
-        private DevComponents.DotNetBar.ButtonItem buttonItem3;
-        private DevComponents.DotNetBar.ButtonItem mnuWeb_ChonMau;
+        private DevComponents.DotNetBar.ButtonItem mnuWeb_LayLaiTuMayChu;
+        private DevComponents.DotNetBar.ButtonItem mnuWeb_MoLai;
         private DevComponents.DotNetBar.RibbonBar ribbonBar5;
         private DevComponents.DotNetBar.ButtonItem mnuLL_btnCapNhat;
         private DevComponents.DotNetBar.RibbonBar ribbonBar4;
@@ -717,6 +714,8 @@
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanelWelcome;
         private DevComponents.DotNetBar.SuperTabItem superTabItemChaoMung;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private DevComponents.DotNetBar.ButtonItem mnuWeb_LuuTru;
     }
 }
 

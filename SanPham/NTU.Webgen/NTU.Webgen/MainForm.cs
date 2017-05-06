@@ -15,16 +15,14 @@ namespace NTU.Webgen
 {
     public partial class MainForm : Form
     {
+        String webFolder;
         String cvXMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\gvStandardTemplate\cv.xml";
         public MainForm()
         {
             InitializeComponent();
         }
       
-        private void mnuWeb_ChonMau_Click(object sender, EventArgs e)
-        {
-           // HienTab("chonmau");
-        }
+   
 
         private void mnuWeb_HieuChinh_Click(object sender, EventArgs e)
         {
@@ -103,6 +101,22 @@ namespace NTU.Webgen
             ChonMau ctrlChonMau = new ChonMau();
             CongCu.AddTab("tabChonMau", "Tạo mới website", superTabControlWindows, ctrlChonMau, true,30);
 
+        }
+        
+        // Mở lại website đã có trên máy cục bộ
+        private void mnuWeb_MoLai_Click(object sender, EventArgs e)
+        {
+            DialogResult rs= openFileDialog1.ShowDialog();
+            if (rs == System.Windows.Forms.DialogResult.OK) {
+                String fileName = openFileDialog1.FileName;
+                webFolder = fileName.Substring(0, fileName.Length - 11);
+               // MessageBox.Show(webFolder);
+
+                System.IO.StreamReader sr = new
+                System.IO.StreamReader(fileName);
+                MessageBox.Show(sr.ReadToEnd());
+
+            }
         }
     }
    
