@@ -114,7 +114,8 @@ namespace NTU.Webgen
 
                 System.IO.StreamReader sr = new
                 System.IO.StreamReader(fileName);
-                MessageBox.Show(sr.ReadToEnd());
+                String noidung = sr.ReadToEnd();
+                MessageBox.Show("Đã nạp xong nội dung, mời Bạn chỉnh sửa","Thông báo");
 
             }
         }

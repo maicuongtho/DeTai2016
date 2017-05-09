@@ -15,8 +15,8 @@ namespace NTU.Webgen
        
     public partial class Publication_TapChi : UserControl
     {
-        String pubXMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\gvStandardTemplate\TapChi.xml";
-        String pubHTMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\gvStandardTemplate\publications.html";
+        String pubXMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\TapChi.xml";
+        String pubHTMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\publications.html";
         String pubHTMLFolder = @"F:/LocalRepository/DeTai2016/SanPham/NTU.Webgen/NTU.Webgen/bin/Debug/";
         public Publication_TapChi()
         {
@@ -135,7 +135,9 @@ namespace NTU.Webgen
         private void btnXuatWeb_Click(object sender, EventArgs e)
         {
             String noiDungMoi = "Kiểm tra lần nữa";
-            CongCu.ReplaceContent("aa.html", "BaiBaoKhoaHoc", noiDungMoi);
+            noiDungMoi= CongCu.XML2HTML_TapChi(pubXMLFile, "BaiBao").ToString();
+
+            CongCu.ReplaceContent(pubHTMLFile, "TapChi", noiDungMoi);
             MessageBox.Show("OK");
          
             

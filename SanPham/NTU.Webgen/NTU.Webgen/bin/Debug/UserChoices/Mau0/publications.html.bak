@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Publications</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+ 
+</head>
+<body style="background-color:#09F">
+ <div class="container">
+ 	<div class="row" style="padding-top:4px;padding-bottom:4px">
+    	<div class="col-md-1">
+        <img src="assets/images/NTUlogo.gif" alt="Logo Đại học Nha Trang" height="60px">
+        </div>
+        <div class="col-md-11">
+        	<H4 style="color:#EEE">TRƯỜNG ĐẠI HỌC NHA TRANG - WEBSITE CÁN BỘ VIÊN CHỨC </H4>
+            02, Nguyễn Đình Chiểu - Nha Trang - Khánh Hòa
+        </div>
+        
+     </div>
+  </div>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+      <a class="navbar-brand" href="#">MAI CƯỜNG THỌ</a>
+    </div>
+    <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="#">TRANG CHỦ</a></li>
+      <li><a href="#">LÝ LỊCH KHOA HỌC</a></li>
+      <li class="active"><a href="#">CÔNG BỐ KHOA HỌC</a></li>
+      <li><a href="#">GIẢNG DẠY</a></li>
+    </ul>
+    </div>
+  </div>
+</nav>
+ 
+  <div class="container bgWhite firstCon">
+  <div class="row title">
+  	 
+     <h1> CÁC CÔNG BỐ KHOA HỌC</h1>
+     <h2> Bài báo </h2>
+  </div>
+  
+
+  <div class="row">
+  
+  
+  	   <section id="TapChi"><ol><li>Nguyen Thanh Cuong, Do Thi Ly,  (2016), <i>Measuring and Assessing the Quality of Information on the Annual Reports: The Case of Seafood’s Companies Listed on the Vietnam Stock Market </i>, International Research Journal of Finance and Economics (SCOPUS),  VOLum r ,  Issue Number ,  Trang so </li><li>Nguyễn Văn TÙng,  (2016), <i>Measuring and Assessing the Quality of Information on the Annual Reports: The Case of Seafood’s Companies Listed on the Vietnam Stock Market </i>, International Research Journal of Finance and Economics (SCOPUS), 2, 2016, 2016</li><li>Mai Cường Thọ, Nguyễn Văn ABC,  (2010), <i>Sự pát trỉ caskdksjdkl sdkas dkljas. Trogn công nghệ chế biến </i>, Tạp chí Khoa học CN Tủy sản Nha Trang, 10, 2, 4</li></ol></section>
+     </div>
+  </div>
+<div class="page-footer">
+	
+    <div class="container">
+    &copy; 2017 - Đại Học Nha Trang
+    </div>
+</div>
+</body>
+</html>

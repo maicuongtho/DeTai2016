@@ -16,5 +16,11 @@ namespace NTU.Webgen
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String pubXMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\gvStandardTemplate\TapChi.xml";
+            //String s = CongCu.XML2HTML(pubXMLFile,"BaiBao");
+        }
     }
 }

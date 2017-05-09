@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DevComponents.DotNetBar;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 namespace NTU.Webgen
 {
     class CongCu
@@ -130,6 +132,67 @@ namespace NTU.Webgen
          
             tabControl.SelectedTab= newTab;
 
+        }
+
+        public static StringBuilder XML2HTML_TapChi(String xmlFile, String nodeName)
+        {
+            XmlTextReader reader = new XmlTextReader(xmlFile);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(reader);
+            reader.Close();
+            XmlElement root = doc.DocumentElement;
+            XmlNodeList Nodes_Level1 = root.SelectNodes("/DSBaiBao/"+nodeName);
+
+            // Sap xep lai theo Nam
+            var e = XElement.Load(new XmlNodeReader(doc));
+
+
+          //  XElement root = XElement.Parse(xml);
+
+            List<XElement> ordered = e.Elements("BaiBao")
+                                     .OrderByDescending(element => (int)element.Element("Ngay"))
+                                    .ToList();
+            e.RemoveAll();
+            e.Add(ordered);
+
+            StringBuilder result = new StringBuilder();
+            result.Append("<ol>");
+            foreach (XElement xe in ordered)
+            {
+                String tacgia = xe.Element("TacGia").Value.ToString();
+                String nam = xe.Element("Ngay").Value.ToString();
+                String tieudebaibao = xe.Element("TieuDeBaiBao").Value.ToString();
+                String tentapchi = xe.Element("TenTapChi").Value.ToString();
+                String tap = xe.Element("Tap").Value.ToString();
+                String so = xe.Element("So").Value.ToString();
+                String trang = xe.Element("Trang").Value.ToString();
+                result.Append("<li>"+tacgia + ", (" + nam + ")," + "<i>" + tieudebaibao + "</i>,");
+                result.Append(tentapchi + ", " + tap + ", " + so + ", " + trang + "</li>");
+            }
+            result.Append("</ol>");
+
+            //            // ------
+            //String s = "";
+            //StringBuilder result = new StringBuilder();
+            //result.Append("<ol>");
+            //foreach (XmlNode n in Nodes_Level1)   // Danh sachs node
+            //{   
+            //    result.Append("<li>");
+            //    // Duyet cac node Level 2 (i=0/id; 1/Tacgia 2/Nam)
+
+            //    for (int i = 1; i < n.ChildNodes.Count; i++ )
+            //    {
+            //        XmlNode l2 = n.ChildNodes[i];
+            //        if (i==2)  result.Append(" (" + l2.InnerText + "), ");
+            //        else if (i==3)  result.Append("<i>" + l2.InnerText + " </i>, "); 
+            //        else if (i==n.ChildNodes.Count-1)  result.Append(l2.InnerText);
+            //        else result.Append(l2.InnerText + ", ");
+            //    }
+            //    result.Append("</li>");
+           
+            //}
+            //result.Append("</ol>");
+            return result;
         }
     }
 
