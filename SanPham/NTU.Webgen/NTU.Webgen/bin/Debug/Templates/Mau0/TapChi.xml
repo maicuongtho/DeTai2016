@@ -1,22 +1,22 @@
-<DSBaiBao>
+﻿<DSBaiBao>
   <BaiBao>
     <id>1</id>
     <TacGia>Nguyen Thanh Cuong, Do Thi Ly</TacGia>
     <Ngay>2015</Ngay>
     <TieuDeBaiBao>Measuring and Assessing the Quality of Information on the Annual Reports: The Case of Seafood’s Companies Listed on the Vietnam Stock Market</TieuDeBaiBao>
-    <NgonNgu>Measuring and Assessing the Quality of Information on the Annual Reports: The Case of Seafood’s Companies Listed on the Vietnam Stock Market</NgonNgu>
-    <TenTapChi>International Research Journal of Finance and Economics (SCOPUS)</TenTapChi>
+    <NgonNgu></NgonNgu>
+<TenTapChi>International Research Journal of Finance and Economics (SCOPUS)</TenTapChi>
     <Tap> VOLum r </Tap>
     <So> Issue Number </So>
     <Trang> Trang so </Trang>
   </BaiBao>
   <BaiBao>
     <id>2</id>
-    <TacGia>TUng Nguyen Van</TacGia>
+    <TacGia>Nguyễn Văn TÙng</TacGia>
     <Ngay>2016</Ngay>
     <TieuDeBaiBao>Measuring and Assessing the Quality of Information on the Annual Reports: The Case of Seafood’s Companies Listed on the Vietnam Stock Market</TieuDeBaiBao>
-    <NgonNgu>Tiếng Anh</NgonNgu>
-    <TenTapChi>International Research Journal of Finance and Economics (SCOPUS)</TenTapChi>
+    <NgonNgu></NgonNgu>
+<TenTapChi>International Research Journal of Finance and Economics (SCOPUS)</TenTapChi>
     <Tap>2</Tap>
     <So>2016</So>
     <Trang>2016</Trang>
@@ -26,8 +26,9 @@
     <TacGia>Mai Cường Thọ, Nguyễn Văn ABC</TacGia>
     <Ngay>2010</Ngay>
     <TieuDeBaiBao>Sự pát trỉ caskdksjdkl sdkas dkljas. Trogn công nghệ chế biến</TieuDeBaiBao>
-    <NgonNgu>Tiếng Việt</NgonNgu>
-    <TenTapChi>Tạp chí Khoa học CN Tủy sản Nha Trang</TenTapChi>
+    
+<NgonNgu></NgonNgu>
+<TenTapChi>Tạp chí Khoa học CN Tủy sản Nha Trang</TenTapChi>
     <Tap>10</Tap>
     <So>2</So>
     <Trang>4</Trang>

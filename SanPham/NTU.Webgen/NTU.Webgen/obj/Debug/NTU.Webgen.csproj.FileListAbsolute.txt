@@ -12,3 +12,5 @@ F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.Publication_Sach.resources
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.Publication_TapChi.resources
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.ChonMau.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.Publication_BaoCaoHoiThao.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.Publication_BaoCaoHoiThao0.resources

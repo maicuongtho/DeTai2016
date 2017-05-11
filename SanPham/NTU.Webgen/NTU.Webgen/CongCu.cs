@@ -55,7 +55,13 @@ namespace NTU.Webgen
         public static void XML2Grid(String xmlFilePath,  DevComponents.DotNetBar.Controls.DataGridViewX grdVx) {
             System.Data.DataSet dataSet = new System.Data.DataSet();
             dataSet.ReadXml(xmlFilePath);
-            grdVx.DataSource = dataSet.Tables[0];
+            try
+            {
+                grdVx.DataSource = dataSet.Tables[0];
+            }
+            catch (Exception e) {
+                grdVx.DataSource = null;
+            }
         }
 
         public static void gotoSite(string url)
@@ -134,9 +140,9 @@ namespace NTU.Webgen
 
         }
 
-        public static StringBuilder XML2HTML_TapChi(String xmlFile, String nodeName)
+        public static StringBuilder XML2HTML_TapChi(String tapchi_xmlFile, String nodeName)
         {
-            XmlTextReader reader = new XmlTextReader(xmlFile);
+            XmlTextReader reader = new XmlTextReader(tapchi_xmlFile);
             XmlDocument doc = new XmlDocument();
             doc.Load(reader);
             reader.Close();
@@ -156,7 +162,7 @@ namespace NTU.Webgen
             e.Add(ordered);
 
             StringBuilder result = new StringBuilder();
-            result.Append("<ol>");
+            result.Append("<h2>Bài báo</h2><ul>");
             foreach (XElement xe in ordered)
             {
                 String tacgia = xe.Element("TacGia").Value.ToString();
@@ -166,10 +172,28 @@ namespace NTU.Webgen
                 String tap = xe.Element("Tap").Value.ToString();
                 String so = xe.Element("So").Value.ToString();
                 String trang = xe.Element("Trang").Value.ToString();
-                result.Append("<li>"+tacgia + ", (" + nam + ")," + "<i>" + tieudebaibao + "</i>,");
+                bool vietnam = true;
+                if (xe.Element("NgonNgu").Value.ToString() != "Tiếng Việt") vietnam = false;
+                if (vietnam)
+                {
+                    tap = "Tập " + tap;
+                    so = "Số " + so;
+                    trang = "Trang" + trang;
+                }
+                else
+                {
+                    tap = "Vol " + tap;
+                    so = "Issue " + so;
+                    trang = "P " + trang;
+                }
+
+                result.Append("<li>"+tacgia + ", (" + nam + "), " + "<i>" + tieudebaibao + "</i>, ");
                 result.Append(tentapchi + ", " + tap + ", " + so + ", " + trang + "</li>");
+                
+
+
             }
-            result.Append("</ol>");
+            result.Append("</ul>");
 
             //            // ------
             //String s = "";
@@ -192,6 +216,113 @@ namespace NTU.Webgen
            
             //}
             //result.Append("</ol>");
+            return result;
+        }
+
+
+
+        public static StringBuilder XML2HTML_BaoCaoHoiThao(String baocao1_xmlFile, String nodeName)
+        {
+            XmlTextReader reader = new XmlTextReader(baocao1_xmlFile);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(reader);
+            reader.Close();
+            XmlElement root = doc.DocumentElement;
+            XmlNodeList Nodes_Level1 = root.SelectNodes("/DSBaoCao1/" + nodeName);
+
+            // Sap xep lai theo Nam
+            var e = XElement.Load(new XmlNodeReader(doc));
+
+
+            //  XElement root = XElement.Parse(xml);
+
+            List<XElement> ordered = e.Elements("BaoCao1")
+                                     .OrderByDescending(element => (int)element.Element("Nam"))
+                                    .ToList();
+            e.RemoveAll();
+            e.Add(ordered);
+
+            StringBuilder result = new StringBuilder();
+            result.Append("<h2>Báo cáo hội thảo (có ấn phẩm)</h2><ul>");
+            foreach (XElement xe in ordered)
+            {
+                String tacgia = xe.Element("TacGia").Value.ToString();
+                String nam = xe.Element("Nam").Value.ToString();
+                String tenbaocao= xe.Element("TenBaoCao").Value.ToString();
+                String tenHoiThao = xe.Element("TenHoiThao").Value.ToString();
+                String thoigiandiadiem = xe.Element("ThoiGianDiaDiem").Value.ToString();
+                String nhaxuatban = xe.Element("NhaXuatBan").Value.ToString();
+                String noixuatban = xe.Element("NoiXuatBan").Value.ToString();
+                String trang = xe.Element("Trang").Value.ToString();
+                bool vietnam = true;
+                if (xe.Element("NgonNgu").Value.ToString() != "Tiếng Việt") vietnam = false;
+                if (vietnam)
+                {
+                    nhaxuatban = "Nhà xuất bản " + nhaxuatban;
+                    trang = "Trang " + trang;
+                }
+                else {
+                    nhaxuatban = "Publisher " + nhaxuatban;
+                    trang = "Page " + trang;    
+                }
+                result.Append("<li>" + tacgia + ", (" + nam + "), " + "<i>" + tenbaocao + "</i>, ");
+                result.Append(tenHoiThao + ", " + thoigiandiadiem + ", " + nhaxuatban+ ", " + noixuatban+ ", " + trang + "</li>");
+            }
+            result.Append("</ul>");
+
+         
+            return result;
+        }
+
+
+
+        public static StringBuilder XML2HTML_BaoCaoHoiThao0(String baocao0_xmlFile, String nodeName)
+        {
+            XmlTextReader reader = new XmlTextReader(baocao0_xmlFile);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(reader);
+            reader.Close();
+            XmlElement root = doc.DocumentElement;
+            XmlNodeList Nodes_Level1 = root.SelectNodes("/DSBaoCao0/" + nodeName);
+
+            // Sap xep lai theo Nam
+            var e = XElement.Load(new XmlNodeReader(doc));
+
+
+            //  XElement root = XElement.Parse(xml);
+
+            List<XElement> ordered = e.Elements("BaoCao0")
+                                     .OrderByDescending(element => (int)element.Element("Nam"))
+                                    .ToList();
+            e.RemoveAll();
+            e.Add(ordered);
+
+            StringBuilder result = new StringBuilder();
+            result.Append("<h2>Báo cáo hội thảo (KHÔNG có ấn phẩm)</h2><ul>");
+            foreach (XElement xe in ordered)
+            {
+                String tacgia = xe.Element("TacGia").Value.ToString();
+                String nam = xe.Element("Nam").Value.ToString();
+                String tenbaocao = xe.Element("TenBaoCao").Value.ToString();
+                String tenHoiThao = xe.Element("TenHoiThao").Value.ToString();
+                String thoigiandiadiem = xe.Element("ThoiGianDiaDiem").Value.ToString();
+                String url = xe.Element("URL").Value.ToString();
+                bool vietnam = true;
+                if (xe.Element("NgonNgu").Value.ToString() != "Tiếng Việt") vietnam = false;
+                if (vietnam)
+                {
+                    url = "Liên kết " + url;
+                }
+                else
+                {
+                    url = "Link " + url;
+                }
+                result.Append("<li>" + tacgia + ", (" + nam + "), " + "<i>" + tenbaocao + "</i>, ");
+                result.Append(tenHoiThao + ", " + thoigiandiadiem + ", <a href='" + url + "'>" + url + "</a></li>");
+            }
+            result.Append("</ul>");
+
+
             return result;
         }
     }

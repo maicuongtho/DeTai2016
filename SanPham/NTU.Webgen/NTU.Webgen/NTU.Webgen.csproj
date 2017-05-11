@@ -77,6 +77,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publication_BaoCaoHoiThao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Publication_BaoCaoHoiThao.Designer.cs">
+      <DependentUpon>Publication_BaoCaoHoiThao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publication_BaoCaoHoiThao0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Publication_BaoCaoHoiThao0.Designer.cs">
+      <DependentUpon>Publication_BaoCaoHoiThao0.cs</DependentUpon>
+    </Compile>
     <Compile Include="Publication_Sach.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -111,6 +123,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Publication_BaoCaoHoiThao.resx">
+      <DependentUpon>Publication_BaoCaoHoiThao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publication_BaoCaoHoiThao0.resx">
+      <DependentUpon>Publication_BaoCaoHoiThao0.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Publication_Sach.resx">
       <DependentUpon>Publication_Sach.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +177,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1491341321_compose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
