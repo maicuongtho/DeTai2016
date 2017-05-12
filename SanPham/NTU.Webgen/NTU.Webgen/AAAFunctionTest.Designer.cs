@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.publication_TapChi1 = new NTU.Webgen.Publication_TapChi();
+            this.publication_Sach1 = new NTU.Webgen.Publication_Sach();
             this.SuspendLayout();
             // 
-            // publication_TapChi1
+            // publication_Sach1
             // 
-            this.publication_TapChi1.Location = new System.Drawing.Point(28, 30);
-            this.publication_TapChi1.Name = "publication_TapChi1";
-            this.publication_TapChi1.Size = new System.Drawing.Size(810, 498);
-            this.publication_TapChi1.TabIndex = 0;
+            this.publication_Sach1.Location = new System.Drawing.Point(24, 22);
+            this.publication_Sach1.Name = "publication_Sach1";
+            this.publication_Sach1.Size = new System.Drawing.Size(807, 501);
+            this.publication_Sach1.TabIndex = 0;
             // 
             // AAAFunctionTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 527);
-            this.Controls.Add(this.publication_TapChi1);
+            this.Controls.Add(this.publication_Sach1);
             this.Name = "AAAFunctionTest";
             this.Text = "AAAFunctionTest";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -53,7 +53,8 @@
 
         #endregion
 
-        private Publication_TapChi publication_TapChi1;
+        private Publication_Sach publication_Sach1;
+
 
 
 

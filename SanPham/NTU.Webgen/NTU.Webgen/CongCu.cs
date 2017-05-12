@@ -325,6 +325,46 @@ namespace NTU.Webgen
 
             return result;
         }
+
+
+        public static StringBuilder XML2HTML_Sach(String sach_xmlFile, String nodeName)
+        {
+            XmlTextReader reader = new XmlTextReader(sach_xmlFile);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(reader);
+            reader.Close();
+            XmlElement root = doc.DocumentElement;
+            XmlNodeList Nodes_Level1 = root.SelectNodes("/DSSach/" + nodeName);
+
+            // Sap xep lai theo Nam
+            var e = XElement.Load(new XmlNodeReader(doc));
+
+
+            //  XElement root = XElement.Parse(xml);
+
+            List<XElement> ordered = e.Elements("Sach")
+                                     .OrderByDescending(element => (int)element.Element("NamXB"))
+                                    .ToList();
+            e.RemoveAll();
+            e.Add(ordered);
+
+            StringBuilder result = new StringBuilder();
+            result.Append("<h2>Sách</h2><ul>");
+            foreach (XElement xe in ordered)
+            {
+                String tacgia = xe.Element("TacGia").Value.ToString();
+                String nam = xe.Element("NamXB").Value.ToString();
+                String tensach = xe.Element("TenSach").Value.ToString();
+                String nhaxb = xe.Element("NhaXB").Value.ToString();
+                String noixb = xe.Element("NoiXB").Value.ToString();
+                result.Append("<li>" + tacgia + ", (" + nam + "), " + "<i>" + tensach + "</i>, ");
+                result.Append(nhaxb + ", " + noixb +"</li>");
+            }
+            result.Append("</ul>");
+
+
+            return result;
+        }
     }
 
 

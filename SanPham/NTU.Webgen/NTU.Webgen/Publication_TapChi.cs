@@ -202,7 +202,6 @@ namespace NTU.Webgen
 
             CongCu.ReplaceContent(pubHTMLFile, "TapChi", noiDungMoi);
             MessageBox.Show("Đã xuất thành công sang trang web: \n" + pubHTMLFile, "Thông báo");
-         
             
         }
 
