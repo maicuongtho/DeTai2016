@@ -12,6 +12,52 @@ namespace NTU.Webgen
 {
     class CongCu
     {
+        /// <summary>
+        /// Thêm thông tin meta vào phần Head, tiện cho SEO
+        /// </summary>
+        /// <param name="htmlFilePath"></param>
+        /// <param name="metaName"></param>
+        /// <param name="metaContent"></param>
+        public static void AddMetaInfors(String htmlFilePath, String metaName, String metaContent)
+        {
+            // Đọc file
+            StreamReader sr = new StreamReader(htmlFilePath);
+            String strHTMLPage = sr.ReadToEnd();
+            sr.Close();
+            // Tìm vị trí để chèn thông tin meta
+            int intStartIndex = strHTMLPage.IndexOf("</title>", 0) + 8;
+            int intEndIndex = intStartIndex;
+            
+            //File html mới
+            StringBuilder newHtmlPage = new StringBuilder();
+            newHtmlPage.Append(strHTMLPage.Substring(0,intStartIndex));
+            // kiêm tra thông tin meta đã tồn tại chưa
+            String metaInfo = "<meta name=\""+ metaName+"\"";
+            int intMeTaPos = strHTMLPage.IndexOf(metaInfo);
+            if (metaName.Equals("keywords")) metaContent.Replace(';', ',');
+            if (intMeTaPos <= 0) // nếu chưa tồn tại
+            {
+                newHtmlPage.Append("<meta name=\"" + metaName + "\"");
+                newHtmlPage.Append(" content=\"" + metaContent.Trim() + "\">");
+            }
+            else // đã có, cập nhật nội dung
+            {
+                newHtmlPage.Append(strHTMLPage.Substring(intMeTaPos, metaInfo.Length));
+                newHtmlPage.Append(" content=\"" + metaContent.Trim() + "\">");
+                //Xóa nội dung cũ
+                int k = strHTMLPage.IndexOf(" content=\"", intMeTaPos)+10;
+                int k1 = strHTMLPage.IndexOf("\">", k);
+                strHTMLPage.Remove(k, k1 - k);
+                intEndIndex = k1+2;
+
+            }
+
+            newHtmlPage.Append(strHTMLPage.Substring(intEndIndex));
+            RenameFile(htmlFilePath, htmlFilePath + ".bak.meta");
+            StreamWriter sw = new System.IO.StreamWriter(htmlFilePath, false, Encoding.UTF8);
+            sw.Write(newHtmlPage);
+            sw.Close();
+        }
         public static void ReplaceContent(String htmlFilePath, String tagClass, String strNewDataToBeInserted)
         { 
         
@@ -119,10 +165,12 @@ namespace NTU.Webgen
                 }
             }
         }
-
+      
 
         public static void AddTab(String tabName, String tabTitle, SuperTabControl tabControl, System.Windows.Forms.Control usercontrol, bool center, int top) {
 
+
+         
             SuperTabItem newTab = tabControl.CreateTab(tabTitle);
             newTab.Name = tabName;
             SuperTabControlPanel panel = (SuperTabControlPanel)newTab.AttachedControl;
@@ -132,8 +180,11 @@ namespace NTU.Webgen
 
                 usercontrol.Left = (panel.ClientSize.Width - usercontrol.Width) / 2;
             }
-
+            usercontrol.Left = 5;
             usercontrol.Top = top;
+            //if (dock.Equals("Fill")) { 
+            usercontrol.Dock = DockStyle.Fill;
+            //}
             panel.Controls.Add(usercontrol);
          
             tabControl.SelectedTab= newTab;
@@ -162,7 +213,7 @@ namespace NTU.Webgen
             e.Add(ordered);
 
             StringBuilder result = new StringBuilder();
-            result.Append("<h2>Bài báo</h2><ul>");
+            result.Append("<b>Bài báo</b><ul>");
             foreach (XElement xe in ordered)
             {
                 String tacgia = xe.Element("TacGia").Value.ToString();
@@ -187,7 +238,7 @@ namespace NTU.Webgen
                     trang = "P " + trang;
                 }
 
-                result.Append("<li>"+tacgia + ", (" + nam + "), " + "<i>" + tieudebaibao + "</i>, ");
+                result.Append("<li>" + tacgia + ", (" + nam + "), " + "<span class='citation_title'>" + tieudebaibao + "</span>, ");
                 result.Append(tentapchi + ", " + tap + ", " + so + ", " + trang + "</li>");
                 
 
@@ -243,7 +294,7 @@ namespace NTU.Webgen
             e.Add(ordered);
 
             StringBuilder result = new StringBuilder();
-            result.Append("<h2>Báo cáo hội thảo (có ấn phẩm)</h2><ul>");
+            result.Append("<b>Báo cáo hội thảo (có ấn phẩm)</b><ul>");
             foreach (XElement xe in ordered)
             {
                 String tacgia = xe.Element("TacGia").Value.ToString();
@@ -265,7 +316,7 @@ namespace NTU.Webgen
                     nhaxuatban = "Publisher " + nhaxuatban;
                     trang = "Page " + trang;    
                 }
-                result.Append("<li>" + tacgia + ", (" + nam + "), " + "<i>" + tenbaocao + "</i>, ");
+                result.Append("<li>" + tacgia + ", (" + nam + "), " + "<span class='citation_title'>" + tenbaocao + "</span>, ");
                 result.Append(tenHoiThao + ", " + thoigiandiadiem + ", " + nhaxuatban+ ", " + noixuatban+ ", " + trang + "</li>");
             }
             result.Append("</ul>");
@@ -298,7 +349,7 @@ namespace NTU.Webgen
             e.Add(ordered);
 
             StringBuilder result = new StringBuilder();
-            result.Append("<h2>Báo cáo hội thảo (KHÔNG có ấn phẩm)</h2><ul>");
+            result.Append("<b>Báo cáo hội thảo (KHÔNG có ấn phẩm)</b><ul>");
             foreach (XElement xe in ordered)
             {
                 String tacgia = xe.Element("TacGia").Value.ToString();
@@ -317,7 +368,7 @@ namespace NTU.Webgen
                 {
                     url = "Link " + url;
                 }
-                result.Append("<li>" + tacgia + ", (" + nam + "), " + "<i>" + tenbaocao + "</i>, ");
+                result.Append("<li>" + tacgia + ", (" + nam + "), " + "<span class='citation_title'>" + tenbaocao + "</span>, ");
                 result.Append(tenHoiThao + ", " + thoigiandiadiem + ", <a href='" + url + "'>" + url + "</a></li>");
             }
             result.Append("</ul>");
@@ -349,7 +400,7 @@ namespace NTU.Webgen
             e.Add(ordered);
 
             StringBuilder result = new StringBuilder();
-            result.Append("<h2>Sách</h2><ul>");
+            result.Append("<b>Sách</b><ul>");
             foreach (XElement xe in ordered)
             {
                 String tacgia = xe.Element("TacGia").Value.ToString();
@@ -364,6 +415,15 @@ namespace NTU.Webgen
 
 
             return result;
+        }
+
+
+        public static String ReadHTMLFile(String htmlFilePath)
+        {
+            StreamReader sr = new StreamReader(htmlFilePath);
+            String strHTMLPage = sr.ReadToEnd();
+            sr.Close();
+            return strHTMLPage;
         }
     }
 

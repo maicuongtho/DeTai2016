@@ -74,6 +74,7 @@ namespace NTU.Webgen
         // Lưu dữ liệu vào XML, cập nhật lưới
         private void btnSave_Click(object sender, EventArgs e)
         {
+            
             if (isThemmoi)
             {
 
@@ -261,6 +262,29 @@ namespace NTU.Webgen
                 CongCu.XML2Grid(pubXMLFile, dataGridViewX_DSTC);
                 XoaInput();
                 EnalbeTextBox(false);
+            }
+        }
+
+        private void dataGridViewX_DSTC_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            txtTacGia.Text = dataGridViewX_DSTC.SelectedRows[0].Cells["TacGia"].Value.ToString();
+            txtNam.Text = dataGridViewX_DSTC.SelectedRows[0].Cells["Nam"].Value.ToString();
+            txtTenBaiBao.Text = dataGridViewX_DSTC.SelectedRows[0].Cells["TieuDeBaiBao"].Value.ToString();
+            txtTenTapChi.Text = dataGridViewX_DSTC.SelectedRows[0].Cells["TenTapChi"].Value.ToString();
+            txtTap.Text = dataGridViewX_DSTC.SelectedRows[0].Cells["Tap"].Value.ToString();
+            txtSo.Text = dataGridViewX_DSTC.SelectedRows[0].Cells["So"].Value.ToString();
+            txtTrang.Text = dataGridViewX_DSTC.SelectedRows[0].Cells["Trang"].Value.ToString();
+
+            txtId.Text = dataGridViewX_DSTC.SelectedRows[0].Cells["STT"].Value.ToString();
+            if (dataGridViewX_DSTC.SelectedRows[0].Cells["NgonNgu"].Value.ToString() == "Tiếng Việt")
+            {
+                radioButtonViet.Checked = true;
+                radioButton2.Checked = false;
+            }
+            else
+            {
+                radioButtonViet.Checked = false;
+                radioButton2.Checked = true;
             }
         }      
     }

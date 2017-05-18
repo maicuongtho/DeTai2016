@@ -7,4 +7,12 @@
     <NhaXB>Giao thong van Tai</NhaXB>
     <NoiXB>Ha Noi</NoiXB>
   </Sach>
+  <Sach>
+    <id>2</id>
+    <TacGia>Mai Cường Thọ</TacGia>
+    <NamXB>2015</NamXB>
+    <TenSach>Phát triển ứng dụng web</TenSach>
+    <NhaXB>Thống kê</NhaXB>
+    <NoiXB>Nha Trang</NoiXB>
+  </Sach>
 </DSSach>

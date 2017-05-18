@@ -14,3 +14,12 @@ F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.ChonMau.resources
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.Publication_BaoCaoHoiThao.resources
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.Publication_BaoCaoHoiThao0.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.ProjectExplorer.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.GioiThieu.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\WinHtmlEditor.dll
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\NetSpell.SpellChecker.dll
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\WinHtmlEditor.pdb
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.Form2.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.Form3.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.ChuongTrinh.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.Home.resources

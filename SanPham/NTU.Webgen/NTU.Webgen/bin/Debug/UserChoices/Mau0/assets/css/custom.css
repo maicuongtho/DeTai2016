@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 .title h1{font-size:18px; padding-left:8px; color:#09F;}
 .title h2{font-size:16px; padding-left:8px; color:#444; font-weight:bold}
@@ -8,10 +8,7 @@
 .page-footer {border-top:#DDD thin dashed; padding-top:5px; margin-top:5px; color:#0CF; font-size:12px}
 
 /*CSS publication*/
-.TacGiaChinh {font-weight:bold}
-.TacGiaKhac {padding-left:2px}
-.Nam {padding-left:2px;}
-.TieuDeBaiBao {font-style:italic}
+.citation_title {font-style:italic; color: darkorange;}
 
 .tabs li {
         list-style:none;

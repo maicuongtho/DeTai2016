@@ -119,6 +119,80 @@ namespace NTU.Webgen
 
             }
         }
+
+        private void btnPub_TapChi_Click(object sender, EventArgs e)
+        {
+            if (superTabControlWindows.Tabs.Contains("tabTapChi"))
+            {
+                var t = (SuperTabItem)superTabControlWindows.Tabs["tabTapChi"];
+                superTabControlWindows.SelectedTab = t;
+            }
+
+             
+            else
+            {
+                Publication_TapChi tc = new Publication_TapChi();
+                CongCu.AddTab("tabTapChi", "Tạp chí", superTabControlWindows, tc, false, 10);
+            }
+
+        }
+
+        private void btnPub_BaoCao_Click(object sender, EventArgs e)
+        {
+            if (superTabControlWindows.Tabs.Contains("tabBaoCao"))
+            {
+                var t = (SuperTabItem)superTabControlWindows.Tabs["tabBaoCao"];
+                superTabControlWindows.SelectedTab = t;
+            }
+            else
+            {
+                Publication_BaoCaoHoiThao bc = new Publication_BaoCaoHoiThao();
+                CongCu.AddTab("tabBaoCao", "Báo cáo hội thảo", superTabControlWindows, bc, false, 10);
+      
+            }
+        }
+
+        private void btnPub_BaoCao0_Click(object sender, EventArgs e)
+        {
+            if (superTabControlWindows.Tabs.Contains("tabBaoCao0"))
+            {
+                var t = (SuperTabItem)superTabControlWindows.Tabs["tabBaoCao0"];
+                superTabControlWindows.SelectedTab = t;
+            }
+            else
+            {
+                Publication_BaoCaoHoiThao0 bc0 = new Publication_BaoCaoHoiThao0();
+                CongCu.AddTab("tabBaoCao0", "Báo cáo hội thảo (không ấn phẩm)", superTabControlWindows, bc0, false, 10);
+            }
+        }
+
+        private void btnPub_Sach_Click(object sender, EventArgs e)
+        {
+            if (superTabControlWindows.Tabs.Contains("tabSach"))
+            {
+                var t = (SuperTabItem)superTabControlWindows.Tabs["tabSach"];
+                superTabControlWindows.SelectedTab = t;
+            }
+            else
+            {
+                Publication_Sach sc = new Publication_Sach();
+                CongCu.AddTab("tabSach", "Sách", superTabControlWindows, sc, false, 10);
+            }
+        }
+
+        private void ribbonTabItemGioiThieu_Button_Click(object sender, EventArgs e)
+        {
+            if (superTabControlWindows.Tabs.Contains("tabGIoiThieu"))
+            {
+                var t = (SuperTabItem)superTabControlWindows.Tabs["tabGIoiThieu"];
+                superTabControlWindows.SelectedTab = t;
+            }
+            else
+            {
+                GioiThieu sc = new GioiThieu();
+                CongCu.AddTab("tabGIoiThieu", "Giới thiệu", superTabControlWindows, sc, true, 10);
+            }
+        }
     }
    
 }

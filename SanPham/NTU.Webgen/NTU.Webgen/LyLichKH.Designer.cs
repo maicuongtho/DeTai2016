@@ -34,10 +34,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::NTU.Webgen.Properties.Resources.NTUBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Name = "LyLichKH";
-            this.Size = new System.Drawing.Size(663, 489);
+            this.Size = new System.Drawing.Size(836, 489);
             this.ResumeLayout(false);
 
         }

@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.publication_Sach1 = new NTU.Webgen.Publication_Sach();
+            this.gioiThieu1 = new NTU.Webgen.GioiThieu();
             this.SuspendLayout();
             // 
-            // publication_Sach1
+            // gioiThieu1
             // 
-            this.publication_Sach1.Location = new System.Drawing.Point(24, 22);
-            this.publication_Sach1.Name = "publication_Sach1";
-            this.publication_Sach1.Size = new System.Drawing.Size(807, 501);
-            this.publication_Sach1.TabIndex = 0;
+            this.gioiThieu1.Location = new System.Drawing.Point(12, 12);
+            this.gioiThieu1.Name = "gioiThieu1";
+            this.gioiThieu1.Size = new System.Drawing.Size(702, 485);
+            this.gioiThieu1.TabIndex = 0;
             // 
             // AAAFunctionTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 527);
-            this.Controls.Add(this.publication_Sach1);
+            this.Controls.Add(this.gioiThieu1);
             this.Name = "AAAFunctionTest";
             this.Text = "AAAFunctionTest";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -53,7 +53,10 @@
 
         #endregion
 
-        private Publication_Sach publication_Sach1;
+        private GioiThieu gioiThieu1;
+
+
+
 
 
 
