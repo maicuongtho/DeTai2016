@@ -31,64 +31,65 @@
             this.b0Chon = new System.Windows.Forms.Button();
             this.linkLabel0 = new System.Windows.Forms.LinkLabel();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.button3 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.groupPanel5 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.groupPanel6 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.button5 = new System.Windows.Forms.Button();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupPanel7 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.button6 = new System.Windows.Forms.Button();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.groupPanel8 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.button7 = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.groupPanel9 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.linkLabel8 = new System.Windows.Forms.LinkLabel();
             this.button8 = new System.Windows.Forms.Button();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.groupPanel10 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.linkLabel9 = new System.Windows.Forms.LinkLabel();
             this.button9 = new System.Windows.Forms.Button();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.groupPanel1.SuspendLayout();
-            this.groupPanel2.SuspendLayout();
-            this.groupPanel3.SuspendLayout();
-            this.groupPanel4.SuspendLayout();
-            this.groupPanel5.SuspendLayout();
-            this.groupPanel6.SuspendLayout();
-            this.groupPanel7.SuspendLayout();
-            this.groupPanel8.SuspendLayout();
-            this.groupPanel9.SuspendLayout();
-            this.groupPanel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.groupPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.groupPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.groupPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.groupPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.groupPanel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.groupPanel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // b0Chon
@@ -153,6 +154,15 @@
             this.groupPanel1.TabIndex = 3;
             this.groupPanel1.Text = "Mẫu số 0";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::NTU.Webgen.Properties.Resources.mau1;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(175, 128);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // groupPanel2
             // 
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
@@ -213,6 +223,15 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Chọn";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::NTU.Webgen.Properties.Resources.mau1;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 14);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(175, 128);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // groupPanel3
             // 
@@ -275,6 +294,15 @@
             this.button2.Text = "Chọn";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::NTU.Webgen.Properties.Resources.mau1;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 14);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(175, 128);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
             // groupPanel4
             // 
             this.groupPanel4.CanvasColor = System.Drawing.SystemColors.Control;
@@ -335,6 +363,15 @@
             this.button3.TabIndex = 1;
             this.button3.Text = "Chọn";
             this.button3.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::NTU.Webgen.Properties.Resources.mau1;
+            this.pictureBox4.Location = new System.Drawing.Point(12, 14);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(175, 128);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
             // 
             // groupPanel5
             // 
@@ -397,6 +434,15 @@
             this.button4.Text = "Chọn";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::NTU.Webgen.Properties.Resources.mau1;
+            this.pictureBox5.Location = new System.Drawing.Point(12, 14);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(175, 128);
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
+            // 
             // groupPanel6
             // 
             this.groupPanel6.CanvasColor = System.Drawing.SystemColors.Control;
@@ -457,6 +503,15 @@
             this.button5.TabIndex = 1;
             this.button5.Text = "Chọn";
             this.button5.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::NTU.Webgen.Properties.Resources.mau1;
+            this.pictureBox6.Location = new System.Drawing.Point(12, 14);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(175, 128);
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
             // 
             // groupPanel7
             // 
@@ -519,6 +574,15 @@
             this.button6.Text = "Chọn";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::NTU.Webgen.Properties.Resources.mau1;
+            this.pictureBox7.Location = new System.Drawing.Point(12, 14);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(175, 128);
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
+            // 
             // groupPanel8
             // 
             this.groupPanel8.CanvasColor = System.Drawing.SystemColors.Control;
@@ -579,6 +643,15 @@
             this.button7.TabIndex = 1;
             this.button7.Text = "Chọn";
             this.button7.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::NTU.Webgen.Properties.Resources.mau1;
+            this.pictureBox8.Location = new System.Drawing.Point(12, 14);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(175, 128);
+            this.pictureBox8.TabIndex = 0;
+            this.pictureBox8.TabStop = false;
             // 
             // groupPanel9
             // 
@@ -641,6 +714,15 @@
             this.button8.Text = "Chọn";
             this.button8.UseVisualStyleBackColor = true;
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::NTU.Webgen.Properties.Resources.mau1;
+            this.pictureBox9.Location = new System.Drawing.Point(12, 14);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(175, 128);
+            this.pictureBox9.TabIndex = 0;
+            this.pictureBox9.TabStop = false;
+            // 
             // groupPanel10
             // 
             this.groupPanel10.CanvasColor = System.Drawing.SystemColors.Control;
@@ -702,30 +784,6 @@
             this.button9.Text = "Chọn";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.FileName = "config.ntu";
-            this.saveFileDialog1.Filter = "NTU webgen file| *.ntu";
-            this.saveFileDialog1.Title = "Hộp thoại chọn nơi lưu website";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::NTU.Webgen.Properties.Resources.mau1;
-            this.pictureBox8.Location = new System.Drawing.Point(12, 14);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(175, 128);
-            this.pictureBox8.TabIndex = 0;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::NTU.Webgen.Properties.Resources.mau1;
-            this.pictureBox7.Location = new System.Drawing.Point(12, 14);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(175, 128);
-            this.pictureBox7.TabIndex = 0;
-            this.pictureBox7.TabStop = false;
-            // 
             // pictureBox10
             // 
             this.pictureBox10.Image = global::NTU.Webgen.Properties.Resources.mau1;
@@ -735,68 +793,11 @@
             this.pictureBox10.TabIndex = 0;
             this.pictureBox10.TabStop = false;
             // 
-            // pictureBox9
+            // saveFileDialog1
             // 
-            this.pictureBox9.Image = global::NTU.Webgen.Properties.Resources.mau1;
-            this.pictureBox9.Location = new System.Drawing.Point(12, 14);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(175, 128);
-            this.pictureBox9.TabIndex = 0;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::NTU.Webgen.Properties.Resources.mau1;
-            this.pictureBox6.Location = new System.Drawing.Point(12, 14);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(175, 128);
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::NTU.Webgen.Properties.Resources.mau1;
-            this.pictureBox5.Location = new System.Drawing.Point(12, 14);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(175, 128);
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::NTU.Webgen.Properties.Resources.mau1;
-            this.pictureBox4.Location = new System.Drawing.Point(12, 14);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(175, 128);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::NTU.Webgen.Properties.Resources.mau1;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 14);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(175, 128);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::NTU.Webgen.Properties.Resources.mau1;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 14);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(175, 128);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::NTU.Webgen.Properties.Resources.mau1;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(175, 128);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.saveFileDialog1.FileName = "config.ntu";
+            this.saveFileDialog1.Filter = "NTU webgen file| *.ntu";
+            this.saveFileDialog1.Title = "Hộp thoại chọn nơi lưu website";
             // 
             // ChonMau
             // 
@@ -817,34 +818,34 @@
             this.Size = new System.Drawing.Size(1128, 444);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupPanel2.ResumeLayout(false);
             this.groupPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupPanel3.ResumeLayout(false);
             this.groupPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupPanel4.ResumeLayout(false);
             this.groupPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupPanel5.ResumeLayout(false);
             this.groupPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.groupPanel6.ResumeLayout(false);
             this.groupPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupPanel7.ResumeLayout(false);
             this.groupPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.groupPanel8.ResumeLayout(false);
             this.groupPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.groupPanel9.ResumeLayout(false);
             this.groupPanel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.groupPanel10.ResumeLayout(false);
             this.groupPanel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -892,5 +893,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }

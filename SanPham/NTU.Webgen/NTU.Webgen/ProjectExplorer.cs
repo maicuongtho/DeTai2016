@@ -13,7 +13,7 @@ namespace NTU.Webgen
 {
     public partial class ProjectExplorer : UserControl
     {
-        String pubHTMLFolder = @"F:/LocalRepository/DeTai2016/SanPham/NTU.Webgen/NTU.Webgen/bin/Debug/UserChoices/Mau0";
+        String pubHTMLFolder;// = @"F:/LocalRepository/DeTai2016/SanPham/NTU.Webgen/NTU.Webgen/bin/Debug/UserChoices/Mau0";
         public ProjectExplorer()
         {
             InitializeComponent();
@@ -34,7 +34,6 @@ namespace NTU.Webgen
             if (directoryInfo.Exists)
             {
                 treeView1.AfterSelect += treeView1_AfterSelect;
-              
                 BuildTree(directoryInfo, treeView1.Nodes);
                 treeView1.ExpandAll();
             }
@@ -47,6 +46,7 @@ namespace NTU.Webgen
 
             foreach (FileInfo file in directoryInfo.GetFiles())
             {
+                if (file.Name.EndsWith(".html"))
                 curNode.Nodes.Add(file.FullName, file.Name);
             }
             foreach (DirectoryInfo subdir in directoryInfo.GetDirectories())
@@ -65,6 +65,12 @@ namespace NTU.Webgen
             //    this.richTextBox1.Text = reader.ReadToEnd();
             //    reader.Close();
             //}
+        }
+
+        private void treeView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            //MessageBox.Show( treeView1.SelectedNode.Text);
+            CongCu.gotoSite(pubHTMLFolder +"\\"+ treeView1.SelectedNode.Text); 
         }
     }
 }

@@ -6,18 +6,19 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
+using System.IO;
 
 namespace NTU.Webgen
 {
     public partial class ChuongTrinh : DevComponents.DotNetBar.OfficeForm
     {
-        
+        public String projectFolder = "";
+
         public ChuongTrinh()
         {
             InitializeComponent();
+            setMainTabVisible(false);
         }
-
-     
 
         
         private void splitContainer1_SplitterMoving(object sender, SplitterCancelEventArgs e)
@@ -35,15 +36,15 @@ namespace NTU.Webgen
 
         private void mnuGioiThieu_Click(object sender, EventArgs e)
         {
-            if (superTabControlWindows.Tabs.Contains("tabGIoiThieu"))
+            if (superTabControlWindows.Tabs.Contains("tabGioiThieu"))
             {
-                var t = (SuperTabItem)superTabControlWindows.Tabs["tabGIoiThieu"];
+                var t = (SuperTabItem)superTabControlWindows.Tabs["tabGioiThieu"];
                 superTabControlWindows.SelectedTab = t;
             }
             else
             {
-                Home sc = new Home();
-                CongCu.AddTab("tabGIoiThieu", "Giới thiệu", superTabControlWindows, sc, true, 10);
+                Home sc = new Home(@projectFolder);
+                CongCu.AddTab("tabGioiThieu", "Giới thiệu", superTabControlWindows, sc, true, 10);
             }
         }
 
@@ -104,6 +105,89 @@ namespace NTU.Webgen
                 Publication_Sach sc = new Publication_Sach();
                 CongCu.AddTab("tabSach", "Sách", superTabControlWindows, sc, false, 10);
             }
+        }
+
+        private void mnuLich_Click(object sender, EventArgs e)
+        {
+            if (superTabControlWindows.Tabs.Contains("tabLich"))
+            {
+                var t = (SuperTabItem)superTabControlWindows.Tabs["tabLich"];
+                superTabControlWindows.SelectedTab = t;
+            }
+            else
+            {
+                calendar sc = new calendar();
+                CongCu.AddTab("tabLich", "Lịch", superTabControlWindows, sc, false, 10);
+            }
+        }
+
+        private void mnuGiangDay_Click(object sender, EventArgs e)
+        {
+            if (superTabControlWindows.Tabs.Contains("tabGiangDay"))
+            {
+                var t = (SuperTabItem)superTabControlWindows.Tabs["tabGiangDay"];
+                superTabControlWindows.SelectedTab = t;
+            }
+            else
+            {
+                GiangDay sc = new GiangDay();
+                CongCu.AddTab("tabGiangDay", "Giảng dạy", superTabControlWindows, sc, false, 10);
+            }
+        }
+
+        public void setMainTabVisible(bool value)
+        {
+            menuStrip1.Items["mnuGioiThieu"].Visible = value;
+            menuStrip1.Items["mnuLyLich"].Visible = value;
+            menuStrip1.Items["mnuCongBo"].Visible = value;
+            menuStrip1.Items["mnuGiangDay"].Visible = value;
+            menuStrip1.Items["mnuLich"].Visible = value;
+            menuStrip1.Items["mnuLienKet"].Visible = value;
+
+        
+        }
+
+        // Tạo mới
+        private void mởToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Mời chọn một mẫu dưới đây");
+            if (superTabControlWindows.Tabs.Contains("tabChonMau"))
+            {
+                var t = (SuperTabItem)superTabControlWindows.Tabs["tabChonMau"];
+                superTabControlWindows.SelectedTab = t;
+            }
+            else
+            {
+                ChonMau sc = new ChonMau(this);
+                CongCu.AddTab("tabChonMau", "Chọn mẫu", superTabControlWindows, sc, false, 10);
+                // Cập nhật thư mục làm việc, bật project explorer
+                setMainTabVisible(true); 
+            }
+        }
+
+
+        //Mở
+        private void mỞToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+           DialogResult rs=  openFileDialog1.ShowDialog();
+           //Đọc file cấu hình để nạp thư mục tương ứng
+           if (rs == DialogResult.OK)
+           {
+               String fileCauHinh = openFileDialog1.FileName;
+               FileStream fs =File.Open(fileCauHinh,FileMode.Open);
+               StreamReader rd = new StreamReader(fs);
+               String thumucChon = rd.ReadLine();
+               fs.Close();
+               rd.Close();
+               projectFolder = thumucChon.Substring(0, thumucChon.Length - 11);
+               ProjectExplorer pj = new ProjectExplorer(projectFolder);
+               MessageBox.Show(thumucChon.Substring(0,thumucChon.Length-12));
+               splitContainer1.Panel2.Controls.Clear();
+               splitContainer1.Panel2.Controls.Add(pj);
+               this.Update();
+               setMainTabVisible(true);
+           }
+
         }
     }
 }

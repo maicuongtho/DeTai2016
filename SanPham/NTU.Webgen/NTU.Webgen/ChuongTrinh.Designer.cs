@@ -30,36 +30,38 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChuongTrinh));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.tậpTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mởToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFile_New = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFile_Open = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuFile_Exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuGioiThieu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuLyLich = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCongBo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCongBo_BaiBao = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCongBo_Baocao1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCongBo_Baocao0 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCongBo_Sach = new System.Windows.Forms.ToolStripMenuItem();
+            this.hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.côngBốKhácToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuGiangDay = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuLich = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.superTabControlWindows = new DevComponents.DotNetBar.SuperTabControl();
-            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.mỞToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tHOÁTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projectExplorer1 = new NTU.Webgen.ProjectExplorer();
-            this.mnuGioiThieu = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuLyLich = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCongBo = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuGiangDay = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCongBo_BaiBao = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCongBo_Baocao1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCongBo_Baocao0 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCongBo_Sach = new System.Windows.Forms.ToolStripMenuItem();
+            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.mnuLienKet = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControlWindows)).BeginInit();
             this.superTabControlWindows.SuspendLayout();
@@ -68,39 +70,139 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tậpTinToolStripMenuItem,
+            this.mnuFile,
             this.mnuGioiThieu,
             this.mnuLyLich,
             this.mnuCongBo,
-            this.mnuGiangDay});
+            this.mnuGiangDay,
+            this.mnuLich,
+            this.mnuLienKet});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(797, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // tậpTinToolStripMenuItem
+            // mnuFile
             // 
-            this.tậpTinToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mởToolStripMenuItem,
-            this.mỞToolStripMenuItem1,
+            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFile_New,
+            this.mnuFile_Open,
             this.toolStripMenuItem1,
-            this.tHOÁTToolStripMenuItem});
-            this.tậpTinToolStripMenuItem.Name = "tậpTinToolStripMenuItem";
-            this.tậpTinToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.tậpTinToolStripMenuItem.Text = "FILE";
+            this.mnuFile_Exit});
+            this.mnuFile.Name = "mnuFile";
+            this.mnuFile.Size = new System.Drawing.Size(40, 20);
+            this.mnuFile.Text = "FILE";
             // 
-            // mởToolStripMenuItem
+            // mnuFile_New
             // 
-            this.mởToolStripMenuItem.Name = "mởToolStripMenuItem";
-            this.mởToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.mởToolStripMenuItem.Text = "TẠO MỚI";
+            this.mnuFile_New.Name = "mnuFile_New";
+            this.mnuFile_New.Size = new System.Drawing.Size(124, 22);
+            this.mnuFile_New.Text = "TẠO MỚI";
+            this.mnuFile_New.Click += new System.EventHandler(this.mởToolStripMenuItem_Click);
+            // 
+            // mnuFile_Open
+            // 
+            this.mnuFile_Open.Name = "mnuFile_Open";
+            this.mnuFile_Open.Size = new System.Drawing.Size(124, 22);
+            this.mnuFile_Open.Text = "MỞ";
+            this.mnuFile_Open.Click += new System.EventHandler(this.mỞToolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(121, 6);
+            // 
+            // mnuFile_Exit
+            // 
+            this.mnuFile_Exit.Name = "mnuFile_Exit";
+            this.mnuFile_Exit.Size = new System.Drawing.Size(124, 22);
+            this.mnuFile_Exit.Text = "THOÁT";
+            // 
+            // mnuGioiThieu
+            // 
+            this.mnuGioiThieu.Name = "mnuGioiThieu";
+            this.mnuGioiThieu.Size = new System.Drawing.Size(78, 20);
+            this.mnuGioiThieu.Text = "GIỚI THIỆU";
+            this.mnuGioiThieu.Click += new System.EventHandler(this.mnuGioiThieu_Click);
+            // 
+            // mnuLyLich
+            // 
+            this.mnuLyLich.Name = "mnuLyLich";
+            this.mnuLyLich.Size = new System.Drawing.Size(125, 20);
+            this.mnuLyLich.Text = "LÝ LỊCH KHOA HỌC";
+            // 
+            // mnuCongBo
+            // 
+            this.mnuCongBo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuCongBo_BaiBao,
+            this.mnuCongBo_Baocao1,
+            this.mnuCongBo_Baocao0,
+            this.mnuCongBo_Sach,
+            this.hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem,
+            this.côngBốKhácToolStripMenuItem});
+            this.mnuCongBo.Name = "mnuCongBo";
+            this.mnuCongBo.Size = new System.Drawing.Size(137, 20);
+            this.mnuCongBo.Text = "CÔNG BỐ KHOA HỌC";
+            // 
+            // mnuCongBo_BaiBao
+            // 
+            this.mnuCongBo_BaiBao.Name = "mnuCongBo_BaiBao";
+            this.mnuCongBo_BaiBao.Size = new System.Drawing.Size(266, 22);
+            this.mnuCongBo_BaiBao.Text = "Bài báo tạp chí";
+            this.mnuCongBo_BaiBao.Click += new System.EventHandler(this.mnuCongBo_BaiBao_Click);
+            // 
+            // mnuCongBo_Baocao1
+            // 
+            this.mnuCongBo_Baocao1.Name = "mnuCongBo_Baocao1";
+            this.mnuCongBo_Baocao1.Size = new System.Drawing.Size(266, 22);
+            this.mnuCongBo_Baocao1.Text = "Báo cáo hội thảo (có ấn phẩm)";
+            this.mnuCongBo_Baocao1.Click += new System.EventHandler(this.mnuCongBo_Baocao1_Click);
+            // 
+            // mnuCongBo_Baocao0
+            // 
+            this.mnuCongBo_Baocao0.Name = "mnuCongBo_Baocao0";
+            this.mnuCongBo_Baocao0.Size = new System.Drawing.Size(266, 22);
+            this.mnuCongBo_Baocao0.Text = "Báo cáo hội thảo không có ấn phẩm";
+            this.mnuCongBo_Baocao0.Click += new System.EventHandler(this.mnuCongBo_Baocao0_Click);
+            // 
+            // mnuCongBo_Sach
+            // 
+            this.mnuCongBo_Sach.Name = "mnuCongBo_Sach";
+            this.mnuCongBo_Sach.Size = new System.Drawing.Size(266, 22);
+            this.mnuCongBo_Sach.Text = "Sách";
+            this.mnuCongBo_Sach.Click += new System.EventHandler(this.mnuCongBo_Sach_Click);
+            // 
+            // hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem
+            // 
+            this.hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem.Name = "hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem";
+            this.hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem.Text = "Hướng dẫn tốt nghiệp (ĐH, SĐH)";
+            // 
+            // côngBốKhácToolStripMenuItem
+            // 
+            this.côngBốKhácToolStripMenuItem.Name = "côngBốKhácToolStripMenuItem";
+            this.côngBốKhácToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
+            this.côngBốKhácToolStripMenuItem.Text = "Công bố khác";
+            // 
+            // mnuGiangDay
+            // 
+            this.mnuGiangDay.Name = "mnuGiangDay";
+            this.mnuGiangDay.Size = new System.Drawing.Size(81, 20);
+            this.mnuGiangDay.Text = "GIẢNG DẠY";
+            this.mnuGiangDay.Click += new System.EventHandler(this.mnuGiangDay_Click);
+            // 
+            // mnuLich
+            // 
+            this.mnuLich.Name = "mnuLich";
+            this.mnuLich.Size = new System.Drawing.Size(45, 20);
+            this.mnuLich.Text = "LỊCH";
+            this.mnuLich.Click += new System.EventHandler(this.mnuLich_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2});
+            this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 412);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(797, 22);
@@ -110,14 +212,8 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(137, 17);
+            this.toolStripStatusLabel1.Text = "thomc@ntu.edu.vn 2017";
             // 
             // toolStrip1
             // 
@@ -157,10 +253,6 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.superTabControlWindows);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.projectExplorer1);
             this.splitContainer1.Size = new System.Drawing.Size(797, 363);
             this.splitContainer1.SplitterDistance = 640;
             this.splitContainer1.TabIndex = 3;
@@ -199,13 +291,6 @@
             this.superTabItem1});
             this.superTabControlWindows.Text = "superTabControl1";
             // 
-            // superTabItem1
-            // 
-            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
-            this.superTabItem1.GlobalItem = false;
-            this.superTabItem1.Name = "superTabItem1";
-            this.superTabItem1.Text = "superTabItem1";
-            // 
             // superTabControlPanel1
             // 
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -215,88 +300,23 @@
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.superTabItem1;
             // 
-            // mỞToolStripMenuItem1
+            // superTabItem1
             // 
-            this.mỞToolStripMenuItem1.Name = "mỞToolStripMenuItem1";
-            this.mỞToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.mỞToolStripMenuItem1.Text = "MỞ";
+            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
+            this.superTabItem1.GlobalItem = false;
+            this.superTabItem1.Name = "superTabItem1";
+            this.superTabItem1.Text = "Dasdboard";
             // 
-            // toolStripMenuItem1
+            // openFileDialog1
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.openFileDialog1.FileName = "Mở Project đã có";
+            this.openFileDialog1.Filter = "NTU Webgen file | *.ntu";
             // 
-            // tHOÁTToolStripMenuItem
+            // mnuLienKet
             // 
-            this.tHOÁTToolStripMenuItem.Name = "tHOÁTToolStripMenuItem";
-            this.tHOÁTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.tHOÁTToolStripMenuItem.Text = "THOÁT";
-            // 
-            // projectExplorer1
-            // 
-            this.projectExplorer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.projectExplorer1.Location = new System.Drawing.Point(0, 0);
-            this.projectExplorer1.Name = "projectExplorer1";
-            this.projectExplorer1.Size = new System.Drawing.Size(153, 363);
-            this.projectExplorer1.TabIndex = 0;
-            // 
-            // mnuGioiThieu
-            // 
-            this.mnuGioiThieu.Name = "mnuGioiThieu";
-            this.mnuGioiThieu.Size = new System.Drawing.Size(78, 20);
-            this.mnuGioiThieu.Text = "GIỚI THIỆU";
-            this.mnuGioiThieu.Click += new System.EventHandler(this.mnuGioiThieu_Click);
-            // 
-            // mnuLyLich
-            // 
-            this.mnuLyLich.Name = "mnuLyLich";
-            this.mnuLyLich.Size = new System.Drawing.Size(125, 20);
-            this.mnuLyLich.Text = "LÝ LỊCH KHOA HỌC";
-            // 
-            // mnuCongBo
-            // 
-            this.mnuCongBo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuCongBo_BaiBao,
-            this.mnuCongBo_Baocao1,
-            this.mnuCongBo_Baocao0,
-            this.mnuCongBo_Sach});
-            this.mnuCongBo.Name = "mnuCongBo";
-            this.mnuCongBo.Size = new System.Drawing.Size(137, 20);
-            this.mnuCongBo.Text = "CÔNG BỐ KHOA HỌC";
-            // 
-            // mnuGiangDay
-            // 
-            this.mnuGiangDay.Name = "mnuGiangDay";
-            this.mnuGiangDay.Size = new System.Drawing.Size(81, 20);
-            this.mnuGiangDay.Text = "GIẢNG DẠY";
-            // 
-            // mnuCongBo_BaiBao
-            // 
-            this.mnuCongBo_BaiBao.Name = "mnuCongBo_BaiBao";
-            this.mnuCongBo_BaiBao.Size = new System.Drawing.Size(266, 22);
-            this.mnuCongBo_BaiBao.Text = "Bài báo tạp chí";
-            this.mnuCongBo_BaiBao.Click += new System.EventHandler(this.mnuCongBo_BaiBao_Click);
-            // 
-            // mnuCongBo_Baocao1
-            // 
-            this.mnuCongBo_Baocao1.Name = "mnuCongBo_Baocao1";
-            this.mnuCongBo_Baocao1.Size = new System.Drawing.Size(266, 22);
-            this.mnuCongBo_Baocao1.Text = "Báo cáo hội thảo (có ấn phẩm)";
-            this.mnuCongBo_Baocao1.Click += new System.EventHandler(this.mnuCongBo_Baocao1_Click);
-            // 
-            // mnuCongBo_Baocao0
-            // 
-            this.mnuCongBo_Baocao0.Name = "mnuCongBo_Baocao0";
-            this.mnuCongBo_Baocao0.Size = new System.Drawing.Size(266, 22);
-            this.mnuCongBo_Baocao0.Text = "Báo cáo hội thảo không có ấn phẩm";
-            this.mnuCongBo_Baocao0.Click += new System.EventHandler(this.mnuCongBo_Baocao0_Click);
-            // 
-            // mnuCongBo_Sach
-            // 
-            this.mnuCongBo_Sach.Name = "mnuCongBo_Sach";
-            this.mnuCongBo_Sach.Size = new System.Drawing.Size(266, 22);
-            this.mnuCongBo_Sach.Text = "Sách";
-            this.mnuCongBo_Sach.Click += new System.EventHandler(this.mnuCongBo_Sach_Click);
+            this.mnuLienKet.Name = "mnuLienKet";
+            this.mnuLienKet.Size = new System.Drawing.Size(66, 20);
+            this.mnuLienKet.Text = "LIÊN KẾT";
             // 
             // ChuongTrinh
             // 
@@ -317,7 +337,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControlWindows)).EndInit();
@@ -332,20 +351,18 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripMenuItem tậpTinToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mởToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuFile;
+        private System.Windows.Forms.ToolStripMenuItem mnuFile_New;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private DevComponents.DotNetBar.SuperTabControl superTabControlWindows;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
         private DevComponents.DotNetBar.SuperTabItem superTabItem1;
-        private System.Windows.Forms.ToolStripMenuItem mỞToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem mnuFile_Open;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem tHOÁTToolStripMenuItem;
-        private ProjectExplorer projectExplorer1;
+        private System.Windows.Forms.ToolStripMenuItem mnuFile_Exit;
         private System.Windows.Forms.ToolStripMenuItem mnuGioiThieu;
         private System.Windows.Forms.ToolStripMenuItem mnuLyLich;
         private System.Windows.Forms.ToolStripMenuItem mnuCongBo;
@@ -354,5 +371,10 @@
         private System.Windows.Forms.ToolStripMenuItem mnuCongBo_Baocao1;
         private System.Windows.Forms.ToolStripMenuItem mnuCongBo_Baocao0;
         private System.Windows.Forms.ToolStripMenuItem mnuCongBo_Sach;
+        private System.Windows.Forms.ToolStripMenuItem mnuLich;
+        private System.Windows.Forms.ToolStripMenuItem hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem côngBốKhácToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem mnuLienKet;
     }
 }

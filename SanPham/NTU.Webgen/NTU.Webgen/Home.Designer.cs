@@ -33,10 +33,21 @@
             this.btnXuatWeb = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.htmlEditor1 = new WinHtmlEditor.HtmlEditor();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDinhHuong = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMonHoc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtBoMon = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtKhoa = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTrinhDo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtWeb = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -49,31 +60,22 @@
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.txtMonHoc = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtDinhHuong = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.htmlEditor1 = new WinHtmlEditor.HtmlEditor();
             this.balloonTipAnhDaiDien = new DevComponents.DotNetBar.BalloonTip();
+            this.btnHuy = new DevComponents.DotNetBar.ButtonX();
             this.panelEx3.SuspendLayout();
             this.panelEx1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelEx3
             // 
             this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.btnHuy);
             this.panelEx3.Controls.Add(this.btnSua);
             this.panelEx3.Controls.Add(this.btnXuatWeb);
             this.panelEx3.Controls.Add(this.btnSave);
@@ -97,7 +99,7 @@
             this.btnSua.Image = global::NTU.Webgen.Properties.Resources.Edit_16x16;
             this.btnSua.Location = new System.Drawing.Point(44, 7);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(101, 24);
+            this.btnSua.Size = new System.Drawing.Size(135, 23);
             this.btnSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2000;
             this.btnSua.TabIndex = 14;
             this.btnSua.Text = "Sửa dữ liệu";
@@ -108,9 +110,10 @@
             this.btnXuatWeb.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnXuatWeb.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnXuatWeb.Image = global::NTU.Webgen.Properties.Resources._1491336195_domain_template;
-            this.btnXuatWeb.Location = new System.Drawing.Point(258, 7);
+            this.btnXuatWeb.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.btnXuatWeb.Location = new System.Drawing.Point(322, 7);
             this.btnXuatWeb.Name = "btnXuatWeb";
-            this.btnXuatWeb.Size = new System.Drawing.Size(159, 24);
+            this.btnXuatWeb.Size = new System.Drawing.Size(135, 23);
             this.btnXuatWeb.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2000;
             this.btnXuatWeb.TabIndex = 15;
             this.btnXuatWeb.Text = "Xuất sang trang web";
@@ -121,9 +124,9 @@
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSave.Image = global::NTU.Webgen.Properties.Resources.Save_16x16;
-            this.btnSave.Location = new System.Drawing.Point(151, 7);
+            this.btnSave.Location = new System.Drawing.Point(183, 7);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(101, 24);
+            this.btnSave.Size = new System.Drawing.Size(135, 23);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2000;
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Lưu";
@@ -149,6 +152,82 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 1;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.htmlEditor1);
+            this.groupBox3.Location = new System.Drawing.Point(44, 415);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(735, 158);
+            this.groupBox3.TabIndex = 32;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Thông tin khác:";
+            // 
+            // htmlEditor1
+            // 
+            this.htmlEditor1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.htmlEditor1.BodyInnerHTML = "Các thông tin khác";
+            this.htmlEditor1.BodyInnerText = "Các thông tin khác";
+            this.htmlEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.htmlEditor1.EnterToBR = true;
+            this.htmlEditor1.FontSize = WinHtmlEditor.FontSize.Three;
+            this.htmlEditor1.Location = new System.Drawing.Point(3, 16);
+            this.htmlEditor1.Name = "htmlEditor1";
+            this.htmlEditor1.ShowStatusBar = false;
+            this.htmlEditor1.ShowToolBar = true;
+            this.htmlEditor1.ShowWb = true;
+            this.htmlEditor1.Size = new System.Drawing.Size(729, 139);
+            this.htmlEditor1.TabIndex = 12;
+            this.htmlEditor1.WebBrowserShortcutsEnabled = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtDinhHuong);
+            this.groupBox2.Controls.Add(this.txtMonHoc);
+            this.groupBox2.Controls.Add(this.txtBoMon);
+            this.groupBox2.Controls.Add(this.txtKhoa);
+            this.groupBox2.Controls.Add(this.txtTrinhDo);
+            this.groupBox2.Controls.Add(this.txtHoTen);
+            this.groupBox2.Controls.Add(this.labelX11);
+            this.groupBox2.Controls.Add(this.labelX10);
+            this.groupBox2.Controls.Add(this.labelX4);
+            this.groupBox2.Controls.Add(this.labelX3);
+            this.groupBox2.Controls.Add(this.labelX2);
+            this.groupBox2.Controls.Add(this.labelX1);
+            this.groupBox2.Location = new System.Drawing.Point(43, 45);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(736, 187);
+            this.groupBox2.TabIndex = 31;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thông tin chung";
+            // 
+            // txtDinhHuong
+            // 
+            // 
+            // 
+            // 
+            this.txtDinhHuong.Border.Class = "TextBoxBorder";
+            this.txtDinhHuong.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtDinhHuong.Location = new System.Drawing.Point(142, 130);
+            this.txtDinhHuong.Multiline = true;
+            this.txtDinhHuong.Name = "txtDinhHuong";
+            this.txtDinhHuong.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtDinhHuong.Size = new System.Drawing.Size(564, 43);
+            this.txtDinhHuong.TabIndex = 6;
+            // 
+            // txtMonHoc
+            // 
+            // 
+            // 
+            // 
+            this.txtMonHoc.Border.Class = "TextBoxBorder";
+            this.txtMonHoc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMonHoc.Location = new System.Drawing.Point(143, 81);
+            this.txtMonHoc.Multiline = true;
+            this.txtMonHoc.Name = "txtMonHoc";
+            this.txtMonHoc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMonHoc.Size = new System.Drawing.Size(564, 43);
+            this.txtMonHoc.TabIndex = 5;
             // 
             // txtBoMon
             // 
@@ -197,6 +276,78 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(260, 20);
             this.txtHoTen.TabIndex = 1;
+            // 
+            // labelX11
+            // 
+            // 
+            // 
+            // 
+            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX11.Location = new System.Drawing.Point(11, 124);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(126, 23);
+            this.labelX11.TabIndex = 20;
+            this.labelX11.Text = "Định hướng nghiên cứu:";
+            // 
+            // labelX10
+            // 
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX10.Location = new System.Drawing.Point(11, 78);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(126, 23);
+            this.labelX10.TabIndex = 20;
+            this.labelX10.Text = "Các môn học đảm nhận:";
+            // 
+            // labelX4
+            // 
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Location = new System.Drawing.Point(352, 52);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(59, 23);
+            this.labelX4.TabIndex = 20;
+            this.labelX4.Text = "Tổ/Bộ môn";
+            // 
+            // labelX3
+            // 
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Location = new System.Drawing.Point(12, 49);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(50, 23);
+            this.labelX3.TabIndex = 21;
+            this.labelX3.Text = "Đơn vị:";
+            // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(352, 23);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(51, 23);
+            this.labelX2.TabIndex = 22;
+            this.labelX2.Text = "Trình độ:";
+            // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Location = new System.Drawing.Point(11, 20);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(51, 23);
+            this.labelX1.TabIndex = 23;
+            this.labelX1.Text = "Họ tên:";
             // 
             // pictureBox1
             // 
@@ -351,157 +502,23 @@
             this.labelX5.TabIndex = 1;
             this.labelX5.Text = "Địa chỉ:";
             // 
-            // labelX4
-            // 
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(352, 52);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(59, 23);
-            this.labelX4.TabIndex = 20;
-            this.labelX4.Text = "Tổ/Bộ môn";
-            // 
-            // labelX3
-            // 
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(12, 49);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(50, 23);
-            this.labelX3.TabIndex = 21;
-            this.labelX3.Text = "Đơn vị:";
-            // 
-            // labelX2
-            // 
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(352, 23);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(51, 23);
-            this.labelX2.TabIndex = 22;
-            this.labelX2.Text = "Trình độ:";
-            // 
-            // labelX1
-            // 
-            // 
-            // 
-            // 
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(11, 20);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(51, 23);
-            this.labelX1.TabIndex = 23;
-            this.labelX1.Text = "Họ tên:";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // labelX10
+            // btnHuy
             // 
-            // 
-            // 
-            // 
-            this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Location = new System.Drawing.Point(11, 78);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(126, 23);
-            this.labelX10.TabIndex = 20;
-            this.labelX10.Text = "Các môn học đảm nhận:";
-            // 
-            // labelX11
-            // 
-            // 
-            // 
-            // 
-            this.labelX11.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX11.Location = new System.Drawing.Point(11, 124);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(126, 23);
-            this.labelX11.TabIndex = 20;
-            this.labelX11.Text = "Định hướng nghiên cứu:";
-            // 
-            // txtMonHoc
-            // 
-            // 
-            // 
-            // 
-            this.txtMonHoc.Border.Class = "TextBoxBorder";
-            this.txtMonHoc.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMonHoc.Location = new System.Drawing.Point(143, 81);
-            this.txtMonHoc.Multiline = true;
-            this.txtMonHoc.Name = "txtMonHoc";
-            this.txtMonHoc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMonHoc.Size = new System.Drawing.Size(564, 43);
-            this.txtMonHoc.TabIndex = 5;
-            // 
-            // txtDinhHuong
-            // 
-            // 
-            // 
-            // 
-            this.txtDinhHuong.Border.Class = "TextBoxBorder";
-            this.txtDinhHuong.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtDinhHuong.Location = new System.Drawing.Point(142, 130);
-            this.txtDinhHuong.Multiline = true;
-            this.txtDinhHuong.Name = "txtDinhHuong";
-            this.txtDinhHuong.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDinhHuong.Size = new System.Drawing.Size(564, 43);
-            this.txtDinhHuong.TabIndex = 6;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.txtDinhHuong);
-            this.groupBox2.Controls.Add(this.txtMonHoc);
-            this.groupBox2.Controls.Add(this.txtBoMon);
-            this.groupBox2.Controls.Add(this.txtKhoa);
-            this.groupBox2.Controls.Add(this.txtTrinhDo);
-            this.groupBox2.Controls.Add(this.txtHoTen);
-            this.groupBox2.Controls.Add(this.labelX11);
-            this.groupBox2.Controls.Add(this.labelX10);
-            this.groupBox2.Controls.Add(this.labelX4);
-            this.groupBox2.Controls.Add(this.labelX3);
-            this.groupBox2.Controls.Add(this.labelX2);
-            this.groupBox2.Controls.Add(this.labelX1);
-            this.groupBox2.Location = new System.Drawing.Point(43, 45);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(736, 187);
-            this.groupBox2.TabIndex = 31;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin chung";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.htmlEditor1);
-            this.groupBox3.Location = new System.Drawing.Point(44, 415);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(735, 158);
-            this.groupBox3.TabIndex = 32;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Thông tin khác:";
-            // 
-            // htmlEditor1
-            // 
-            this.htmlEditor1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.htmlEditor1.BodyInnerHTML = "Các thông tin khác";
-            this.htmlEditor1.BodyInnerText = "Các thông tin khác";
-            this.htmlEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.htmlEditor1.EnterToBR = true;
-            this.htmlEditor1.FontSize = WinHtmlEditor.FontSize.Three;
-            this.htmlEditor1.Location = new System.Drawing.Point(3, 16);
-            this.htmlEditor1.Name = "htmlEditor1";
-            this.htmlEditor1.ShowStatusBar = false;
-            this.htmlEditor1.ShowToolBar = true;
-            this.htmlEditor1.ShowWb = true;
-            this.htmlEditor1.Size = new System.Drawing.Size(729, 139);
-            this.htmlEditor1.TabIndex = 12;
-            this.htmlEditor1.WebBrowserShortcutsEnabled = true;
+            this.btnHuy.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnHuy.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnHuy.Image = global::NTU.Webgen.Properties.Resources.Cancel_24x24;
+            this.btnHuy.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.btnHuy.Location = new System.Drawing.Point(461, 7);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(135, 23);
+            this.btnHuy.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2000;
+            this.btnHuy.TabIndex = 16;
+            this.btnHuy.Text = "Hủy bỏ";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // Home
             // 
@@ -513,10 +530,10 @@
             this.Load += new System.EventHandler(this.Home_Load);
             this.panelEx3.ResumeLayout(false);
             this.panelEx1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -557,6 +574,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private WinHtmlEditor.HtmlEditor htmlEditor1;
         private DevComponents.DotNetBar.BalloonTip balloonTipAnhDaiDien;
+        private DevComponents.DotNetBar.ButtonX btnHuy;
 
     }
 }

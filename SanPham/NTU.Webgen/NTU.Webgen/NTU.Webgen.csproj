@@ -56,6 +56,12 @@
     <Compile Include="AAAFunctionTest.Designer.cs">
       <DependentUpon>AAAFunctionTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="calendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="calendar.Designer.cs">
+      <DependentUpon>calendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChonMau.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -80,6 +86,12 @@
     </Compile>
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiangDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GiangDay.Designer.cs">
+      <DependentUpon>GiangDay.cs</DependentUpon>
     </Compile>
     <Compile Include="GioiThieu.cs">
       <SubType>UserControl</SubType>
@@ -137,8 +149,17 @@
     <Compile Include="Publication_TapChi.Designer.cs">
       <DependentUpon>Publication_TapChi.cs</DependentUpon>
     </Compile>
+    <Compile Include="VideoPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VideoPlayer.Designer.cs">
+      <DependentUpon>VideoPlayer.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AAAFunctionTest.resx">
       <DependentUpon>AAAFunctionTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="calendar.resx">
+      <DependentUpon>calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChonMau.resx">
       <DependentUpon>ChonMau.cs</DependentUpon>
@@ -151,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiangDay.resx">
+      <DependentUpon>GiangDay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GioiThieu.resx">
       <DependentUpon>GioiThieu.cs</DependentUpon>
@@ -188,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Publication_TapChi.resx">
       <DependentUpon>Publication_TapChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoPlayer.resx">
+      <DependentUpon>VideoPlayer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -276,6 +303,48 @@
       <Project>{1d1ef0a4-1d49-4d42-9295-e3b28359389a}</Project>
       <Name>WinHtmlEditor</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google-calendar-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons8-Windows-8-Editing-Attach.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

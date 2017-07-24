@@ -36,6 +36,29 @@ namespace NTU.Webgen
             htmlEditor1.setButtonVisible("tsbRemoveFormat");
         }
 
+        public Home(String ProjectFolder)
+        {
+          
+            InitializeComponent();
+            this.ProjectFolder = ProjectFolder;
+            this.homeXMLFile = ProjectFolder+"\\data\\index.xml";
+            this.gioithieuHTMLFile = ProjectFolder + "\\index.html";
+            this.subgioithieuHTMLFile = ProjectFolder + "\\subindex.htm";
+            this.pubHTMLFolder = ProjectFolder.Replace("\\","/");
+            isSua = false;
+            EnableTextBox(false);
+            htmlEditor1.setButtonVisible("tsbNew");
+            htmlEditor1.setButtonVisible("tsbOpen");
+            htmlEditor1.setButtonVisible("tsbSave");
+            htmlEditor1.setButtonVisible("tsbPrint");
+            htmlEditor1.setButtonVisible("tsbPreview");
+            htmlEditor1.setButtonVisible("tsbFind");
+            htmlEditor1.setButtonVisible("tsbAbout");
+            htmlEditor1.setButtonVisible("tsbRemoveFormat");
+        }
+
+
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
@@ -69,9 +92,9 @@ namespace NTU.Webgen
                 
                 XmlElement newCd = doc.CreateElement("Home");
                 newCd.InnerXml = "<id>1</id>" +
-                        	"<HoTen> "+ txtHoTen.Text.Trim() + "</HoTen>" +
-                            "<TrinhDo>  " + txtTrinhDo.Text.Trim() + " </TrinhDo>" +
-                            "<Khoa> " + txtKhoa.Text.Trim() + " </Khoa>" +
+                        	"<HoTen>"+ txtHoTen.Text.Trim() + "</HoTen>" +
+                            "<TrinhDo> " + txtTrinhDo.Text.Trim() + " </TrinhDo>" +
+                            "<Khoa>" + txtKhoa.Text.Trim() + " </Khoa>" +
                             "<BoMon>" + txtBoMon.Text.Trim() + " </BoMon>" +
                             "<CacMonHocDamNhan>" + txtMonHoc.Text.Trim() + " </CacMonHocDamNhan>" +
                             "<DinhHuongNghienCuu>" + txtDinhHuong.Text.Trim() + " </DinhHuongNghienCuu>" +
@@ -80,7 +103,7 @@ namespace NTU.Webgen
                             "<SoDienThoai>" + txtSDT.Text.Trim() + "</SoDienThoai>" +
                             "<FB>" + txtFB.Text.Trim() + "</FB>" +
                             "<Web>" + txtWeb.Text.Trim() + "</Web>" +
-                            "<Others>SubHome.htm</Others>" + "<Avatar>" + pictureBox1.ImageLocation + "</Avatar>";
+                            "<Others>subindex.htm</Others>" + "<Avatar>" + pictureBox1.ImageLocation + "</Avatar>";
 
                 root.ReplaceChild(newCd, oldCd);
                 CongCu.RenameFile(subgioithieuHTMLFile, subgioithieuHTMLFile+".bak");
@@ -120,6 +143,10 @@ namespace NTU.Webgen
 
         private void Home_Load(object sender, EventArgs e)
         {
+            LoadXML2Form();
+        }
+
+        private void LoadXML2Form() {
             XmlTextReader reader = new XmlTextReader(homeXMLFile);
             XmlDocument doc = new XmlDocument();
             doc.Load(reader);
@@ -146,11 +173,11 @@ namespace NTU.Webgen
             String noiDungMoi = "";
             String tempFile = pictureBox1.ImageLocation;
             int k = tempFile.LastIndexOf('\\');
-            String htmlAvatarFile1 = pubHTMLFolder+"/assets/images/" +tempFile.Substring(k+1);
+            String htmlAvatarFile1 ="assets/images/" +tempFile.Substring(k+1);
 
             StringBuilder result = new StringBuilder();
             result.Append("<div class='col-sm-3'>");
-            result.Append("<center><img src='" + htmlAvatarFile1 + "' width=90%></center></div><div class='col-sm-6'><h3>Thông tin chung</h3>");
+            result.Append("<h3><center><img src='" + htmlAvatarFile1 + "' width=90% height=196px></center></h3></div><div class='col-sm-6'><h3>Thông tin chung</h3>");
             result.Append("<b>"+txtTrinhDo.Text + ".</b> " + txtHoTen.Text + "<br>");
             result.Append("<b>Đơn vị: </b>" + txtKhoa.Text + "<br>");
             result.Append("<b>Tổ/Bộ môn: </b>" + txtBoMon.Text + "<br>");
@@ -168,7 +195,21 @@ namespace NTU.Webgen
             CongCu.AddMetaInfors(gioithieuHTMLFile, "descriptions", txtDinhHuong.Text);
             CongCu.AddMetaInfors(gioithieuHTMLFile, "thucainua", txtTrinhDo.Text);
             CongCu.ReplaceContent(gioithieuHTMLFile, "gioithieu", result.ToString());
+            // Dành cho mẫu 4
+            CongCu.ReplaceContent(gioithieuHTMLFile, "anhTrai", "<img src=\""+ htmlAvatarFile1 +"\" width=186px height=196px>");
+            CongCu.ReplaceContent(gioithieuHTMLFile, "tenTrai", "website của "+txtHoTen.Text);
+
+            //----------------------------------
+            // Thêm tiêu đề
+            CongCu.ReplaceTite(gioithieuHTMLFile,"NTU. "+txtHoTen.Text+"-Giới thiệu");
             MessageBox.Show("Đã xuất thành công sang trang web: \n" + gioithieuHTMLFile, "Thông báo");
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            LoadXML2Form();
+            EnableTextBox(false);
+            isSua = false;
         }
 
        

@@ -14,28 +14,28 @@ namespace NTU.Webgen
 {
     public partial class ChonMau : UserControl
     {
+      
         String TempPath;
         String webPath;
         String thumucGoc;
         String thumucChon;
-      
-        public ChonMau()
+        public String projectFolder;
+        ChuongTrinh chuongtrinhChinh;
+
+        public ChonMau(ChuongTrinh c)
         {
             InitializeComponent();
-          //  ReSizeGroup();
             thumucGoc = System.AppDomain.CurrentDomain.BaseDirectory;
-            TempPath = thumucGoc+"Templates\\Mau0";
+            TempPath = thumucGoc+"Templates\\Mau4";
             webPath = TempPath.Replace("\\", "/");
+            chuongtrinhChinh = c;
+            
         }
-
-       
 
         private void linkLabel0_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CongCu.gotoSite(webPath + "/publications.html"); 
         }
-
-
 
         void ReSizeGroup() {
 
@@ -52,29 +52,50 @@ namespace NTU.Webgen
             groupPanel8.Height = h;
             groupPanel9.Height = h;
             groupPanel10.Height = h;
-           
-
         }
 
         private void b0Chon_Click(object sender, EventArgs e)
         {
-           thumucChon = thumucGoc + "UserChoices\\Mau0";
-           if (!File.Exists(thumucChon + "\\config.ntu"))
-           {
-               Directory.CreateDirectory(thumucChon);
-               File.Create(thumucChon + "\\config.ntu");
+            folderBrowserDialog1.Description = "Chọn nơi lưu dự an web";
+            DialogResult rs = folderBrowserDialog1.ShowDialog();
+            if (rs == DialogResult.OK)
+            {
+                thumucChon = folderBrowserDialog1.SelectedPath;
+                //MessageBox.Show(thumucChon);
+                //                thumucChon = thumucGoc + "UserChoices\\Mau0";
+                if (!File.Exists(thumucChon + "\\config.ntu"))
+                {
+                   // Directory.CreateDirectory(thumucChon);
+                    String fileCauHinh = thumucChon+"\\config.ntu";
+                    FileStream fs = File.Create(fileCauHinh);
+                    
+                    this.Enabled = false;
+                    CongCu.DirectoryCopy(TempPath, thumucChon, true);
+                    this.Enabled = true;
+                    MessageBox.Show("Chọn mẫu xong, Mời hiệu chỉnh dữ liệu", "Thông báo");
+                    
+                    StreamWriter outputFile = new StreamWriter(fs);
+                    outputFile.WriteLine(fileCauHinh);
+                    outputFile.Close();
+                    fs.Close();
+                    projectFolder = thumucChon;
+                    MessageBox.Show(projectFolder);
 
-               this.Enabled = false;
-               CongCu.DirectoryCopy(TempPath, thumucChon, true);
-               this.Enabled = true;
-               MessageBox.Show("Chọn mẫu xong, Mời hiệu chỉnh dữ liệu", "Thông báo");
-           }
-           else
-               MessageBox.Show("Bạn đã chọn mẫu này", "Cảnh báo");
+                   ProjectExplorer pj = new ProjectExplorer(projectFolder);
+                   SplitContainer p = (SplitContainer)chuongtrinhChinh.Controls["splitContainer1"];
+                   p.Panel2.Controls.Add(pj);
+    
+                   chuongtrinhChinh.Update();
+                   
+                }
+                else
+                    MessageBox.Show("Bạn đã chọn mẫu này", "Cảnh báo");
 
+            }
         }
 
       
 
     }
+
 }

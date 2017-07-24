@@ -10,8 +10,27 @@ using System.Xml;
 using System.Xml.Linq;
 namespace NTU.Webgen
 {
-    class CongCu
+   public  class CongCu
     {
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <param name="newTitle"></param>
+       public static void ReplaceTite(String htmlFilePath, String newTitle)
+       {
+           StreamReader sr = new StreamReader(htmlFilePath);
+           String strHTMLPage = sr.ReadToEnd();
+           sr.Close();
+           int intStartIndex = strHTMLPage.IndexOf("<title>",0);
+           int intEndIndex = strHTMLPage.IndexOf("</title>", intStartIndex);
+           String strNewHTMLPage = strHTMLPage.Substring(0, intStartIndex+7);
+           strNewHTMLPage += newTitle;
+           strNewHTMLPage += strHTMLPage.Substring(intEndIndex);
+           StreamWriter sw = new System.IO.StreamWriter(htmlFilePath, false, Encoding.UTF8);
+           sw.Write(strNewHTMLPage);
+           sw.Close();
+
+       }
         /// <summary>
         /// Thêm thông tin meta vào phần Head, tiện cho SEO
         /// </summary>
@@ -70,7 +89,7 @@ namespace NTU.Webgen
          StreamReader sr = new StreamReader(htmlFilePath);
          strHTMLPage = sr.ReadToEnd();
          sr.Close();
-         RenameFile(htmlFilePath, htmlFilePath + ".bak");
+   
 
         // intStartIndex = strHTMLPage.IndexOf("<div class=\"sectionContent\">", 0) + 28;
          String strtoFind = "<section id=\""+ tagClass+ "\">";
@@ -83,10 +102,13 @@ namespace NTU.Webgen
          strNewHTMLPage += strNewDataToBeInserted;
          strNewHTMLPage += strHTMLPage.Substring(intEndIndex);
 
-
-         StreamWriter sw = new System.IO.StreamWriter(htmlFilePath, false, Encoding.UTF8);
-         sw.Write(strNewHTMLPage);
-         sw.Close();
+         if (intStartIndex != 0)
+         {
+             RenameFile(htmlFilePath, htmlFilePath + ".bak");
+             StreamWriter sw = new System.IO.StreamWriter(htmlFilePath, false, Encoding.UTF8);
+             sw.Write(strNewHTMLPage);
+             sw.Close();
+         }
         
         
         }
@@ -425,6 +447,17 @@ namespace NTU.Webgen
             sr.Close();
             return strHTMLPage;
         }
+
+
+        public static void Text2File(String str, String filename)
+        {
+            StreamWriter outputFile = new StreamWriter(filename);
+            outputFile.WriteLine(str);
+            outputFile.Close();
+        }
+        
+       
+
     }
 
 

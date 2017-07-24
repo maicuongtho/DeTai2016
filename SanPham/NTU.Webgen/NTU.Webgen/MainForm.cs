@@ -98,8 +98,8 @@ namespace NTU.Webgen
 
         private void mnuWeb_TaoMoi_Click(object sender, EventArgs e)
         {
-            ChonMau ctrlChonMau = new ChonMau();
-            CongCu.AddTab("tabChonMau", "Tạo mới website", superTabControlWindows, ctrlChonMau, true,30);
+           // ChonMau ctrlChonMau = new ChonMau(this);
+           // CongCu.AddTab("tabChonMau", "Tạo mới website", superTabControlWindows, ctrlChonMau, true,30);
 
         }
         
