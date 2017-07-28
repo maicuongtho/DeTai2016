@@ -541,7 +541,7 @@ namespace NTU.Webgen
             return result;
         }
 
-
+         
 
         public static String ReadHTMLFile(String htmlFilePath)
         {
@@ -570,6 +570,234 @@ namespace NTU.Webgen
            CongCu.ReplaceContent(htmlLienKetPath, "LienKet", noiDungMoi);
            MessageBox.Show("Đã xuất thành công sang trang web: \n" + htmlLienKetPath, "Thông báo");
            return true; 
+       }
+       public static String ThayNoiDungTrongTheSpan(String NoiDungFileCu, String idThe, String noiDungThe) {
+
+           String strtoFind = "<span id=\"" + idThe + "\">";
+           int intStartIndex = NoiDungFileCu.IndexOf(strtoFind, 0) + strtoFind.Length;
+           int intEndIndex = NoiDungFileCu.IndexOf("</span>", intStartIndex);
+
+           String strNewHTMLPage = NoiDungFileCu.Substring(0, intStartIndex);
+           strNewHTMLPage += noiDungThe;
+           strNewHTMLPage += NoiDungFileCu.Substring(intEndIndex);
+           return strNewHTMLPage; 
+          
+       }
+       public static bool XuatCV(String xmlCVFile, String htmlCVFile)
+       {
+           // ĐỌc file HTML
+           String htmlContent = CongCu.ReadHTMLFile(htmlCVFile);
+           // Đọc file XML
+           XmlTextReader reader = new XmlTextReader(xmlCVFile);
+           XmlDocument doc = new XmlDocument();
+           doc.Load(reader);
+           reader.Close();
+           // Lấy gốc
+           XmlElement root = doc.DocumentElement;
+           //Lây thông tin chung
+           XmlNode Nodes_Level1_ThongTinChung = root.SelectSingleNode("/root/TuThuat");
+           
+           String hoten = Nodes_Level1_ThongTinChung.ChildNodes[0].InnerText.Trim();
+           String gioitinh = Nodes_Level1_ThongTinChung.ChildNodes[1].InnerText.Trim();
+           String ngaysinh = Nodes_Level1_ThongTinChung.ChildNodes[2].InnerText.Trim();
+           String noisinh = Nodes_Level1_ThongTinChung.ChildNodes[3].InnerText.Trim();
+           String quequan = Nodes_Level1_ThongTinChung.ChildNodes[4].InnerText.Trim();
+           String dantoc = Nodes_Level1_ThongTinChung.ChildNodes[5].InnerText.Trim();
+           
+           XmlNode nodeHocVi = Nodes_Level1_ThongTinChung.SelectSingleNode("HocViCaoNhat");
+           String tenHV = nodeHocVi.ChildNodes[0].InnerText.Trim();
+           String namnhanHV = nodeHocVi.ChildNodes[1].InnerText.Trim();
+           String nuocnhanHV = nodeHocVi.ChildNodes[2].InnerText.Trim();
+           
+           XmlNode nodeChucDanh = Nodes_Level1_ThongTinChung.SelectSingleNode("ChucDanhKhoaHoc");
+           String tenChucDanh = nodeChucDanh.ChildNodes[0].InnerText.Trim();
+           String nambonhiemChucDanh = nodeChucDanh.ChildNodes[1].InnerText.Trim();
+
+           XmlNode nodeDonViCongTac = Nodes_Level1_ThongTinChung.SelectSingleNode("DonViCongTac");
+           String tenDonVi = nodeDonViCongTac.ChildNodes[0].InnerText.Trim();
+           String chucvu = nodeDonViCongTac.ChildNodes[1].InnerText.Trim();
+
+           XmlNode nodeLienLac = Nodes_Level1_ThongTinChung.SelectSingleNode("LienLac");
+           String noiOHienNay = nodeLienLac.ChildNodes[0].InnerText.Trim();
+           String diachi = nodeLienLac.ChildNodes[1].InnerText.Trim();
+           String dtCoQuan = nodeLienLac.ChildNodes[2].InnerText.Trim();
+           String dtNR = nodeLienLac.ChildNodes[3].InnerText.Trim();
+           String didong = nodeLienLac.ChildNodes[4].InnerText.Trim();
+           String fax = nodeLienLac.ChildNodes[5].InnerText.Trim();
+           String email = nodeLienLac.ChildNodes[6].InnerText.Trim();
+
+           DateTime d = DateTime.Now;
+           String ngay = d.Day.ToString();
+           String thang = d.Month.ToString();
+           String nam = d.Year.ToString();
+           //-----hết lấy thông tin chung
+           // Đổ thông tin chung ra HTML
+
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "ngay", ngay);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "thang", thang);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "nam", nam);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "ten", hoten);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "gioitinh", gioitinh);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "ngaysinh", ngaysinh);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "noisinh", noisinh);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "quequan", quequan);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "dantoc", dantoc);
+
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "hocvicaonhat", tenHV);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "nam_nuoc_nhan_hv", tenHV+","+namnhanHV);
+
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "chucdanh", tenChucDanh);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "nambonhiem", nambonhiemChucDanh);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "chucvu", chucvu);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "dvcongtac", tenDonVi);
+
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "cho_o", noiOHienNay);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "dcLienLac", diachi);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "dtCQ",    dtCoQuan+ "     ");
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "dtNR", dtNR + "     ");
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "dtDD", didong + "     ");
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "fax", fax);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "mail", email);
+            
+
+           // Đào tạo Dai hoc 1
+           XmlNode DaiHoc1 = root.SelectSingleNode("/root/QuaTrinhDaoTao/DaiHoc1");
+           String heDaoTao = DaiHoc1.ChildNodes[0].InnerText.Trim();
+           String noiDaoTao = DaiHoc1.ChildNodes[1].InnerText.Trim();
+           String nuocDaoTao = DaiHoc1.ChildNodes[2].InnerText.Trim();
+           String chuyenganhDaoTao = DaiHoc1.ChildNodes[3].InnerText.Trim();
+           String namTotNghiep = DaiHoc1.ChildNodes[4].InnerText.Trim();
+           // Đào tạo Dai hoc 2
+           XmlNode DaiHoc2 = root.SelectSingleNode("/root/QuaTrinhDaoTao/DaiHoc2");
+           String chuyenganhDaoTao2 = DaiHoc2.ChildNodes[0].InnerText.Trim();
+           String namTotNghiep2 = DaiHoc2.ChildNodes[1].InnerText.Trim();
+
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "hedaotao", heDaoTao);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "noidaotao", noiDaoTao);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "nuocdaotao", nuocDaoTao);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "chuyennganhdaotao_daihoc", chuyenganhDaoTao);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "namtotnghiep_daihoc", namTotNghiep);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "bang2", chuyenganhDaoTao2);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "namtotnghiep_daihoc2", namTotNghiep2);
+
+
+           //Thạc sĩ
+           XmlNode ThS = root.SelectSingleNode("/root/QuaTrinhDaoTao/ThacSi");
+          
+           String thacsi_noidaotao = ThS.ChildNodes[0].InnerText.Trim();
+           String thacsi_nuocdaotao = ThS.ChildNodes[1].InnerText.Trim();
+           String thacsi_chuyennganh = ThS.ChildNodes[2].InnerText.Trim();
+           String thacsi_namcapbang = ThS.ChildNodes[3].InnerText.Trim();
+
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "ThS_ChuyenNganh", thacsi_chuyennganh);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "ThS_NamCapBang", thacsi_namcapbang);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "ThS_noidaotao", thacsi_noidaotao);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "ThS_nuocdaotao", thacsi_nuocdaotao);
+
+           // Tiến sĩ
+
+           //Thạc sĩ
+           XmlNode TS = root.SelectSingleNode("/root/QuaTrinhDaoTao/TienSi");
+
+           String ts_noidaotao = TS.ChildNodes[0].InnerText.Trim();
+           String ts_nuocdaotao = TS.ChildNodes[1].InnerText.Trim();
+           String ts_chuyennganh = TS.ChildNodes[2].InnerText.Trim();
+           String ts_namcapbang = TS.ChildNodes[4].InnerText.Trim();
+           String ts_luanan = TS.ChildNodes[5].InnerText.Trim();
+
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "TS_ChuyenNganh", ts_chuyennganh);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "TS_NamCapBang", ts_namcapbang);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "TS_NoiDaoTao", ts_noidaotao);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "TS_NuocDaoTao", ts_nuocdaotao);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "TS_TenLuanAn", ts_luanan);
+
+           // Ngoại ngữ
+           XmlNode NN1 = root.SelectSingleNode("/root/QuaTrinhDaoTao/NgoaiNgu1");
+
+           String tenNN1 = NN1.ChildNodes[1].InnerText.Trim();
+           String levelNN1 = NN1.ChildNodes[2].InnerText.Trim();
+
+           // Ngoại ngữ 2
+           XmlNode NN2 = root.SelectSingleNode("/root/QuaTrinhDaoTao/NgoaiNgu2");
+           String tenNN2 = NN2.ChildNodes[1].InnerText.Trim();
+           String levelNN2 = NN2.ChildNodes[2].InnerText.Trim();
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "NN1", tenNN1);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "NN1_level", levelNN1);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "NN2", tenNN2);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "NN2_level", levelNN2);
+           
+
+
+           // Chứng chỉ
+           var cc = XElement.Load(new XmlNodeReader(doc));
+           XmlNodeList dsNodeTinHoc = root.SelectNodes("/root/QuaTrinhDaoTao/DSTinHoc/TinHoc");
+           XmlNode[] nodeArray = dsNodeTinHoc.Cast<XmlNode>().ToArray();
+           StringBuilder listCC = new StringBuilder();
+           foreach (XmlNode n in dsNodeTinHoc)
+           {
+               String tenCC = n.ChildNodes[1].InnerText.Trim(); 
+               listCC.Append(tenCC+";  ");
+           }
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "TinHoc", listCC.ToString());
+           CongCu.RenameFile(htmlCVFile,htmlCVFile+".bak");
+           StreamWriter sw = new System.IO.StreamWriter(htmlCVFile, false, Encoding.UTF8);
+           sw.Write(htmlContent);
+           sw.Close();
+            
+
+           // Quas trinh cong tac
+           XmlNodeList dsNodeQTCT = root.SelectNodes("/root/DSQuaTrinhCongTac/QuaTrinhCongTac");
+           XmlNode[] nodeCongTac = dsNodeQTCT.Cast<XmlNode>().ToArray();
+           StringBuilder qtCT = new StringBuilder();
+           qtCT.Append("<table width=\"424\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-left: 6px\">"); //bang
+           qtCT.Append("<tr><td><b>Thời gian</b></td><td><b>Nơi công tác</b></td><td><b>Công việc đảm nhiệm</b></td></tr>"); //bang
+          
+           foreach (XmlNode c in nodeCongTac)
+           {
+               qtCT.Append("<tr>");
+               String tu_den = c.ChildNodes[1].InnerText.Trim()+"-"+c.ChildNodes[2].InnerText.Trim();
+               String dv=c.ChildNodes[3].InnerText.Trim();
+               String cv=c.ChildNodes[4].InnerText.Trim();
+               qtCT.Append("<td>"+tu_den+"</td>");
+               qtCT.Append("<td>"+dv+"</td>");
+               qtCT.Append("<td>"+cv+"</td>");
+           }
+           qtCT.Append("</table>");
+           CongCu.ReplaceContent(htmlCVFile, "QuaTrinhCongTac", qtCT.ToString());
+
+
+
+           // Qua trinh NCKH
+           XmlNodeList dsNodeNCKH = root.SelectNodes("/root/NghienCuuKhoaHoc/DSDeTaiKH/DeTaiKH");
+           XmlNode[] nodeNCKH = dsNodeNCKH.Cast<XmlNode>().ToArray();
+           StringBuilder qtNCKH = new StringBuilder();
+           qtNCKH.Append("<table width=\"424\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-left: 6px\">"); //bang
+           qtNCKH.Append("<tr><td><b>STT</b></td><td><b>Tên đề tài</b></td><td><b>Năm bắt đầu/Năm hoàn thành</b></td><td><b>Đề tài cấp (NN, Bộ, ngành, trường)</b></td><td><b>Trách nhiệm tham gia trong đề tài</b></td></tr>"); //bang
+
+           foreach (XmlNode k in nodeNCKH)
+           {
+               qtNCKH.Append("<tr>");
+               String STT, TenDeTai, NamBatDau, NamHoanThanh, DeTaiCap, TrachNhiem;
+               STT = k.ChildNodes[0].InnerText.Trim();
+               TenDeTai = k.ChildNodes[1].InnerText.Trim();
+               NamBatDau = k.ChildNodes[2].InnerText.Trim();
+               NamHoanThanh = k.ChildNodes[3].InnerText.Trim();
+               DeTaiCap = k.ChildNodes[4].InnerText.Trim();
+               TrachNhiem = k.ChildNodes[5].InnerText.Trim();
+
+
+               qtNCKH.Append("<td>" + STT + "</td>");
+               qtNCKH.Append("<td>" + TenDeTai + "</td>");
+               qtNCKH.Append("<td>" + NamBatDau + "/" + NamHoanThanh + "</td>");
+               qtNCKH.Append("<td>" + DeTaiCap + "</td>");
+               qtNCKH.Append("<td>" + TrachNhiem + "</td>");
+           }
+           qtNCKH.Append("</table>");
+
+           CongCu.ReplaceContent(htmlCVFile, "QuaTrinhNCKH", qtNCKH.ToString());
+
+           MessageBox.Show("OK");
+           return true;
        }
     
    
