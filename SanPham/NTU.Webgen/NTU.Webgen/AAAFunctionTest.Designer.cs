@@ -28,22 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gioiThieu1 = new NTU.Webgen.GioiThieu();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lienKet1 = new NTU.Webgen.LienKet();
             this.SuspendLayout();
             // 
-            // gioiThieu1
+            // button1
             // 
-            this.gioiThieu1.Location = new System.Drawing.Point(12, 12);
-            this.gioiThieu1.Name = "gioiThieu1";
-            this.gioiThieu1.Size = new System.Drawing.Size(702, 485);
-            this.gioiThieu1.TabIndex = 0;
+            this.button1.Location = new System.Drawing.Point(13, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lienKet1
+            // 
+            this.lienKet1.Location = new System.Drawing.Point(12, 51);
+            this.lienKet1.Name = "lienKet1";
+            this.lienKet1.Size = new System.Drawing.Size(881, 497);
+            this.lienKet1.TabIndex = 1;
             // 
             // AAAFunctionTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 527);
-            this.Controls.Add(this.gioiThieu1);
+            this.Controls.Add(this.lienKet1);
+            this.Controls.Add(this.button1);
             this.Name = "AAAFunctionTest";
             this.Text = "AAAFunctionTest";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -53,7 +64,9 @@
 
         #endregion
 
-        private GioiThieu gioiThieu1;
+        private System.Windows.Forms.Button button1;
+        private LienKet lienKet1;
+
 
 
 

@@ -37,10 +37,12 @@
     </div>
     <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-      <li><a href="#">TRANG CHỦ</a></li>
+      <li><a href="home.html">GIỚI THIỆU</a></li>
       <li><a href="#">LÝ LỊCH KHOA HỌC</a></li>
-      <li class="active"><a href="#">CÔNG BỐ KHOA HỌC</a></li>
+      <li class="active"><a href="publications.html">CÔNG BỐ KHOA HỌC</a></li>
       <li><a href="#">GIẢNG DẠY</a></li>
+      <li><a href="calendar.html">LỊCH</a></li>
+      <li><a href="webIndex.html">Danh mục web cán bộ</a></li>
     </ul>
     </div>
   </div>
@@ -54,7 +56,7 @@
   
 
   <div class="row">
-  	   <section id="TapChi"><h2>Bài báo</h2><ul><li>TUng Nguyen Van, (2016), <span class='citation_title'>Measuring and Assessing the Quality of Information on the Annual Reports: The Case of Seafood’s Companies Listed on the Vietnam Stock Market</span>, International Research Journal of Finance and Economics (SCOPUS), Vol 2, Issue 2016, P 2016</li><li>Nguyen Thanh Cuong, Do Thi Ly, (2015), <span class='citation_title'>Measuring and Assessing the Quality of Information on the Annual Reports: The Case of Seafood’s Companies Listed on the Vietnam Stock Market</span>, International Research Journal of Finance and Economics (SCOPUS), Vol  VOLum r , Issue  Issue Number , P  Trang so </li><li>Mai Cường Thọ, Nguyễn Văn ABC, (2010), <span class='citation_title'>Sự pát trỉ caskdksjdkl sdkas dkljas. Trogn công nghệ chế biến</span>, Tạp chí Khoa học CN Tủy sản Nha Trang, Tập 10, Số 2, Trang4</li></ul></section>
+  	   <section id="TapChi"><b>Bài báo</b><ul><li>TUng Nguyen Van, (2016), <span class='citation_title'>Measuring and Assessing the Quality of Information on the Annual Reports: The Case of Seafood’s Companies Listed on the Vietnam Stock Market</span>, International Research Journal of Finance and Economics (SCOPUS), Vol 2, Issue 2016, P 2016</li><li>Nguyen Thanh Cuong, Do Thi Ly, (2015), <span class='citation_title'>Measuring and Assessing the Quality of Information on the Annual Reports: The Case of Seafood’s Companies Listed on the Vietnam Stock Market</span>, International Research Journal of Finance and Economics (SCOPUS), Vol  VOLum r , Issue  Issue Number , P  Trang so </li><li>Mai Cường Thọ, Nguyễn Văn ABC, (2010), <span class='citation_title'>Sự pát trỉ caskdksjdkl sdkas dkljas. Trogn công nghệ chế biến</span>, Tạp chí Khoa học CN Tủy sản Nha Trang, Tập 10, Số 2, Trang4</li></ul></section>
       <section id="BaoCao1"><h2>Báo cáo hội thảo (có ấn phẩm)</h2><ul><li>Tho. Mai Cuong, (2017), <i>New tech in IoT</i>,@ Conference, 10 Sept 2017, Ha Noi, Publisher Thong Ky, Ha Noi, Page </li><li>Mai Cường Thọ, (2016), <i>Nhận dạng tiếng việt có dấu</i>,Hội thảo Công nghệ thông tin và Truyền thông, 10/2016, đẠI HỌC nHA tRANG, Nhà xuất bản Thống kê, NHA TRANG, Trang 90-100</li><li>Tho Mai Cuong, (2015), <i>Advence in Hypbiittt</i>,Asia Adsafsdf dfsdkflksdfksdf ksd;f sd;fksd; fksd;lf, Korean, Publisher Nord Acelen, Aicelnen, Page 90</li></ul></section>
        <section id="BaoCao0"><h2>Báo cáo hội thảo (KHÔNG có ấn phẩm)</h2><ul><li>Tho Mai Cuong, (2016), <i>Báo cáo trình trạng ABC trong các ao nuôi thủy sản</i>,Hội thảo ứng dugnj caoong nghẹ thpngk  , 20/6/2015, Đại học Nha Trang, <a href='Link http://ntu.edu.vn/'>Link http://ntu.edu.vn/</a></li></ul></section>
        <section id="Sach"><h2>Sách</h2><ul><li>Mai Cuwowng Tho, Do Nhu An, (2016), <i>Lý thuyết đồ thị</i>, Giao thong van Tai, Ha Noi</li><li>Mai Cường Thọ, (2015), <i>Phát triển ứng dụng web</i>, Thống kê, Nha Trang</li></ul></section>

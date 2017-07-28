@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.IO;
 
 namespace NTU.Webgen
 {
@@ -17,12 +18,24 @@ namespace NTU.Webgen
         String baocaoXMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\BaoCaoHoiThao.xml";
         String pubHTMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\publications.html";
         String pubHTMLFolder = @"F:/LocalRepository/DeTai2016/SanPham/NTU.Webgen/NTU.Webgen/bin/Debug/";
-      
+        String ProjectFolder;
         public Publication_BaoCaoHoiThao()
         {
             InitializeComponent();
             EnableInput(false);
             isThemmoi = false; isSua=false; isXoa=false;
+            CongCu.XML2Grid(baocaoXMLFile, dataGridViewX_DSBaoCao);
+        }
+
+        public Publication_BaoCaoHoiThao(String ProjectFolder)
+        {
+            InitializeComponent();
+            this.ProjectFolder = ProjectFolder;
+            this.baocaoXMLFile = ProjectFolder + "\\data\\BaoCaoHoiThao.xml";
+            this.pubHTMLFile = ProjectFolder + "\\publications.html";
+            this.pubHTMLFolder = ProjectFolder.Replace("\\", "/");
+            EnableInput(false);
+            isThemmoi = false; isSua = false; isXoa = false;
             CongCu.XML2Grid(baocaoXMLFile, dataGridViewX_DSBaoCao);
         }
 
@@ -112,8 +125,19 @@ namespace NTU.Webgen
                 XmlNode nodeNgonNgu = xmlDom.CreateElement("NgonNgu");
                 if (radioButtonViet.Checked) nodeNgonNgu.InnerText = "Tiếng Việt";
                 else nodeNgonNgu.InnerText = "Tiếng Anh";
-                
 
+                XmlNode nodeDinhKem = xmlDom.CreateElement("DinhKem");
+                // Luu file dinh kem
+                String fileNguon = lblDinhKem.Text;
+
+                if (fileNguon != "")
+                {
+                    int i = fileNguon.LastIndexOf("\\");
+                    String tenFile = fileNguon.Substring(i+1);
+                    String FileDinhKem = ProjectFolder + "\\data\\DinhKem\\" + tenFile;
+                    File.Copy(fileNguon, FileDinhKem);
+                    nodeDinhKem.InnerText = FileDinhKem;
+                }
 
                 //add to parent node
                 node.AppendChild(nodeid);
@@ -126,7 +150,7 @@ namespace NTU.Webgen
                 node.AppendChild(nodeNhaXB);
                 node.AppendChild(nodeNoiXB);
                 node.AppendChild(nodeTrang);
-
+                node.AppendChild(nodeDinhKem);
 
                 //add to elements collection
                 xmlDom.DocumentElement.AppendChild(node);
@@ -159,6 +183,23 @@ namespace NTU.Webgen
                 if (!radioButtonViet.Checked) strNgonNgu = "Tiếng Anh";
                 oldCd = root.SelectSingleNode("/DSBaoCao1/BaoCao1[id='" + id + "']");
 
+                String fileDinhKemGoc = oldCd.ChildNodes[10].InnerText;
+                //MessageBox.Show(fileDinhKemGoc);
+                String fileDinhKem = lblDinhKem.Text;
+                if (fileDinhKem != fileDinhKemGoc)
+                {
+                    int i = fileDinhKem.LastIndexOf("\\");
+                    String tenFile = fileDinhKem.Substring(i+1);
+                    fileDinhKemGoc = ProjectFolder + "\\data\\DinhKem\\" + tenFile;
+                    try { File.Copy(fileDinhKem, fileDinhKemGoc); }
+                    catch (Exception exx)
+                    {
+                        int oo = 0; ;
+                    }
+                }
+
+
+
                 XmlElement newCd = doc.CreateElement("BaoCao1");
                 newCd.InnerXml = "<id>" + this.txtId.Text + "</id>" +
                         "<TacGia>" + txtTacGia.Text + "</TacGia>" +
@@ -169,7 +210,8 @@ namespace NTU.Webgen
                         "<ThoiGianDiaDiem>" + txtThoiGianDiaDiem.Text + "</ThoiGianDiaDiem>" +
                         "<NhaXuatBan>" + txtNhaXuatBan.Text + "</NhaXuatBan>" +
                         "<NoiXuatBan>" + txtNoiXuatBan.Text + "</NoiXuatBan>" +
-                        "<Trang>" + txtTrang.Text + "</Trang>";
+                        "<Trang>" + txtTrang.Text + "</Trang>"+
+                        "<DinhKem>" + fileDinhKemGoc + "</DinhKem>"; ;
 
                 root.ReplaceChild(newCd, oldCd);
 
@@ -229,6 +271,7 @@ namespace NTU.Webgen
                 radioButton2.Checked = true;
             }
 
+            lblDinhKem.Text = dataGridViewX_DSBaoCao.SelectedRows[0].Cells["DinhKem"].Value.ToString();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -265,7 +308,21 @@ namespace NTU.Webgen
         {
             String noiDungMoi = CongCu.XML2HTML_BaoCaoHoiThao(baocaoXMLFile, "BaoCao1").ToString();
             CongCu.ReplaceContent(pubHTMLFile, "BaoCao1", noiDungMoi);
+
+            // Dành cho mẫu 4
+            UserInfo u = CongCu.getUserInfo(ProjectFolder + "\\data\\index.xml");
+            CongCu.ReplaceContent(pubHTMLFile, "anhTrai", "<img src=\"" + u.HinhAnh + "\" width=100% height=186px>");
+            CongCu.ReplaceContent(pubHTMLFile, "tenTrai", "website của " + u.HoTen);
+            // Thêm tiêu đề
+            CongCu.ReplaceTite(pubHTMLFile, "NTU. " + u.HoTen + "-Báo cáo hội thảo");
+
             MessageBox.Show("Đã xuất thành công sang trang web: \n" + pubHTMLFile,"Thông báo");
+        }
+
+        private void btnDinhKem_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = openFileDialog1.ShowDialog();
+            if (rs == DialogResult.OK) lblDinhKem.Text = openFileDialog1.FileName;
         }
 
        

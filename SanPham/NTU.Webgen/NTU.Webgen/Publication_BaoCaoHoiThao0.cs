@@ -17,6 +17,7 @@ namespace NTU.Webgen
         String baocao0XMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\BaoCaoHoiThao0.xml";
         String pubHTMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\publications.html";
         String pubHTMLFolder = @"F:/LocalRepository/DeTai2016/SanPham/NTU.Webgen/NTU.Webgen/bin/Debug/";
+        String ProjectFolder;
         public Publication_BaoCaoHoiThao0()
         {
             InitializeComponent();
@@ -25,6 +26,18 @@ namespace NTU.Webgen
             CongCu.XML2Grid(baocao0XMLFile, dataGridViewX_DSBaoCao0);
         }
 
+
+        public Publication_BaoCaoHoiThao0(String ProjectFolder)
+        {
+            InitializeComponent();
+            EnableInput(false);
+            this.ProjectFolder = ProjectFolder;
+            this.baocao0XMLFile = ProjectFolder + "\\data\\BaoCaoHoiThao0.xml";
+            this.pubHTMLFile = ProjectFolder + "\\publications.html";
+            this.pubHTMLFolder = ProjectFolder.Replace("\\", "/");
+            isThemmoi = false; isSua = false; isXoa = false;
+            CongCu.XML2Grid(baocao0XMLFile, dataGridViewX_DSBaoCao0);
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             XoaInput();
@@ -225,6 +238,15 @@ namespace NTU.Webgen
         {
             String noiDungMoi = CongCu.XML2HTML_BaoCaoHoiThao0(baocao0XMLFile, "BaoCao0").ToString();
             CongCu.ReplaceContent(pubHTMLFile, "BaoCao0", noiDungMoi);
+
+            // Dành cho mẫu 4
+            UserInfo u = CongCu.getUserInfo(ProjectFolder + "\\data\\index.xml");
+            CongCu.ReplaceContent(pubHTMLFile, "anhTrai", "<img src=\"" + u.HinhAnh + "\" width=100% height=186px>");
+            CongCu.ReplaceContent(pubHTMLFile, "tenTrai", "website của " + u.HoTen);
+            // Thêm tiêu đề
+            CongCu.ReplaceTite(pubHTMLFile, "NTU. " + u.HoTen + "-Báo cáo hội thảo");
+
+
             MessageBox.Show("Đã xuất thành công sang trang web: \n" + pubHTMLFile, "Thông báo");
         }
 

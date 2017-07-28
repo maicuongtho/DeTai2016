@@ -35,3 +35,4 @@ F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\AxInterop.S
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\Interop.ShockwaveFlashObjects.dll
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.GiangDay.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.LienKet.resources

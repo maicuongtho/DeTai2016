@@ -36,6 +36,30 @@ namespace NTU.Webgen
             htmlEditor1.setButtonVisible("tsbRemoveFormat");
         }
 
+        public calendar(String ProjectFolder)
+        {
+            InitializeComponent();
+            isSua = false;
+
+            this.ProjectFolder = ProjectFolder;
+            this.carXMLFile = ProjectFolder + "\\data\\calendar.xml";
+            this.carHTMLFile = ProjectFolder + "\\calendar.html";
+            this.pubHTMLFolder = ProjectFolder.Replace("\\", "/");
+            this.ggCarHTMLFile = ProjectFolder + "\\ggCalendar.htm";
+            this.subCarHTMLFile = ProjectFolder + "\\subCalendar.htm";
+            txtURLLich.Enabled = false;
+            htmlEditor1.Enabled = false;
+            htmlEditor1.setButtonVisible("tsbNew");
+            htmlEditor1.setButtonVisible("tsbOpen");
+            htmlEditor1.setButtonVisible("tsbSave");
+            htmlEditor1.setButtonVisible("tsbPrint");
+            htmlEditor1.setButtonVisible("tsbPreview");
+            htmlEditor1.setButtonVisible("tsbFind");
+            htmlEditor1.setButtonVisible("tsbAbout");
+            htmlEditor1.setButtonVisible("tsbRemoveFormat");
+        }
+
+
         private void btnHelp_Click(object sender, EventArgs e)
         {
             new VideoPlayer().ShowDialog();
@@ -97,6 +121,15 @@ namespace NTU.Webgen
          //   CongCu.AddMetaInfors(gioithieuHTMLFile, "descriptions", txtDinhHuong.Text);
          //   CongCu.AddMetaInfors(gioithieuHTMLFile, "thucainua", txtTrinhDo.Text);
             CongCu.ReplaceContent(carHTMLFile, "lich", result.ToString());
+
+
+            // Dành cho mẫu 4
+            UserInfo u = CongCu.getUserInfo(ProjectFolder + "\\data\\index.xml");
+            CongCu.ReplaceContent(carHTMLFile, "anhTrai", "<img src=\"" + u.HinhAnh + "\" width=100% height=186px>");
+            CongCu.ReplaceContent(carHTMLFile, "tenTrai", "website của " + u.HoTen);
+            // Thêm tiêu đề
+            CongCu.ReplaceTite(carHTMLFile, "NTU. " + u.HoTen + "-Báo cáo hội thảo");
+
             MessageBox.Show("Đã xuất thành công sang trang web: \n" + carHTMLFile, "Thông báo");
         }
     }

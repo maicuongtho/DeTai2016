@@ -8,10 +8,43 @@ using DevComponents.DotNetBar;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using System.Data;
 namespace NTU.Webgen
 {
+   public class UserInfo {
+        String hoten;
+        String hinhanh;
+        public UserInfo() {hoten="";hinhanh="";}
+        public UserInfo(String hoten, String hinhanh) {this.hoten=hoten;this.hinhanh=hinhanh;}
+        public String HoTen {
+            get {return hoten;}
+            set {hoten = value;}
+        }
+       public String HinhAnh {
+        get {return hinhanh;} set {hinhanh=value;}
+       }
+   }
    public  class CongCu
     {
+       public static UserInfo getUserInfo(String homeXMLFile)
+       {
+           XmlTextReader reader = new XmlTextReader(homeXMLFile);
+           XmlDocument doc = new XmlDocument();
+           doc.Load(reader);
+           reader.Close();
+
+           //Select the cd node with the matching title
+           XmlNode oldCd;
+           XmlElement root = doc.DocumentElement;
+           oldCd = root.SelectSingleNode("/root/Home[id='1']");
+           UserInfo u = new UserInfo();
+           u.HoTen = oldCd.ChildNodes[1].InnerText;
+           String anh = oldCd.ChildNodes[13].InnerText;
+
+           u.HinhAnh = anh.Substring(anh.IndexOf("assets")).Replace("\\","/");
+           return u;
+       }
+
        /// <summary>
        /// 
        /// </summary>
@@ -132,9 +165,37 @@ namespace NTU.Webgen
             }
         }
 
+        public static void XML2_LienKetGrid(String xmlFilePath, DevComponents.DotNetBar.Controls.DataGridViewX grdVx)
+        {
+            System.Data.DataSet dataSet = new System.Data.DataSet();
+            dataSet.ReadXml(xmlFilePath);
+            DataTable dtTarget = dataSet.Tables[0].Clone();
+            foreach (DataRow dr in dataSet.Tables[0].Rows) {
+
+                dtTarget.LoadDataRow(new[]
+                                  {
+                                      dr[0], // default value
+                                      dr[1],
+                                      System.Web.HttpUtility.UrlDecode(dr[2].ToString())
+                                  }, LoadOption.Upsert);
+            }
+
+
+
+            try
+            {
+                grdVx.DataSource = dtTarget;
+            }
+            catch (Exception e)
+            {
+                grdVx.DataSource = null;
+            }
+        }
         public static void gotoSite(string url)
         {
-            System.Diagnostics.Process.Start(url);
+           
+                System.Diagnostics.Process.Start(url);
+            
         }
 
 
@@ -251,7 +312,7 @@ namespace NTU.Webgen
                 {
                     tap = "Tập " + tap;
                     so = "Số " + so;
-                    trang = "Trang" + trang;
+                    trang = "Trang " + trang;
                 }
                 else
                 {
@@ -259,9 +320,11 @@ namespace NTU.Webgen
                     so = "Issue " + so;
                     trang = "P " + trang;
                 }
-
+                String dinhkem = xe.Element("DinhKem").Value.ToString();
+                int vt = dinhkem.IndexOf("data\\DinhKem", 0);
+                String pdf = dinhkem.Substring(vt).Replace("\\","/");
                 result.Append("<li>" + tacgia + ", (" + nam + "), " + "<span class='citation_title'>" + tieudebaibao + "</span>, ");
-                result.Append(tentapchi + ", " + tap + ", " + so + ", " + trang + "</li>");
+                result.Append(tentapchi + ", " + tap + ", " + so + ", " + trang + ", <a href=\"" + pdf+ "\"> pdf</a></li>");
                 
 
 
@@ -338,8 +401,12 @@ namespace NTU.Webgen
                     nhaxuatban = "Publisher " + nhaxuatban;
                     trang = "Page " + trang;    
                 }
+                String dinhkem = xe.Element("DinhKem").Value.ToString();
+                int vt = dinhkem.IndexOf("data\\DinhKem", 0);
+                String pdf = dinhkem.Substring(vt).Replace("\\", "/");
+                
                 result.Append("<li>" + tacgia + ", (" + nam + "), " + "<span class='citation_title'>" + tenbaocao + "</span>, ");
-                result.Append(tenHoiThao + ", " + thoigiandiadiem + ", " + nhaxuatban+ ", " + noixuatban+ ", " + trang + "</li>");
+                result.Append(tenHoiThao + ", " + thoigiandiadiem + ", " + nhaxuatban + ", " + noixuatban + ", " + trang + ", <a href=\"" + pdf + "\"> pdf</a></li>");
             }
             result.Append("</ul>");
 
@@ -440,6 +507,42 @@ namespace NTU.Webgen
         }
 
 
+        public static StringBuilder XML2HTML_LieKet(String xmlFile)
+        {
+            XmlTextReader reader = new XmlTextReader(xmlFile);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(reader);
+            reader.Close();
+            XmlElement root = doc.DocumentElement;
+            XmlNodeList Nodes_Level1 = root.SelectNodes("/DSSach/LienKet");
+
+         
+            var e = XElement.Load(new XmlNodeReader(doc));
+
+
+            //  XElement root = XElement.Parse(xml);
+
+            List<XElement> ordered = e.Elements("LienKet").ToList();
+            e.RemoveAll();
+            e.Add(ordered);
+
+            StringBuilder result = new StringBuilder();
+            result.Append("<ul>");
+            foreach (XElement xe in ordered)
+            {
+                String tenLienKet = xe.Element("TieuDe").Value.ToString();
+                String diaChiLienKet = xe.Element("DiaChi").Value.ToString();
+                 
+                result.Append("<li>" + tenLienKet + " : <a href=\"" + diaChiLienKet + "\"> "+ diaChiLienKet+"  </a></li>");
+            }
+            result.Append("</ul>");
+
+
+            return result;
+        }
+
+
+
         public static String ReadHTMLFile(String htmlFilePath)
         {
             StreamReader sr = new StreamReader(htmlFilePath);
@@ -460,5 +563,15 @@ namespace NTU.Webgen
 
     }
 
-
+   public class XuatWeb {
+       public static bool XuatLienKet(String xmlLienKetPath, String htmlLienKetPath)
+       {
+           String noiDungMoi = CongCu.XML2HTML_LieKet(xmlLienKetPath).ToString();
+           CongCu.ReplaceContent(htmlLienKetPath, "LienKet", noiDungMoi);
+           MessageBox.Show("Đã xuất thành công sang trang web: \n" + htmlLienKetPath, "Thông báo");
+           return true; 
+       }
+    
+   
+   }
 }

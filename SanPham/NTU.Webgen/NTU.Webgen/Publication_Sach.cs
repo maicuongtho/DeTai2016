@@ -17,10 +17,23 @@ namespace NTU.Webgen
         String sachXMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\Sach.xml";
         String pubHTMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\publications.html";
         String pubHTMLFolder = @"F:/LocalRepository/DeTai2016/SanPham/NTU.Webgen/NTU.Webgen/bin/Debug/";
-      
+        String ProjectFolder;
         public Publication_Sach()
         {
             InitializeComponent();
+
+
+            EnalbeTextBox(false);
+            CongCu.XML2Grid(sachXMLFile, dataGridViewX_DSSach);
+        }
+
+        public Publication_Sach(String ProjectFolder)
+        {
+            InitializeComponent();
+            this.ProjectFolder = ProjectFolder;
+            this.sachXMLFile = ProjectFolder + "\\data\\Sach.xml";
+            this.pubHTMLFile = ProjectFolder + "\\publications.html";
+            this.pubHTMLFolder = ProjectFolder.Replace("\\", "/");
             EnalbeTextBox(false);
             CongCu.XML2Grid(sachXMLFile, dataGridViewX_DSSach);
         }
@@ -215,6 +228,13 @@ namespace NTU.Webgen
             String noiDungMoi = CongCu.XML2HTML_Sach(sachXMLFile, "Sach").ToString();
 
             CongCu.ReplaceContent(pubHTMLFile, "Sach", noiDungMoi);
+
+            // Dành cho mẫu 4
+            UserInfo u = CongCu.getUserInfo(ProjectFolder + "\\data\\index.xml");
+            CongCu.ReplaceContent(pubHTMLFile, "anhTrai", "<img src=\"" + u.HinhAnh + "\" width=100% height=186px>");
+            CongCu.ReplaceContent(pubHTMLFile, "tenTrai", "website của " + u.HoTen);
+            // Thêm tiêu đề
+            CongCu.ReplaceTite(pubHTMLFile, "NTU. " + u.HoTen + "-Báo cáo hội thảo");
             MessageBox.Show("Đã xuất thành công sang trang web: \n" + pubHTMLFile, "Thông báo");
             
         }

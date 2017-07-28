@@ -177,31 +177,37 @@ namespace NTU.Webgen
 
             StringBuilder result = new StringBuilder();
             result.Append("<div class='col-sm-3'>");
-            result.Append("<h3><center><img src='" + htmlAvatarFile1 + "' width=90% height=196px></center></h3></div><div class='col-sm-6'><h3>Thông tin chung</h3>");
+            result.Append("<h3><center><img src='" + htmlAvatarFile1 + "' width=90% height=196px></center></h3></div><div class='col-sm-5'><h3>Thông tin chung</h3>");
             result.Append("<b>"+txtTrinhDo.Text + ".</b> " + txtHoTen.Text + "<br>");
             result.Append("<b>Đơn vị: </b>" + txtKhoa.Text + "<br>");
             result.Append("<b>Tổ/Bộ môn: </b>" + txtBoMon.Text + "<br>");
             result.Append("<b>Các môn học đảm nhận: </b><p>" + txtMonHoc.Text + "</p>");
-            result.Append("<b>Định hướng nghiên cứu chính: </b><p>" + txtDinhHuong.Text + "</p></div><div class='col-sm-3'><h3> Thông tin liên hệ </h3>");
-            result.Append("Địa chỉ: " + txtDiaChi.Text + "<br>");
-            result.Append("Email: " + txtEmail.Text + "<br>");
-            result.Append("Số điện thoại: " + txtSDT.Text + "<br>");
-            result.Append("Mạng xã hội: " + txtFB.Text + "<br>");
-            result.Append("Website: " + txtWeb.Text + "<br></div><div class='col-md-12' style='padding-top:10px'> <h3>Thông tin khác</h3>");
+            result.Append("<b>Định hướng nghiên cứu chính: </b><p>" + txtDinhHuong.Text + "</p></div><div class='col-sm-4'><h3> Thông tin liên hệ </h3>");
+            result.Append("<b>Địa chỉ:</b> " + txtDiaChi.Text + "<br>");
+            result.Append("<b>Email: </b>" + txtEmail.Text + "<br>");
+            result.Append("<b>Số điện thoại:</b> " + txtSDT.Text + "<br>");
+            result.Append("<b>Mạng xã hội: </b>" + txtFB.Text + "<br>");
+            result.Append("<b>Website: </b> <a href=\"http://" + txtWeb.Text + "\">"  + txtWeb.Text + "</a><br></div><div class='col-md-12' style='padding-top:10px'> <h3>Thông tin khác</h3>");
             result.Append(CongCu.ReadHTMLFile(subgioithieuHTMLFile)+"</div>");
             CongCu.AddMetaInfors(gioithieuHTMLFile, "author", txtHoTen.Text);
            // CongCu.AddMetaInfors(gioithieuHTMLFile, "keyword", txtMonHoc.Text);
             CongCu.AddMetaInfors(gioithieuHTMLFile, "keywords", txtMonHoc.Text);
             CongCu.AddMetaInfors(gioithieuHTMLFile, "descriptions", txtDinhHuong.Text);
-            CongCu.AddMetaInfors(gioithieuHTMLFile, "thucainua", txtTrinhDo.Text);
+            //CongCu.AddMetaInfors(gioithieuHTMLFile, "thucainua", txtTrinhDo.Text);
             CongCu.ReplaceContent(gioithieuHTMLFile, "gioithieu", result.ToString());
             // Dành cho mẫu 4
-            CongCu.ReplaceContent(gioithieuHTMLFile, "anhTrai", "<img src=\""+ htmlAvatarFile1 +"\" width=186px height=196px>");
+            CongCu.ReplaceContent(gioithieuHTMLFile, "anhTrai", "<img src=\""+ htmlAvatarFile1 +"\" width=100% height=186px>");
             CongCu.ReplaceContent(gioithieuHTMLFile, "tenTrai", "website của "+txtHoTen.Text);
 
-            //----------------------------------
+            CongCu.ReplaceContent(ProjectFolder+"\\publications.html", "anhTrai", "<img src=\"" + htmlAvatarFile1 + "\" width=100% height=186px>");
+            CongCu.ReplaceContent(ProjectFolder + "\\publications.html", "tenTrai", "website của " + txtHoTen.Text);
+
+            CongCu.ReplaceContent(ProjectFolder + "\\calendar.html", "anhTrai", "<img src=\"" + htmlAvatarFile1 + "\" width=100% height=186px>");
+            CongCu.ReplaceContent(ProjectFolder + "\\calendar.html", "tenTrai", "website của " + txtHoTen.Text);
+
             // Thêm tiêu đề
             CongCu.ReplaceTite(gioithieuHTMLFile,"NTU. "+txtHoTen.Text+"-Giới thiệu");
+            //----------------------------
             MessageBox.Show("Đã xuất thành công sang trang web: \n" + gioithieuHTMLFile, "Thông báo");
         }
 

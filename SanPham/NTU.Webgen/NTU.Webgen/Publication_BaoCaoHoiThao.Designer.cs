@@ -49,6 +49,11 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.lblDinhKem = new DevComponents.DotNetBar.LabelX();
+            this.btnDinhKem = new DevComponents.DotNetBar.ButtonX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonViet = new System.Windows.Forms.RadioButton();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
@@ -60,10 +65,9 @@
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.txtThoiGianDiaDiem = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
-            this.balloonTipTrang = new DevComponents.DotNetBar.BalloonTip();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.radioButtonViet = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.balloonTipTrang = new DevComponents.DotNetBar.BalloonTip();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +78,7 @@
             this.NoiXuatBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Trang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgonNgu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DinhKem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX_DSBaoCao)).BeginInit();
             this.panelEx2.SuspendLayout();
             this.panelEx1.SuspendLayout();
@@ -106,7 +111,8 @@
             this.NhaXuatBan,
             this.NoiXuatBan,
             this.Trang,
-            this.NgonNgu});
+            this.NgonNgu,
+            this.DinhKem});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -341,9 +347,9 @@
             this.panelEx2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.panelEx2.Controls.Add(this.dataGridViewX_DSBaoCao);
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx2.Location = new System.Drawing.Point(0, 323);
+            this.panelEx2.Location = new System.Drawing.Point(0, 370);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(828, 178);
+            this.panelEx2.Size = new System.Drawing.Size(828, 131);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -357,6 +363,9 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.lblDinhKem);
+            this.panelEx1.Controls.Add(this.btnDinhKem);
+            this.panelEx1.Controls.Add(this.labelX12);
             this.panelEx1.Controls.Add(this.radioButton2);
             this.panelEx1.Controls.Add(this.radioButtonViet);
             this.panelEx1.Controls.Add(this.panelEx3);
@@ -374,7 +383,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(828, 323);
+            this.panelEx1.Size = new System.Drawing.Size(828, 370);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -382,6 +391,63 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 2;
+            // 
+            // lblDinhKem
+            // 
+            // 
+            // 
+            // 
+            this.lblDinhKem.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.lblDinhKem.Location = new System.Drawing.Point(202, 303);
+            this.lblDinhKem.Name = "lblDinhKem";
+            this.lblDinhKem.Size = new System.Drawing.Size(582, 16);
+            this.lblDinhKem.TabIndex = 27;
+            // 
+            // btnDinhKem
+            // 
+            this.btnDinhKem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDinhKem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDinhKem.Location = new System.Drawing.Point(160, 300);
+            this.btnDinhKem.Name = "btnDinhKem";
+            this.btnDinhKem.Size = new System.Drawing.Size(33, 23);
+            this.btnDinhKem.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnDinhKem.TabIndex = 26;
+            this.btnDinhKem.Text = "...";
+            this.btnDinhKem.Click += new System.EventHandler(this.btnDinhKem_Click);
+            // 
+            // labelX12
+            // 
+            // 
+            // 
+            // 
+            this.labelX12.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX12.Location = new System.Drawing.Point(27, 300);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(152, 23);
+            this.labelX12.TabIndex = 25;
+            this.labelX12.Text = "Đính kèm (tóm tắt /fulltext)";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(223, 154);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(74, 17);
+            this.radioButton2.TabIndex = 18;
+            this.radioButton2.Text = "Tiếng Anh";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonViet
+            // 
+            this.radioButtonViet.AutoSize = true;
+            this.radioButtonViet.Checked = true;
+            this.radioButtonViet.Location = new System.Drawing.Point(145, 154);
+            this.radioButtonViet.Name = "radioButtonViet";
+            this.radioButtonViet.Size = new System.Drawing.Size(73, 17);
+            this.radioButtonViet.TabIndex = 18;
+            this.radioButtonViet.TabStop = true;
+            this.radioButtonViet.Text = "Tiếng Việt";
+            this.radioButtonViet.UseVisualStyleBackColor = true;
             // 
             // panelEx3
             // 
@@ -532,7 +598,7 @@
             // 
             // 
             this.labelX10.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX10.Location = new System.Drawing.Point(27, 297);
+            this.labelX10.Location = new System.Drawing.Point(27, 341);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(357, 23);
             this.labelX10.TabIndex = 9;
@@ -550,27 +616,9 @@
             this.labelX11.TabIndex = 9;
             this.labelX11.Text = "Ngôn ngữ";
             // 
-            // radioButtonViet
+            // openFileDialog1
             // 
-            this.radioButtonViet.AutoSize = true;
-            this.radioButtonViet.Checked = true;
-            this.radioButtonViet.Location = new System.Drawing.Point(145, 154);
-            this.radioButtonViet.Name = "radioButtonViet";
-            this.radioButtonViet.Size = new System.Drawing.Size(73, 17);
-            this.radioButtonViet.TabIndex = 18;
-            this.radioButtonViet.TabStop = true;
-            this.radioButtonViet.Text = "Tiếng Việt";
-            this.radioButtonViet.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(223, 154);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(74, 17);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.Text = "Tiếng Anh";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // STT
             // 
@@ -648,6 +696,13 @@
             this.NgonNgu.ReadOnly = true;
             this.NgonNgu.Visible = false;
             // 
+            // DinhKem
+            // 
+            this.DinhKem.DataPropertyName = "DinhKem";
+            this.DinhKem.HeaderText = "Đính kèm";
+            this.DinhKem.Name = "DinhKem";
+            this.DinhKem.ReadOnly = true;
+            // 
             // Publication_BaoCaoHoiThao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -701,6 +756,10 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButtonViet;
         private DevComponents.DotNetBar.LabelX labelX11;
+        private DevComponents.DotNetBar.LabelX lblDinhKem;
+        private DevComponents.DotNetBar.ButtonX btnDinhKem;
+        private DevComponents.DotNetBar.LabelX labelX12;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TacGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nam;
@@ -711,5 +770,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiXuatBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Trang;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgonNgu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DinhKem;
     }
 }

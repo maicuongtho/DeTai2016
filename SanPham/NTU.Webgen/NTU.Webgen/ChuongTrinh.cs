@@ -59,7 +59,7 @@ namespace NTU.Webgen
 
             else
             {
-                Publication_TapChi tc = new Publication_TapChi();
+                Publication_TapChi tc = new Publication_TapChi(@projectFolder);
                 CongCu.AddTab("tabTapChi", "Tạp chí", superTabControlWindows, tc, false, 10);
             }
         }
@@ -73,7 +73,7 @@ namespace NTU.Webgen
             }
             else
             {
-                Publication_BaoCaoHoiThao bc = new Publication_BaoCaoHoiThao();
+                Publication_BaoCaoHoiThao bc = new Publication_BaoCaoHoiThao(@projectFolder);
                 CongCu.AddTab("tabBaoCao", "Báo cáo hội thảo", superTabControlWindows, bc, false, 10);
 
             }
@@ -88,7 +88,7 @@ namespace NTU.Webgen
             }
             else
             {
-                Publication_BaoCaoHoiThao0 bc0 = new Publication_BaoCaoHoiThao0();
+                Publication_BaoCaoHoiThao0 bc0 = new Publication_BaoCaoHoiThao0(@projectFolder);
                 CongCu.AddTab("tabBaoCao0", "Báo cáo hội thảo (không ấn phẩm)", superTabControlWindows, bc0, false, 10);
             }
         }
@@ -102,7 +102,7 @@ namespace NTU.Webgen
             }
             else
             {
-                Publication_Sach sc = new Publication_Sach();
+                Publication_Sach sc = new Publication_Sach(@projectFolder);
                 CongCu.AddTab("tabSach", "Sách", superTabControlWindows, sc, false, 10);
             }
         }
@@ -116,7 +116,7 @@ namespace NTU.Webgen
             }
             else
             {
-                calendar sc = new calendar();
+                calendar sc = new calendar(@projectFolder);
                 CongCu.AddTab("tabLich", "Lịch", superTabControlWindows, sc, false, 10);
             }
         }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using System.IO;
 
 namespace NTU.Webgen
 {
@@ -19,11 +20,23 @@ namespace NTU.Webgen
         String pubXMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\TapChi.xml";
         String pubHTMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\publications.html";
         String pubHTMLFolder = @"F:/LocalRepository/DeTai2016/SanPham/NTU.Webgen/NTU.Webgen/bin/Debug/";
+        String ProjectFolder;
         public Publication_TapChi()
         {
             InitializeComponent();
             EnalbeTextBox(false);
             CongCu.XML2Grid(pubXMLFile,dataGridViewX_DSTC);
+        }
+
+        public Publication_TapChi(String ProjectFolder)
+        {
+            InitializeComponent();
+            EnalbeTextBox(false);
+            this.ProjectFolder = ProjectFolder;
+            this.pubXMLFile = ProjectFolder + "\\data\\TapChi.xml";
+            this.pubHTMLFile = ProjectFolder + "\\publications.html";
+            this.pubHTMLFolder = ProjectFolder.Replace("\\", "/");
+            CongCu.XML2Grid(pubXMLFile, dataGridViewX_DSTC);
         }
 
        // Thêm mới dữ liệu vào Grid
@@ -119,6 +132,18 @@ namespace NTU.Webgen
                 if (radioButtonViet.Checked) nodeNgonNgu.InnerText = "Tiếng Việt";
                 else nodeNgonNgu.InnerText = "Tiếng Anh";
 
+                XmlNode nodeDinhKem = xmlDom.CreateElement("DinhKem");
+                // Luu file dinh kem
+                String fileNguon= lblDinhKem.Text;
+                
+                if(fileNguon!="")
+                {
+                    int i=fileNguon.LastIndexOf("\\");
+                    String tenFile = fileNguon.Substring(i+1);
+                    String FileDinhKem = ProjectFolder+"\\data\\DinhKem\\"+tenFile;
+                    File.Copy(fileNguon,FileDinhKem);
+                    nodeDinhKem.InnerText=FileDinhKem;
+                }
                 //add to parent node
                 node.AppendChild(nodeid);
                 node.AppendChild(nodeTacGia);
@@ -129,6 +154,7 @@ namespace NTU.Webgen
                 node.AppendChild(nodeTap);
                 node.AppendChild(nodeSo);
                 node.AppendChild(nodeTrang);
+                node.AppendChild(nodeDinhKem);
 
 
                 //add to elements collection
@@ -159,6 +185,20 @@ namespace NTU.Webgen
                 if (!radioButtonViet.Checked) strNgonNgu = "Tiếng Anh";
                 oldCd = root.SelectSingleNode("/DSBaiBao/BaiBao[id='" + id + "']");
 
+                String fileDinhKemGoc = oldCd.ChildNodes[9].InnerText;
+                //MessageBox.Show(fileDinhKemGoc);
+                String fileDinhKem = lblDinhKem.Text;
+                if (fileDinhKem != fileDinhKemGoc)
+                {
+                    int i = fileDinhKem.LastIndexOf("\\");
+                    String tenFile = fileDinhKem.Substring(i+1);
+                    fileDinhKemGoc = ProjectFolder + "\\data\\DinhKem\\" + tenFile;
+                    try { File.Copy(fileDinhKem, fileDinhKemGoc); }
+                    catch (Exception exx) {
+                        int oo = 0; ;
+                    }
+                }
+
                 XmlElement newCd = doc.CreateElement("BaiBao");
                 newCd.InnerXml = "<id>" + this.txtId.Text + "</id>" +
                         "<TacGia>" + txtTacGia.Text + "</TacGia>" +
@@ -168,8 +208,9 @@ namespace NTU.Webgen
                         "<TenTapChi>" + txtTenTapChi.Text + "</TenTapChi>" +
                         "<Tap>" + txtTap.Text + "</Tap>" +
                         "<So>" + txtSo.Text + "</So>" +
-                        "<Trang>" + txtTrang.Text + "</Trang>";
-
+                        "<Trang>" + txtTrang.Text + "</Trang>" +
+                        "<DinhKem>"+ fileDinhKemGoc +"</DinhKem>";
+                        
                 root.ReplaceChild(newCd, oldCd);
 
                 //save the output to a file
@@ -202,6 +243,12 @@ namespace NTU.Webgen
             String noiDungMoi = CongCu.XML2HTML_TapChi(pubXMLFile, "BaiBao").ToString();
 
             CongCu.ReplaceContent(pubHTMLFile, "TapChi", noiDungMoi);
+            // Dành cho mẫu 4
+            //UserInfo u = CongCu.getUserInfo(ProjectFolder + "\\data\\index.xml");
+            //CongCu.ReplaceContent(pubHTMLFile, "anhTrai", "<img src=\"" + u.HinhAnh + "\" width=100% height=186px>");
+            //CongCu.ReplaceContent(pubHTMLFile, "tenTrai", "website của " + u.HoTen);
+            //// Thêm tiêu đề
+            //CongCu.ReplaceTite(pubHTMLFile, "NTU. " + u.HoTen + "-Báo cáo hội thảo");
             MessageBox.Show("Đã xuất thành công sang trang web: \n" + pubHTMLFile, "Thông báo");
             
         }
@@ -227,6 +274,7 @@ namespace NTU.Webgen
             txtTrang.Enabled = b;
             radioButton2.Enabled = b;
             radioButtonViet.Enabled = b;
+            btnDinhKem.Enabled = b;
         }
 
         private void btnHuyBo_Click(object sender, EventArgs e)
@@ -286,6 +334,13 @@ namespace NTU.Webgen
                 radioButtonViet.Checked = false;
                 radioButton2.Checked = true;
             }
+            lblDinhKem.Text = dataGridViewX_DSTC.SelectedRows[0].Cells["DinhKem"].Value.ToString();
+        }
+
+        private void btnDinhKem_Click(object sender, EventArgs e)
+        {
+            DialogResult rs= openFileDialog1.ShowDialog();
+            if (rs == DialogResult.OK) lblDinhKem.Text = openFileDialog1.FileName;
         }      
     }
 }
