@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 using System.Data;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 namespace NTU.Webgen
 {
    public class UserInfo {
@@ -152,6 +154,36 @@ namespace NTU.Webgen
             }
             File.Move(oldFilePath, newFilePath);
         }
+
+        public static DataTable GetContentAsDataTable(DevComponents.DotNetBar.Controls.DataGridViewX dgv, bool IgnoreHideColumns = false)
+        {
+            try
+            {
+                if (dgv.ColumnCount == 0) return null;
+                DataTable dtSource = new DataTable();
+                foreach (DataGridViewColumn col in dgv.Columns)
+                {
+                    if (IgnoreHideColumns & !col.Visible) continue;
+                    if (col.Name == string.Empty) continue;
+                    dtSource.Columns.Add(col.Name);
+                    dtSource.Columns[col.Name].Caption = col.HeaderText;
+                }
+                if (dtSource.Columns.Count == 0) return null;
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    DataRow drNewRow = dtSource.NewRow();
+                    foreach (DataColumn col in dtSource.Columns)
+                    {
+                        drNewRow[col.ColumnName] = row.Cells[col.ColumnName].Value;
+                    }
+                    dtSource.Rows.Add(drNewRow);
+                }
+                return dtSource;
+            }
+            catch { return null; }
+        }
+
+
 
         public static void XML2Grid(String xmlFilePath,  DevComponents.DotNetBar.Controls.DataGridViewX grdVx) {
             System.Data.DataSet dataSet = new System.Data.DataSet();
@@ -637,6 +669,8 @@ namespace NTU.Webgen
            htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "thang", thang);
            htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "nam", nam);
            htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "ten", hoten);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "ten_ky", hoten);
+
            htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "gioitinh", gioitinh);
            htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "ngaysinh", ngaysinh);
            htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "noisinh", noisinh);
@@ -644,6 +678,7 @@ namespace NTU.Webgen
            htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "dantoc", dantoc);
 
            htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "hocvicaonhat", tenHV);
+           htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "hocvicaonhat_ky", tenHV);
            htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "nam_nuoc_nhan_hv", tenHV+","+namnhanHV);
 
            htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "chucdanh", tenChucDanh);
@@ -758,9 +793,9 @@ namespace NTU.Webgen
                String tu_den = c.ChildNodes[1].InnerText.Trim()+"-"+c.ChildNodes[2].InnerText.Trim();
                String dv=c.ChildNodes[3].InnerText.Trim();
                String cv=c.ChildNodes[4].InnerText.Trim();
-               qtCT.Append("<td>"+tu_den+"</td>");
-               qtCT.Append("<td>"+dv+"</td>");
-               qtCT.Append("<td>"+cv+"</td>");
+               qtCT.Append("<td><span>" + tu_den + "</span></td>");
+               qtCT.Append("<td><span>" + dv + "</span></td>");
+               qtCT.Append("<td><span>" + cv + "</span></td>");
            }
            qtCT.Append("</table>");
            CongCu.ReplaceContent(htmlCVFile, "QuaTrinhCongTac", qtCT.ToString());
@@ -768,6 +803,7 @@ namespace NTU.Webgen
 
 
            // Qua trinh NCKH
+           //1. đề tài khoa học
            XmlNodeList dsNodeNCKH = root.SelectNodes("/root/NghienCuuKhoaHoc/DSDeTaiKH/DeTaiKH");
            XmlNode[] nodeNCKH = dsNodeNCKH.Cast<XmlNode>().ToArray();
            StringBuilder qtNCKH = new StringBuilder();
@@ -786,20 +822,188 @@ namespace NTU.Webgen
                TrachNhiem = k.ChildNodes[5].InnerText.Trim();
 
 
-               qtNCKH.Append("<td>" + STT + "</td>");
-               qtNCKH.Append("<td>" + TenDeTai + "</td>");
-               qtNCKH.Append("<td>" + NamBatDau + "/" + NamHoanThanh + "</td>");
-               qtNCKH.Append("<td>" + DeTaiCap + "</td>");
-               qtNCKH.Append("<td>" + TrachNhiem + "</td>");
+               qtNCKH.Append("<td><span>" + STT + "</span></td>");
+               qtNCKH.Append("<td><span>" + TenDeTai + "</span></td>");
+               qtNCKH.Append("<td><span>" + NamBatDau + "/" + NamHoanThanh + "</span></td>");
+               qtNCKH.Append("<td><span>" + DeTaiCap + "</span></td>");
+               qtNCKH.Append("<td><span>" + TrachNhiem + "</span></td>");
            }
            qtNCKH.Append("</table>");
-
            CongCu.ReplaceContent(htmlCVFile, "QuaTrinhNCKH", qtNCKH.ToString());
+           //2. Công bố khoa học
+
+           XmlNodeList dsNodeCongBoKH = root.SelectNodes("/root/NghienCuuKhoaHoc/DSCongTrinhKhoaHoc/CongBo");
+           XmlNode[] nodeCongBoKH = dsNodeCongBoKH.Cast<XmlNode>().ToArray();
+           StringBuilder qtCongBoKhoaHoc = new StringBuilder();
+           qtCongBoKhoaHoc.Append("<table width=\"424\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-left: 6px\">"); //bang
+           qtCongBoKhoaHoc.Append("<tr><td><b>STT</b></td><td><b>Tên công trình</b></td><td><b>Năm công bố</b></td><td><b>Nơi công bố</b></td></tr>"); //bang
+
+           foreach (XmlNode k in nodeCongBoKH)
+           {
+               qtCongBoKhoaHoc.Append("<tr>");
+               String STT, TenCongTrinh, NamCongBo, NoiCongBo;
+               STT = k.ChildNodes[0].InnerText.Trim();
+               TenCongTrinh = k.ChildNodes[1].InnerText.Trim();
+               NamCongBo = k.ChildNodes[2].InnerText.Trim();
+               NoiCongBo = k.ChildNodes[3].InnerText.Trim();
+
+               qtCongBoKhoaHoc.Append("<td><span>" + STT + "</span></td>");
+               qtCongBoKhoaHoc.Append("<td><span>" + TenCongTrinh + "</span></td>");
+               qtCongBoKhoaHoc.Append("<td><span>" + NamCongBo + "</span></td>");
+               qtCongBoKhoaHoc.Append("<td><span>" + NoiCongBo + "</span></td>");
+              
+           }
+           qtCongBoKhoaHoc.Append("</table>");
+           CongCu.ReplaceContent(htmlCVFile, "QuaTrinhNCKH_CongBo", qtCongBoKhoaHoc.ToString());
+
 
            MessageBox.Show("OK");
            return true;
        }
-    
+
+       public static void HTMLToPdf(string htmlCVFile, string pdfCVFile)
+       {
+           Document document = new Document();
+           PdfWriter.GetInstance(document, new FileStream(pdfCVFile, FileMode.Create));
+           document.Open();
+           String noiDungCVHTML = layNoiDungCV(htmlCVFile);
+           iTextSharp.text.html.simpleparser.StyleSheet styles = new iTextSharp.text.html.simpleparser.StyleSheet();
+           iTextSharp.text.html.simpleparser.HTMLWorker hw = new iTextSharp.text.html.simpleparser.HTMLWorker(document);
+           hw.Parse(new StringReader(noiDungCVHTML.ToString()));
+           document.Close();
+
+       }
+
+       public static string layNoiDungCV(String htmlCVFile)
+       {
+           String strtoFind = "<section id='NoiDungCV'>";
+           String NoiDungHTML = CongCu.ReadHTMLFile(htmlCVFile);
+           int intStartIndex = NoiDungHTML.IndexOf(strtoFind, 0) + strtoFind.Length;
+
+
+           int intEndIndex = NoiDungHTML.LastIndexOf("</section>");
+
+           return NoiDungHTML.Substring(intStartIndex, intEndIndex-intStartIndex);
+           
+       }
+
+
+       public static bool XuatBaiGiang(int id, String xmlTeachFile, String htmlTeachHPFile)
+       {
+           // ĐỌc file HTML
+           String htmlContent = CongCu.ReadHTMLFile(htmlTeachHPFile);
+           // Đọc file XML
+           XmlTextReader reader = new XmlTextReader(xmlTeachFile);
+           XmlDocument doc = new XmlDocument();
+           doc.Load(reader);
+           reader.Close();
+           // Lấy gốc
+           XmlElement root = doc.DocumentElement;
+           XmlNode Nodes_BaiGiang = root.SelectSingleNode("/root/DSHocPhan/HocPhan[id='"+id+"']");
+
+           #region Thông tin học phần
+          
+               XmlNode nodeThongTin = Nodes_BaiGiang.SelectSingleNode("/root/DSHocPhan/HocPhan/ThongTin");
+               String maHP =nodeThongTin.ChildNodes[0].InnerText;
+               String tenHP = nodeThongTin.ChildNodes[1].InnerText;
+               String hocTruoc = nodeThongTin.ChildNodes[2].InnerText;
+               String tc = nodeThongTin.ChildNodes[3].InnerText;
+               String trinhdo = nodeThongTin.ChildNodes[4].InnerText;
+               String muctieu = nodeThongTin.ChildNodes[5].InnerText;
+               String noidung = nodeThongTin.ChildNodes[6].InnerText;
+               htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "MAHOCPHAN", maHP);
+               htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "TENHOCPHAN", tenHP);
+               htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "tenHocPhan", tenHP);
+               htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "maHocPhan", maHP);
+               htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "khoiluong", tc);
+               htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "hpHocTruoc", hocTruoc);
+               htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "muctieuHP", muctieu);
+               htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "noiDungVanTat", noidung);
+               // thay xong, đóng file
+               CongCu.RenameFile(htmlTeachHPFile, htmlTeachHPFile + ".bak");
+               StreamWriter sw = new System.IO.StreamWriter(htmlTeachHPFile, false, Encoding.UTF8);
+               sw.Write(htmlContent);
+               sw.Close();
+               // Thêm các thông tin meta
+               CongCu.ReplaceTite(htmlTeachHPFile,tenHP);
+               CongCu.AddMetaInfors(htmlTeachHPFile, "keywords", tenHP);
+               CongCu.AddMetaInfors(htmlTeachHPFile, "descriptions", noidung); 
+           #endregion
+           #region Đánh giá kết quả
+               XmlNodeList dsDanhGia = Nodes_BaiGiang.SelectNodes("DanhGiaKetQua/HinhThuc");
+               XmlNode[] nodeDanhGia = dsDanhGia.Cast<XmlNode>().ToArray();
+               StringBuilder danhgiaHocTap = new StringBuilder();
+               danhgiaHocTap.Append("<ul>");
+               foreach (XmlNode k in nodeDanhGia)
+               {
+                   String tenDG = k.ChildNodes[1].InnerText;
+                   String mota = k.ChildNodes[2].InnerText;
+                   String trongso = k.ChildNodes[3].InnerText;
+                   String hinhthuclambai= k.ChildNodes[4].InnerText;
+                   danhgiaHocTap.Append("<li><b>" + tenDG + "(" + trongso + "):</b>"+mota + ", " +hinhthuclambai+"</li>");
+               }
+               danhgiaHocTap.Append("</ul>");
+               CongCu.ReplaceContent(htmlTeachHPFile, "DanhGiaKetQua", danhgiaHocTap.ToString());
+           #endregion
+
+
+               #region Tài liệu tham khảo
+               XmlNodeList dsTaiLieu = Nodes_BaiGiang.SelectNodes("TaiLieuThamKhao/TaiLieu");
+               XmlNode[] nodeTaiLieu = dsTaiLieu.Cast<XmlNode>().ToArray();
+               StringBuilder tltk = new StringBuilder();
+               foreach (XmlNode k in nodeTaiLieu)
+               {
+                   String STT = k.ChildNodes[0].InnerText;
+                   String tenTaiLieu = k.ChildNodes[1].InnerText;
+                   String tenTG = k.ChildNodes[2].InnerText;
+                   String nhaXB = k.ChildNodes[3].InnerText;
+                   String namXB = k.ChildNodes[4].InnerText;
+                   String diachiKhaiThac = k.ChildNodes[5].InnerText;
+                   String mucdichSuDung = k.ChildNodes[6].InnerText;
+                   tltk.Append("[" + STT + "], " + tenTG + ", <i>" + tenTaiLieu + "</i>, " + namXB + ", " + nhaXB + "  <a href=\"" + diachiKhaiThac + "\">Xem </a><br>");
+               }
+
+               CongCu.ReplaceContent(htmlTeachHPFile, "TaiLieuThamKhao", tltk.ToString());
+               #endregion
+
+               #region Đề cương học phần
+                    XmlNode nodeDeCuong = Nodes_BaiGiang.SelectSingleNode("/root/DSHocPhan/HocPhan/DeCuongHocPhan");
+                    String decuong = "<a href=\"data/HocPhan/NEC301/"+nodeDeCuong.InnerText+"\">Xem tại đây</a>";
+                    htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "DeCuongHP", decuong);
+                    // thay xong, đóng file
+                    CongCu.RenameFile(htmlTeachHPFile, htmlTeachHPFile + ".bak");
+                    StreamWriter sw1 = new System.IO.StreamWriter(htmlTeachHPFile, false, Encoding.UTF8);
+                    sw1.Write(htmlContent);
+                    sw1.Close();    
+               #endregion
+               #region Bài giảng
+                     XmlNodeList dsChuong = Nodes_BaiGiang.SelectNodes("BaiGiang/Chuong");
+                     XmlNode[] nodeChuong = dsChuong.Cast<XmlNode>().ToArray();
+                     StringBuilder chuong = new StringBuilder();
+
+                     chuong.Append("<table>");
+                     foreach (XmlNode k in nodeChuong)
+                     {
+                         String STT = k.ChildNodes[0].InnerText;
+                         String tenChuong = k.ChildNodes[1].InnerText;
+                         String mota = k.ChildNodes[2].InnerText;
+                         String url = k.ChildNodes[3].InnerText;
+                         chuong.Append("<tr><td>"+STT+"</td><td>"+tenChuong+"</td><td>"+mota+"</td><td> <a href=\"data/HocPhan/NEC301/"+ url+"\">Tải về </td></tr>");
+                     }
+                     chuong.Append("</table>");
+                     CongCu.ReplaceContent(htmlTeachHPFile, "BaiGiang", chuong.ToString());
+               #endregion
+
+               #region Chính sách khác
+
+               #endregion
+
+
+               MessageBox.Show("OK");
+           return true;
+       }
+
+     
    
    }
 }

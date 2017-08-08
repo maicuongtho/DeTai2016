@@ -20,13 +20,13 @@ namespace NTU.Webgen
         private void btnChonDeCuong_Click(object sender, EventArgs e)
         {
            DialogResult rs = openFileDialogDeCuong.ShowDialog();
-           if (rs == DialogResult.OK) txtDeCuong.Text = openFileDialogDeCuong.FileName;
+          // if (rs == DialogResult.OK) txtDeCuong.Text = openFileDialogDeCuong.FileName;
         }
 
         private void btnChonGiaoTrinh_Click(object sender, EventArgs e)
         {
             DialogResult rs = openFileDialogBaiGiang.ShowDialog();
-            if (rs == DialogResult.OK) txtDeCuong.Text = openFileDialogBaiGiang.FileName;
+           // if (rs == DialogResult.OK) txtDeCuong.Text = openFileDialogBaiGiang.FileName;
         }
 
         private void btnUploadTaiLieu_Click(object sender, EventArgs e)
