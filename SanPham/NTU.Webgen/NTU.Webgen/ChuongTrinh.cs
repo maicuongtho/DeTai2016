@@ -189,5 +189,24 @@ namespace NTU.Webgen
            }
 
         }
+
+        private void mnuLyLich_Click(object sender, EventArgs e)
+        {
+            if (superTabControlWindows.Tabs.Contains("tabLyLich"))
+            {
+                var t = (SuperTabItem)superTabControlWindows.Tabs["tabLyLich"];
+                superTabControlWindows.SelectedTab = t;
+            }
+            else
+            {
+                LyLichKH sc = new LyLichKH(@projectFolder);
+                CongCu.AddTab("tabLyLich", "Lý lịch khoa học", superTabControlWindows, sc, false, 10);
+            }
+        }
+
+        private void mnuLienKet_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

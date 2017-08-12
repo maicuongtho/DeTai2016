@@ -12,9 +12,16 @@ namespace NTU.Webgen
 {
     public partial class LyLichKH : UserControl
     {
+        String ProjectFolder;
         public LyLichKH()
         {
             InitializeComponent();
         }
+        public LyLichKH(String ProjectFolder)
+        {
+            InitializeComponent();
+            this.ProjectFolder = ProjectFolder;
+        }
+
     }
 }

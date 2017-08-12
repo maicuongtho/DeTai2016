@@ -45,7 +45,7 @@ namespace NTU.Webgen
         {
             String bgXMLFile = @"C:\Users\Mai Cuong Tho\Desktop\TestMau4\data\teaching.xml";
             String bgHTMLFile = @"C:\Users\Mai Cuong Tho\Desktop\TestMau4\teaching.html";
-            XuatWeb.XuatBaiGiang(1, bgXMLFile, bgHTMLFile);
+            XuatWeb.XuatBaiGiang("NEC303", bgXMLFile, bgHTMLFile);
         }
 
 

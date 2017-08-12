@@ -8,34 +8,43 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.IO;
 
 namespace NTU.Webgen
 {
     public partial class HocPhanPage : UserControl
     {
         static String xmlFile = @"\\data\\teaching.xml";
-        static String htmlFile = @"\weblink.html";
+        static String htmlFile = @"\index.html";
         String ProjectFolder;
+        String CourseFolder;
         String fullXMLFile;
         String fullHTMLFile;
         bool isThemMoi, isSua;
+        String MaHocPhan;
         public HocPhanPage()
         {
             InitializeComponent();
             this.ProjectFolder = @"C:\Users\Mai Cuong Tho\Desktop\TestMau4";
             this.fullXMLFile = ProjectFolder + xmlFile;
-            LoadBaiGiang(1, fullXMLFile);
-            this.fullHTMLFile = (ProjectFolder + htmlFile);
+            MaHocPhan = "NEC303";
+            this.CourseFolder = ProjectFolder + @"\courses\"+MaHocPhan;
+
+            LoadBaiGiang("NEC303", fullXMLFile);
+            this.fullHTMLFile = (CourseFolder + htmlFile);
+            linkWebCourse.Text = fullHTMLFile;
         }
 
 
-        public HocPhanPage(String xmlTeachingFile, int Idhocphan) {
+        public HocPhanPage(String xmlTeachingFile, String Idhocphan) {
             InitializeComponent();
             this.ProjectFolder = @"C:\Users\Mai Cuong Tho\Desktop\TestMau4";
             this.fullXMLFile = ProjectFolder + xmlFile;
             this.fullHTMLFile = (ProjectFolder + htmlFile);
-            LoadBaiGiang(Idhocphan, fullXMLFile);
-        
+            this.MaHocPhan = Idhocphan;
+            this.CourseFolder = ProjectFolder + @"\courses\" + MaHocPhan;
+            LoadBaiGiang(MaHocPhan, fullXMLFile);
+            linkWebCourse.Text = fullHTMLFile;
         }
 
         private void dataGridViewX2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -47,8 +56,128 @@ namespace NTU.Webgen
                 MessageBox.Show(e.RowIndex.ToString());
             }
         }
+        // Lưu bài giảng lại, vào file XML
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveBaiGiang(txtMaHP.Text, fullXMLFile);
 
-        private void  LoadBaiGiang(int id, String xmlTeachFile)
+        }
+    
+
+        private void SaveBaiGiang(String idHocPhan, String xmlTeachFile) {
+            // Đọc file XML
+            XmlTextReader reader = new XmlTextReader(xmlTeachFile);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(reader);
+            reader.Close();
+            // Lấy gốc
+            XmlElement root = doc.DocumentElement;
+            XmlNode Nodes_BaiGiang = root.SelectSingleNode("/root/DSHocPhan/HocPhan[id='" + idHocPhan + "']");
+            XmlElement xmlENodes_BaiGiang = Nodes_BaiGiang as XmlElement;
+            
+            #region Lưu thông tin học phần
+            XmlNode oldNodeThongTin = Nodes_BaiGiang.SelectSingleNode("ThongTin");
+            XmlElement newNodeThongTin = doc.CreateElement("ThongTin");
+            newNodeThongTin.InnerXml=
+                "<MaHP>" + txtMaHP.Text + "</MaHP>" +
+                "<TenHP>" + txtTenHP.Text + "</TenHP>" +
+                "<HocPhan_HocTruoc>" + txtHPHocTruoc.Text + "</HocPhan_HocTruoc>" +
+                "<KhoiLuong>" + txtKhoiLuong.Text + "</KhoiLuong>" +
+    			"<DaoTaoTrinhDo>"+txtTrinhDo.Text +"</DaoTaoTrinhDo>"+
+    			"<MucTieu>" +txtMucTieu.Text +"</MucTieu>"+
+    			"<NoiDungVanTat>"  +txtNoiDung.Text +"</NoiDungVanTat>";
+            xmlENodes_BaiGiang.ReplaceChild(newNodeThongTin, oldNodeThongTin);
+           
+            #endregion
+            #region Lưu phần đánh giá
+            XmlNode nodeDanhGia = Nodes_BaiGiang.SelectSingleNode("DanhGiaKetQua");
+            nodeDanhGia.InnerText = ""; 
+            DataTable dtTarget = CongCu.GetContentAsDataTable(grvDanhGia);
+            foreach (DataRow r in dtTarget.Rows) {
+                XmlElement newNode = doc.CreateElement("HinhThuc");
+                newNode.InnerXml =
+                      "<id>" + r[0] + "</id>" +
+                      "<TenHinhThuc>" + r[1] + "</TenHinhThuc>" +
+                      "<MoTaThem>" + r[2] + "</MoTaThem>" +
+                      "<TrongSo>" + r[3] + "</TrongSo>" +
+                      "<HinhThucLamBai>" + r[4] + "</HinhThucLamBai>";
+                nodeDanhGia.AppendChild(newNode);
+            }
+           
+            #endregion
+            #region Đê cương học phần
+            XmlNode oldNodeDeCuong = Nodes_BaiGiang.SelectSingleNode("DeCuongHocPhan");
+            //1. Upload or No
+            String fileDeCuongTrongXML = oldNodeDeCuong.InnerText;
+            String fileDeCuongTrongTextBox = txtDeCuong.Text;
+            
+            if (fileDeCuongTrongXML != fileDeCuongTrongTextBox)
+            {
+                String filenameCopy = fileDeCuongTrongTextBox.Substring(fileDeCuongTrongTextBox.LastIndexOf("\\")+1);
+                File.Copy(fileDeCuongTrongTextBox,CourseFolder+"\\"+filenameCopy,true);
+                oldNodeDeCuong.InnerXml = filenameCopy;
+                txtDeCuong.Text = filenameCopy;
+            }
+            
+            #endregion
+            #region Tài liệu tham khảo
+            XmlNode nodeTLTK = Nodes_BaiGiang.SelectSingleNode("TaiLieuThamKhao");
+            nodeTLTK.InnerText = "";
+            dtTarget = CongCu.GetContentAsDataTable(gdvTaiLieuThamKhao);
+            foreach (DataRow r in dtTarget.Rows)
+            {
+                XmlElement newNode = doc.CreateElement("TaiLieu");
+                newNode.InnerXml =
+                           "<id>" + r[0] + "</id>" +
+                          "<TenTaiLieu>" + r[1] + "</TenTaiLieu>" +
+                          "<TacGia>" + r[2] + "</TacGia>" +
+                          "<NhaXuatBan>" + r[3] + "</NhaXuatBan>" +
+                          "<NamXuatBan>" + r[4] + "</NamXuatBan>" +
+                          "<DiaChiKhaiThac>" + r[5] + "</DiaChiKhaiThac>" +
+                          "<MucDichSuDung>" + r[6] + "</MucDichSuDung>";
+                nodeTLTK.AppendChild(newNode);
+            }
+            #endregion
+
+            #region Bài giang chi tiet
+            XmlNode nodeChiTiet = Nodes_BaiGiang.SelectSingleNode("BaiGiang");
+            nodeChiTiet.InnerText = "";
+            dtTarget = CongCu.GetContentAsDataTable(grdBaiGiang);
+            foreach (DataRow r in dtTarget.Rows)
+            {
+                XmlElement newNode = doc.CreateElement("Chuong");
+                String f = r[3].ToString();
+                if (f.LastIndexOf("\\") > 0) f = f.Substring(f.LastIndexOf("\\") + 1); 
+                newNode.InnerXml =
+                           "<id>"+r[0]+"</id>"+
+                          "<TenChuong>"+r[1]+"</TenChuong>"+
+                          "<MoTaNoiDung>"+r[2]+"</MoTaNoiDung>"+
+                          "<Download>"+f+"</Download>";
+               nodeChiTiet.AppendChild(newNode);
+               // Up chuong
+               String fileChuongTrongBang = r[3].ToString();
+               if (fileChuongTrongBang.LastIndexOf("\\") > 0)
+               {
+                   try
+                   {
+                       String filenameCopy = fileChuongTrongBang.Substring(fileChuongTrongBang.LastIndexOf("\\") + 1);
+                       File.Copy(fileChuongTrongBang, CourseFolder + "\\" + filenameCopy, true);
+                       r[3] = filenameCopy;
+                   }
+                   catch (Exception ex)
+                   {
+                       MessageBox.Show(ex.Message, "Lỗi khi copy file vào thư mục website", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Asterisk);
+                   }
+               }
+
+            }
+            #endregion
+
+            doc.Save(fullXMLFile);
+            MessageBox.Show("Lưu thành công", "NTUWebgen.Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        
+        private void  LoadBaiGiang(String idHocPhan, String xmlTeachFile)
         {
             
             // Đọc file XML
@@ -58,8 +187,8 @@ namespace NTU.Webgen
             reader.Close();
             // Lấy gốc
             XmlElement root = doc.DocumentElement;
-            XmlNode Nodes_BaiGiang = root.SelectSingleNode("/root/DSHocPhan/HocPhan[id='" + id + "']");
-
+            XmlNode Nodes_BaiGiang = root.SelectSingleNode("/root/DSHocPhan/HocPhan[id='" + idHocPhan + "']");
+            //XmlElement bg = root. 
             #region Thông tin học phần
 
             XmlNode nodeThongTin = Nodes_BaiGiang.SelectSingleNode("/root/DSHocPhan/HocPhan/ThongTin");
@@ -120,8 +249,8 @@ namespace NTU.Webgen
                 String tenTG = k.ChildNodes[2].InnerText;
                 String nhaXB = k.ChildNodes[3].InnerText;
                 String namXB = k.ChildNodes[4].InnerText;
-                String diachiKhaiThac = k.ChildNodes[5].InnerText;
-                String mucdichSuDung = k.ChildNodes[6].InnerText;
+                String diachiKhaiThac = k.ChildNodes[6].InnerText;
+                String mucdichSuDung = k.ChildNodes[5].InnerText;
               
                 dtTaiLieu.LoadDataRow(new[]
                                       {
@@ -141,7 +270,7 @@ namespace NTU.Webgen
 
             #region Đề cương học phần
             XmlNode nodeDeCuong = Nodes_BaiGiang.SelectSingleNode("/root/DSHocPhan/HocPhan/DeCuongHocPhan");
-            String decuong = "<a href=\"data/HocPhan/NEC301/" + nodeDeCuong.InnerText + "\">Xem tại đây</a>";
+            txtDeCuong.Text = nodeDeCuong.InnerText;
            
             #endregion
             #region Bài giảng
@@ -296,7 +425,7 @@ namespace NTU.Webgen
                 txtMoTa.Enabled = false;
                 txtTrongSo.Enabled = false;
                 txtHinhThucThucHien.Enabled = false;
-                linkSuaChuDe.Text = "Sửa đánh giá";
+                linkSuaDanhGia.Text = "Sửa đánh giá";
             }
         }
         #endregion
@@ -446,7 +575,7 @@ namespace NTU.Webgen
                 txtNamXB.Enabled = false;
                 txtMucDichSuDung.Enabled = false;
                 txtDiaChiKhaiThac.Enabled = false;
-                linkSuaTaiLieu.Text = "Cập nhật sửa";
+                linkSuaTaiLieu.Text = "Sửa tài liệu";
             }
         }
     
@@ -581,7 +710,13 @@ namespace NTU.Webgen
             DialogResult rs = openFileDialog2.ShowDialog();
             if (rs == DialogResult.OK) txtDeCuong.Text = openFileDialog2.FileName;
         }
-    
+
+        private void btnXuatWeb_Click(object sender, EventArgs e)
+        {
+            XuatWeb.XuatBaiGiang(MaHocPhan, fullXMLFile, fullHTMLFile);
+        }
+
+        
 
         //-----------------------
     }

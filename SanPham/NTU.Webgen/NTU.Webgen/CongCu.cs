@@ -888,7 +888,7 @@ namespace NTU.Webgen
        }
 
 
-       public static bool XuatBaiGiang(int id, String xmlTeachFile, String htmlTeachHPFile)
+       public static bool XuatBaiGiang(String id, String xmlTeachFile, String htmlTeachHPFile)
        {
            // ĐỌc file HTML
            String htmlContent = CongCu.ReadHTMLFile(htmlTeachHPFile);
@@ -968,8 +968,8 @@ namespace NTU.Webgen
 
                #region Đề cương học phần
                     XmlNode nodeDeCuong = Nodes_BaiGiang.SelectSingleNode("/root/DSHocPhan/HocPhan/DeCuongHocPhan");
-                    String decuong = "<a href=\"data/HocPhan/NEC301/"+nodeDeCuong.InnerText+"\">Xem tại đây</a>";
-                    htmlContent = ThayNoiDungTrongTheSpan(htmlContent, "DeCuongHP", decuong);
+                    String decuong = "<a href=\""+nodeDeCuong.InnerText+"\">Xem tại đây</a>";
+                    htmlContent = ThayNoiDungTrongTheSpan(CongCu.ReadHTMLFile(htmlTeachHPFile), "DeCuongHP", decuong);
                     // thay xong, đóng file
                     CongCu.RenameFile(htmlTeachHPFile, htmlTeachHPFile + ".bak");
                     StreamWriter sw1 = new System.IO.StreamWriter(htmlTeachHPFile, false, Encoding.UTF8);
@@ -988,7 +988,7 @@ namespace NTU.Webgen
                          String tenChuong = k.ChildNodes[1].InnerText;
                          String mota = k.ChildNodes[2].InnerText;
                          String url = k.ChildNodes[3].InnerText;
-                         chuong.Append("<tr><td>"+STT+"</td><td>"+tenChuong+"</td><td>"+mota+"</td><td> <a href=\"data/HocPhan/NEC301/"+ url+"\">Tải về </td></tr>");
+                         chuong.Append("<tr><td>"+STT+"</td><td>"+tenChuong+"</td><td>"+mota+"</td><td> <a href=\""+ url+"\">Tải về </td></tr>");
                      }
                      chuong.Append("</table>");
                      CongCu.ReplaceContent(htmlTeachHPFile, "BaiGiang", chuong.ToString());

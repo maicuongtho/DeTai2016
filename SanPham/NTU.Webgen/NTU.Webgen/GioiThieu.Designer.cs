@@ -305,12 +305,12 @@
             this.htmlEditor1.BodyInnerText = "Các thông tin khác";
             this.htmlEditor1.EnterToBR = true;
             this.htmlEditor1.FontSize = WinHtmlEditor.FontSize.Three;
-            this.htmlEditor1.Location = new System.Drawing.Point(20, 339);
+            this.htmlEditor1.Location = new System.Drawing.Point(28, 347);
             this.htmlEditor1.Name = "htmlEditor1";
             this.htmlEditor1.ShowStatusBar = false;
             this.htmlEditor1.ShowToolBar = true;
             this.htmlEditor1.ShowWb = true;
-            this.htmlEditor1.Size = new System.Drawing.Size(826, 512);
+            this.htmlEditor1.Size = new System.Drawing.Size(826, 237);
             this.htmlEditor1.TabIndex = 5;
             this.htmlEditor1.WebBrowserShortcutsEnabled = true;
             // 
@@ -330,7 +330,7 @@
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "GioiThieu";
-            this.Size = new System.Drawing.Size(874, 485);
+            this.Size = new System.Drawing.Size(1024, 600);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

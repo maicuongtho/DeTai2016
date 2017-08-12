@@ -46,6 +46,7 @@
             this.côngBốKhácToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGiangDay = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLich = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuLienKet = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -56,7 +57,6 @@
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.mnuLienKet = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -97,26 +97,26 @@
             // mnuFile_New
             // 
             this.mnuFile_New.Name = "mnuFile_New";
-            this.mnuFile_New.Size = new System.Drawing.Size(124, 22);
+            this.mnuFile_New.Size = new System.Drawing.Size(152, 22);
             this.mnuFile_New.Text = "TẠO MỚI";
             this.mnuFile_New.Click += new System.EventHandler(this.mởToolStripMenuItem_Click);
             // 
             // mnuFile_Open
             // 
             this.mnuFile_Open.Name = "mnuFile_Open";
-            this.mnuFile_Open.Size = new System.Drawing.Size(124, 22);
+            this.mnuFile_Open.Size = new System.Drawing.Size(152, 22);
             this.mnuFile_Open.Text = "MỞ";
             this.mnuFile_Open.Click += new System.EventHandler(this.mỞToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(121, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // mnuFile_Exit
             // 
             this.mnuFile_Exit.Name = "mnuFile_Exit";
-            this.mnuFile_Exit.Size = new System.Drawing.Size(124, 22);
+            this.mnuFile_Exit.Size = new System.Drawing.Size(152, 22);
             this.mnuFile_Exit.Text = "THOÁT";
             // 
             // mnuGioiThieu
@@ -131,6 +131,7 @@
             this.mnuLyLich.Name = "mnuLyLich";
             this.mnuLyLich.Size = new System.Drawing.Size(125, 20);
             this.mnuLyLich.Text = "LÝ LỊCH KHOA HỌC";
+            this.mnuLyLich.Click += new System.EventHandler(this.mnuLyLich_Click);
             // 
             // mnuCongBo
             // 
@@ -198,6 +199,13 @@
             this.mnuLich.Size = new System.Drawing.Size(45, 20);
             this.mnuLich.Text = "LỊCH";
             this.mnuLich.Click += new System.EventHandler(this.mnuLich_Click);
+            // 
+            // mnuLienKet
+            // 
+            this.mnuLienKet.Name = "mnuLienKet";
+            this.mnuLienKet.Size = new System.Drawing.Size(66, 20);
+            this.mnuLienKet.Text = "LIÊN KẾT";
+            this.mnuLienKet.Click += new System.EventHandler(this.mnuLienKet_Click);
             // 
             // statusStrip1
             // 
@@ -311,12 +319,6 @@
             // 
             this.openFileDialog1.FileName = "Mở Project đã có";
             this.openFileDialog1.Filter = "NTU Webgen file | *.ntu";
-            // 
-            // mnuLienKet
-            // 
-            this.mnuLienKet.Name = "mnuLienKet";
-            this.mnuLienKet.Size = new System.Drawing.Size(66, 20);
-            this.mnuLienKet.Text = "LIÊN KẾT";
             // 
             // ChuongTrinh
             // 
