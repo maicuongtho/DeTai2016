@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.txtDeCuong = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -62,18 +62,6 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
-            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblHangChon_DanhGia = new System.Windows.Forms.Label();
-            this.linkSuaDanhGia = new System.Windows.Forms.LinkLabel();
-            this.linkXoaDanhGia = new System.Windows.Forms.LinkLabel();
-            this.linkThemDanhGia = new System.Windows.Forms.LinkLabel();
-            this.lblID = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtTrinhDo = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lblHangChon_TaiLieu = new System.Windows.Forms.Label();
@@ -84,6 +72,13 @@
             this.labelX16 = new DevComponents.DotNetBar.LabelX();
             this.lblIDTaiLieu = new System.Windows.Forms.Label();
             this.gdvTaiLieuThamKhao = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.STTTaiLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTaiLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NhaXuatBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NamXuatBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChiKhaiThac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MucDichSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTenTaiLieu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTacGia = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtDiaChiKhaiThac = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -118,27 +113,28 @@
             this.MoTaNoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FileBaiGiang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblHangChon_DanhGia = new System.Windows.Forms.Label();
+            this.linkSuaDanhGia = new System.Windows.Forms.LinkLabel();
+            this.linkXoaDanhGia = new System.Windows.Forms.LinkLabel();
+            this.linkThemDanhGia = new System.Windows.Forms.LinkLabel();
+            this.lblID = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtTrinhDo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
+            this.linkWebCourse = new System.Windows.Forms.LinkLabel();
             this.btnXuatWeb = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.linkWebCourse = new System.Windows.Forms.LinkLabel();
-            this.STTTaiLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTaiLieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NhaXuatBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NamXuatBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChiKhaiThac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MucDichSuDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grvDanhGia)).BeginInit();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
-            this.superTabControlPanel1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.superTabControlPanel2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvTaiLieuThamKhao)).BeginInit();
@@ -146,6 +142,10 @@
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdBaiGiang)).BeginInit();
+            this.superTabControlPanel1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.panelEx3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -232,14 +232,14 @@
             this.MoTa,
             this.TrongSo,
             this.HinhThucThucHien});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grvDanhGia.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvDanhGia.DefaultCellStyle = dataGridViewCellStyle4;
             this.grvDanhGia.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grvDanhGia.Location = new System.Drawing.Point(20, 179);
             this.grvDanhGia.MultiSelect = false;
@@ -525,8 +525,8 @@
             this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
-            this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.Controls.Add(this.superTabControlPanel3);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.Controls.Add(this.superTabControlPanel1);
             this.superTabControl1.Location = new System.Drawing.Point(16, 41);
             this.superTabControl1.Name = "superTabControl1";
@@ -541,168 +541,6 @@
             this.superTabItem2,
             this.superTabItem3});
             this.superTabControl1.Text = "superTabControl1";
-            // 
-            // superTabControlPanel1
-            // 
-            this.superTabControlPanel1.Controls.Add(this.groupBox4);
-            this.superTabControlPanel1.Controls.Add(this.groupBox3);
-            this.superTabControlPanel1.Controls.Add(this.groupBox2);
-            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 25);
-            this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(994, 477);
-            this.superTabControlPanel1.TabIndex = 1;
-            this.superTabControlPanel1.TabItem = this.superTabItem1;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.buttonX1);
-            this.groupBox4.Controls.Add(this.labelX14);
-            this.groupBox4.Controls.Add(this.txtDeCuong);
-            this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox4.Location = new System.Drawing.Point(514, 351);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(464, 98);
-            this.groupBox4.TabIndex = 4;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "ĐỀ CƯƠNG HỌC PHẦN";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.lblHangChon_DanhGia);
-            this.groupBox3.Controls.Add(this.linkSuaDanhGia);
-            this.groupBox3.Controls.Add(this.linkXoaDanhGia);
-            this.groupBox3.Controls.Add(this.linkThemDanhGia);
-            this.groupBox3.Controls.Add(this.grvDanhGia);
-            this.groupBox3.Controls.Add(this.lblID);
-            this.groupBox3.Controls.Add(this.labelX9);
-            this.groupBox3.Controls.Add(this.txtLoaiDanhGia);
-            this.groupBox3.Controls.Add(this.txtTrongSo);
-            this.groupBox3.Controls.Add(this.txtHinhThucThucHien);
-            this.groupBox3.Controls.Add(this.labelX12);
-            this.groupBox3.Controls.Add(this.labelX10);
-            this.groupBox3.Controls.Add(this.labelX11);
-            this.groupBox3.Controls.Add(this.txtMoTa);
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox3.Location = new System.Drawing.Point(514, 25);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(464, 301);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "ĐÁNH GIÁ";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
-            // 
-            // lblHangChon_DanhGia
-            // 
-            this.lblHangChon_DanhGia.AutoSize = true;
-            this.lblHangChon_DanhGia.Location = new System.Drawing.Point(410, 161);
-            this.lblHangChon_DanhGia.Name = "lblHangChon_DanhGia";
-            this.lblHangChon_DanhGia.Size = new System.Drawing.Size(16, 13);
-            this.lblHangChon_DanhGia.TabIndex = 15;
-            this.lblHangChon_DanhGia.Text = "-1";
-            this.lblHangChon_DanhGia.Visible = false;
-            // 
-            // linkSuaDanhGia
-            // 
-            this.linkSuaDanhGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkSuaDanhGia.Location = new System.Drawing.Point(230, 153);
-            this.linkSuaDanhGia.Name = "linkSuaDanhGia";
-            this.linkSuaDanhGia.Size = new System.Drawing.Size(100, 23);
-            this.linkSuaDanhGia.TabIndex = 14;
-            this.linkSuaDanhGia.TabStop = true;
-            this.linkSuaDanhGia.Text = "Sửa đánh giá";
-            this.linkSuaDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkSuaDanhGia.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSuaDanhGia_LinkClicked);
-            // 
-            // linkXoaDanhGia
-            // 
-            this.linkXoaDanhGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkXoaDanhGia.Location = new System.Drawing.Point(124, 153);
-            this.linkXoaDanhGia.Name = "linkXoaDanhGia";
-            this.linkXoaDanhGia.Size = new System.Drawing.Size(100, 23);
-            this.linkXoaDanhGia.TabIndex = 14;
-            this.linkXoaDanhGia.TabStop = true;
-            this.linkXoaDanhGia.Text = "Xóa đánh giá";
-            this.linkXoaDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkXoaDanhGia.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkXoaDanhGia_LinkClicked);
-            // 
-            // linkThemDanhGia
-            // 
-            this.linkThemDanhGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkThemDanhGia.Location = new System.Drawing.Point(18, 153);
-            this.linkThemDanhGia.Name = "linkThemDanhGia";
-            this.linkThemDanhGia.Size = new System.Drawing.Size(100, 23);
-            this.linkThemDanhGia.TabIndex = 14;
-            this.linkThemDanhGia.TabStop = true;
-            this.linkThemDanhGia.Text = "Thêm đánh giá";
-            this.linkThemDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkThemDanhGia.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkThemDanhGia_LinkClicked);
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(18, 72);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(18, 13);
-            this.lblID.TabIndex = 13;
-            this.lblID.Text = "ID";
-            this.lblID.Visible = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.txtKhoiLuong);
-            this.groupBox2.Controls.Add(this.txtMaHP);
-            this.groupBox2.Controls.Add(this.txtTenHP);
-            this.groupBox2.Controls.Add(this.txtNoiDung);
-            this.groupBox2.Controls.Add(this.labelX1);
-            this.groupBox2.Controls.Add(this.labelX8);
-            this.groupBox2.Controls.Add(this.txtMucTieu);
-            this.groupBox2.Controls.Add(this.labelX2);
-            this.groupBox2.Controls.Add(this.labelX7);
-            this.groupBox2.Controls.Add(this.txtHPHocTruoc);
-            this.groupBox2.Controls.Add(this.labelX5);
-            this.groupBox2.Controls.Add(this.labelX3);
-            this.groupBox2.Controls.Add(this.txtTrinhDo);
-            this.groupBox2.Controls.Add(this.labelX4);
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox2.Location = new System.Drawing.Point(19, 25);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(477, 454);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "THÔNG TIN CHUNG";
-            // 
-            // txtTrinhDo
-            // 
-            // 
-            // 
-            // 
-            this.txtTrinhDo.Border.Class = "TextBoxBorder";
-            this.txtTrinhDo.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtTrinhDo.Location = new System.Drawing.Point(296, 47);
-            this.txtTrinhDo.Name = "txtTrinhDo";
-            this.txtTrinhDo.Size = new System.Drawing.Size(157, 20);
-            this.txtTrinhDo.TabIndex = 4;
-            // 
-            // labelX4
-            // 
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(239, 46);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(51, 23);
-            this.labelX4.TabIndex = 2;
-            this.labelX4.Text = "Trình độ:";
-            // 
-            // superTabItem1
-            // 
-            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
-            this.superTabItem1.GlobalItem = false;
-            this.superTabItem1.Name = "superTabItem1";
-            this.superTabItem1.Text = "Thông tin chung - Đánh giá - Đề cương";
             // 
             // superTabControlPanel2
             // 
@@ -836,14 +674,14 @@
             this.NamXuatBan,
             this.DiaChiKhaiThac,
             this.MucDichSuDung});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdvTaiLieuThamKhao.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdvTaiLieuThamKhao.DefaultCellStyle = dataGridViewCellStyle5;
             this.gdvTaiLieuThamKhao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.gdvTaiLieuThamKhao.Location = new System.Drawing.Point(24, 215);
             this.gdvTaiLieuThamKhao.MultiSelect = false;
@@ -854,6 +692,60 @@
             this.gdvTaiLieuThamKhao.Size = new System.Drawing.Size(906, 204);
             this.gdvTaiLieuThamKhao.TabIndex = 8;
             this.gdvTaiLieuThamKhao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvTaiLieuThamKhao_CellClick);
+            // 
+            // STTTaiLieu
+            // 
+            this.STTTaiLieu.DataPropertyName = "STTTaiLieu";
+            this.STTTaiLieu.HeaderText = "STT";
+            this.STTTaiLieu.Name = "STTTaiLieu";
+            this.STTTaiLieu.ReadOnly = true;
+            this.STTTaiLieu.Visible = false;
+            this.STTTaiLieu.Width = 50;
+            // 
+            // TenTaiLieu
+            // 
+            this.TenTaiLieu.DataPropertyName = "TenTaiLieu";
+            this.TenTaiLieu.HeaderText = "Tên tài liệu";
+            this.TenTaiLieu.Name = "TenTaiLieu";
+            this.TenTaiLieu.ReadOnly = true;
+            this.TenTaiLieu.Width = 300;
+            // 
+            // TacGia
+            // 
+            this.TacGia.DataPropertyName = "TacGia";
+            this.TacGia.HeaderText = "Tác giả";
+            this.TacGia.Name = "TacGia";
+            this.TacGia.ReadOnly = true;
+            // 
+            // NhaXuatBan
+            // 
+            this.NhaXuatBan.DataPropertyName = "NhaXuatBan";
+            this.NhaXuatBan.HeaderText = "Nhà XB";
+            this.NhaXuatBan.Name = "NhaXuatBan";
+            this.NhaXuatBan.ReadOnly = true;
+            // 
+            // NamXuatBan
+            // 
+            this.NamXuatBan.DataPropertyName = "NamXuatBan";
+            this.NamXuatBan.HeaderText = "Năm XB";
+            this.NamXuatBan.Name = "NamXuatBan";
+            this.NamXuatBan.ReadOnly = true;
+            // 
+            // DiaChiKhaiThac
+            // 
+            this.DiaChiKhaiThac.DataPropertyName = "DiaChiKhaiThac";
+            this.DiaChiKhaiThac.HeaderText = "Địa chỉ khai thác";
+            this.DiaChiKhaiThac.Name = "DiaChiKhaiThac";
+            this.DiaChiKhaiThac.ReadOnly = true;
+            this.DiaChiKhaiThac.Width = 200;
+            // 
+            // MucDichSuDung
+            // 
+            this.MucDichSuDung.DataPropertyName = "MucDichSuDung";
+            this.MucDichSuDung.HeaderText = "Mục đích sử dụng";
+            this.MucDichSuDung.Name = "MucDichSuDung";
+            this.MucDichSuDung.ReadOnly = true;
+            this.MucDichSuDung.Width = 200;
             // 
             // txtTenTaiLieu
             // 
@@ -1202,14 +1094,14 @@
             this.TenChuDe,
             this.MoTaNoiDung,
             this.FileBaiGiang});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdBaiGiang.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdBaiGiang.DefaultCellStyle = dataGridViewCellStyle6;
             this.grdBaiGiang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grdBaiGiang.Location = new System.Drawing.Point(13, 242);
             this.grdBaiGiang.MultiSelect = false;
@@ -1262,6 +1154,168 @@
             this.superTabItem3.Name = "superTabItem3";
             this.superTabItem3.Text = "Bài giảng (theo chương / chủ đề / full)";
             // 
+            // superTabControlPanel1
+            // 
+            this.superTabControlPanel1.Controls.Add(this.groupBox4);
+            this.superTabControlPanel1.Controls.Add(this.groupBox3);
+            this.superTabControlPanel1.Controls.Add(this.groupBox2);
+            this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel1.Name = "superTabControlPanel1";
+            this.superTabControlPanel1.Size = new System.Drawing.Size(994, 477);
+            this.superTabControlPanel1.TabIndex = 1;
+            this.superTabControlPanel1.TabItem = this.superTabItem1;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.buttonX1);
+            this.groupBox4.Controls.Add(this.labelX14);
+            this.groupBox4.Controls.Add(this.txtDeCuong);
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox4.Location = new System.Drawing.Point(514, 351);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(464, 98);
+            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "ĐỀ CƯƠNG HỌC PHẦN";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblHangChon_DanhGia);
+            this.groupBox3.Controls.Add(this.linkSuaDanhGia);
+            this.groupBox3.Controls.Add(this.linkXoaDanhGia);
+            this.groupBox3.Controls.Add(this.linkThemDanhGia);
+            this.groupBox3.Controls.Add(this.grvDanhGia);
+            this.groupBox3.Controls.Add(this.lblID);
+            this.groupBox3.Controls.Add(this.labelX9);
+            this.groupBox3.Controls.Add(this.txtLoaiDanhGia);
+            this.groupBox3.Controls.Add(this.txtTrongSo);
+            this.groupBox3.Controls.Add(this.txtHinhThucThucHien);
+            this.groupBox3.Controls.Add(this.labelX12);
+            this.groupBox3.Controls.Add(this.labelX10);
+            this.groupBox3.Controls.Add(this.labelX11);
+            this.groupBox3.Controls.Add(this.txtMoTa);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox3.Location = new System.Drawing.Point(514, 25);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(464, 301);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "ĐÁNH GIÁ";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // lblHangChon_DanhGia
+            // 
+            this.lblHangChon_DanhGia.AutoSize = true;
+            this.lblHangChon_DanhGia.Location = new System.Drawing.Point(410, 161);
+            this.lblHangChon_DanhGia.Name = "lblHangChon_DanhGia";
+            this.lblHangChon_DanhGia.Size = new System.Drawing.Size(16, 13);
+            this.lblHangChon_DanhGia.TabIndex = 15;
+            this.lblHangChon_DanhGia.Text = "-1";
+            this.lblHangChon_DanhGia.Visible = false;
+            // 
+            // linkSuaDanhGia
+            // 
+            this.linkSuaDanhGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.linkSuaDanhGia.Location = new System.Drawing.Point(230, 153);
+            this.linkSuaDanhGia.Name = "linkSuaDanhGia";
+            this.linkSuaDanhGia.Size = new System.Drawing.Size(100, 23);
+            this.linkSuaDanhGia.TabIndex = 14;
+            this.linkSuaDanhGia.TabStop = true;
+            this.linkSuaDanhGia.Text = "Sửa đánh giá";
+            this.linkSuaDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkSuaDanhGia.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSuaDanhGia_LinkClicked);
+            // 
+            // linkXoaDanhGia
+            // 
+            this.linkXoaDanhGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.linkXoaDanhGia.Location = new System.Drawing.Point(124, 153);
+            this.linkXoaDanhGia.Name = "linkXoaDanhGia";
+            this.linkXoaDanhGia.Size = new System.Drawing.Size(100, 23);
+            this.linkXoaDanhGia.TabIndex = 14;
+            this.linkXoaDanhGia.TabStop = true;
+            this.linkXoaDanhGia.Text = "Xóa đánh giá";
+            this.linkXoaDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkXoaDanhGia.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkXoaDanhGia_LinkClicked);
+            // 
+            // linkThemDanhGia
+            // 
+            this.linkThemDanhGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.linkThemDanhGia.Location = new System.Drawing.Point(18, 153);
+            this.linkThemDanhGia.Name = "linkThemDanhGia";
+            this.linkThemDanhGia.Size = new System.Drawing.Size(100, 23);
+            this.linkThemDanhGia.TabIndex = 14;
+            this.linkThemDanhGia.TabStop = true;
+            this.linkThemDanhGia.Text = "Thêm đánh giá";
+            this.linkThemDanhGia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkThemDanhGia.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkThemDanhGia_LinkClicked);
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(18, 72);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(18, 13);
+            this.lblID.TabIndex = 13;
+            this.lblID.Text = "ID";
+            this.lblID.Visible = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.txtKhoiLuong);
+            this.groupBox2.Controls.Add(this.txtMaHP);
+            this.groupBox2.Controls.Add(this.txtTenHP);
+            this.groupBox2.Controls.Add(this.txtNoiDung);
+            this.groupBox2.Controls.Add(this.labelX1);
+            this.groupBox2.Controls.Add(this.labelX8);
+            this.groupBox2.Controls.Add(this.txtMucTieu);
+            this.groupBox2.Controls.Add(this.labelX2);
+            this.groupBox2.Controls.Add(this.labelX7);
+            this.groupBox2.Controls.Add(this.txtHPHocTruoc);
+            this.groupBox2.Controls.Add(this.labelX5);
+            this.groupBox2.Controls.Add(this.labelX3);
+            this.groupBox2.Controls.Add(this.txtTrinhDo);
+            this.groupBox2.Controls.Add(this.labelX4);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox2.Location = new System.Drawing.Point(19, 25);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(477, 454);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "THÔNG TIN CHUNG";
+            // 
+            // txtTrinhDo
+            // 
+            // 
+            // 
+            // 
+            this.txtTrinhDo.Border.Class = "TextBoxBorder";
+            this.txtTrinhDo.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtTrinhDo.Location = new System.Drawing.Point(296, 47);
+            this.txtTrinhDo.Name = "txtTrinhDo";
+            this.txtTrinhDo.Size = new System.Drawing.Size(157, 20);
+            this.txtTrinhDo.TabIndex = 4;
+            // 
+            // labelX4
+            // 
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Location = new System.Drawing.Point(239, 46);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(51, 23);
+            this.labelX4.TabIndex = 2;
+            this.labelX4.Text = "Trình độ:";
+            // 
+            // superTabItem1
+            // 
+            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
+            this.superTabItem1.GlobalItem = false;
+            this.superTabItem1.Name = "superTabItem1";
+            this.superTabItem1.Text = "Thông tin chung - Đánh giá - Đề cương";
+            // 
             // panelEx3
             // 
             this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
@@ -1281,6 +1335,16 @@
             this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx3.Style.GradientAngle = 90;
             this.panelEx3.TabIndex = 19;
+            // 
+            // linkWebCourse
+            // 
+            this.linkWebCourse.AutoSize = true;
+            this.linkWebCourse.Location = new System.Drawing.Point(275, 11);
+            this.linkWebCourse.Name = "linkWebCourse";
+            this.linkWebCourse.Size = new System.Drawing.Size(54, 13);
+            this.linkWebCourse.TabIndex = 14;
+            this.linkWebCourse.TabStop = true;
+            this.linkWebCourse.Text = "index.html";
             // 
             // btnXuatWeb
             // 
@@ -1319,70 +1383,6 @@
             this.openFileDialog2.Filter = "Tập tin pdf|*.pdf|Tập tin MS Word|*.docx|Tập tin MS Word|*.doc";
             this.openFileDialog2.Title = "Chọn đề cương học phần đăng tải";
             // 
-            // linkWebCourse
-            // 
-            this.linkWebCourse.AutoSize = true;
-            this.linkWebCourse.Location = new System.Drawing.Point(275, 11);
-            this.linkWebCourse.Name = "linkWebCourse";
-            this.linkWebCourse.Size = new System.Drawing.Size(54, 13);
-            this.linkWebCourse.TabIndex = 14;
-            this.linkWebCourse.TabStop = true;
-            this.linkWebCourse.Text = "index.html";
-            // 
-            // STTTaiLieu
-            // 
-            this.STTTaiLieu.DataPropertyName = "STTTaiLieu";
-            this.STTTaiLieu.HeaderText = "STT";
-            this.STTTaiLieu.Name = "STTTaiLieu";
-            this.STTTaiLieu.ReadOnly = true;
-            this.STTTaiLieu.Visible = false;
-            this.STTTaiLieu.Width = 50;
-            // 
-            // TenTaiLieu
-            // 
-            this.TenTaiLieu.DataPropertyName = "TenTaiLieu";
-            this.TenTaiLieu.HeaderText = "Tên tài liệu";
-            this.TenTaiLieu.Name = "TenTaiLieu";
-            this.TenTaiLieu.ReadOnly = true;
-            this.TenTaiLieu.Width = 300;
-            // 
-            // TacGia
-            // 
-            this.TacGia.DataPropertyName = "TacGia";
-            this.TacGia.HeaderText = "Tác giả";
-            this.TacGia.Name = "TacGia";
-            this.TacGia.ReadOnly = true;
-            // 
-            // NhaXuatBan
-            // 
-            this.NhaXuatBan.DataPropertyName = "NhaXuatBan";
-            this.NhaXuatBan.HeaderText = "Nhà XB";
-            this.NhaXuatBan.Name = "NhaXuatBan";
-            this.NhaXuatBan.ReadOnly = true;
-            // 
-            // NamXuatBan
-            // 
-            this.NamXuatBan.DataPropertyName = "NamXuatBan";
-            this.NamXuatBan.HeaderText = "Năm XB";
-            this.NamXuatBan.Name = "NamXuatBan";
-            this.NamXuatBan.ReadOnly = true;
-            // 
-            // DiaChiKhaiThac
-            // 
-            this.DiaChiKhaiThac.DataPropertyName = "DiaChiKhaiThac";
-            this.DiaChiKhaiThac.HeaderText = "Địa chỉ khai thác";
-            this.DiaChiKhaiThac.Name = "DiaChiKhaiThac";
-            this.DiaChiKhaiThac.ReadOnly = true;
-            this.DiaChiKhaiThac.Width = 200;
-            // 
-            // MucDichSuDung
-            // 
-            this.MucDichSuDung.DataPropertyName = "MucDichSuDung";
-            this.MucDichSuDung.HeaderText = "Mục đích sử dụng";
-            this.MucDichSuDung.Name = "MucDichSuDung";
-            this.MucDichSuDung.ReadOnly = true;
-            this.MucDichSuDung.Width = 200;
-            // 
             // HocPhanPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1394,11 +1394,6 @@
             this.panelEx1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
-            this.superTabControlPanel1.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.superTabControlPanel2.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -1408,6 +1403,11 @@
             this.groupBox6.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdBaiGiang)).EndInit();
+            this.superTabControlPanel1.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.panelEx3.ResumeLayout(false);
             this.panelEx3.PerformLayout();
             this.ResumeLayout(false);
