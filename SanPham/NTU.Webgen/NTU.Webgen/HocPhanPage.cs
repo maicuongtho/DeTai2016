@@ -391,6 +391,11 @@ namespace NTU.Webgen
                 try { grvDanhGia.DataSource = dtDanhGia; grvDanhGia.Refresh(); }
                 catch (Exception ex) { grvDanhGia.DataSource = null; }
                 MessageBox.Show("Đã xóa xong", "NTUWebgen Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lblHangChon_DanhGia.Text = "-1";
+                txtLoaiDanhGia.Text = "";
+                txtMoTa.Text = "";
+                txtTrongSo.Text = "";
+                txtHinhThucThucHien.Text = "";
 
             }
         }
@@ -535,7 +540,14 @@ namespace NTU.Webgen
                 try { gdvTaiLieuThamKhao.DataSource = dtTL; gdvTaiLieuThamKhao.Refresh(); }
                 catch (Exception ex) { gdvTaiLieuThamKhao.DataSource = null; }
                 MessageBox.Show("Đã xóa xong", "NTUWebgen Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                lblHangChon_TaiLieu.Text = "-1";
+                txtTenTaiLieu.Text = "";
+                txtTacGia.Text = "";
+                txtNhaXB.Text = "";
+                txtNamXB.Text = "";
+                txtMucDichSuDung.Text = "";
+                txtDiaChiKhaiThac.Text = "";
+               
             }
         }
 
@@ -657,6 +669,7 @@ namespace NTU.Webgen
                 try { grdBaiGiang.DataSource = dtChuDe; grdBaiGiang.Refresh(); }
                 catch (Exception ex) { grdBaiGiang.DataSource = null; }
                 MessageBox.Show("Đã xóa xong", "NTU Webgen Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lblHangChon_BaiGiang.Text = "-1";
 
             }
         }
