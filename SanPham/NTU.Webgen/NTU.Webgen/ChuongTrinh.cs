@@ -179,9 +179,11 @@ namespace NTU.Webgen
                String thumucChon = rd.ReadLine();
                fs.Close();
                rd.Close();
-               projectFolder = thumucChon.Substring(0, thumucChon.Length - 11);
+              // projectFolder = thumucChon.Substring(0, thumucChon.Length - 11);
+               projectFolder = thumucChon.Substring(0, thumucChon.LastIndexOf("\\"));
+               
                ProjectExplorer pj = new ProjectExplorer(projectFolder);
-               MessageBox.Show(thumucChon.Substring(0,thumucChon.Length-12));
+               MessageBox.Show(projectFolder);
                splitContainer1.Panel2.Controls.Clear();
                splitContainer1.Panel2.Controls.Add(pj);
                this.Update();
@@ -206,7 +208,30 @@ namespace NTU.Webgen
 
         private void mnuLienKet_Click(object sender, EventArgs e)
         {
+            if (superTabControlWindows.Tabs.Contains("taLienKet"))
+            {
+                var t = (SuperTabItem)superTabControlWindows.Tabs["taLienKet"];
+                superTabControlWindows.SelectedTab = t;
+            }
+            else
+            {
+                LienKet sc = new LienKet(@projectFolder);
+                CongCu.AddTab("taLienKet", "Liên kết học thuật", superTabControlWindows, sc, false, 10);
+            }
+        }
 
+        private void mnuCongBo_Click(object sender, EventArgs e)
+        {
+            if (superTabControlWindows.Tabs.Contains("tabCongBo"))
+            {
+                var t = (SuperTabItem)superTabControlWindows.Tabs["tabCongBo"];
+                superTabControlWindows.SelectedTab = t;
+            }
+            else
+            {
+                CongBo sc = new CongBo();
+                CongCu.AddTab("tabCongBo", "Công bố khoa học", superTabControlWindows, sc, false, 10);
+            }
         }
     }
 }

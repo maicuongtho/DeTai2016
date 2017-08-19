@@ -196,6 +196,31 @@ namespace NTU.Webgen
                 grdVx.DataSource = null;
             }
         }
+        // Cho công bố khoa học
+        public static void XML2GridbyNode1(String xmlFilePath,String NodeL1,  DevComponents.DotNetBar.Controls.DataGridViewX grdVx)
+        {
+            XmlTextReader reader = new XmlTextReader(xmlFilePath);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(reader);
+            reader.Close();
+            XmlElement root = doc.DocumentElement;
+            XmlNodeList Nodes_CongTac = root.SelectNodes("/root/"+NodeL1);
+            XmlNode[] qtCongTac = Nodes_CongTac.Cast<XmlNode>().ToArray();
+
+            DataTable dtCongTac = CongCu.GetContentAsDataTable(grdVx);
+            System.Data.DataSet dataSet = new System.Data.DataSet();
+
+            foreach (XmlNode k in qtCongTac)
+            {
+                int soCot = k.ChildNodes.Count; 
+                Object[] value = new Object[soCot];
+                for (int j = 0; j < soCot; j++) value[j] = k.ChildNodes[j].InnerText;
+                dtCongTac.LoadDataRow(value, LoadOption.Upsert);
+            }
+            try { grdVx.DataSource = dtCongTac; }
+            catch { grdVx.DataSource = null; }
+           
+        }
 
         public static void XML2_LienKetGrid(String xmlFilePath, DevComponents.DotNetBar.Controls.DataGridViewX grdVx)
         {
@@ -357,37 +382,71 @@ namespace NTU.Webgen
                 String pdf = dinhkem.Substring(vt).Replace("\\","/");
                 result.Append("<li>" + tacgia + ", (" + nam + "), " + "<span class='citation_title'>" + tieudebaibao + "</span>, ");
                 result.Append(tentapchi + ", " + tap + ", " + so + ", " + trang + ", <a href=\"" + pdf+ "\"> pdf</a></li>");
-                
-
 
             }
             result.Append("</ul>");
-
-            //            // ------
-            //String s = "";
-            //StringBuilder result = new StringBuilder();
-            //result.Append("<ol>");
-            //foreach (XmlNode n in Nodes_Level1)   // Danh sachs node
-            //{   
-            //    result.Append("<li>");
-            //    // Duyet cac node Level 2 (i=0/id; 1/Tacgia 2/Nam)
-
-            //    for (int i = 1; i < n.ChildNodes.Count; i++ )
-            //    {
-            //        XmlNode l2 = n.ChildNodes[i];
-            //        if (i==2)  result.Append(" (" + l2.InnerText + "), ");
-            //        else if (i==3)  result.Append("<i>" + l2.InnerText + " </i>, "); 
-            //        else if (i==n.ChildNodes.Count-1)  result.Append(l2.InnerText);
-            //        else result.Append(l2.InnerText + ", ");
-            //    }
-            //    result.Append("</li>");
-           
-            //}
-            //result.Append("</ol>");
             return result;
         }
 
+        public static StringBuilder XML2HTML_TapChi(String xmlPubFile)
+        {
+            XmlTextReader reader = new XmlTextReader(xmlPubFile);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(reader);
+            reader.Close();
+            XmlElement root = doc.DocumentElement;
+            XmlNodeList Nodes_Level1 = root.SelectNodes("DSBaiBao/BaiBao");
 
+           // List<XElement> ordered = Nodes_Level1.Cast<XElement>().ToList<XElement>();
+
+            
+            // Sap xep lai theo Nam
+          //  var e = XElement.Load(new XmlNodeReader(doc));
+
+
+            //  XElement root = XElement.Parse(xml);
+
+            //List<XElement> ordered = e.Elements("BaiBao")
+            //                         .OrderByDescending(element => (int)element.Element("Ngay"))
+            //                        .ToList();
+            //e.RemoveAll();
+            //e.Add(ordered);
+
+            StringBuilder result = new StringBuilder();
+            result.Append("<b>Bài báo</b><ul>");
+            foreach (XmlNode xe in Nodes_Level1)
+            {
+                String tacgia = xe.ChildNodes[1].InnerText;
+                String nam = xe.ChildNodes[2].InnerText;
+                String tieudebaibao = xe.ChildNodes[3].InnerText;
+                String tentapchi = xe.ChildNodes[4].InnerText;
+                String tap = xe.ChildNodes[5].InnerText;
+                String so = xe.ChildNodes[6].InnerText;
+                String trang = xe.ChildNodes[7].InnerText;
+                bool vietnam = true;
+                if ( xe.ChildNodes[8].InnerText != "Tiếng Việt") vietnam = false;
+                if (vietnam)
+                {
+                    tap = "Tập " + tap;
+                    so = "Số " + so;
+                    trang = "Trang " + trang;
+                }
+                else
+                {
+                    tap = "Vol " + tap;
+                    so = "Issue " + so;
+                    trang = "P " + trang;
+                }
+                String dinhkem = xe.ChildNodes[9].InnerText;
+                int vt = dinhkem.IndexOf("data\\DinhKem", 0);
+                String pdf = dinhkem.Substring(vt).Replace("\\", "/");
+                result.Append("<li>" + tacgia + ", (" + nam + "), " + "<span class='citation_title'>" + tieudebaibao + "</span>, ");
+                result.Append(tentapchi + ", " + tap + ", " + so + ", " + trang + ", <a href=\"" + pdf + "\"> pdf</a></li>");
+
+            }
+            result.Append("</ul>");
+            return result;
+        }
 
         public static StringBuilder XML2HTML_BaoCaoHoiThao(String baocao1_xmlFile, String nodeName)
         {
@@ -445,6 +504,51 @@ namespace NTU.Webgen
          
             return result;
         }
+        public static StringBuilder XML2HTML_BaoCaoHoiThao(String pubXML)
+        {
+            XmlTextReader reader = new XmlTextReader(pubXML);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(reader);
+            reader.Close();
+            XmlElement root = doc.DocumentElement;
+            XmlNodeList Nodes_Level1 = root.SelectNodes("DSBaoCao1/BaoCao1");
+
+            StringBuilder result = new StringBuilder();
+            result.Append("<b>Báo cáo hội thảo (có ấn phẩm)</b><ul>");
+            foreach (XmlNode xe in Nodes_Level1)
+            {
+                String tacgia = xe.ChildNodes[1].InnerText;
+                String nam = xe.ChildNodes[2].InnerText;
+                String tenbaocao = xe.ChildNodes[3].InnerText;
+                String tenHoiThao = xe.ChildNodes[4].InnerText;
+                String thoigiandiadiem = xe.ChildNodes[5].InnerText;
+                String nhaxuatban = xe.ChildNodes[6].InnerText;
+                String noixuatban = xe.ChildNodes[7].InnerText;
+                String trang = xe.ChildNodes[8].InnerText;
+                bool vietnam = true;
+                if (xe.ChildNodes[9].InnerText != "Tiếng Việt") vietnam = false;
+                if (vietnam)
+                {
+                    nhaxuatban = "Nhà xuất bản " + nhaxuatban;
+                    trang = "Trang " + trang;
+                }
+                else
+                {
+                    nhaxuatban = "Publisher " + nhaxuatban;
+                    trang = "Page " + trang;
+                }
+                String dinhkem = xe.ChildNodes[10].InnerText;
+                int vt = dinhkem.IndexOf("data\\DinhKem", 0);
+                String pdf = dinhkem.Substring(vt).Replace("\\", "/");
+
+                result.Append("<li>" + tacgia + ", (" + nam + "), " + "<span class='citation_title'>" + tenbaocao + "</span>, ");
+                result.Append(tenHoiThao + ", " + thoigiandiadiem + ", " + nhaxuatban + ", " + noixuatban + ", " + trang + ", <a href=\"" + pdf + "\"> pdf</a></li>");
+            }
+            result.Append("</ul>");
+
+
+            return result;
+        }
 
 
 
@@ -498,6 +602,44 @@ namespace NTU.Webgen
             return result;
         }
 
+        public static StringBuilder XML2HTML_BaoCaoHoiThao0(String xmlPubFile)
+        {
+            XmlTextReader reader = new XmlTextReader(xmlPubFile);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(reader);
+            reader.Close();
+            XmlElement root = doc.DocumentElement;
+            XmlNodeList Nodes_Level1 = root.SelectNodes("DSBaoCao0/BaoCao0" );
+ 
+
+            StringBuilder result = new StringBuilder();
+            result.Append("<b>Báo cáo hội thảo (KHÔNG có ấn phẩm)</b><ul>");
+            foreach (XmlNode xe in Nodes_Level1)
+            {
+                String tacgia = xe.ChildNodes[1].InnerText;
+                String nam = xe.ChildNodes[2].InnerText;
+                String tenbaocao = xe.ChildNodes[3].InnerText;
+                String tenHoiThao = xe.ChildNodes[4].InnerText;
+                String thoigiandiadiem = xe.ChildNodes[5].InnerText;
+                String url = xe.ChildNodes[7].InnerText;
+                bool vietnam = true;
+                if (xe.ChildNodes[6].InnerText != "Tiếng Việt") vietnam = false;
+                if (vietnam)
+                {
+                    url = "Liên kết " + url;
+                }
+                else
+                {
+                    url = "Link " + url;
+                }
+                result.Append("<li>" + tacgia + ", (" + nam + "), " + "<span class='citation_title'>" + tenbaocao + "</span>, ");
+                result.Append(tenHoiThao + ", " + thoigiandiadiem + ", <a href='" + url + "'>" + url + "</a></li>");
+            }
+            result.Append("</ul>");
+
+
+            return result;
+        }
 
         public static StringBuilder XML2HTML_Sach(String sach_xmlFile, String nodeName)
         {
@@ -531,6 +673,32 @@ namespace NTU.Webgen
                 String noixb = xe.Element("NoiXB").Value.ToString();
                 result.Append("<li>" + tacgia + ", (" + nam + "), " + "<i>" + tensach + "</i>, ");
                 result.Append(nhaxb + ", " + noixb +"</li>");
+            }
+            result.Append("</ul>");
+
+
+            return result;
+        }
+
+        public static StringBuilder XML2HTML_Sach(String xmlpubFile)
+        {
+            XmlTextReader reader = new XmlTextReader(xmlpubFile);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(reader);
+            reader.Close();
+            XmlElement root = doc.DocumentElement;
+            XmlNodeList Nodes_Level1 = root.SelectNodes("DSSach/Sach");
+            StringBuilder result = new StringBuilder();
+            result.Append("<b>Sách</b><ul>");
+            foreach (XmlNode xe in Nodes_Level1)
+            {
+                String tacgia = xe.ChildNodes[1].InnerText;
+                String nam = xe.ChildNodes[2].InnerText;
+                String tensach = xe.ChildNodes[3].InnerText;
+                String nhaxb = xe.ChildNodes[4].InnerText;
+                String noixb = xe.ChildNodes[5].InnerText;
+                result.Append("<li>" + tacgia + ", (" + nam + "), " + "<i>" + tensach + "</i>, ");
+                result.Append(nhaxb + ", " + noixb + "</li>");
             }
             result.Append("</ul>");
 
@@ -857,7 +1025,6 @@ namespace NTU.Webgen
            CongCu.ReplaceContent(htmlCVFile, "QuaTrinhNCKH_CongBo", qtCongBoKhoaHoc.ToString());
 
 
-           MessageBox.Show("OK");
            return true;
        }
 
@@ -1003,7 +1170,14 @@ namespace NTU.Webgen
            return true;
        }
 
-     
+
+       public static bool XuatCongBo(String xmlPub, String htmlPub)
+       {
+           
+
+           return true;
+       
+       }
    
    }
 }

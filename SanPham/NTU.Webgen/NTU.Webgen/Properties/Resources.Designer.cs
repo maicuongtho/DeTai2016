@@ -253,6 +253,16 @@ namespace NTU.Webgen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconcalendar {
+            get {
+                object obj = ResourceManager.GetObject("iconcalendar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icons8_Windows_8_Editing_Attach {
             get {
                 object obj = ResourceManager.GetObject("Icons8-Windows-8-Editing-Attach", resourceCulture);

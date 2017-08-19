@@ -97,26 +97,26 @@
             // mnuFile_New
             // 
             this.mnuFile_New.Name = "mnuFile_New";
-            this.mnuFile_New.Size = new System.Drawing.Size(152, 22);
+            this.mnuFile_New.Size = new System.Drawing.Size(124, 22);
             this.mnuFile_New.Text = "TẠO MỚI";
             this.mnuFile_New.Click += new System.EventHandler(this.mởToolStripMenuItem_Click);
             // 
             // mnuFile_Open
             // 
             this.mnuFile_Open.Name = "mnuFile_Open";
-            this.mnuFile_Open.Size = new System.Drawing.Size(152, 22);
+            this.mnuFile_Open.Size = new System.Drawing.Size(124, 22);
             this.mnuFile_Open.Text = "MỞ";
             this.mnuFile_Open.Click += new System.EventHandler(this.mỞToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(121, 6);
             // 
             // mnuFile_Exit
             // 
             this.mnuFile_Exit.Name = "mnuFile_Exit";
-            this.mnuFile_Exit.Size = new System.Drawing.Size(152, 22);
+            this.mnuFile_Exit.Size = new System.Drawing.Size(124, 22);
             this.mnuFile_Exit.Text = "THOÁT";
             // 
             // mnuGioiThieu
@@ -145,12 +145,14 @@
             this.mnuCongBo.Name = "mnuCongBo";
             this.mnuCongBo.Size = new System.Drawing.Size(137, 20);
             this.mnuCongBo.Text = "CÔNG BỐ KHOA HỌC";
+            this.mnuCongBo.Click += new System.EventHandler(this.mnuCongBo_Click);
             // 
             // mnuCongBo_BaiBao
             // 
             this.mnuCongBo_BaiBao.Name = "mnuCongBo_BaiBao";
             this.mnuCongBo_BaiBao.Size = new System.Drawing.Size(266, 22);
             this.mnuCongBo_BaiBao.Text = "Bài báo tạp chí";
+            this.mnuCongBo_BaiBao.Visible = false;
             this.mnuCongBo_BaiBao.Click += new System.EventHandler(this.mnuCongBo_BaiBao_Click);
             // 
             // mnuCongBo_Baocao1
@@ -158,6 +160,7 @@
             this.mnuCongBo_Baocao1.Name = "mnuCongBo_Baocao1";
             this.mnuCongBo_Baocao1.Size = new System.Drawing.Size(266, 22);
             this.mnuCongBo_Baocao1.Text = "Báo cáo hội thảo (có ấn phẩm)";
+            this.mnuCongBo_Baocao1.Visible = false;
             this.mnuCongBo_Baocao1.Click += new System.EventHandler(this.mnuCongBo_Baocao1_Click);
             // 
             // mnuCongBo_Baocao0
@@ -165,6 +168,7 @@
             this.mnuCongBo_Baocao0.Name = "mnuCongBo_Baocao0";
             this.mnuCongBo_Baocao0.Size = new System.Drawing.Size(266, 22);
             this.mnuCongBo_Baocao0.Text = "Báo cáo hội thảo không có ấn phẩm";
+            this.mnuCongBo_Baocao0.Visible = false;
             this.mnuCongBo_Baocao0.Click += new System.EventHandler(this.mnuCongBo_Baocao0_Click);
             // 
             // mnuCongBo_Sach
@@ -172,6 +176,7 @@
             this.mnuCongBo_Sach.Name = "mnuCongBo_Sach";
             this.mnuCongBo_Sach.Size = new System.Drawing.Size(266, 22);
             this.mnuCongBo_Sach.Text = "Sách";
+            this.mnuCongBo_Sach.Visible = false;
             this.mnuCongBo_Sach.Click += new System.EventHandler(this.mnuCongBo_Sach_Click);
             // 
             // hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem
@@ -179,12 +184,14 @@
             this.hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem.Name = "hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem";
             this.hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem.Text = "Hướng dẫn tốt nghiệp (ĐH, SĐH)";
+            this.hướngDẫnTốtNghiệpĐHSĐHToolStripMenuItem.Visible = false;
             // 
             // côngBốKhácToolStripMenuItem
             // 
             this.côngBốKhácToolStripMenuItem.Name = "côngBốKhácToolStripMenuItem";
             this.côngBốKhácToolStripMenuItem.Size = new System.Drawing.Size(266, 22);
             this.côngBốKhácToolStripMenuItem.Text = "Công bố khác";
+            this.côngBốKhácToolStripMenuItem.Visible = false;
             // 
             // mnuGiangDay
             // 

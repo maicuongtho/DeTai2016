@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnHuy = new DevComponents.DotNetBar.ButtonX();
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnXuatWeb = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.htmlEditor1 = new WinHtmlEditor.HtmlEditor();
+            this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
+            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtDinhHuong = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtMonHoc = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -49,7 +50,8 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.htmlEditor1 = new WinHtmlEditor.HtmlEditor();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtWeb = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtFB = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -61,27 +63,27 @@
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.balloonTipAnhDaiDien = new DevComponents.DotNetBar.BalloonTip();
-            this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
-            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelEx3.SuspendLayout();
             this.panelEx1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEx3
             // 
             this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.linkLabel1);
             this.panelEx3.Controls.Add(this.btnHuy);
             this.panelEx3.Controls.Add(this.btnSua);
             this.panelEx3.Controls.Add(this.btnXuatWeb);
@@ -99,6 +101,16 @@
             this.panelEx3.Style.GradientAngle = 90;
             this.panelEx3.TabIndex = 18;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(290, 12);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(54, 13);
+            this.linkLabel1.TabIndex = 17;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "index.html";
+            // 
             // btnHuy
             // 
             this.btnHuy.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -111,6 +123,7 @@
             this.btnHuy.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnHuy.TabIndex = 16;
             this.btnHuy.Text = "Hủy bỏ";
+            this.btnHuy.Visible = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnSua
@@ -118,12 +131,13 @@
             this.btnSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSua.Image = global::NTU.Webgen.Properties.Resources.Edit_16x16;
-            this.btnSua.Location = new System.Drawing.Point(44, 7);
+            this.btnSua.Location = new System.Drawing.Point(602, 8);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(135, 23);
             this.btnSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSua.TabIndex = 14;
             this.btnSua.Text = "Sửa dữ liệu";
+            this.btnSua.Visible = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXuatWeb
@@ -132,7 +146,7 @@
             this.btnXuatWeb.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnXuatWeb.Image = global::NTU.Webgen.Properties.Resources._1491336195_domain_template;
             this.btnXuatWeb.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnXuatWeb.Location = new System.Drawing.Point(322, 7);
+            this.btnXuatWeb.Location = new System.Drawing.Point(154, 7);
             this.btnXuatWeb.Name = "btnXuatWeb";
             this.btnXuatWeb.Size = new System.Drawing.Size(135, 23);
             this.btnXuatWeb.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -145,7 +159,7 @@
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnSave.Image = global::NTU.Webgen.Properties.Resources.Save_16x16;
-            this.btnSave.Location = new System.Drawing.Point(183, 7);
+            this.btnSave.Location = new System.Drawing.Point(15, 7);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(135, 23);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -158,7 +172,6 @@
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
             this.panelEx1.Controls.Add(this.superTabControl1);
-            this.panelEx1.Controls.Add(this.pictureBox1);
             this.panelEx1.Controls.Add(this.panelEx3);
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
@@ -173,35 +186,51 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 1;
             // 
-            // groupBox3
+            // superTabControl1
             // 
-            this.groupBox3.Controls.Add(this.htmlEditor1);
-            this.groupBox3.Location = new System.Drawing.Point(534, 195);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(446, 230);
-            this.groupBox3.TabIndex = 32;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Thông tin khác:";
             // 
-            // htmlEditor1
             // 
-            this.htmlEditor1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.htmlEditor1.BodyInnerHTML = "Các thông tin khác";
-            this.htmlEditor1.BodyInnerText = "Các thông tin khác";
-            this.htmlEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.htmlEditor1.EnterToBR = true;
-            this.htmlEditor1.FontSize = WinHtmlEditor.FontSize.Three;
-            this.htmlEditor1.Location = new System.Drawing.Point(3, 16);
-            this.htmlEditor1.Name = "htmlEditor1";
-            this.htmlEditor1.ShowStatusBar = false;
-            this.htmlEditor1.ShowToolBar = true;
-            this.htmlEditor1.ShowWb = true;
-            this.htmlEditor1.Size = new System.Drawing.Size(440, 211);
-            this.htmlEditor1.TabIndex = 12;
-            this.htmlEditor1.WebBrowserShortcutsEnabled = true;
+            // 
+            // 
+            // 
+            // 
+            this.superTabControl1.ControlBox.CloseBox.Name = "";
+            // 
+            // 
+            // 
+            this.superTabControl1.ControlBox.MenuBox.Name = "";
+            this.superTabControl1.ControlBox.Name = "";
+            this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabControl1.ControlBox.MenuBox,
+            this.superTabControl1.ControlBox.CloseBox});
+            this.superTabControl1.Controls.Add(this.superTabControlPanel3);
+            this.superTabControl1.Location = new System.Drawing.Point(15, 41);
+            this.superTabControl1.Name = "superTabControl1";
+            this.superTabControl1.ReorderTabsEnabled = true;
+            this.superTabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.superTabControl1.SelectedTabIndex = 2;
+            this.superTabControl1.Size = new System.Drawing.Size(994, 476);
+            this.superTabControl1.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.superTabControl1.TabIndex = 33;
+            this.superTabControl1.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabItem3});
+            this.superTabControl1.Text = "superTabControl1";
+            // 
+            // superTabControlPanel3
+            // 
+            this.superTabControlPanel3.Controls.Add(this.groupBox2);
+            this.superTabControlPanel3.Controls.Add(this.groupBox3);
+            this.superTabControlPanel3.Controls.Add(this.groupBox1);
+            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 30);
+            this.superTabControlPanel3.Name = "superTabControlPanel3";
+            this.superTabControlPanel3.Size = new System.Drawing.Size(994, 446);
+            this.superTabControlPanel3.TabIndex = 0;
+            this.superTabControlPanel3.TabItem = this.superTabItem3;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.txtDinhHuong);
             this.groupBox2.Controls.Add(this.txtMonHoc);
             this.groupBox2.Controls.Add(this.txtBoMon);
@@ -232,7 +261,7 @@
             this.txtDinhHuong.Multiline = true;
             this.txtDinhHuong.Name = "txtDinhHuong";
             this.txtDinhHuong.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDinhHuong.Size = new System.Drawing.Size(808, 43);
+            this.txtDinhHuong.Size = new System.Drawing.Size(585, 43);
             this.txtDinhHuong.TabIndex = 6;
             // 
             // txtMonHoc
@@ -246,7 +275,7 @@
             this.txtMonHoc.Multiline = true;
             this.txtMonHoc.Name = "txtMonHoc";
             this.txtMonHoc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMonHoc.Size = new System.Drawing.Size(808, 43);
+            this.txtMonHoc.Size = new System.Drawing.Size(584, 43);
             this.txtMonHoc.TabIndex = 5;
             // 
             // txtBoMon
@@ -258,7 +287,7 @@
             this.txtBoMon.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtBoMon.Location = new System.Drawing.Point(409, 53);
             this.txtBoMon.Name = "txtBoMon";
-            this.txtBoMon.Size = new System.Drawing.Size(541, 20);
+            this.txtBoMon.Size = new System.Drawing.Size(318, 20);
             this.txtBoMon.TabIndex = 4;
             // 
             // txtKhoa
@@ -369,19 +398,32 @@
             this.labelX1.TabIndex = 23;
             this.labelX1.Text = "Họ tên:";
             // 
-            // pictureBox1
+            // groupBox3
             // 
-            this.balloonTipAnhDaiDien.SetBalloonCaption(this.pictureBox1, "Ảnh đại diện");
-            this.balloonTipAnhDaiDien.SetBalloonText(this.pictureBox1, "Nhấp chuột vào khung này để cập nhật ảnh của bạn!");
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::NTU.Webgen.Properties.Resources.NTUBg;
-            this.pictureBox1.Location = new System.Drawing.Point(600, 246);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 163);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.groupBox3.Controls.Add(this.htmlEditor1);
+            this.groupBox3.Location = new System.Drawing.Point(534, 195);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(446, 230);
+            this.groupBox3.TabIndex = 32;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Thông tin khác:";
+            // 
+            // htmlEditor1
+            // 
+            this.htmlEditor1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.htmlEditor1.BodyInnerHTML = "Các thông tin khác";
+            this.htmlEditor1.BodyInnerText = "Các thông tin khác";
+            this.htmlEditor1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.htmlEditor1.EnterToBR = true;
+            this.htmlEditor1.FontSize = WinHtmlEditor.FontSize.Three;
+            this.htmlEditor1.Location = new System.Drawing.Point(3, 16);
+            this.htmlEditor1.Name = "htmlEditor1";
+            this.htmlEditor1.ShowStatusBar = false;
+            this.htmlEditor1.ShowToolBar = true;
+            this.htmlEditor1.ShowWb = true;
+            this.htmlEditor1.Size = new System.Drawing.Size(440, 211);
+            this.htmlEditor1.TabIndex = 12;
+            this.htmlEditor1.WebBrowserShortcutsEnabled = true;
             // 
             // groupBox1
             // 
@@ -522,39 +564,16 @@
             this.labelX5.TabIndex = 1;
             this.labelX5.Text = "Địa chỉ:";
             // 
+            // superTabItem3
+            // 
+            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
+            this.superTabItem3.GlobalItem = false;
+            this.superTabItem3.Image = global::NTU.Webgen.Properties.Resources.Edit_16x16;
+            this.superTabItem3.Name = "superTabItem3";
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // superTabControl1
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            this.superTabControl1.ControlBox.CloseBox.Name = "";
-            // 
-            // 
-            // 
-            this.superTabControl1.ControlBox.MenuBox.Name = "";
-            this.superTabControl1.ControlBox.Name = "";
-            this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabControl1.ControlBox.MenuBox,
-            this.superTabControl1.ControlBox.CloseBox});
-            this.superTabControl1.Controls.Add(this.superTabControlPanel3);
-            this.superTabControl1.Location = new System.Drawing.Point(15, 41);
-            this.superTabControl1.Name = "superTabControl1";
-            this.superTabControl1.ReorderTabsEnabled = true;
-            this.superTabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.superTabControl1.SelectedTabIndex = 2;
-            this.superTabControl1.Size = new System.Drawing.Size(994, 476);
-            this.superTabControl1.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.superTabControl1.TabIndex = 33;
-            this.superTabControl1.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabItem3});
-            this.superTabControl1.Text = "superTabControl1";
             // 
             // superTabItem2
             // 
@@ -562,24 +581,19 @@
             this.superTabItem2.Name = "superTabItem2";
             this.superTabItem2.Text = "Tài liệu tham khảo";
             // 
-            // superTabControlPanel3
+            // pictureBox1
             // 
-            this.superTabControlPanel3.Controls.Add(this.groupBox2);
-            this.superTabControlPanel3.Controls.Add(this.groupBox3);
-            this.superTabControlPanel3.Controls.Add(this.groupBox1);
-            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 30);
-            this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(994, 446);
-            this.superTabControlPanel3.TabIndex = 0;
-            this.superTabControlPanel3.TabItem = this.superTabItem3;
-            // 
-            // superTabItem3
-            // 
-            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
-            this.superTabItem3.GlobalItem = false;
-            this.superTabItem3.Image = global::NTU.Webgen.Properties.Resources.Edit_16x16;
-            this.superTabItem3.Name = "superTabItem3";
+            this.balloonTipAnhDaiDien.SetBalloonCaption(this.pictureBox1, "Ảnh đại diện");
+            this.balloonTipAnhDaiDien.SetBalloonText(this.pictureBox1, "Nhấp chuột vào khung này để cập nhật ảnh của bạn!");
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::NTU.Webgen.Properties.Resources.NTUBg;
+            this.pictureBox1.Location = new System.Drawing.Point(758, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(179, 163);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Home
             // 
@@ -590,14 +604,15 @@
             this.Size = new System.Drawing.Size(1024, 600);
             this.Load += new System.EventHandler(this.Home_Load);
             this.panelEx3.ResumeLayout(false);
+            this.panelEx3.PerformLayout();
             this.panelEx1.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
             this.superTabControl1.ResumeLayout(false);
             this.superTabControlPanel3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -613,7 +628,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtKhoa;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTrinhDo;
         private DevComponents.DotNetBar.Controls.TextBoxX txtHoTen;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtWeb;
         private DevComponents.DotNetBar.Controls.TextBoxX txtFB;
@@ -643,6 +657,8 @@
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel3;
         private DevComponents.DotNetBar.SuperTabItem superTabItem3;
         private DevComponents.DotNetBar.SuperTabItem superTabItem2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }

@@ -255,7 +255,7 @@ namespace NTU.Webgen
                         "<Email>" + txtEmail.Text+"</Email>" +
                     "</LienLac>";
                 root.ReplaceChild(new_TuThuat, old_TuThuat);
-                doc.Save(fullXMLFile);
+              
                 
 
             #endregion
@@ -319,10 +319,64 @@ namespace NTU.Webgen
                       "<TrinhDo>" + txtNN2_TrinhDo.Text + "</TrinhDo>";
                 xmlENodes_DaoTao.ReplaceChild(nn2, old_NN2);
 
-                doc.Save(fullXMLFile);
+               
+            #endregion
+            #region Lưu quá trình công tác
+                XmlNode Nodes_QuaTrinhCongTac = root.SelectSingleNode("DSQuaTrinhCongTac");
+                XmlElement xmlENodes_CongTac = Nodes_QuaTrinhCongTac as XmlElement;
+                Nodes_QuaTrinhCongTac.InnerText = "";
+                DataTable dtTarget = CongCu.GetContentAsDataTable(grdQuaTrinhCongTac);
+                foreach (DataRow r in dtTarget.Rows)
+                {
+                    XmlElement newNode = doc.CreateElement("QuaTrinhCongTac");
+                    newNode.InnerXml =
+                          "<id>" + r[0] + "</id>" +
+                          "<TuNgay>" + r[1] + "</TuNgay>" +
+                          "<DenNgay>" + r[2] + "</DenNgay>" +
+                          "<DonViCongTac>" + r[3] + "</DonViCongTac>" +
+                          "<CongViecDamNhiem>" + r[4] + "</CongViecDamNhiem>";
+                    xmlENodes_CongTac.AppendChild(newNode);
+                }
             #endregion
 
+                #region Lưu đề tài nghiên cứu khoa học
+                XmlNode Nodes_DeTai = root.SelectSingleNode("NghienCuuKhoaHoc/DSDeTaiKH");
+                XmlElement xmlENodes_DeTai = Nodes_DeTai as XmlElement;
+                Nodes_DeTai.InnerText = "";
+                dtTarget = CongCu.GetContentAsDataTable(grdDeTaiKhoaHoc);
+                foreach (DataRow r in dtTarget.Rows)
+                {
+                    XmlElement newNode = doc.CreateElement("DeTaiKH");
+                    newNode.InnerXml =
+                          "<id>" + r[0] + "</id>" +
+                          "<TenDeTai>" + r[1] + "</TenDeTai>" +
+                          "<NamBatDau>" + r[2] + "</NamBatDau>" +
+                          "<NamHoanThanh>" + r[3] + "</NamHoanThanh>" +
+                          "<DeTaiCap>" + r[4] + "</DeTaiCap>" +
+                          "<TrachNhiem>" + r[5] + "</TrachNhiem>";
+                    xmlENodes_DeTai.AppendChild(newNode);
+                }
+                #endregion
 
+                #region Lưu công bố khoa học
+                XmlNode Nodes_CongBo= root.SelectSingleNode("NghienCuuKhoaHoc/DSCongTrinhKhoaHoc");
+                XmlElement xmlENodes_CongBo = Nodes_CongBo as XmlElement;
+                Nodes_CongBo.InnerText = "";
+                dtTarget = CongCu.GetContentAsDataTable(grdCongBoKhoaHoc);
+                foreach (DataRow r in dtTarget.Rows)
+                {
+                    XmlElement newNode = doc.CreateElement("CongBo");
+                    newNode.InnerXml =
+                          "<id>" + r[0] + "</id>" +
+                          "<TenCongTrinh>" + r[1] + "</TenCongTrinh>" +
+                          "<NamCongBo>" + r[3] + "</NamCongBo>" +
+                          "<NoiCongBo>" + r[2] + "</NoiCongBo>" +
+                          "<LoaiCongBo>" + r[4] + "</LoaiCongBo>";
+                    xmlENodes_CongBo.AppendChild(newNode);
+                }
+                #endregion
+            doc.Save(fullXMLFile);
+            MessageBox.Show("Lưu thành công", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -362,7 +416,8 @@ namespace NTU.Webgen
 
                 txtCongViecDamNhiem.Enabled = true;
                 txtCongViecDamNhiem.Text = "";
-                linkQTCT_Them.Text = "Lưu thêm";
+                linkQTCT_Them.ForeColor = Color.Red;
+                linkQTCT_Them.Text = "Xác nhận thêm";
             }
             else
             {
@@ -394,7 +449,7 @@ namespace NTU.Webgen
 
                 txtCongViecDamNhiem.Enabled = false;
                 txtCongViecDamNhiem.Text = "";
-
+                linkQTCT_Them.ForeColor = Color.Blue;
                 linkQTCT_Them.Text = "Thêm mới";
 
             }
@@ -578,7 +633,7 @@ namespace NTU.Webgen
                 int i = Int16.Parse(lblHangChon_DeTai.Text);
                 dtMoi.Rows[i]["TenDeTai"] = txtTenDeTaiNCKH.Text;
                 dtMoi.Rows[i]["NamBatDau"] = txtNamBatDau.Text;
-                dtMoi.Rows[i]["NamHoanThanh"] = txtNamHoanThanh.Text;
+                dtMoi.Rows[i]["NamKetThuc"] = txtNamHoanThanh.Text;
                 dtMoi.Rows[i]["DeTaiCap"] = txtDeTaiCap.Text;
                 dtMoi.Rows[i]["TrachNhiem"] = txtTrachNhiem.Text;
 
@@ -730,6 +785,14 @@ namespace NTU.Webgen
         private void btnSave_Click(object sender, EventArgs e)
         {
             SaveLyLich(fullXMLFile);
+        }
+
+        private void btnXuatWeb_Click(object sender, EventArgs e)
+        {
+            XuatWeb.XuatCV(fullXMLFile, fullHTMLFile);
+            MessageBox.Show("Đã xuất xong, mời xem kết quả", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            CongCu.gotoSite(fullHTMLFile);
+
         }
 
        

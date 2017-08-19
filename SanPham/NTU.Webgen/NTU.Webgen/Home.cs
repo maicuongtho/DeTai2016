@@ -13,11 +13,11 @@ namespace NTU.Webgen
 {
     public partial class Home : UserControl
     {
-        String homeXMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\Home.xml";
-        String gioithieuHTMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\Home.html";
-        String subgioithieuHTMLFile = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\SubHome.htm";
-        String pubHTMLFolder = @"F:/LocalRepository/DeTai2016/SanPham/NTU.Webgen/NTU.Webgen/bin/Debug/UserChoices/Mau0";
-        String ProjectFolder = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0";
+        String homeXMLFile;// = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\Home.xml";
+        String gioithieuHTMLFile;// = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\Home.html";
+        String subgioithieuHTMLFile;// = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\SubHome.htm";
+        String pubHTMLFolder;// = @"F:/LocalRepository/DeTai2016/SanPham/NTU.Webgen/NTU.Webgen/bin/Debug/UserChoices/Mau0";
+        String ProjectFolder;// = @"F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0";
         String avatar;
         String htmlAvatarFile;
         bool isThemMoi, isSua;
@@ -25,7 +25,7 @@ namespace NTU.Webgen
         {
             InitializeComponent();
             isSua = false;
-            EnableTextBox(false);
+          //  EnableTextBox(false);
             htmlEditor1.setButtonVisible("tsbNew");
             htmlEditor1.setButtonVisible("tsbOpen");
             htmlEditor1.setButtonVisible("tsbSave");
@@ -46,7 +46,7 @@ namespace NTU.Webgen
             this.subgioithieuHTMLFile = ProjectFolder + "\\subindex.htm";
             this.pubHTMLFolder = ProjectFolder.Replace("\\","/");
             isSua = false;
-            EnableTextBox(false);
+          //  EnableTextBox(false);
             htmlEditor1.setButtonVisible("tsbNew");
             htmlEditor1.setButtonVisible("tsbOpen");
             htmlEditor1.setButtonVisible("tsbSave");
@@ -76,8 +76,7 @@ namespace NTU.Webgen
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (isSua)
-            {
+             
                 XmlTextReader reader = new XmlTextReader(homeXMLFile);
                 XmlDocument doc = new XmlDocument();
                 doc.Load(reader);
@@ -110,13 +109,8 @@ namespace NTU.Webgen
                 htmlEditor1.save(subgioithieuHTMLFile);
                 //save the output to a file
                 doc.Save(homeXMLFile);
-                isSua = false;
-                EnableTextBox(false);
-
-            }
-
-            
-
+                MessageBox.Show("Đã lưu xong", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+      
         }
         public void EnableTextBox(bool b)
         {
@@ -206,9 +200,9 @@ namespace NTU.Webgen
             CongCu.ReplaceContent(ProjectFolder + "\\calendar.html", "tenTrai", "website của " + txtHoTen.Text);
 
             // Thêm tiêu đề
-            CongCu.ReplaceTite(gioithieuHTMLFile,"NTU. "+txtHoTen.Text+"-Giới thiệu");
+            CongCu.ReplaceTite(gioithieuHTMLFile,"NTU."+txtHoTen.Text+"-Giới thiệu");
             //----------------------------
-            MessageBox.Show("Đã xuất thành công sang trang web: \n" + gioithieuHTMLFile, "Thông báo");
+            MessageBox.Show("Đã xuất thành công sang trang web: \n" + gioithieuHTMLFile, "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
