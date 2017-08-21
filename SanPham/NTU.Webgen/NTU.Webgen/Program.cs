@@ -18,7 +18,7 @@ namespace NTU.Webgen
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            // ChuongTrinh c = new ChuongTrinh();
-            Application.Run(new ChuongTrinh());
+            Application.Run(new AAAFunctionTest());
         }
      
         

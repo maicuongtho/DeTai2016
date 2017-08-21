@@ -709,34 +709,25 @@ namespace NTU.Webgen
 
         public static StringBuilder XML2HTML_LieKet(String xmlFile)
         {
+
             XmlTextReader reader = new XmlTextReader(xmlFile);
             XmlDocument doc = new XmlDocument();
             doc.Load(reader);
             reader.Close();
             XmlElement root = doc.DocumentElement;
-            XmlNodeList Nodes_Level1 = root.SelectNodes("/DSSach/LienKet");
-
-         
-            var e = XElement.Load(new XmlNodeReader(doc));
-
-
-            //  XElement root = XElement.Parse(xml);
-
-            List<XElement> ordered = e.Elements("LienKet").ToList();
-            e.RemoveAll();
-            e.Add(ordered);
-
+            XmlNodeList Nodes_Level1 = root.SelectNodes("DSLienKet/LienKet");
+            XmlNode[] nodeLK = Nodes_Level1.Cast<XmlNode>().ToArray();
+           
             StringBuilder result = new StringBuilder();
             result.Append("<ul>");
-            foreach (XElement xe in ordered)
+            foreach (XmlNode xe in nodeLK)
             {
-                String tenLienKet = xe.Element("TieuDe").Value.ToString();
-                String diaChiLienKet = xe.Element("DiaChi").Value.ToString();
+                String tenLienKet = xe.ChildNodes[1].InnerText;
+                String diaChiLienKet =System.Web.HttpUtility.UrlDecode(   xe.ChildNodes[2].InnerText);
                  
                 result.Append("<li>" + tenLienKet + " : <a href=\"" + diaChiLienKet + "\"> "+ diaChiLienKet+"  </a></li>");
             }
             result.Append("</ul>");
-
 
             return result;
         }

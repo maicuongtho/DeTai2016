@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.IO;
 
 namespace NTU.Webgen
 {
@@ -37,6 +38,7 @@ namespace NTU.Webgen
           
         }
         public CongBo(String ProjectFolder) {
+            InitializeComponent();
             this.ProjectFolder = ProjectFolder;
             fullXMLFile = ProjectFolder + xmlCongBoFile;
             fullHTMLFile = ProjectFolder + htmlCongBoFile;
@@ -58,7 +60,7 @@ namespace NTU.Webgen
             XmlNodeList Nodes_TC = root.SelectNodes("/root/DSBaiBao/BaiBao");
             XmlNode[] tc = Nodes_TC.Cast<XmlNode>().ToArray();
             DataTable dt = CongCu.GetContentAsDataTable(dataGridViewX_DSTC);
-
+            dt.Clear();
             foreach (XmlNode k in tc)
             {
                 String STT = k.ChildNodes[0].InnerText;
@@ -89,7 +91,7 @@ namespace NTU.Webgen
             XmlNodeList Nodes_bc = root.SelectNodes("/root/DSBaoCao1/BaoCao1");
             XmlNode[] bc = Nodes_bc.Cast<XmlNode>().ToArray();
             DataTable dt = CongCu.GetContentAsDataTable(dataGridViewX_DSBaoCao);
-
+            dt.Clear();
             foreach (XmlNode k in bc)
             {
                 String STT = k.ChildNodes[0].InnerText;
@@ -135,7 +137,7 @@ namespace NTU.Webgen
             XmlNodeList Nodes_bc = root.SelectNodes("/root/DSBaoCao0/BaoCao0");
             XmlNode[] bc = Nodes_bc.Cast<XmlNode>().ToArray();
             DataTable dt = CongCu.GetContentAsDataTable(dataGridViewX_DSBaoCao0);
-
+            dt.Clear();
             foreach (XmlNode k in bc)
             {
                 String STT = k.ChildNodes[0].InnerText;
@@ -175,7 +177,7 @@ namespace NTU.Webgen
             XmlNodeList Nodes_s = root.SelectNodes("/root/DSSach/Sach");
             XmlNode[] s = Nodes_s.Cast<XmlNode>().ToArray();
             DataTable dt = CongCu.GetContentAsDataTable(dataGridViewX_DSSach);
-
+            dt.Clear();
             foreach (XmlNode k in s)
             {
                 String STT = k.ChildNodes[0].InnerText;
@@ -252,6 +254,10 @@ namespace NTU.Webgen
                 txtSo.Enabled = true;
                 txtTrang.Enabled = true;
                 txtId.Enabled = true;
+                btnDinhKem.Enabled = true;
+                radioButtonViet.Enabled = true;
+                radioButton2.Enabled = true;
+
                 linkTapChi_Them.BackColor = Color.Red;
                 linkTapChi_Them.Text = "Xác nhận thêm";
                 linkTapChi_Sua.Enabled = false;
@@ -268,7 +274,7 @@ namespace NTU.Webgen
                 {
                     String ngongu = "Tiếng Việt";
                     if (!radioButtonViet.Checked) ngongu = "Tiếng Anh";
-                    String fileDinhDem = txtDinhKem.Text.Substring(txtDinhKem.Text.LastIndexOf("\\")+1);
+                    String fileDinhDem = txtDinhKem.Text;//.Substring(txtDinhKem.Text.LastIndexOf("\\")+1);
 
                     DataTable dtTapChi = CongCu.GetContentAsDataTable(dataGridViewX_DSTC);
                     dtTapChi.LoadDataRow(new[]
@@ -306,6 +312,9 @@ namespace NTU.Webgen
                 txtSo.Enabled = false;
                 txtTrang.Enabled = false;
                 txtId.Enabled = false;
+                btnDinhKem.Enabled = false;
+                radioButtonViet.Enabled = false;
+                radioButton2.Enabled = false;
                 linkTapChi_Them.BackColor = Color.Transparent;
                 linkTapChi_Them.Text ="Thêm mới";
                 linkTapChi_Sua.Enabled = true;
@@ -359,7 +368,9 @@ namespace NTU.Webgen
                     txtSo.Enabled = true;
                     txtTrang.Enabled = true;
                     txtId.Enabled = true;
-
+                    btnDinhKem.Enabled = true;
+                    radioButtonViet.Enabled = true;
+                    radioButton2.Enabled = true;
                     linkTapChi_Sua.Text = "Xác nhận sửa";
                     linkTapChi_Sua.BackColor = Color.Red;
 
@@ -383,6 +394,7 @@ namespace NTU.Webgen
                 dtMoi.Rows[i]["Tap"] = txtTap.Text;
                 dtMoi.Rows[i]["So"] = txtSo.Text;
                 dtMoi.Rows[i]["Trang"] = txtTrang.Text;
+                dtMoi.Rows[i]["DinhKem"] = txtDinhKem.Text;
 
 
                 try { dataGridViewX_DSTC.DataSource = dtMoi; dataGridViewX_DSTC.Refresh(); }
@@ -396,6 +408,9 @@ namespace NTU.Webgen
                 txtSo.Enabled = false;
                 txtTrang.Enabled = false;
                 txtId.Enabled = false;
+                btnDinhKem.Enabled = false;
+                radioButtonViet.Enabled = false;
+                radioButton2.Enabled = false;
                 linkTapChi_Sua.Text = "Sửa";
                 linkTapChi_Sua.BackColor = Color.Transparent;
                 linkTapChi_Them.Enabled = true;
@@ -535,7 +550,7 @@ namespace NTU.Webgen
                     String ngongu = "Tiếng Việt";
                     if (!radBaoCaoViet.Checked) ngongu = "Tiếng Anh";
 
-                    String fileDinhDem = txtBaoCao_DinhKem.Text.Substring(txtBaoCao_DinhKem.Text.LastIndexOf("\\")+1);
+                    String fileDinhDem = txtBaoCao_DinhKem.Text;//.Substring(txtBaoCao_DinhKem.Text.LastIndexOf("\\")+1);
                     DataTable dt = CongCu.GetContentAsDataTable(dataGridViewX_DSBaoCao);
                     dt.LoadDataRow(new[]
                                       {
@@ -1206,7 +1221,7 @@ namespace NTU.Webgen
         #endregion
 
 
-        private void btnSave_Click(object sender, EventArgs e)
+        void SaveCongBo()
         {
             // Đọc file XML
             XmlTextReader reader = new XmlTextReader(fullXMLFile);
@@ -1220,9 +1235,21 @@ namespace NTU.Webgen
             XmlElement xmlENodes_BaiBao = Nodes_BaiBao as XmlElement;
             Nodes_BaiBao.InnerText = "";
             DataTable dtTarget = CongCu.GetContentAsDataTable(dataGridViewX_DSTC);
+            String baibaodinhkem="";
             foreach (DataRow r in dtTarget.Rows)
             {
                 XmlElement newNode = doc.CreateElement("BaiBao");
+
+                //1. Upload or No
+                String fileBaiBao = r["DinhKem"].ToString();
+                baibaodinhkem = fileBaiBao;
+                if (fileBaiBao.Contains("\\"))
+                {
+                    String filenameCopy = fileBaiBao.Substring(fileBaiBao.LastIndexOf("\\") + 1);
+                    File.Copy(fileBaiBao, ProjectFolder + "\\data\\DinhKem\\" + filenameCopy, true);
+                    baibaodinhkem = filenameCopy;
+                   
+                }
 
                 newNode.InnerXml =
                         "<id>" + r["STT"] + "</id>" +
@@ -1231,12 +1258,14 @@ namespace NTU.Webgen
                         "<TieuDeBaiBao>" + r["TieuDeBaiBao"] + "</TieuDeBaiBao>" +
                         "<TenTapChi>" + r["TenTapChi"] + "</TenTapChi>" +
                         "<Tap>" + r["Tap"] + "</Tap>" +
-                        "<So>" + r["So"] + "</So>"+
-                        "<Trang>" + r["Trang"] + "</Trang>"+
+                        "<So>" + r["So"] + "</So>" +
+                        "<Trang>" + r["Trang"] + "</Trang>" +
                         "<NgonNgu>" + r["NgonNgu"] + "</NgonNgu>" +
-                        "<DinhKem>" + r["DinhKem"] + "</DinhKem>";
+                        "<DinhKem>" + baibaodinhkem+ "</DinhKem>";
                 xmlENodes_BaiBao.AppendChild(newNode);
+
             }
+           
             #endregion
 
 
@@ -1246,8 +1275,21 @@ namespace NTU.Webgen
             XmlElement xmlENodes_BaoCao1 = Nodes_BaoCao1 as XmlElement;
             Nodes_BaoCao1.InnerText = "";
             dtTarget = CongCu.GetContentAsDataTable(dataGridViewX_DSBaoCao);
+            String baocaodinhkem = "";
             foreach (DataRow r in dtTarget.Rows)
             {
+                //1. Upload or No
+               
+                String fileBaoCao = r["DinhKembc"].ToString();
+                baocaodinhkem = fileBaoCao;
+                if (fileBaoCao.Contains("\\"))
+                {
+                    String filenameCopy = fileBaoCao.Substring(fileBaoCao.LastIndexOf("\\") + 1);
+                    File.Copy(fileBaoCao, ProjectFolder + "\\data\\DinhKem\\" + filenameCopy, true);
+                    baocaodinhkem = filenameCopy;
+                    
+                }
+                
                 XmlElement newNode = doc.CreateElement("BaoCao1");
                 newNode.InnerXml =
                         "<id>" + r["STTbc"] + "</id>" +
@@ -1302,13 +1344,19 @@ namespace NTU.Webgen
                         "<TenSach>" + r["TenSach"] + "</TenSach>" +
                         "<NhaXB>" + r["NhaXBsach"] + "</NhaXB>" +
                         "<NoiXB>" + r["NoiXBsach"] + "</NoiXB>";// +
-                        //"<DinhKem>" + r["STTsach"] + "</DinhKem>";
+                //"<DinhKem>" + r["STTsach"] + "</DinhKem>";
 
                 xmlENodes_Sach.AppendChild(newNode);
             }
             #endregion
-                doc.Save(fullXMLFile);
-                MessageBox.Show("Lưu thành công", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            doc.Save(fullXMLFile); LoadTapChi();
+            LoadBaoCao(); LoadBaoCao0(); LoadSach();
+            MessageBox.Show("Lưu thành công", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SaveCongBo();
         }
 
         private void btnXuatWeb_Click(object sender, EventArgs e)

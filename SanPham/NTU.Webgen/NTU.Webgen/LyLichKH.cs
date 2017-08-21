@@ -416,8 +416,12 @@ namespace NTU.Webgen
 
                 txtCongViecDamNhiem.Enabled = true;
                 txtCongViecDamNhiem.Text = "";
-                linkQTCT_Them.ForeColor = Color.Red;
+                linkQTCT_Them.BackColor = Color.Red;
                 linkQTCT_Them.Text = "Xác nhận thêm";
+                linkQTCT_Xoa.Enabled = false;
+                linkQTCT_Sua.Enabled = false;
+                linkQTCT_Huy.Text = "Hủy bỏ thêm";
+                linkQTCT_Huy.Visible = true;
             }
             else
             {
@@ -449,8 +453,12 @@ namespace NTU.Webgen
 
                 txtCongViecDamNhiem.Enabled = false;
                 txtCongViecDamNhiem.Text = "";
-                linkQTCT_Them.ForeColor = Color.Blue;
+                linkQTCT_Them.BackColor = Color.Transparent;
                 linkQTCT_Them.Text = "Thêm mới";
+                linkQTCT_Xoa.Enabled = true;
+                linkQTCT_Sua.Enabled = true;
+             
+                linkQTCT_Huy.Visible = false;
 
             }
         }
@@ -462,16 +470,19 @@ namespace NTU.Webgen
             {
                 DataTable dtQTct= CongCu.GetContentAsDataTable(grdQuaTrinhCongTac);
                 int i = Int16.Parse(lblHangChon_QTCT.Text);
-                dtQTct.Rows.RemoveAt(i);
-                try { grdQuaTrinhCongTac.DataSource = dtQTct; grdQuaTrinhCongTac.Refresh(); }
-                catch (Exception ex) { grdQuaTrinhCongTac.DataSource = null; }
-                MessageBox.Show("Đã xóa xong", "NTUWebgen Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                lblHangChon_QTCT.Text = "-1";
-                txtTuNgay.Text = "";
-                txtDenNgay.Text = "";
-                txtQT_donvicongtac.Text = "";
-                txtCongViecDamNhiem.Text = "";
-
+                DialogResult rs = MessageBox.Show("Bạn có chắc xóa bản ghi này", "NTUWebgen Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (rs == DialogResult.Yes)
+                {
+                    dtQTct.Rows.RemoveAt(i);
+                    try { grdQuaTrinhCongTac.DataSource = dtQTct; grdQuaTrinhCongTac.Refresh(); }
+                    catch (Exception ex) { grdQuaTrinhCongTac.DataSource = null; }
+                    MessageBox.Show("Đã xóa xong", "NTUWebgen Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblHangChon_QTCT.Text = "-1";
+                    txtTuNgay.Text = "";
+                    txtDenNgay.Text = "";
+                    txtQT_donvicongtac.Text = "";
+                    txtCongViecDamNhiem.Text = "";
+                }
             }
         }
 
@@ -486,7 +497,12 @@ namespace NTU.Webgen
                     txtDenNgay.Enabled = true;
                     txtQT_donvicongtac.Enabled = true;
                     txtCongViecDamNhiem.Enabled = true;
-                    linkQTCT_Sua.Text = "Cập nhật sửa";
+                    linkQTCT_Sua.Text = "Xác nhận sửa";
+                    linkQTCT_Sua.BackColor = Color.Red;
+                    linkQTCT_Them.Enabled = false;
+                    linkQTCT_Xoa.Enabled = false;
+                    linkQTCT_Huy.Text = "Hủy bỏ sửa";
+                    linkQTCT_Huy.Visible = true;
                 }
             }
             else
@@ -506,6 +522,11 @@ namespace NTU.Webgen
                 txtQT_donvicongtac.Enabled = false;
                 txtCongViecDamNhiem.Enabled = false;
                 linkQTCT_Sua.Text = "Sửa";
+                linkQTCT_Sua.BackColor = Color.Transparent;
+                linkQTCT_Them.Enabled = true;
+                linkQTCT_Xoa.Enabled = true;
+                
+                linkQTCT_Huy.Visible = false;
             }
         }
 
@@ -551,7 +572,12 @@ namespace NTU.Webgen
                 txtDeTaiCap.Enabled = true;
                 txtTrachNhiem.Enabled = true;
 
-                linkDeTai_Them.Text = "Lưu thêm";
+                linkDeTai_Xoa.Enabled = false;
+                linkDeTai_Sua.Enabled = false;
+                linkDeTai_Huy.Text = "Hủy bỏ thêm";
+                linkDeTai_Huy.Visible = true;
+                linkDeTai_Them.BackColor = Color.Red;
+                linkDeTai_Them.Text = "Xác nhận thêm";
             }
             else
             {
@@ -586,7 +612,12 @@ namespace NTU.Webgen
                 txtNamHoanThanh.Enabled = false;
                 txtDeTaiCap.Enabled = false;
                 txtTrachNhiem.Enabled = false;
+                linkDeTai_Xoa.Enabled = true;
+                linkDeTai_Sua.Enabled = true;
+                linkDeTai_Them.BackColor = Color.Transparent;
                 linkDeTai_Them.Text = "Thêm mới";
+               
+                linkDeTai_Huy.Visible = false;
 
             }
         }
@@ -598,16 +629,20 @@ namespace NTU.Webgen
             {
                 DataTable dtDeTai = CongCu.GetContentAsDataTable(grdDeTaiKhoaHoc);
                 int i = Int16.Parse(lblHangChon_DeTai.Text);
-                dtDeTai.Rows.RemoveAt(i);
-                try { grdDeTaiKhoaHoc.DataSource = dtDeTai; grdDeTaiKhoaHoc.Refresh(); }
-                catch (Exception ex) { grdDeTaiKhoaHoc.DataSource = null; }
-                MessageBox.Show("Đã xóa xong", "NTUWebgen Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                lblHangChon_DeTai.Text = "-1";
-                txtTenDeTaiNCKH.Text = "";
-                txtNamBatDau.Text = "";
-                txtNamHoanThanh.Text = "";
-                txtDeTaiCap.Text = "";
-                txtTrachNhiem.Text = "";
+                DialogResult rs = MessageBox.Show("Xác nhận xóa đề tài: " + dtDeTai.Rows[i][1], "NTUWebgen Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (rs == DialogResult.Yes)
+                {
+                    dtDeTai.Rows.RemoveAt(i);
+                    try { grdDeTaiKhoaHoc.DataSource = dtDeTai; grdDeTaiKhoaHoc.Refresh(); }
+                    catch (Exception ex) { grdDeTaiKhoaHoc.DataSource = null; }
+                    MessageBox.Show("Đã xóa xong", "NTUWebgen Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblHangChon_DeTai.Text = "-1";
+                    txtTenDeTaiNCKH.Text = "";
+                    txtNamBatDau.Text = "";
+                    txtNamHoanThanh.Text = "";
+                    txtDeTaiCap.Text = "";
+                    txtTrachNhiem.Text = "";
+                }
 
             }
         }
@@ -623,8 +658,14 @@ namespace NTU.Webgen
                     txtNamBatDau.Enabled = true;
                     txtNamHoanThanh.Enabled = true;
                     txtDeTaiCap.Enabled = true;
-                    txtTrachNhiem.Enabled = true; 
+                    txtTrachNhiem.Enabled = true;
+                    linkDeTai_Them.Enabled = false;
+                    linkDeTai_Xoa.Enabled = false;
+                    linkDeTai_Sua.BackColor = Color.Red;
                     linkDeTai_Sua.Text = "Cập nhật sửa";
+                    linkDeTai_Huy.Text = "Hủy bỏ sửa";
+                    linkDeTai_Huy.Visible = true;
+
                 }
             }
             else
@@ -645,6 +686,10 @@ namespace NTU.Webgen
                 txtNamHoanThanh.Enabled = false;
                 txtDeTaiCap.Enabled = false;
                 txtTrachNhiem.Enabled = false;
+                linkDeTai_Them.Enabled = true;
+                linkDeTai_Xoa.Enabled = true;
+                linkDeTai_Huy.Visible = false;
+                linkDeTai_Sua.BackColor = Color.Transparent;
                 linkDeTai_Sua.Text = "Sửa";
             }
         }
@@ -685,8 +730,12 @@ namespace NTU.Webgen
                 txtNamCongBo.Enabled = true;
                 txtLoaiCongBo.Enabled = true;
                 txtNoiCongBo.Enabled = true;
-
-                linkCongBo_Them.Text = "Lưu thêm";
+                linkCongBo_Sua.Enabled = false;
+                linkCongBo_Xoa.Enabled = false;
+                linkCongBo_Them.BackColor = Color.Red;
+                linkCongBo_Them.Text = "Xác nhận thêm";
+                linkCongBo_Huy.Text = "Hủy bỏ thêm";
+                linkCongBo_Huy.Visible = true;
             }
             else
             {
@@ -722,6 +771,10 @@ namespace NTU.Webgen
                 txtLoaiCongBo.Enabled = false;
                 txtNoiCongBo.Enabled = false;
 
+                linkCongBo_Sua.Enabled = true;
+                linkCongBo_Xoa.Enabled = true;
+                linkCongBo_Them.BackColor = Color.Transparent;
+                linkCongBo_Huy.Visible = false;
                 linkCongBo_Them.Text = "Thêm mới";
 
             }
@@ -734,16 +787,19 @@ namespace NTU.Webgen
             {
                 DataTable dt = CongCu.GetContentAsDataTable(grdCongBoKhoaHoc);
                 int i = Int16.Parse(lblHangChon_CongBo.Text);
-                dt.Rows.RemoveAt(i);
-                try { grdCongBoKhoaHoc.DataSource = dt; grdCongBoKhoaHoc.Refresh(); }
-                catch (Exception ex) { grdCongBoKhoaHoc.DataSource = null; }
-                MessageBox.Show("Đã xóa xong", "NTUWebgen Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                lblHangChon_CongBo.Text = "-1";
-                txtTenCongTrinh.Text = "";
-                txtNamCongBo.Text = "";
-                txtLoaiCongBo.Text = "";
-                txtNoiCongBo.Text = "";
-
+                DialogResult rs = MessageBox.Show("Xác nhận xóa công bố: " + dt.Rows[i][1], "NTUWebgen Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (rs == DialogResult.Yes)
+                {
+                    dt.Rows.RemoveAt(i);
+                    try { grdCongBoKhoaHoc.DataSource = dt; grdCongBoKhoaHoc.Refresh(); }
+                    catch (Exception ex) { grdCongBoKhoaHoc.DataSource = null; }
+                    MessageBox.Show("Đã xóa xong", "NTUWebgen Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblHangChon_CongBo.Text = "-1";
+                    txtTenCongTrinh.Text = "";
+                    txtNamCongBo.Text = "";
+                    txtLoaiCongBo.Text = "";
+                    txtNoiCongBo.Text = "";
+                }
             }
         }
 
@@ -759,6 +815,11 @@ namespace NTU.Webgen
                     txtLoaiCongBo.Enabled = true;
                     txtNoiCongBo.Enabled = true;
                     linkCongBo_Sua.Text = "Cập nhật sửa";
+                    linkCongBo_Sua.BackColor = Color.Red;
+                    linkCongBo_Them.Enabled = false;
+                    linkCongBo_Xoa.Enabled = false;
+                    linkCongBo_Huy.Text = "Hủy bỏ sửa";
+                    linkCongBo_Huy.Visible = true;
                 }
             }
             else
@@ -777,6 +838,10 @@ namespace NTU.Webgen
                 txtNamCongBo.Enabled = false;
                 txtLoaiCongBo.Enabled = false;
                 txtNoiCongBo.Enabled = false;
+                linkCongBo_Sua.BackColor = Color.Transparent;
+                linkCongBo_Them.Enabled = true;
+                linkCongBo_Xoa.Enabled = true;
+                linkCongBo_Huy.Visible = false;
                 linkCongBo_Sua.Text = "Sửa";
             }
         }
@@ -793,6 +858,74 @@ namespace NTU.Webgen
             MessageBox.Show("Đã xuất xong, mời xem kết quả", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
             CongCu.gotoSite(fullHTMLFile);
 
+        }
+
+        private void linkDeTai_Huy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            txtTenDeTaiNCKH.Text = "";
+            txtNamBatDau.Text = "";
+            txtNamHoanThanh.Text = "";
+            txtDeTaiCap.Text = "";
+            txtTrachNhiem.Text = "";
+            txtTenDeTaiNCKH.Enabled = false;
+            txtNamBatDau.Enabled = false;
+            txtNamHoanThanh.Enabled = false;
+            txtDeTaiCap.Enabled = false;
+            txtTrachNhiem.Enabled = false;
+
+            linkDeTai_Them.Enabled = true;
+            linkDeTai_Them.Text = "Thêm mới";
+            linkDeTai_Them.BackColor = Color.Transparent;
+            linkDeTai_Sua.BackColor = Color.Transparent;
+            linkDeTai_Xoa.Enabled = true;
+            linkDeTai_Sua.Text = "Sửa";
+            linkDeTai_Sua.Enabled = true;
+            linkDeTai_Huy.Visible= false;
+
+        }
+
+        private void linkCongBo_Huy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            txtTenCongTrinh.Text = "";
+            txtNamCongBo.Text = "";
+            txtLoaiCongBo.Text = "";
+            txtNoiCongBo.Text = "";
+
+            txtTenCongTrinh.Enabled = false;
+            txtNamCongBo.Enabled = false;
+            txtLoaiCongBo.Enabled = false;
+            txtNoiCongBo.Enabled = false;
+            linkCongBo_Them.BackColor = Color.Transparent;
+            linkCongBo_Sua.BackColor = Color.Transparent;
+            linkCongBo_Sua.Enabled = true;
+            linkCongBo_Xoa.Enabled = true;
+            linkCongBo_Them.Enabled = true;
+            linkCongBo_Huy.Visible = false;
+            linkCongBo_Them.Text = "Thêm mới";
+            linkCongBo_Sua.Text = "Sửa";
+             
+        }
+
+        private void linkQTCT_Huy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            txtTuNgay.Enabled = false;
+            txtTuNgay.Text = "";
+            txtDenNgay.Enabled = false;
+            txtDenNgay.Text = "";
+            txtQT_donvicongtac.Enabled = false;
+            txtQT_donvicongtac.Text = "";
+
+            txtCongViecDamNhiem.Enabled = false;
+            txtCongViecDamNhiem.Text = "";
+            linkQTCT_Them.BackColor = Color.Transparent;
+            linkQTCT_Them.Text = "Thêm mới";
+            linkQTCT_Sua.BackColor = Color.Transparent;
+            linkQTCT_Sua.Text = "Sửa";
+            linkQTCT_Xoa.Enabled = true;
+            linkQTCT_Sua.Enabled = true; linkQTCT_Them.Enabled = true;
+
+
+            linkQTCT_Huy.Visible = false;
         }
 
        

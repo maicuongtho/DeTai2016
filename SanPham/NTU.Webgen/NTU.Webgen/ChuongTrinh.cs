@@ -229,7 +229,7 @@ namespace NTU.Webgen
             }
             else
             {
-                CongBo sc = new CongBo();
+                CongBo sc = new CongBo(@projectFolder);
                 CongCu.AddTab("tabCongBo", "Công bố khoa học", superTabControlWindows, sc, false, 10);
             }
         }
