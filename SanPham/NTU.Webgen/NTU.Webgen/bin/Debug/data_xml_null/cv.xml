@@ -1,0 +1,84 @@
+<root>
+  <TuThuat>
+    <HoTen> /HoTen>
+    <GioiTinh> </GioiTinh>
+    <NgaySinh> </NgaySinh>
+    <NoiSinh></NoiSinh>
+    <QueQuan> </QueQuan>
+    <DanToc>  </DanToc>
+    <HocViCaoNhat>
+      <TenHocViCaoNhat></TenHocViCaoNhat>
+      <NamNhanHV></NamNhanHV>
+      <NuocNhanHV></NuocNhanHV>
+    </HocViCaoNhat>
+    <ChucDanhKhoaHoc>
+      <TenChucDanhCaoNhat> </TenChucDanhCaoNhat>
+      <NamBoNhiem></NamBoNhiem>
+    </ChucDanhKhoaHoc>
+    <DonViCongTac> <TenDonVi> </TenDonVi><ChucVu></ChucVu></DonViCongTac>
+    <LienLac>
+      <NoiOHienNay></NoiOHienNay>
+      <DiaChi> </DiaChi>
+      <DTCoQuan> </DTCoQuan>
+      <DTNhaRieng> </DTNhaRieng>
+      <DTDiDong> </DTDiDong>
+      <fax> </fax>
+      <Email> </Email>
+    </LienLac>
+  </TuThuat>
+  <QuaTrinhDaoTao>
+    <DaiHoc1>
+      <HeDT> </HeDT>
+      <NoiDaoTao> </NoiDaoTao>
+      <NuocDaoTao> </NuocDaoTao>
+      <ChuyenNganh> </ChuyenNganh>
+      <NamTotNghiep> </NamTotNghiep>
+    </DaiHoc1>
+    <DaiHoc2>
+      <ChuyenNganh> </ChuyenNganh>
+      <NamTotNghiep> </NamTotNghiep>
+    </DaiHoc2>
+    <ThacSi>
+      <NoiDaoTao> </NoiDaoTao>
+      <NuocDaoTao> </NuocDaoTao>
+      <ChuyenNganh> </ChuyenNganh>
+      <NamCapBang> </NamCapBang>
+    </ThacSi>
+    <TienSi>
+      <NoiDaoTao> </NoiDaoTao>
+      <NuocDaoTao> </NuocDaoTao>
+      <ChuyenNganh> </ChuyenNganh>
+      <ThoiGianDaoTao> </ThoiGianDaoTao>
+      <NamCapBang> </NamCapBang>
+      <TenLuanAn> </TenLuanAn>
+    </TienSi>
+    <NgoaiNgu1>
+      <id>1</id>
+      <TenNN> </TenNN>
+      <TrinhDo> </TrinhDo>
+    </NgoaiNgu1>
+    <NgoaiNgu2>
+      <id>2</id>
+      <TenNN> </TenNN>
+      <TrinhDo> </TrinhDo>
+    </NgoaiNgu2>
+    <DSTinHoc>
+      <TinHoc>
+        <id>1</id>
+        <TenChungChi> </TenChungChi>
+      </TinHoc>
+      <TinHoc>
+        <id>2</id>
+        <TenChungChi> </TenChungChi>
+      </TinHoc>
+    </DSTinHoc>
+  </QuaTrinhDaoTao>
+  <DSQuaTrinhCongTac>
+  </DSQuaTrinhCongTac>
+  <NghienCuuKhoaHoc>
+    <DSDeTaiKH>
+    </DSDeTaiKH>
+    <DSCongTrinhKhoaHoc>
+    </DSCongTrinhKhoaHoc>
+  </NghienCuuKhoaHoc>
+</root>

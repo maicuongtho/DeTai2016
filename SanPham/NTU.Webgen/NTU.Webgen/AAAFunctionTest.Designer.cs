@@ -31,7 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.lienKet1 = new NTU.Webgen.LienKet();
+            this.cacMonHoc1 = new NTU.Webgen.CacMonHoc();
             this.SuspendLayout();
             // 
             // button1
@@ -64,19 +64,19 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // lienKet1
+            // cacMonHoc1
             // 
-            this.lienKet1.Location = new System.Drawing.Point(12, 41);
-            this.lienKet1.Name = "lienKet1";
-            this.lienKet1.Size = new System.Drawing.Size(1024, 600);
-            this.lienKet1.TabIndex = 3;
+            this.cacMonHoc1.Location = new System.Drawing.Point(12, 101);
+            this.cacMonHoc1.Name = "cacMonHoc1";
+            this.cacMonHoc1.Size = new System.Drawing.Size(1024, 600);
+            this.cacMonHoc1.TabIndex = 3;
             // 
             // AAAFunctionTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 527);
-            this.Controls.Add(this.lienKet1);
+            this.Controls.Add(this.cacMonHoc1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -92,7 +92,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private LienKet lienKet1;
+        private CacMonHoc cacMonHoc1;
 
 
 

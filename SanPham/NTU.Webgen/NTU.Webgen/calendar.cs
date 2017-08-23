@@ -104,9 +104,6 @@ namespace NTU.Webgen
         {
             String noiDungMoi = "";
             StringBuilder result = new StringBuilder();
-            
-            
-           
             result.Append("<div id='lichgoogle'>");
             result.Append("<h2>LỊCH GOOGLE</h2>");
             result.Append("<iframe src=\"");
@@ -127,9 +124,9 @@ namespace NTU.Webgen
             UserInfo u = CongCu.getUserInfo(ProjectFolder + "\\data\\index.xml");
             CongCu.ReplaceContent(carHTMLFile, "anhTrai", "<img src=\"" + u.HinhAnh + "\" width=100% height=186px>");
             CongCu.ReplaceContent(carHTMLFile, "tenTrai", "website của " + u.HoTen);
+            
             // Thêm tiêu đề
-            CongCu.ReplaceTite(carHTMLFile, "NTU. " + u.HoTen + "-Báo cáo hội thảo");
-
+            CongCu.ReplaceTite(carHTMLFile, "Lịch-" + u.HoTen + "NTUWebgen");
             MessageBox.Show("Đã xuất thành công sang trang web: \n" + carHTMLFile, "Thông báo");
         }
     }

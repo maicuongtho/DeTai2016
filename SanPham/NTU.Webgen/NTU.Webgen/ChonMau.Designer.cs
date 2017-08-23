@@ -41,8 +41,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.linkMau4 = new System.Windows.Forms.LinkLabel();
+            this.btnMau4 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.groupPanel5 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
@@ -307,8 +307,8 @@
             // 
             this.groupPanel4.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel4.Controls.Add(this.linkLabel3);
-            this.groupPanel4.Controls.Add(this.button3);
+            this.groupPanel4.Controls.Add(this.linkMau4);
+            this.groupPanel4.Controls.Add(this.btnMau4);
             this.groupPanel4.Controls.Add(this.pictureBox4);
             this.groupPanel4.Location = new System.Drawing.Point(686, 5);
             this.groupPanel4.Name = "groupPanel4";
@@ -342,27 +342,28 @@
             // 
             this.groupPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel4.TabIndex = 3;
-            this.groupPanel4.Text = "groupPanel1";
+            this.groupPanel4.Text = "Mẫu số 4";
             // 
-            // linkLabel3
+            // linkMau4
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(21, 153);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(55, 13);
-            this.linkLabel3.TabIndex = 2;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Xem trước";
-            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel0_LinkClicked);
+            this.linkMau4.AutoSize = true;
+            this.linkMau4.Location = new System.Drawing.Point(21, 153);
+            this.linkMau4.Name = "linkMau4";
+            this.linkMau4.Size = new System.Drawing.Size(55, 13);
+            this.linkMau4.TabIndex = 2;
+            this.linkMau4.TabStop = true;
+            this.linkMau4.Text = "Xem trước";
+            this.linkMau4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel0_LinkClicked);
             // 
-            // button3
+            // btnMau4
             // 
-            this.button3.Location = new System.Drawing.Point(82, 148);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Chọn";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnMau4.Location = new System.Drawing.Point(82, 148);
+            this.btnMau4.Name = "btnMau4";
+            this.btnMau4.Size = new System.Drawing.Size(75, 23);
+            this.btnMau4.TabIndex = 1;
+            this.btnMau4.Text = "Chọn";
+            this.btnMau4.UseVisualStyleBackColor = true;
+            this.btnMau4.Click += new System.EventHandler(this.btnMau4_Click);
             // 
             // pictureBox4
             // 
@@ -865,8 +866,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel4;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.LinkLabel linkMau4;
+        private System.Windows.Forms.Button btnMau4;
         private System.Windows.Forms.PictureBox pictureBox4;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel5;
         private System.Windows.Forms.LinkLabel linkLabel4;

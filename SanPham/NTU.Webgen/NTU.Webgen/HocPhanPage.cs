@@ -14,7 +14,7 @@ namespace NTU.Webgen
 {
     public partial class HocPhanPage : UserControl
     {
-        static String xmlFile = @"\\data\\teaching.xml";
+        static String xmlFile = @"\data\teaching.xml";
         static String htmlFile = @"\index.html";
         String ProjectFolder;
         String CourseFolder;
@@ -36,13 +36,14 @@ namespace NTU.Webgen
         }
 
 
-        public HocPhanPage(String xmlTeachingFile, String Idhocphan) {
+        public HocPhanPage(String Idhocphan, String ProjectFolder) {
             InitializeComponent();
-            this.ProjectFolder = @"C:\Users\Mai Cuong Tho\Desktop\TestMau4";
+            this.ProjectFolder = ProjectFolder;
             this.fullXMLFile = ProjectFolder + xmlFile;
-            this.fullHTMLFile = (ProjectFolder + htmlFile);
+            
             this.MaHocPhan = Idhocphan;
             this.CourseFolder = ProjectFolder + @"\courses\" + MaHocPhan;
+            this.fullHTMLFile = (CourseFolder + htmlFile);
             LoadBaiGiang(MaHocPhan, fullXMLFile);
             linkWebCourse.Text = fullHTMLFile;
         }
@@ -127,14 +128,16 @@ namespace NTU.Webgen
             foreach (DataRow r in dtTarget.Rows)
             {
                 XmlElement newNode = doc.CreateElement("TaiLieu");
+                String dckt = r[5].ToString();
+                if (dckt.Contains("/")) dckt = System.Web.HttpUtility.UrlEncode(dckt);
                 newNode.InnerXml =
                            "<id>" + r[0] + "</id>" +
                           "<TenTaiLieu>" + r[1] + "</TenTaiLieu>" +
                           "<TacGia>" + r[2] + "</TacGia>" +
                           "<NhaXuatBan>" + r[3] + "</NhaXuatBan>" +
                           "<NamXuatBan>" + r[4] + "</NamXuatBan>" +
-                          "<DiaChiKhaiThac>" + r[5] + "</DiaChiKhaiThac>" +
-                          "<MucDichSuDung>" + r[6] + "</MucDichSuDung>";
+                          "<DiaChiKhaiThac>" + dckt + "</DiaChiKhaiThac>" +
+                          "<MucDichSuDung>" +  r[6] + "</MucDichSuDung>";
                 nodeTLTK.AppendChild(newNode);
             }
             #endregion
@@ -191,7 +194,7 @@ namespace NTU.Webgen
             //XmlElement bg = root. 
             #region Thông tin học phần
 
-            XmlNode nodeThongTin = Nodes_BaiGiang.SelectSingleNode("/root/DSHocPhan/HocPhan/ThongTin");
+            XmlNode nodeThongTin = Nodes_BaiGiang.SelectSingleNode("ThongTin");
             String maHP = nodeThongTin.ChildNodes[0].InnerText;
             String tenHP = nodeThongTin.ChildNodes[1].InnerText;
             String hocTruoc = nodeThongTin.ChildNodes[2].InnerText;
@@ -249,8 +252,9 @@ namespace NTU.Webgen
                 String tenTG = k.ChildNodes[2].InnerText;
                 String nhaXB = k.ChildNodes[3].InnerText;
                 String namXB = k.ChildNodes[4].InnerText;
-                String diachiKhaiThac = k.ChildNodes[6].InnerText;
-                String mucdichSuDung = k.ChildNodes[5].InnerText;
+                String diachiKhaiThac = k.ChildNodes[5].InnerText;
+                if (diachiKhaiThac.Contains("%2f")) diachiKhaiThac = System.Web.HttpUtility.UrlDecode(diachiKhaiThac);
+                String mucdichSuDung = k.ChildNodes[6].InnerText;
               
                 dtTaiLieu.LoadDataRow(new[]
                                       {
@@ -259,8 +263,7 @@ namespace NTU.Webgen
                                       tenTG,
                                       nhaXB,
                                       namXB,
-                                      mucdichSuDung,
-                                      diachiKhaiThac
+                                      diachiKhaiThac,mucdichSuDung
                                       }, LoadOption.Upsert);
             }
             try { gdvTaiLieuThamKhao.DataSource = dtTaiLieu; }
@@ -269,7 +272,7 @@ namespace NTU.Webgen
             #endregion
 
             #region Đề cương học phần
-            XmlNode nodeDeCuong = Nodes_BaiGiang.SelectSingleNode("/root/DSHocPhan/HocPhan/DeCuongHocPhan");
+            XmlNode nodeDeCuong = Nodes_BaiGiang.SelectSingleNode("DeCuongHocPhan");
             txtDeCuong.Text = nodeDeCuong.InnerText;
            
             #endregion

@@ -40,3 +40,4 @@ F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.exe
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.pdb
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.CongBo.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\obj\Debug\NTU.Webgen.CacMonHoc.resources

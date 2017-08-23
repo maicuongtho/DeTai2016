@@ -10,12 +10,13 @@ using System.Windows.Forms;
 using System.IO;
 using System.Threading;
 
+
 namespace NTU.Webgen
 {
     public partial class ChonMau : UserControl
     {
       
-        String TempPath;
+        String TempPath; 
         String webPath;
         String thumucGoc;
         String thumucChon;
@@ -26,7 +27,7 @@ namespace NTU.Webgen
         {
             InitializeComponent();
             thumucGoc = System.AppDomain.CurrentDomain.BaseDirectory;
-            TempPath = thumucGoc+"Templates\\Mau4";
+            TempPath = thumucGoc+"Templates\\";
             webPath = TempPath.Replace("\\", "/");
             chuongtrinhChinh = c;
             
@@ -70,15 +71,17 @@ namespace NTU.Webgen
                     FileStream fs = File.Create(fileCauHinh);
                     
                     this.Enabled = false;
-                    CongCu.DirectoryCopy(TempPath, thumucChon, true);
+                    CongCu.DirectoryCopy(TempPath+"Mau0", thumucChon, true);
                     this.Enabled = true;
                     MessageBox.Show("Chọn mẫu xong, Mời hiệu chỉnh dữ liệu", "Thông báo");
                     
                     StreamWriter outputFile = new StreamWriter(fs);
                     outputFile.WriteLine(fileCauHinh);
+                    outputFile.WriteLine(0); // mẫu 0
                     outputFile.Close();
                     fs.Close();
                     projectFolder = thumucChon;
+                    chuongtrinhChinh.projectFolder = thumucChon;
                     MessageBox.Show(projectFolder);
 
                    ProjectExplorer pj = new ProjectExplorer(projectFolder);
@@ -87,6 +90,47 @@ namespace NTU.Webgen
     
                    chuongtrinhChinh.Update();
                    
+                }
+                else
+                    MessageBox.Show("Bạn đã chọn mẫu này", "NTUWebgen Cảnh báo",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+        }
+
+        private void btnMau4_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.Description = "Chọn nơi lưu website";
+            DialogResult rs = folderBrowserDialog1.ShowDialog();
+            if (rs == DialogResult.OK)
+            {
+                thumucChon = folderBrowserDialog1.SelectedPath;
+                //MessageBox.Show(thumucChon);
+                //                thumucChon = thumucGoc + "UserChoices\\Mau0";
+                if (!File.Exists(thumucChon + "\\config.ntu"))
+                {
+                    // Directory.CreateDirectory(thumucChon);
+                    String fileCauHinh = thumucChon + "\\config.ntu";
+                    FileStream fs = File.Create(fileCauHinh);
+
+                    this.Enabled = false;
+                    CongCu.DirectoryCopy(TempPath+"Mau4", thumucChon, true);
+                    this.Enabled = true;
+                    MessageBox.Show("Chọn mẫu xong, Mời hiệu chỉnh dữ liệu", "Thông báo");
+
+                    StreamWriter outputFile = new StreamWriter(fs);
+                    outputFile.WriteLine(fileCauHinh);
+                    outputFile.WriteLine(4);  // mẫu 4
+                    outputFile.Close();
+                    fs.Close();
+                    projectFolder = thumucChon;
+                    MessageBox.Show(projectFolder);
+                    chuongtrinhChinh.projectFolder = thumucChon;
+                    ProjectExplorer pj = new ProjectExplorer(projectFolder);
+                    SplitContainer p = (SplitContainer)chuongtrinhChinh.Controls["splitContainer1"];
+                    p.Panel2.Controls.Add(pj);
+
+                    chuongtrinhChinh.Update();
+
                 }
                 else
                     MessageBox.Show("Bạn đã chọn mẫu này", "Cảnh báo");

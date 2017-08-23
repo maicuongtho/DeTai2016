@@ -61,6 +61,12 @@
       <DependentUpon>AAAFunctionTest.cs</DependentUpon>
     </Compile>
     <Compile Include="BLL.cs" />
+    <Compile Include="CacMonHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CacMonHoc.Designer.cs">
+      <DependentUpon>CacMonHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="calendar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </Compile>
     <EmbeddedResource Include="AAAFunctionTest.resx">
       <DependentUpon>AAAFunctionTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CacMonHoc.resx">
+      <DependentUpon>CacMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="calendar.resx">
       <DependentUpon>calendar.cs</DependentUpon>
@@ -386,6 +395,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\info-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hp.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

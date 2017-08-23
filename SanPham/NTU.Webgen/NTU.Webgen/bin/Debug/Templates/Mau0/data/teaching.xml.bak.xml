@@ -1,0 +1,163 @@
+<root>
+  <DSHocPhan>
+    <HocPhan>
+      <id>NEC303</id>
+      <ThongTin>
+        <MaHP>NEC303</MaHP>
+        <TenHP>Lập trình mạng với Java SE 333</TenHP>
+        <HocPhan_HocTruoc>Lập trình Hướng đối tượng, Lập trình Java 333</HocPhan_HocTruoc>
+        <KhoiLuong>3(2+1)</KhoiLuong>
+        <DaoTaoTrinhDo>Đại học, Cao đẳng</DaoTaoTrinhDo>
+        <MucTieu>Trang bị cho sinh viên các kiến thức cơ sở và nâng cao về các ký thuật lập trình mạng TCP/IP. Sinh viên sẽ được hướng dẫn để có thể lập trình được các ứng dụng có kết nối, truyền thông sử dụng mạng ở mức Socket.</MucTieu>
+        <NoiDungVanTat>Giới thiệu các mô hình lập trình mạng; Bộ giao thức TCP/IP;Thư viện Winsock; 333</NoiDungVanTat>
+      </ThongTin>
+      <DanhGiaKetQua>
+        <HinhThuc>
+          <id>1</id>
+          <TenHinhThuc>Kiem tra thuong xuyen</TenHinhThuc>
+          <MoTaThem>ok chua</MoTaThem>
+          <TrongSo>10%</TrongSo>
+          <HinhThucLamBai>Van dap</HinhThucLamBai>
+        </HinhThuc>
+        <HinhThuc>
+          <id>2</id>
+          <TenHinhThuc>Cuối kỳ</TenHinhThuc>
+          <MoTaThem>Thhhhhhhhhhhhhh</MoTaThem>
+          <TrongSo>50%</TrongSo>
+          <HinhThucLamBai>Thực hành trên máy</HinhThucLamBai>
+        </HinhThuc>
+        <HinhThuc>
+          <id>3</id>
+          <TenHinhThuc>Giiai kỳ</TenHinhThuc>
+          <MoTaThem>jhasjdhsjhdkas dasdasdasd</MoTaThem>
+          <TrongSo>20%</TrongSo>
+          <HinhThucLamBai>Thực hành trên máy</HinhThucLamBai>
+        </HinhThuc>
+      </DanhGiaKetQua>
+      <TaiLieuThamKhao>
+        <TaiLieu>
+          <id>1</id>
+          <TenTaiLieu>Bài giảng Lập trình mạng nâng cao</TenTaiLieu>
+          <TacGia>Mai Cường Thọ, Trần Mạnh Khang</TacGia>
+          <NhaXuatBan>Đại học Nha Trang</NhaXuatBan>
+          <NamXuatBan>2018</NamXuatBan>
+          <DiaChiKhaiThac>Giáo vêin</DiaChiKhaiThac>
+          <MucDichSuDung>Tài liệu chính</MucDichSuDung>
+        </TaiLieu>
+        <TaiLieu>
+          <id>2</id>
+          <TenTaiLieu>Network Programming</TenTaiLieu>
+          <TacGia>Jonh Hennry</TacGia>
+          <NhaXuatBan>Cambgrind</NhaXuatBan>
+          <NamXuatBan>2016</NamXuatBan>
+          <DiaChiKhaiThac>ntu.edu.vn</DiaChiKhaiThac>
+          <MucDichSuDung>Tài liệu tham khảo</MucDichSuDung>
+        </TaiLieu>
+      </TaiLieuThamKhao>
+      <DeCuongHocPhan>VHVL.pdf</DeCuongHocPhan>
+      <BaiGiang>
+        <Chuong>
+          <id>1</id>
+          <TenChuong>Chương 1</TenChuong>
+          <MoTaNoiDung>Mô tả nội dung chuwogn ở đây</MoTaNoiDung>
+          <Download>Web1-03-HTMLCanBan.pdf</Download>
+        </Chuong>
+        <Chuong>
+          <id>2</id>
+          <TenChuong>Chương 2</TenChuong>
+          <MoTaNoiDung>Nói đôi điều về chương 2</MoTaNoiDung>
+          <Download>cnttbiginglptrnhjava-bkhcm-160829131351.pdf</Download>
+        </Chuong>
+      </BaiGiang>
+      <ChinhSachKhac>
+    			chinhsachkhac.htm
+    		</ChinhSachKhac>
+      <DSThongBao>
+        <ThongBao>
+          <id>1</id>
+          <NoiDungThongBao>Nộp gấp bài tập cho thầy</NoiDungThongBao>
+        </ThongBao>
+      </DSThongBao>
+    </HocPhan>
+    <HocPhan>
+      <id>NEC405</id>
+      <ThongTin>
+        <MaHP>NEC405</MaHP>
+        <TenHP>Lập trình ứng dụng mạng với Java</TenHP>
+        <HocPhan_HocTruoc>Lập trình Hướng đối tượng, Lập trình Java</HocPhan_HocTruoc>
+        <KhoiLuong>3 tín chỉ (2+1)</KhoiLuong>
+        <DaoTaoTrinhDo>Đại học</DaoTaoTrinhDo>
+        <MucTieu>Trang bị cho sinh viên các kiến thức cơ sở và nâng cao về các ký thuật lập trình mạng TCP/IP. Sinh viên sẽ được hướng dẫn để có thể lập trình được các ứng dụng có kết nối, truyền thông sử dụng mạng ở mức Socket.</MucTieu>
+        <NoiDungVanTat>Giới thiệu các mô hình lập trình mạng; Bộ giao thức TCP/IP;Thư viện Winsock; </NoiDungVanTat>
+      </ThongTin>
+      <DanhGiaKetQua>
+        <HinhThuc>
+          <id>1</id>
+          <TenHinhThuc>Kiểm tra</TenHinhThuc>
+          <MoTaThem>Kiểm tra thường xuyên, Bài tập, Chuyên cần</MoTaThem>
+          <TrongSo>30%</TrongSo>
+          <HinhThucLamBai>
+          </HinhThucLamBai>
+        </HinhThuc>
+        <HinhThuc>
+          <id>2</id>
+          <TenHinhThuc>Giữa kỳ</TenHinhThuc>
+          <MoTaThem>HÌnh thức thực hành</MoTaThem>
+          <HinhThucLamBai>Trắc nghiệm</HinhThucLamBai>
+          <TrongSo>20%</TrongSo>
+        </HinhThuc>
+        <HinhThuc>
+          <id>3</id>
+          <TenHinhThuc>Cuối kỳ</TenHinhThuc>
+          <MoTaThem>T</MoTaThem>
+          <HinhThucLamBai>Thực hành trên máy</HinhThucLamBai>
+          <TrongSo>50%</TrongSo>
+        </HinhThuc>
+      </DanhGiaKetQua>
+      <TaiLieuThamKhao>
+        <TaiLieu>
+          <id>1</id>
+          <TenTaiLieu>Bài giảng Lập trình mạng</TenTaiLieu>
+          <TacGia>Mai Cường Thọ</TacGia>
+          <NhaXuatBan>Đại học Nha Trang</NhaXuatBan>
+          <NamXuatBan>2017</NamXuatBan>
+          <DiaChiKhaiThac>baigiangLTM.pdf</DiaChiKhaiThac>
+          <MucDichSuDung>Tài liệu chính</MucDichSuDung>
+        </TaiLieu>
+        <TaiLieu>
+          <id>2</id>
+          <TenTaiLieu>Network Programming</TenTaiLieu>
+          <TacGia>Jonh Hennry</TacGia>
+          <NhaXuatBan>Cambgrind</NhaXuatBan>
+          <NamXuatBan>2017</NamXuatBan>
+          <DiaChiKhaiThac>hoo.haa.edu.vn</DiaChiKhaiThac>
+          <MucDichSuDung>Tài liệu tham khảo</MucDichSuDung>
+        </TaiLieu>
+      </TaiLieuThamKhao>
+      <DeCuongHocPhan>decuongLTM.pdf</DeCuongHocPhan>
+      <BaiGiang>
+        <Chuong>
+          <id>1</id>
+          <TenChuong>Chương 1</TenChuong>
+          <MoTaNoiDung>Mô tả nội dung chuwogn ở đây</MoTaNoiDung>
+          <Download>hhhh.pdf</Download>
+        </Chuong>
+        <Chuong>
+          <id>2</id>
+          <TenChuong>Chương 2</TenChuong>
+          <MoTaNoiDung>Nói đôi điều về chương 2</MoTaNoiDung>
+          <Download>chap2.pdf</Download>
+        </Chuong>
+      </BaiGiang>
+      <ChinhSachKhac>
+    			chinhsachkhac.htm
+    		</ChinhSachKhac>
+      <DSThongBao>
+        <ThongBao>
+          <id>1</id>
+          <NoiDungThongBao>Nộp gấp bài tập cho thầy</NoiDungThongBao>
+        </ThongBao>
+      </DSThongBao>
+    </HocPhan>
+  </DSHocPhan>
+</root>

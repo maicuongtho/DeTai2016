@@ -13,7 +13,7 @@ namespace NTU.Webgen
 {
     public partial class LyLichKH : UserControl
     {
-        static String xmlLyLichFile= @"\\data\\cv.xml";
+        static String xmlLyLichFile= @"\data\cv.xml";
         static String htmlLyLichFile=@"\cv.html";
         String ProjectFolder;
         String fullXMLFile;
@@ -855,6 +855,12 @@ namespace NTU.Webgen
         private void btnXuatWeb_Click(object sender, EventArgs e)
         {
             XuatWeb.XuatCV(fullXMLFile, fullHTMLFile);
+
+            // Dành cho mẫu 4
+            UserInfo u = CongCu.getUserInfo(ProjectFolder + "\\data\\index.xml");
+            CongCu.ReplaceContent(fullHTMLFile, "anhTrai", "<img src=\"" + u.HinhAnh + "\" width=100% height=186px>");
+            CongCu.ReplaceContent(fullHTMLFile, "tenTrai", "website của " + u.HoTen);
+            //----------------------
             MessageBox.Show("Đã xuất xong, mời xem kết quả", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
             CongCu.gotoSite(fullHTMLFile);
 

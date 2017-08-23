@@ -6,6 +6,7 @@
     <TenSach>Lý thuyết đồ thị</TenSach>
     <NhaXB>Giao thong van Tai</NhaXB>
     <NoiXB>Ha Noi</NoiXB>
+     <DinhKem></DinhKem>
   </Sach>
   <Sach>
     <id>2</id>
@@ -14,5 +15,6 @@
     <TenSach>Phát triển ứng dụng web</TenSach>
     <NhaXB>Thống kê</NhaXB>
     <NoiXB>Nha Trang</NoiXB>
+     <DinhKem></DinhKem>
   </Sach>
 </DSSach>

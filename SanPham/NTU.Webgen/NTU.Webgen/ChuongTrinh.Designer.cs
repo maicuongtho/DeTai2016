@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChuongTrinh));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFile_New = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,8 +49,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton_Open = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.superTabControlWindows = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
@@ -97,26 +95,30 @@
             // mnuFile_New
             // 
             this.mnuFile_New.Name = "mnuFile_New";
-            this.mnuFile_New.Size = new System.Drawing.Size(124, 22);
+            this.mnuFile_New.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.mnuFile_New.Size = new System.Drawing.Size(167, 22);
             this.mnuFile_New.Text = "TẠO MỚI";
             this.mnuFile_New.Click += new System.EventHandler(this.mởToolStripMenuItem_Click);
             // 
             // mnuFile_Open
             // 
+            this.mnuFile_Open.Image = global::NTU.Webgen.Properties.Resources._1491336216_folder;
             this.mnuFile_Open.Name = "mnuFile_Open";
-            this.mnuFile_Open.Size = new System.Drawing.Size(124, 22);
+            this.mnuFile_Open.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.mnuFile_Open.Size = new System.Drawing.Size(167, 22);
             this.mnuFile_Open.Text = "MỞ";
             this.mnuFile_Open.Click += new System.EventHandler(this.mỞToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(121, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // mnuFile_Exit
             // 
             this.mnuFile_Exit.Name = "mnuFile_Exit";
-            this.mnuFile_Exit.Size = new System.Drawing.Size(124, 22);
+            this.mnuFile_Exit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.mnuFile_Exit.Size = new System.Drawing.Size(167, 22);
             this.mnuFile_Exit.Text = "THOÁT";
             // 
             // mnuGioiThieu
@@ -233,31 +235,22 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2});
+            this.toolStripButton_Open});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(797, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // toolStripButton_Open
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton_Open.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton_Open.Image = global::NTU.Webgen.Properties.Resources._1491336216_folder;
+            this.toolStripButton_Open.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_Open.Name = "toolStripButton_Open";
+            this.toolStripButton_Open.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton_Open.Text = "toolStripButton2";
+            this.toolStripButton_Open.Click += new System.EventHandler(this.toolStripButton_Open_Click);
             // 
             // splitContainer1
             // 
@@ -363,10 +356,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnuFile;
         private System.Windows.Forms.ToolStripMenuItem mnuFile_New;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton_Open;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private DevComponents.DotNetBar.SuperTabControl superTabControlWindows;
+        public DevComponents.DotNetBar.SuperTabControl superTabControlWindows;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
         private DevComponents.DotNetBar.SuperTabItem superTabItem1;
         private System.Windows.Forms.ToolStripMenuItem mnuFile_Open;

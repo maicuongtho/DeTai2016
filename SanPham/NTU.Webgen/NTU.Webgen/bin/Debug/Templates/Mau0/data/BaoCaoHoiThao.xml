@@ -9,7 +9,9 @@
     <ThoiGianDiaDiem>10/2016, đẠI HỌC nHA tRANG</ThoiGianDiaDiem>
     <NhaXuatBan>Thống kê</NhaXuatBan>
     <NoiXuatBan>NHA TRANG</NoiXuatBan>
-    <Trang>90-100</Trang>
+    <Trang>
+    </Trang>
+    <DinhKem>C:\Users\Mai Cuong Tho\Desktop\TestMau4\data\DinhKem\baitap_java_dhth.pdf</DinhKem>
   </BaoCao1>
   <BaoCao1>
     <id>3</id>
@@ -23,6 +25,7 @@
     <NoiXuatBan>Ha Noi</NoiXuatBan>
     <Trang>
     </Trang>
+    <DinhKem>C:\Users\Mai Cuong Tho\Desktop\TestMau4\data\DinhKem\de_1_0902.pdf</DinhKem>
   </BaoCao1>
   <BaoCao1>
     <id>4</id>
@@ -34,6 +37,8 @@
     <ThoiGianDiaDiem>Korean</ThoiGianDiaDiem>
     <NhaXuatBan>Nord Acelen</NhaXuatBan>
     <NoiXuatBan>Aicelnen</NoiXuatBan>
-    <Trang>90</Trang>
+    <Trang>
+    </Trang>
+    <DinhKem>C:\Users\Mai Cuong Tho\Desktop\TestMau4\data\DinhKem\ts_nguyen_duc_huy.pdf</DinhKem>
   </BaoCao1>
 </DSBaoCao1>

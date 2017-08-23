@@ -13,7 +13,7 @@ namespace NTU.Webgen
     public partial class ChuongTrinh : DevComponents.DotNetBar.OfficeForm
     {
         public String projectFolder = "";
-
+        public int idMau;
         public ChuongTrinh()
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace NTU.Webgen
             }
             else
             {
-                Home sc = new Home(@projectFolder);
+                Home sc = new Home(@projectFolder,idMau);
                 CongCu.AddTab("tabGioiThieu", "Giới thiệu", superTabControlWindows, sc, true, 10);
             }
         }
@@ -130,8 +130,8 @@ namespace NTU.Webgen
             }
             else
             {
-                GiangDay sc = new GiangDay();
-                CongCu.AddTab("tabGiangDay", "Giảng dạy", superTabControlWindows, sc, false, 10);
+                CacMonHoc sc = new CacMonHoc(@projectFolder,this);
+                CongCu.AddTab("tabGiangDay", "Các học phần Giảng dạy", superTabControlWindows, sc, false, 10);
             }
         }
 
@@ -177,6 +177,7 @@ namespace NTU.Webgen
                FileStream fs =File.Open(fileCauHinh,FileMode.Open);
                StreamReader rd = new StreamReader(fs);
                String thumucChon = rd.ReadLine();
+               idMau = Int16.Parse(rd.ReadLine());
                fs.Close();
                rd.Close();
               // projectFolder = thumucChon.Substring(0, thumucChon.Length - 11);
@@ -232,6 +233,11 @@ namespace NTU.Webgen
                 CongBo sc = new CongBo(@projectFolder);
                 CongCu.AddTab("tabCongBo", "Công bố khoa học", superTabControlWindows, sc, false, 10);
             }
+        }
+
+        private void toolStripButton_Open_Click(object sender, EventArgs e)
+        {
+            mỞToolStripMenuItem1_Click(sender, e);
         }
     }
 }

@@ -1,0 +1,82 @@
+<root>
+  <DSHocPhan>
+    <HocPhan>
+      <id>NEC303</id>
+      <ThongTin>
+        <MaHP>NEC303</MaHP>
+        <TenHP>Lập trình Java</TenHP>
+        <HocPhan_HocTruoc>
+        </HocPhan_HocTruoc>
+        <KhoiLuong>
+        </KhoiLuong>
+        <DaoTaoTrinhDo> </DaoTaoTrinhDo>
+        <MucTieu> </MucTieu>
+        <NoiDungVanTat>
+        </NoiDungVanTat>
+      </ThongTin>
+      <DanhGiaKetQua>
+      </DanhGiaKetQua>
+      <TaiLieuThamKhao>
+      </TaiLieuThamKhao>
+      <DeCuongHocPhan>
+      </DeCuongHocPhan>
+      <BaiGiang>
+      </BaiGiang>
+      <ChinhSachKhac>chinhsachkhac.htm </ChinhSachKhac>
+      <DSThongBao>
+      </DSThongBao>
+    </HocPhan>
+    <HocPhan>
+      <id>NEC405</id>
+      <ThongTin>
+        <MaHP>NEC405</MaHP>
+        <TenHP>Lập trình ứng dụng mạng với Java</TenHP>
+        <HocPhan_HocTruoc>
+        </HocPhan_HocTruoc>
+        <KhoiLuong>
+        </KhoiLuong>
+        <DaoTaoTrinhDo> </DaoTaoTrinhDo>
+        <MucTieu> </MucTieu>
+        <NoiDungVanTat>
+        </NoiDungVanTat>
+      </ThongTin>
+      <DanhGiaKetQua>
+      </DanhGiaKetQua>
+      <TaiLieuThamKhao>
+      </TaiLieuThamKhao>
+      <DeCuongHocPhan>
+      </DeCuongHocPhan>
+      <BaiGiang>
+      </BaiGiang>
+      <ChinhSachKhac>chinhsachkhac.htm </ChinhSachKhac>
+      <DSThongBao>
+      </DSThongBao>
+    </HocPhan>
+    <HocPhan>
+      <id>SOT102</id>
+      <ThongTin>
+        <MaHP>SOT102</MaHP>
+        <TenHP>Tin học cơ sở</TenHP>
+        <HocPhan_HocTruoc>
+        </HocPhan_HocTruoc>
+        <KhoiLuong>
+        </KhoiLuong>
+        <DaoTaoTrinhDo> </DaoTaoTrinhDo>
+        <MucTieu> </MucTieu>
+        <NoiDungVanTat>
+        </NoiDungVanTat>
+      </ThongTin>
+      <DanhGiaKetQua>
+      </DanhGiaKetQua>
+      <TaiLieuThamKhao>
+      </TaiLieuThamKhao>
+      <DeCuongHocPhan>
+      </DeCuongHocPhan>
+      <BaiGiang>
+      </BaiGiang>
+      <ChinhSachKhac>chinhsachkhac.htm </ChinhSachKhac>
+      <DSThongBao>
+      </DSThongBao>
+    </HocPhan>
+  </DSHocPhan>
+</root>

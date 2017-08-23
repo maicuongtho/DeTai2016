@@ -1,0 +1,149 @@
+<root>
+  <TuThuat>
+    <HoTen>Mai Cường Thọ ww</HoTen>
+    <GioiTinh>Nam</GioiTinh>
+    <NgaySinh>25/10/1980</NgaySinh>
+    <NoiSinh>Thanh Hóa</NoiSinh>
+    <QueQuan>Hà Hải - Hà Trung - Thanh Hóa</QueQuan>
+    <DanToc> Kinh </DanToc>
+    <HocViCaoNhat>
+      <TenHocViCaoNhat>Thạc sĩ</TenHocViCaoNhat>
+      <NamNhanHV>2011</NamNhanHV>
+      <NuocNhanHV>Việt Nam</NuocNhanHV>
+    </HocViCaoNhat>
+    <ChucDanhKhoaHoc>
+      <TenChucDanhCaoNhat>Giáo suw</TenChucDanhCaoNhat>
+      <NamBoNhiem>2020</NamBoNhiem>
+    </ChucDanhKhoaHoc>
+    <DonViCongTac> <TenDonVi>Khoa Công nghệ Thông tin - Đại học Nha Trang</TenDonVi><ChucVu>Giảng viên</ChucVu></DonViCongTac>
+    <LienLac>
+      <NoiOHienNay>Khóm 25, Hòn Chồng VĨnh Phước NHa Trang, KHánh hòa</NoiOHienNay>
+      <DiaChi>Khoa Công nghệ Thông tin - Đại học Nha Trang - 02 Nguyễn ĐÌnh Chiểu</DiaChi>
+      <DTCoQuan>0583 831 149tt</DTCoQuan>
+      <DTNhaRieng>0977862556tt</DTNhaRieng>
+      <DTDiDong>0915311008ttt</DTDiDong>
+      <fax>11223232323</fax>
+      <Email>thomc@ntu.edu.vnnnnnn</Email>
+    </LienLac>
+  </TuThuat>
+  <QuaTrinhDaoTao>
+    <DaiHoc1>
+      <HeDT>Chính Qui</HeDT>
+      <NoiDaoTao>Đại học Bách Khoa Hà Nội</NoiDaoTao>
+      <NuocDaoTao>Việt Nam</NuocDaoTao>
+      <ChuyenNganh>Công nghệ Thông tin</ChuyenNganh>
+      <NamTotNghiep>2007</NamTotNghiep>
+    </DaiHoc1>
+    <DaiHoc2>
+      <ChuyenNganh>Công nghệ Tin sinh học</ChuyenNganh>
+      <NamTotNghiep>2010</NamTotNghiep>
+    </DaiHoc2>
+    <ThacSi>
+      <NoiDaoTao>Đại học Bách Khoa Hà Nội</NoiDaoTao>
+      <NuocDaoTao>Việt Nam</NuocDaoTao>
+      <ChuyenNganh>Công nghệ Thông tin</ChuyenNganh>
+      <NamCapBang>2011</NamCapBang>
+    </ThacSi>
+    <TienSi>
+      <NoiDaoTao>Đại học Cam bờ ríc</NoiDaoTao>
+      <NuocDaoTao>Mỹ</NuocDaoTao>
+      <ChuyenNganh>An ninh mạng</ChuyenNganh>
+      <ThoiGianDaoTao>5 năm</ThoiGianDaoTao>
+      <NamCapBang>2016</NamCapBang>
+      <TenLuanAn>Hệ thống phòng chống tấn công mạng IPS kết hợp Hệ chuyên gia</TenLuanAn>
+    </TienSi>
+    <NgoaiNgu1>
+      <id>1</id>
+      <TenNN>Anh văn</TenNN>
+      <TrinhDo>Nghe nói đọc viết thành thạo</TrinhDo>
+    </NgoaiNgu1>
+    <NgoaiNgu2>
+      <id>2</id>
+      <TenNN>Pháp văn</TenNN>
+      <TrinhDo>Bằng DELF B1</TrinhDo>
+    </NgoaiNgu2>
+    <DSTinHoc>
+      <TinHoc>
+        <id>1</id>
+        <TenChungChi>Chứng chỉ ƯD CNTT cơ bản</TenChungChi>
+      </TinHoc>
+      <TinHoc>
+        <id>2</id>
+        <TenChungChi>Chứng chỉ Quản trị mạng CISCO CCNA 1</TenChungChi>
+      </TinHoc>
+    </DSTinHoc>
+  </QuaTrinhDaoTao>
+  <DSQuaTrinhCongTac>
+    <QuaTrinhCongTac>
+      <id>1</id>
+      <TuNgay>10/4/2004</TuNgay>
+      <DenNgay>20/10/2005</DenNgay>
+      <DonViCongTac>Trung Tâm Phần mềm</DonViCongTac>
+      <CongViecDamNhiem>Quản trị mạng</CongViecDamNhiem>
+    </QuaTrinhCongTac>
+    <QuaTrinhCongTac>
+      <id>2</id>
+      <TuNgay>31/10/2005</TuNgay>
+      <DenNgay>7777</DenNgay>
+      <DonViCongTac>Đại học Nha Trang</DonViCongTac>
+      <CongViecDamNhiem>Giảng viên Khoa CNTT</CongViecDamNhiem>
+    </QuaTrinhCongTac>
+  </DSQuaTrinhCongTac>
+  <NghienCuuKhoaHoc>
+    <DSDeTaiKH>
+      <DeTaiKH>
+        <id>1</id>
+        <TenDeTai>dadas</TenDeTai>
+        <NamBatDau>11</NamBatDau>
+        <NamHoanThanh>222</NamHoanThanh>
+        <DeTaiCap>eer</DeTaiCap>
+        <TrachNhiem>rrere</TrachNhiem>
+      </DeTaiKH>
+      <DeTaiKH>
+        <id>2</id>
+        <TenDeTai>ưewrvrer</TenDeTai>
+        <NamBatDau>34</NamBatDau>
+        <NamHoanThanh>34</NamHoanThanh>
+        <DeTaiCap>ghgh</DeTaiCap>
+        <TrachNhiem>rteertetrt</TrachNhiem>
+      </DeTaiKH>
+    </DSDeTaiKH>
+    <DSCongTrinhKhoaHoc>
+      <CongBo>
+        <id>1</id>
+        <TenCongTrinh>Nâng cao thứ hạng web đại học được đánh giá bởi Webometrics/QS</TenCongTrinh>
+        <NamCongBo>2017</NamCongBo>
+        <NoiCongBo>Tạp chí Khoa học Đại học Văn Lan</NoiCongBo>
+        <LoaiCongBo>Tạp chí</LoaiCongBo>
+      </CongBo>
+      <CongBo>
+        <id>2</id>
+        <TenCongTrinh>Công trình số 2 ở đây, Công trình số 2 ở đây, Công trình số 2 ở đây, </TenCongTrinh>
+        <NamCongBo>2017</NamCongBo>
+        <NoiCongBo>Tạp chí/Hội thảo Ở đây</NoiCongBo>
+        <LoaiCongBo>Hội thảo</LoaiCongBo>
+      </CongBo>
+      <CongBo>
+        <id>3</id>
+        <TenCongTrinh>Giáo trình Quản trị hệ thống mạng nâng cao </TenCongTrinh>
+        <NamCongBo>2016</NamCongBo>
+        <NoiCongBo>Nhà Xuất Bản Đại học Bách Khoa Hà Nội</NoiCongBo>
+        <LoaiCongBo>Sách</LoaiCongBo>
+      </CongBo>
+      <CongBo>
+        <id>4</id>
+        <TenCongTrinh>Book chapppper </TenCongTrinh>
+        <NamCongBo>2016</NamCongBo>
+        <NoiCongBo>Springer</NoiCongBo>
+        <LoaiCongBo>BookChapter</LoaiCongBo>
+      </CongBo>
+      <CongBo>
+        <id>5</id>
+        <TenCongTrinh>tên công bố khác ở đây, tên công bố khác ở đây, tên công bố khác ở đây,   </TenCongTrinh>
+        <NamCongBo>năm công bố khác ở đây</NamCongBo>
+        <NoiCongBo>nơi công bố ở đây</NoiCongBo>
+        <LoaiCongBo>Khác</LoaiCongBo>
+      </CongBo>
+    </DSCongTrinhKhoaHoc>
+  </NghienCuuKhoaHoc>
+</root>

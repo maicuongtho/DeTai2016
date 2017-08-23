@@ -173,6 +173,16 @@ namespace NTU.Webgen.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Book_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Book_Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cancel_24x24 {
             get {
                 object obj = ResourceManager.GetObject("Cancel_24x24", resourceCulture);
@@ -246,6 +256,16 @@ namespace NTU.Webgen.Properties {
         internal static System.Drawing.Bitmap google_calendar_2 {
             get {
                 object obj = ResourceManager.GetObject("google-calendar-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hp {
+            get {
+                object obj = ResourceManager.GetObject("hp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

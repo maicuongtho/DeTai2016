@@ -207,10 +207,20 @@ namespace NTU.Webgen
 
         private void dataGridViewX_DSLienKet_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtLK.Text = dataGridViewX_DSLienKet.SelectedRows[0].Cells[1].Value.ToString();
-            txtDC.Text = dataGridViewX_DSLienKet.SelectedRows[0].Cells[2].Value.ToString();
-            txtId.Text = dataGridViewX_DSLienKet.SelectedRows[0].Cells[0].Value.ToString();
-            lblHangChon_LK.Text = e.RowIndex.ToString();
+            try
+            {
+                txtLK.Text = dataGridViewX_DSLienKet.SelectedRows[0].Cells[1].Value.ToString();
+                txtDC.Text = dataGridViewX_DSLienKet.SelectedRows[0].Cells[2].Value.ToString();
+                txtId.Text = dataGridViewX_DSLienKet.SelectedRows[0].Cells[0].Value.ToString();
+                lblHangChon_LK.Text = e.RowIndex.ToString();
+            }
+            catch {
+
+                txtLK.Text = "";
+                txtDC.Text = "";
+                txtId.Text = "";
+                lblHangChon_LK.Text = "-1";
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

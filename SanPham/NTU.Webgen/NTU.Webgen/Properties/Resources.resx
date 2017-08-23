@@ -130,6 +130,9 @@
   <data name="1491336233_www_page" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1491336233_www_page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="info-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="NTUBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NTUBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -144,6 +147,9 @@
   </data>
   <data name="Cancel_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Book_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Book_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cancel_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,7 +205,7 @@
   <data name="1491341215_Download_downloading_data_storage_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1491341215_Download_downloading_data_storage_folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="info-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
