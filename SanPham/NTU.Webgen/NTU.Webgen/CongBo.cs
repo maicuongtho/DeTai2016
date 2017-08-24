@@ -1302,7 +1302,7 @@ namespace NTU.Webgen
                         "<NoiXuatBan>" + r["NoiXuatBan"] + "</NoiXuatBan>" +
                         "<Trang>" + r["Trangbc"] + "</Trang>" +
                         "<NgonNgu>" + r["NgonNgubc"] + "</NgonNgu>" +
-                        "<DinhKem>" + r["DinhKembc"] + "</DinhKem>";
+                        "<DinhKem>" + baocaodinhkem + "</DinhKem>";
                 xmlENodes_BaoCao1.AppendChild(newNode);
             }
             #endregion
@@ -1361,10 +1361,10 @@ namespace NTU.Webgen
 
         private void btnXuatWeb_Click(object sender, EventArgs e)
         {
-            String noiDungMoi = CongCu.XML2HTML_TapChi(fullXMLFile).ToString();
+            String noiDungMoi = CongCu.XML2HTML_TapChi1(fullXMLFile, ProjectFolder).ToString();
             CongCu.ReplaceContent(fullHTMLFile, "TapChi", noiDungMoi);
 
-              noiDungMoi = CongCu.XML2HTML_BaoCaoHoiThao(fullXMLFile).ToString();
+              noiDungMoi = CongCu.XML2HTML_BaoCaoHoiThao1(fullXMLFile, ProjectFolder).ToString();
               CongCu.ReplaceContent(fullHTMLFile, "BaoCao1", noiDungMoi);
 
               noiDungMoi = CongCu.XML2HTML_BaoCaoHoiThao0(fullXMLFile).ToString();
