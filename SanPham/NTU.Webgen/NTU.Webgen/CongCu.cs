@@ -402,7 +402,7 @@ namespace NTU.Webgen
             return result;
         }
 
-        public static StringBuilder XML2HTML_TapChi(String xmlPubFile)
+        public static StringBuilder XML2HTML_TapChi1(String xmlPubFile, String ProjectFoler)
         {
             XmlTextReader reader = new XmlTextReader(xmlPubFile);
             XmlDocument doc = new XmlDocument();
@@ -451,9 +451,10 @@ namespace NTU.Webgen
                     so = "Issue " + so;
                     trang = "P " + trang;
                 }
-                String dinhkem = xe.ChildNodes[9].InnerText;
-                int vt = dinhkem.IndexOf("data\\DinhKem", 0);
-                String pdf = dinhkem.Substring(vt).Replace("\\", "/");
+                //String dinhkem = xe.ChildNodes[9].InnerText;
+                //int vt = dinhkem.IndexOf("data\\DinhKem", 0);
+                //String pdf = dinhkem.Substring(vt).Replace("\\", "/");
+                String pdf = ProjectFoler + @"\data\dinhkem\" + xe.ChildNodes[9].InnerText;
                 result.Append("<li>" + tacgia + ", (" + nam + "), " + "<span class='citation_title'>" + tieudebaibao + "</span>, ");
                 result.Append(tentapchi + ", " + tap + ", " + so + ", " + trang + ", <a href=\"" + pdf + "\"> pdf</a></li>");
 
@@ -518,7 +519,7 @@ namespace NTU.Webgen
          
             return result;
         }
-        public static StringBuilder XML2HTML_BaoCaoHoiThao(String pubXML)
+        public static StringBuilder XML2HTML_BaoCaoHoiThao1(String pubXML, String ProjectFoler)
         {
             XmlTextReader reader = new XmlTextReader(pubXML);
             XmlDocument doc = new XmlDocument();
@@ -551,10 +552,10 @@ namespace NTU.Webgen
                     nhaxuatban = "Publisher " + nhaxuatban;
                     trang = "Page " + trang;
                 }
-                String dinhkem = xe.ChildNodes[10].InnerText;
-                int vt = dinhkem.IndexOf("data\\DinhKem", 0);
-                String pdf = dinhkem.Substring(vt).Replace("\\", "/");
-
+                //String dinhkem = xe.ChildNodes[10].InnerText;
+                //int vt = dinhkem.IndexOf("data\\DinhKem", 0);
+                //String pdf = dinhkem.Substring(vt).Replace("\\", "/");
+                String pdf = ProjectFoler + @"\data\dinhkem\" + xe.ChildNodes[10].InnerText;
                 result.Append("<li>" + tacgia + ", (" + nam + "), " + "<span class='citation_title'>" + tenbaocao + "</span>, ");
                 result.Append(tenHoiThao + ", " + thoigiandiadiem + ", " + nhaxuatban + ", " + noixuatban + ", " + trang + ", <a href=\"" + pdf + "\"> pdf</a></li>");
             }
