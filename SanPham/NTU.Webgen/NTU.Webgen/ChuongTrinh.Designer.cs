@@ -55,6 +55,7 @@
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.mnuXuatSangMauKhac = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -74,7 +75,8 @@
             this.mnuCongBo,
             this.mnuGiangDay,
             this.mnuLich,
-            this.mnuLienKet});
+            this.mnuLienKet,
+            this.mnuXuatSangMauKhac});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(797, 24);
@@ -112,7 +114,7 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(164, 6);
             // 
             // mnuFile_Exit
             // 
@@ -320,6 +322,12 @@
             this.openFileDialog1.FileName = "Mở Project đã có";
             this.openFileDialog1.Filter = "NTU Webgen file | *.ntu";
             // 
+            // mnuXuatSangMauKhac
+            // 
+            this.mnuXuatSangMauKhac.Name = "mnuXuatSangMauKhac";
+            this.mnuXuatSangMauKhac.Size = new System.Drawing.Size(148, 20);
+            this.mnuXuatSangMauKhac.Text = "XUẤT SANG MẪU KHÁC";
+            // 
             // ChuongTrinh
             // 
             this.ClientSize = new System.Drawing.Size(797, 434);
@@ -377,5 +385,6 @@
         private System.Windows.Forms.ToolStripMenuItem côngBốKhácToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem mnuLienKet;
+        private System.Windows.Forms.ToolStripMenuItem mnuXuatSangMauKhac;
     }
 }

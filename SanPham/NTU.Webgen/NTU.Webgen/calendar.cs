@@ -57,6 +57,8 @@ namespace NTU.Webgen
             htmlEditor1.setButtonVisible("tsbFind");
             htmlEditor1.setButtonVisible("tsbAbout");
             htmlEditor1.setButtonVisible("tsbRemoveFormat");
+            txtURLLich.Text = CongCu.ReadHTMLFile(ggCarHTMLFile);
+            htmlEditor1.BodyInnerHTML = CongCu.ReadHTMLFile(subCarHTMLFile);
         }
 
 
@@ -67,8 +69,8 @@ namespace NTU.Webgen
 
         private void calendar_Load(object sender, EventArgs e)
         {
-            txtURLLich.Text = CongCu.ReadHTMLFile(ggCarHTMLFile);
-            htmlEditor1.BodyInnerHTML = CongCu.ReadHTMLFile(subCarHTMLFile);
+            //txtURLLich.Text = CongCu.ReadHTMLFile(ggCarHTMLFile);
+            //htmlEditor1.BodyInnerHTML = CongCu.ReadHTMLFile(subCarHTMLFile);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -121,13 +123,13 @@ namespace NTU.Webgen
 
 
             // Dành cho mẫu 4
-            UserInfo u = CongCu.getUserInfo(ProjectFolder + "\\data\\index.xml");
-            CongCu.ReplaceContent(carHTMLFile, "anhTrai", "<img src=\"" + u.HinhAnh + "\" width=100% height=186px>");
-            CongCu.ReplaceContent(carHTMLFile, "tenTrai", "website của " + u.HoTen);
+          //  UserInfo u = CongCu.getUserInfo(ProjectFolder + "\\data\\index.xml");
+           // CongCu.ReplaceContent(carHTMLFile, "anhTrai", "<img src=\"" + u.HinhAnh + "\" width=100% height=186px>");
+          //  CongCu.ReplaceContent(carHTMLFile, "tenTrai", "website của " + u.HoTen);
             
             // Thêm tiêu đề
-            CongCu.ReplaceTite(carHTMLFile, "Lịch-" + u.HoTen + "NTUWebgen");
-            MessageBox.Show("Đã xuất thành công sang trang web: \n" + carHTMLFile, "Thông báo");
+          //  CongCu.ReplaceTite(carHTMLFile, "Lịch-" + u.HoTen + "NTUWebgen");
+            MessageBox.Show("Đã xuất thành công sang trang web: \n" + carHTMLFile, "NTUWebgen", MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }

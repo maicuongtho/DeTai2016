@@ -734,13 +734,13 @@ namespace NTU.Webgen
             XmlNode[] nodeLK = Nodes_Level1.Cast<XmlNode>().ToArray();
            
             StringBuilder result = new StringBuilder();
-            result.Append("<ul>");
+            result.Append("<ul style=\"padding-left: 21px;\">");
             foreach (XmlNode xe in nodeLK)
             {
                 String tenLienKet = xe.ChildNodes[1].InnerText;
                 String diaChiLienKet =System.Web.HttpUtility.UrlDecode(   xe.ChildNodes[2].InnerText);
-                 
-                result.Append("<li>" + tenLienKet + " : <a href=\"" + diaChiLienKet + "\"> "+ diaChiLienKet+"  </a></li>");
+
+                result.Append("<li style=\"padding-bottom: 10px;\">" + tenLienKet + " : <a href=\"" + diaChiLienKet + "\"> " + diaChiLienKet + "  </a></li>");
             }
             result.Append("</ul>");
 
@@ -795,7 +795,11 @@ namespace NTU.Webgen
            String sdt = Nodes_Home.ChildNodes[9].InnerText.Trim();
            String fb= Nodes_Home.ChildNodes[10].InnerText.Trim();
            String web = Nodes_Home.ChildNodes[11].InnerText.Trim();
-           String avarta =@"assets/images/"+Nodes_Home.ChildNodes[13].InnerText.Trim();
+           String av = Nodes_Home.ChildNodes[13].InnerText.Trim();
+           String avarta;
+           if (av!="noAvatar.jpg")
+               avarta =@"assets/images/"+av;
+           else avarta = @"data/" + av;
 
            StringBuilder result = new StringBuilder();
            result.Append("<div class='col-sm-3'>");
@@ -812,10 +816,8 @@ namespace NTU.Webgen
            result.Append("<b>Website: </b> <a href=\"http://" + web + "\">" + web + "</a><br></div><div class='col-md-12' style='padding-top:10px'> <h3>Thông tin khác</h3>");
            result.Append(CongCu.ReadHTMLFile(htmlSubIndex) + "</div>");
            CongCu.AddMetaInfors(htmlIndex, "author", hoten);
-           // CongCu.AddMetaInfors(gioithieuHTMLFile, "keyword", txtMonHoc.Text);
            CongCu.AddMetaInfors(htmlIndex, "keywords", cacmonday);
            CongCu.AddMetaInfors(htmlIndex, "descriptions", dinhhuongnghiencuu);
-           //CongCu.AddMetaInfors(gioithieuHTMLFile, "thucainua", txtTrinhDo.Text);
            CongCu.ReplaceContent(htmlIndex, "gioithieu", result.ToString());
            // Dành cho mẫu 4
            if (idMau == 4)
@@ -850,7 +852,7 @@ namespace NTU.Webgen
                }
            }
            // Thêm tiêu đề
-           CongCu.ReplaceTite(htmlIndex, "Giới thiệu -");
+           CongCu.ReplaceTite(htmlIndex, "Giới thiệu -"+hoten);
            //----------------------------
            MessageBox.Show("Đã xuất thành công sang trang web: \n" + htmlIndex, "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
       

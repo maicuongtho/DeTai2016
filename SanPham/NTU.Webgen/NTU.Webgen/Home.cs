@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.IO;
 
 namespace NTU.Webgen
 {
@@ -63,7 +64,7 @@ namespace NTU.Webgen
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+            openFileDialog1.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|GIF Files (*.gif)|*.gif";
             DialogResult rs = openFileDialog1.ShowDialog();
             if (rs == DialogResult.OK)
             {
@@ -90,8 +91,10 @@ namespace NTU.Webgen
                 oldCd = root.SelectSingleNode("/root/Home");
 
                 String anh = pictureBox1.ImageLocation;
-                anh = anh.Substring(anh.LastIndexOf("\\")+1);
-                
+                if (anh != null)
+                    anh = anh.Substring(anh.LastIndexOf("\\") + 1);
+                else
+                    anh = "noAvatar.jpg";
                 XmlElement newCd = doc.CreateElement("Home");
                 newCd.InnerXml = "<id>1</id>" +
                         	"<HoTen>"+ txtHoTen.Text.Trim() + "</HoTen>" +
@@ -149,7 +152,7 @@ namespace NTU.Webgen
             doc.Load(reader);
             reader.Close();
             XmlElement root = doc.DocumentElement;
-            XmlNode data = root.SelectSingleNode("/root/Home[id='1']");
+            XmlNode data = root.SelectSingleNode("Home[id='1']");
             try
             {
                 txtHoTen.Text = data.ChildNodes[1].InnerText.Trim();
@@ -163,7 +166,13 @@ namespace NTU.Webgen
                 txtSDT.Text = data.ChildNodes[9].InnerText.Trim();
                 txtFB.Text = data.ChildNodes[10].InnerText.Trim();
                 txtWeb.Text = data.ChildNodes[11].InnerText.Trim();
-                pictureBox1.ImageLocation = ProjectFolder+@"\assets\images\"+ data.ChildNodes[13].InnerText.Trim();
+                String fileAnh = ProjectFolder + @"\assets\images\"+ data.ChildNodes[13].InnerText.Trim();
+                
+                if (File.Exists(fileAnh)) 
+                {
+                    pictureBox1.ImageLocation = fileAnh;
+                }
+               
                 htmlEditor1.BodyInnerHTML = CongCu.ReadHTMLFile(subgioithieuHTMLFile);
             }
             catch

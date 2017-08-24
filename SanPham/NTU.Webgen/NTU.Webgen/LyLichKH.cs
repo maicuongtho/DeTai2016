@@ -856,13 +856,13 @@ namespace NTU.Webgen
         {
             XuatWeb.XuatCV(fullXMLFile, fullHTMLFile);
 
-            // Dành cho mẫu 4
-            UserInfo u = CongCu.getUserInfo(ProjectFolder + "\\data\\index.xml");
-            CongCu.ReplaceContent(fullHTMLFile, "anhTrai", "<img src=\"" + u.HinhAnh + "\" width=100% height=186px>");
-            CongCu.ReplaceContent(fullHTMLFile, "tenTrai", "website của " + u.HoTen);
-            //----------------------
-            MessageBox.Show("Đã xuất xong, mời xem kết quả", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            CongCu.gotoSite(fullHTMLFile);
+            //// Dành cho mẫu 4
+            //UserInfo u = CongCu.getUserInfo(ProjectFolder + "\\data\\index.xml");
+            //CongCu.ReplaceContent(fullHTMLFile, "anhTrai", "<img src=\"" + u.HinhAnh + "\" width=100% height=186px>");
+            //CongCu.ReplaceContent(fullHTMLFile, "tenTrai", "website của " + u.HoTen);
+            ////----------------------
+            MessageBox.Show("Đã xuất xong!", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //CongCu.gotoSite(fullHTMLFile);
 
         }
 

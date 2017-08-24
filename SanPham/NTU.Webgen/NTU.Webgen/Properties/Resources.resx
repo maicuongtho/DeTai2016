@@ -142,6 +142,9 @@
   <data name="1491336216_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1491336216_folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="hp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="mau1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mau1.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,7 +208,7 @@
   <data name="1491341215_Download_downloading_data_storage_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1491341215_Download_downloading_data_storage_folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NoPhoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NoPhoto.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

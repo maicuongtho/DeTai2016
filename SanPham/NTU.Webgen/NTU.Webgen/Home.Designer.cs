@@ -30,15 +30,10 @@
         {
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.btnHuy = new DevComponents.DotNetBar.ButtonX();
-            this.btnSua = new DevComponents.DotNetBar.ButtonX();
-            this.btnXuatWeb = new DevComponents.DotNetBar.ButtonX();
-            this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtDinhHuong = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtMonHoc = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtBoMon = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -64,19 +59,24 @@
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.balloonTipAnhDaiDien = new DevComponents.DotNetBar.BalloonTip();
             this.superTabItem2 = new DevComponents.DotNetBar.SuperTabItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.superTabItem3 = new DevComponents.DotNetBar.SuperTabItem();
+            this.btnHuy = new DevComponents.DotNetBar.ButtonX();
+            this.btnSua = new DevComponents.DotNetBar.ButtonX();
+            this.btnXuatWeb = new DevComponents.DotNetBar.ButtonX();
+            this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.panelEx3.SuspendLayout();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEx3
@@ -110,62 +110,6 @@
             this.linkLabel1.TabIndex = 17;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "index.html";
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnHuy.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnHuy.Image = global::NTU.Webgen.Properties.Resources.Cancel_24x24;
-            this.btnHuy.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnHuy.Location = new System.Drawing.Point(461, 7);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(135, 23);
-            this.btnHuy.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnHuy.TabIndex = 16;
-            this.btnHuy.Text = "Hủy bỏ";
-            this.btnHuy.Visible = false;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSua.Image = global::NTU.Webgen.Properties.Resources.Edit_16x16;
-            this.btnSua.Location = new System.Drawing.Point(602, 8);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(135, 23);
-            this.btnSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSua.TabIndex = 14;
-            this.btnSua.Text = "Sửa dữ liệu";
-            this.btnSua.Visible = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXuatWeb
-            // 
-            this.btnXuatWeb.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnXuatWeb.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnXuatWeb.Image = global::NTU.Webgen.Properties.Resources._1491336195_domain_template;
-            this.btnXuatWeb.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnXuatWeb.Location = new System.Drawing.Point(154, 7);
-            this.btnXuatWeb.Name = "btnXuatWeb";
-            this.btnXuatWeb.Size = new System.Drawing.Size(135, 23);
-            this.btnXuatWeb.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnXuatWeb.TabIndex = 15;
-            this.btnXuatWeb.Text = "Xuất sang trang web";
-            this.btnXuatWeb.Click += new System.EventHandler(this.btnXuatWeb_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Image = global::NTU.Webgen.Properties.Resources.Save_16x16;
-            this.btnSave.Location = new System.Drawing.Point(15, 7);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(135, 23);
-            this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSave.TabIndex = 13;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panelEx1
             // 
@@ -249,20 +193,6 @@
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chung";
-            // 
-            // pictureBox1
-            // 
-            this.balloonTipAnhDaiDien.SetBalloonCaption(this.pictureBox1, "Ảnh đại diện");
-            this.balloonTipAnhDaiDien.SetBalloonText(this.pictureBox1, "Nhấp chuột vào khung này để cập nhật ảnh của bạn!");
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::NTU.Webgen.Properties.Resources.NTUBg;
-            this.pictureBox1.Location = new System.Drawing.Point(758, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 163);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtDinhHuong
             // 
@@ -578,13 +508,6 @@
             this.labelX5.TabIndex = 1;
             this.labelX5.Text = "Địa chỉ:";
             // 
-            // superTabItem3
-            // 
-            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
-            this.superTabItem3.GlobalItem = false;
-            this.superTabItem3.Image = global::NTU.Webgen.Properties.Resources.ico_account;
-            this.superTabItem3.Name = "superTabItem3";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -594,6 +517,83 @@
             this.superTabItem2.GlobalItem = false;
             this.superTabItem2.Name = "superTabItem2";
             this.superTabItem2.Text = "Tài liệu tham khảo";
+            // 
+            // pictureBox1
+            // 
+            this.balloonTipAnhDaiDien.SetBalloonCaption(this.pictureBox1, "Ảnh đại diện");
+            this.balloonTipAnhDaiDien.SetBalloonText(this.pictureBox1, "Nhấp chuột vào khung này để cập nhật ảnh của bạn!");
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::NTU.Webgen.Properties.Resources.NoPhoto;
+            this.pictureBox1.Location = new System.Drawing.Point(758, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(140, 163);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // superTabItem3
+            // 
+            this.superTabItem3.AttachedControl = this.superTabControlPanel3;
+            this.superTabItem3.GlobalItem = false;
+            this.superTabItem3.Image = global::NTU.Webgen.Properties.Resources.ico_account;
+            this.superTabItem3.Name = "superTabItem3";
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnHuy.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnHuy.Image = global::NTU.Webgen.Properties.Resources.Cancel_24x24;
+            this.btnHuy.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.btnHuy.Location = new System.Drawing.Point(461, 7);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(135, 23);
+            this.btnHuy.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnHuy.TabIndex = 16;
+            this.btnHuy.Text = "Hủy bỏ";
+            this.btnHuy.Visible = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSua.Image = global::NTU.Webgen.Properties.Resources.Edit_16x16;
+            this.btnSua.Location = new System.Drawing.Point(602, 8);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(135, 23);
+            this.btnSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSua.TabIndex = 14;
+            this.btnSua.Text = "Sửa dữ liệu";
+            this.btnSua.Visible = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnXuatWeb
+            // 
+            this.btnXuatWeb.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnXuatWeb.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnXuatWeb.Image = global::NTU.Webgen.Properties.Resources._1491336195_domain_template;
+            this.btnXuatWeb.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.btnXuatWeb.Location = new System.Drawing.Point(154, 7);
+            this.btnXuatWeb.Name = "btnXuatWeb";
+            this.btnXuatWeb.Size = new System.Drawing.Size(135, 23);
+            this.btnXuatWeb.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnXuatWeb.TabIndex = 15;
+            this.btnXuatWeb.Text = "Xuất sang trang web";
+            this.btnXuatWeb.Click += new System.EventHandler(this.btnXuatWeb_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSave.Image = global::NTU.Webgen.Properties.Resources.Save_16x16;
+            this.btnSave.Location = new System.Drawing.Point(15, 7);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(135, 23);
+            this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSave.TabIndex = 13;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Home
             // 
@@ -610,9 +610,9 @@
             this.superTabControl1.ResumeLayout(false);
             this.superTabControlPanel3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

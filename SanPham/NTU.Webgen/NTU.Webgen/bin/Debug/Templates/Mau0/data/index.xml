@@ -1,18 +1,18 @@
 <root>
   <Home>
     <id>1</id>
-    <HoTen>Mai Cường Thọ</HoTen>
-    <TrinhDo> Thạc sĩ </TrinhDo>
-    <Khoa>Công nghệ Thông tin </Khoa>
-    <BoMon>Mạng máy tính và Truyền thông </BoMon>
-    <CacMonHocDamNhan>Lập trình Java; Lập trình Andoird; Kiến trúc máy tính </CacMonHocDamNhan>
-    <DinhHuongNghienCuu>Nhận dạng tiếng Việt, IoT, Arduino; Các nghiên cứu về mạng cảm biến không dây </DinhHuongNghienCuu>
-    <DiaChi>02 Nguyễn Đình Chiểu, Nha Trang</DiaChi>
-    <Email>maicuongtho@gmail.com</Email>
-    <SoDienThoai>0915311008</SoDienThoai>
-    <FB>maicuongtho</FB>
-    <Web>http://ntu.edu.vn/~thomc</Web>
+    <HoTen> </HoTen>
+    <TrinhDo>   </TrinhDo>
+    <Khoa>  </Khoa>
+    <BoMon> </BoMon>
+    <CacMonHocDamNhan>  </CacMonHocDamNhan>
+    <DinhHuongNghienCuu>  </DinhHuongNghienCuu>
+    <DiaChi> </DiaChi>
+    <Email> </Email>
+    <SoDienThoai> </SoDienThoai>
+    <FB> </FB>
+    <Web> </Web>
     <Others>subindex.htm</Others>
-    <Avatar>C:\Users\Mai Cuong Tho\Desktop\TestMau4\assets\images\tab1.png</Avatar>
+    <Avatar></Avatar>
   </Home>
 </root>
