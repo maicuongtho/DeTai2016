@@ -851,6 +851,31 @@ namespace NTU.Webgen
                    CongCu.ReplaceContent(dskhoahoc[i] + @"\index.html", "anhTrai", "<img src=\"../../" + avarta + "\" width=100% height=186px>");
                }
            }
+           // Dành cho mẫu 3,2
+           if ((idMau == 3)||(idMau==2))
+           {
+               CongCu.ReplaceContent(htmlIndex, "nav3_ten", hoten);
+
+               CongCu.ReplaceContent(ProjectFolder + "\\publications.html", "nav3_ten",  hoten);
+
+               CongCu.ReplaceContent(ProjectFolder + "\\calendar.html", "nav3_ten",  hoten);
+
+               CongCu.ReplaceContent(ProjectFolder + "\\teaching.html", "nav3_ten",  hoten);
+
+               CongCu.ReplaceContent(ProjectFolder + "\\weblink.html", "nav3_ten",  hoten);
+
+               CongCu.ReplaceContent(ProjectFolder + "\\cv.html", "nav3_ten",  hoten);
+
+               CongCu.ReplaceContent(ProjectFolder + "\\teaching.html", "nav3_ten",  hoten);
+
+               // Lục các thư mục trong thư mục course, để cập nhật ảnh avata cho cac bài gaigrn
+               String[] dskhoahoc = Directory.GetDirectories(ProjectFolder + @"\courses");
+               for (int i = 0; i < dskhoahoc.Length; i++)
+               {
+                   CongCu.ReplaceContent(dskhoahoc[i] + @"\index.html", "nav3_ten", hoten);
+                   CongCu.ReplaceContent(dskhoahoc[i] + @"\index.html", "nav3_ten", hoten);
+               }
+           }
            // Thêm tiêu đề
            CongCu.ReplaceTite(htmlIndex, "Giới thiệu -"+hoten);
            //----------------------------
