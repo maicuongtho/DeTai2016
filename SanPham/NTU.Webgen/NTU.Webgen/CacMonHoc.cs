@@ -77,8 +77,8 @@ namespace NTU.Webgen
 
                 txtHP_Ten.Text = "";
                 txtHP_Ten.Enabled = true;
-                txtHP_MucTieu.Text = "";
-                txtHP_MucTieu.Enabled = true;
+                txtHP_NoiDungTT.Text = "";
+                txtHP_NoiDungTT.Enabled = true;
                 pictureBox1.Enabled = true;
                 linkHP_Them.BackColor = Color.Red;
                 linkHP_Them.Text = "Xác nhận thêm";
@@ -99,7 +99,7 @@ namespace NTU.Webgen
                                       {
                                       (dataGridViewX_DSHP.Rows.Count+1).ToString(),
                                       txtHP_Ma.Text,
-                                      txtHP_Ten.Text, txtHP_MucTieu.Text, "", pictureBox1.ImageLocation                                     
+                                      txtHP_Ten.Text, txtHP_NoiDungTT.Text, "", pictureBox1.ImageLocation                                     
                                        
                                       }, LoadOption.Upsert);
                     try {
@@ -115,8 +115,8 @@ namespace NTU.Webgen
 
                 txtHP_Ten.Text = "";
                 txtHP_Ten.Enabled = false;
-                txtHP_MucTieu.Text = "";
-                txtHP_MucTieu.Enabled = false;
+                txtHP_NoiDungTT.Text = "";
+                txtHP_NoiDungTT.Enabled = false;
                 pictureBox1.Enabled = false;
                 linkHP_Them.BackColor = Color.Transparent;
                 linkHP_Them.Text = "Thêm mới";
@@ -147,7 +147,7 @@ namespace NTU.Webgen
                     lblHangChon_HP.Text = "-1";
                     txtHP_Ma.Text = "";
                     txtHP_Ten.Text = "";
-                    txtHP_MucTieu.Text = "";
+                    txtHP_NoiDungTT.Text = "";
                     thaydoi = true;
                     btnSave.Enabled = true;
                 }
@@ -164,7 +164,7 @@ namespace NTU.Webgen
                 {
                     txtHP_Ma.Enabled = true;
                     txtHP_Ten.Enabled = true;
-                    txtHP_MucTieu.Enabled = true;
+                    txtHP_NoiDungTT.Enabled = true;
                     linkHP_Sua.Text = "Xác nhận sửa";
                     pictureBox1.Enabled = true;
                     linkHP_Sua.BackColor = Color.Red;
@@ -178,17 +178,38 @@ namespace NTU.Webgen
             {
                 DataTable dtMoi = CongCu.GetContentAsDataTable(dataGridViewX_DSHP);
                 int i = Int16.Parse(lblHangChon_HP.Text);
-                dtMoi.Rows[i]["BienTapHP"] = "";
+                dtMoi.Rows[i]["NoiDungHP"] = "";
+                
+                // đổi mã
+                String macu =dtMoi.Rows[i]["MaHP"].ToString(); 
+                String tmcu =ProjectFolder+@"\courses\"+macu;
                 dtMoi.Rows[i]["MaHP"] = txtHP_Ma.Text;
+                // Đổi tên thưc mục
+                String tmmoi =ProjectFolder+@"\courses\"+dtMoi.Rows[i]["MaHP"].ToString();
+                try
+                {
+                    Directory.Move(tmcu, tmmoi);
+                }
+                catch { int kk = 0; }
+                // kiếm tra có thay ảnh mới chưa
+                
+                //if (pictureBox1.ImageLocation == dtMoi.Rows[i]["AnhCover"].ToString())  // không sửa ảnh đại diện
+                //{
+                    String strAnh = pictureBox1.ImageLocation;
+                    strAnh=strAnh.Replace(macu, txtHP_Ma.Text);
+                    pictureBox1.ImageLocation = strAnh;
+                //}
+                //pictureBox1.ImageLocation.Replace(macu, txtHP_Ma.Text);
+
                 dtMoi.Rows[i]["TenHP"] = txtHP_Ten.Text;
-                dtMoi.Rows[i]["MucTieuHP"] = txtHP_MucTieu.Text;
+                dtMoi.Rows[i]["NoiDungHP"] = txtHP_NoiDungTT.Text;
                 dtMoi.Rows[i]["AnhCover"] = pictureBox1.ImageLocation;
                 try { dataGridViewX_DSHP.DataSource = dtMoi; dataGridViewX_DSHP.Refresh(); }
                 catch (Exception ex) { dataGridViewX_DSHP.DataSource = null; }
 
                 txtHP_Ten.Enabled = false;
                 txtHP_Ma.Enabled = false;
-                txtHP_MucTieu.Enabled = false;
+                txtHP_NoiDungTT.Enabled = false;
                 pictureBox1.Enabled = false;
                 linkHP_Sua.Text = "Sửa";
                 linkHP_Sua.BackColor = Color.Transparent;
@@ -254,12 +275,12 @@ namespace NTU.Webgen
                 i++;
                 String ma = k.ChildNodes[1].InnerText;
                 String ten =k.ChildNodes[2].InnerText;
-                String muctieu = k.ChildNodes[3].InnerText;
+                String noidungtt = k.ChildNodes[3].InnerText;
                 String cover = k.ChildNodes[4].InnerText;
                 dtHP.LoadDataRow(new[]
                                       {
                                       i.ToString(),
-                                      ma, ten, muctieu, 
+                                      ma, ten, noidungtt, 
                                       "chi tiết", cover
                                       }, LoadOption.Upsert);
                 
@@ -288,14 +309,18 @@ namespace NTU.Webgen
                 if (fileanh.Contains("\\"))
                 {
                     tenFile = fileanh.Substring(fileanh.LastIndexOf("\\") + 1);
-                    File.Copy(fileanh, ProjectFolder + @"\courses\" + r[1].ToString() + @"\" + tenFile);
+                    try
+                    {
+                        File.Copy(fileanh, ProjectFolder + @"\courses\" + r[1].ToString() + @"\" + tenFile, true);
+                    }
+                    catch { int kkk = 0; }
                 }
                 XmlElement newNode = doc.CreateElement("HocPhan");
                 newNode.InnerXml =
                       "<id>" + r[0] + "</id>" +
                       "<MaHP>" + r[1] + "</MaHP>" +
                       "<Ten>" + r[2] + "</Ten>" +
-                      "<MucTieu>"+r[3]+"</MucTieu>"+
+                      "<NoiDungTT>"+r[3]+"</NoiDungTT>"+
                       "<AnhCover>" + tenFile + "</AnhCover>";
                 xmlENodes_HP.AppendChild(newNode);
 
@@ -322,7 +347,7 @@ namespace NTU.Webgen
             txtHP_Id.Text = dataGridViewX_DSHP.SelectedRows[0].Cells[0].Value.ToString();
             txtHP_Ma.Text = dataGridViewX_DSHP.SelectedRows[0].Cells[1].Value.ToString();
             txtHP_Ten.Text = dataGridViewX_DSHP.SelectedRows[0].Cells[2].Value.ToString();
-            txtHP_MucTieu.Text = dataGridViewX_DSHP.SelectedRows[0].Cells[3].Value.ToString();
+            txtHP_NoiDungTT.Text = dataGridViewX_DSHP.SelectedRows[0].Cells[3].Value.ToString();
             pictureBox1.ImageLocation = ProjectFolder + @"\courses\" + txtHP_Ma.Text + @"\" + dataGridViewX_DSHP.SelectedRows[0].Cells[5].Value.ToString();
             lblHangChon_HP.Text = e.RowIndex.ToString();
         }
@@ -357,7 +382,7 @@ namespace NTU.Webgen
                         XmlNode newNode = docTeach.CreateElement("HocPhan");
                         String mamon = bangMonhoc.Rows[i]["MaHP"].ToString();
                         String tenmon = bangMonhoc.Rows[i]["TenHP"].ToString();
-                        String muctieu = bangMonhoc.Rows[i]["MucTieuHP"].ToString();
+                        String nodungtt = bangMonhoc.Rows[i]["NoiDungHP"].ToString();
                         newNode.InnerXml =
                         "<id>"+mamon+"</id>" +
                         "<ThongTin>" +
@@ -366,8 +391,8 @@ namespace NTU.Webgen
                            "<HocPhan_HocTruoc></HocPhan_HocTruoc>" +
                            "<KhoiLuong></KhoiLuong>" +
                            "<DaoTaoTrinhDo> </DaoTaoTrinhDo>" +
-                           "<MucTieu>"+ muctieu+" </MucTieu>" +
-                           "<NoiDungVanTat></NoiDungVanTat>" +
+                           "<MucTieu> </MucTieu>" +
+                           "<NoiDungVanTat>" + nodungtt + "</NoiDungVanTat>" +
                         "</ThongTin>" +
                         "<DanhGiaKetQua>" +
                         "</DanhGiaKetQua>" +
@@ -418,7 +443,7 @@ namespace NTU.Webgen
                 String maTrongBang = bangMonhoc.Rows[i]["MaHP"].ToString();
                 String mamon = bangMonhoc.Rows[i]["MaHP"].ToString();
                 String tenmon = bangMonhoc.Rows[i]["TenHP"].ToString();
-                String muctieu = bangMonhoc.Rows[i]["MucTieuHP"].ToString();
+                String noidungtt = bangMonhoc.Rows[i]["NoiDungHP"].ToString();
                 XmlNode Node_BaiGiang = rootTeach.SelectSingleNode("DSHocPhan/HocPhan[id='" + maTrongBang +"']");
                 if (Node_BaiGiang == null) // Nếu chưa có trong file teachingXML
                 {// Tạo node mới
@@ -432,8 +457,8 @@ namespace NTU.Webgen
                        "<HocPhan_HocTruoc></HocPhan_HocTruoc>" +
                        "<KhoiLuong></KhoiLuong>" +
                        "<DaoTaoTrinhDo> </DaoTaoTrinhDo>" +
-                       "<MucTieu>" + muctieu + " </MucTieu>" +
-                       "<NoiDungVanTat></NoiDungVanTat>" +
+                       "<MucTieu> </MucTieu>" +
+                       "<NoiDungVanTat>" + noidungtt + "</NoiDungVanTat>" +
                     "</ThongTin>" +
                     "<DanhGiaKetQua>" +
                     "</DanhGiaKetQua>" +
@@ -455,7 +480,7 @@ namespace NTU.Webgen
                     XmlNode updateNode = Node_BaiGiang;
                     updateNode.ChildNodes[1].ChildNodes[0].InnerText = mamon;
                     updateNode.ChildNodes[1].ChildNodes[1].InnerText = tenmon;
-                    updateNode.ChildNodes[1].ChildNodes[5].InnerText = muctieu;
+                    updateNode.ChildNodes[1].ChildNodes[6].InnerText = noidungtt;
                     nodeDS.ReplaceChild(updateNode, Node_BaiGiang);
                 }
 
@@ -494,7 +519,7 @@ namespace NTU.Webgen
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "JPG Files (*.jpg)|PNG Files (*.png)|*.png|*.jpg|GIF Files (*.gif)|*.gif";
+            openFileDialog1.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|GIF Files (*.gif)|*.gif";
             DialogResult rs = openFileDialog1.ShowDialog();
             if (rs == DialogResult.OK)
             {

@@ -410,7 +410,7 @@ namespace NTU.Webgen
             reader.Close();
             XmlElement root = doc.DocumentElement;
             XmlNodeList Nodes_Level1 = root.SelectNodes("DSBaiBao/BaiBao");
-
+            
            // List<XElement> ordered = Nodes_Level1.Cast<XElement>().ToList<XElement>();
 
             
@@ -740,7 +740,7 @@ namespace NTU.Webgen
                 String tenLienKet = xe.ChildNodes[1].InnerText;
                 String diaChiLienKet =System.Web.HttpUtility.UrlDecode(   xe.ChildNodes[2].InnerText);
 
-                result.Append("<li style=\"padding-bottom: 10px;\">" + tenLienKet + " : <a href=\"" + diaChiLienKet + "\"> " + diaChiLienKet + "  </a></li>");
+                result.Append("<li style=\"padding-bottom: 10px;\">" + tenLienKet + " : <br><a href=\"" + diaChiLienKet + "\"> " + diaChiLienKet + "  </a></li>");
             }
             result.Append("</ul>");
 
@@ -820,28 +820,28 @@ namespace NTU.Webgen
            CongCu.AddMetaInfors(htmlIndex, "descriptions", dinhhuongnghiencuu);
            CongCu.ReplaceContent(htmlIndex, "gioithieu", result.ToString());
            // Dành cho mẫu 4
-           if (idMau == 4)
+           if( (idMau == 4)|| (idMau==9)|| (idMau==10))
            {
                CongCu.ReplaceContent(htmlIndex, "anhTrai", "<img src=\"" + avarta + "\" width=100% height=186px>");
-               CongCu.ReplaceContent(htmlIndex, "tenTrai", "website của " + hoten);
+               CongCu.ReplaceContent(htmlIndex, "tenTrai",trinhdo+ "." + hoten);
 
                CongCu.ReplaceContent(ProjectFolder + "\\publications.html", "anhTrai", "<img src=\"" + avarta + "\" width=100% height=186px>");
-               CongCu.ReplaceContent(ProjectFolder + "\\publications.html", "tenTrai", "website của " + hoten);
+               CongCu.ReplaceContent(ProjectFolder + "\\publications.html", "tenTrai", trinhdo + "." + hoten);
 
                CongCu.ReplaceContent(ProjectFolder + "\\calendar.html", "anhTrai", "<img src=\"" + avarta + "\" width=100% height=186px>");
-               CongCu.ReplaceContent(ProjectFolder + "\\calendar.html", "tenTrai", "website của " + hoten);
+               CongCu.ReplaceContent(ProjectFolder + "\\calendar.html", "tenTrai", trinhdo + "." + hoten);
 
                CongCu.ReplaceContent(ProjectFolder + "\\teaching.html", "anhTrai", "<img src=\"" + avarta + "\" width=100% height=186px>");
-               CongCu.ReplaceContent(ProjectFolder + "\\teaching.html", "tenTrai", "website của " + hoten);
+               CongCu.ReplaceContent(ProjectFolder + "\\teaching.html", "tenTrai", trinhdo + "." + hoten);
 
                CongCu.ReplaceContent(ProjectFolder + "\\weblink.html", "anhTrai", "<img src=\"" + avarta + "\" width=100% height=186px>");
-               CongCu.ReplaceContent(ProjectFolder + "\\weblink.html", "tenTrai", "website của " + hoten);
+               CongCu.ReplaceContent(ProjectFolder + "\\weblink.html", "tenTrai", trinhdo + "." + hoten);
 
                CongCu.ReplaceContent(ProjectFolder + "\\cv.html", "anhTrai", "<img src=\"" + avarta + "\" width=100% height=186px>");
-               CongCu.ReplaceContent(ProjectFolder + "\\cv.html", "tenTrai", "website của " + hoten);
+               CongCu.ReplaceContent(ProjectFolder + "\\cv.html", "tenTrai", trinhdo + "." + hoten);
 
                CongCu.ReplaceContent(ProjectFolder + "\\teaching.html", "anhTrai", "<img src=\"" + avarta + "\" width=100% height=186px>");
-               CongCu.ReplaceContent(ProjectFolder + "\\teaching.html", "tenTrai", "website của " + hoten);
+               CongCu.ReplaceContent(ProjectFolder + "\\teaching.html", "tenTrai", trinhdo + "." + hoten);
 
                // Lục các thư mục trong thư mục course, để cập nhật ảnh avata cho cac bài gaigrn
                String[] dskhoahoc=Directory.GetDirectories(ProjectFolder + @"\courses");
@@ -852,7 +852,7 @@ namespace NTU.Webgen
                }
            }
            // Dành cho mẫu 3,2
-           if ((idMau == 3)||(idMau==2))
+           if ((idMau == 3) || (idMau == 2) || (idMau == 8) || (idMau == 6) || (idMau == 5) || (idMau == 0) || (idMau == 1))
            {
                CongCu.ReplaceContent(htmlIndex, "nav3_ten", hoten);
 
@@ -1190,7 +1190,7 @@ namespace NTU.Webgen
 
            #region Thông tin học phần
           
-               XmlNode nodeThongTin = Nodes_BaiGiang.SelectSingleNode("/root/DSHocPhan/HocPhan/ThongTin");
+               XmlNode nodeThongTin = Nodes_BaiGiang.SelectSingleNode("ThongTin");
                String maHP =nodeThongTin.ChildNodes[0].InnerText;
                String tenHP = nodeThongTin.ChildNodes[1].InnerText;
                String hocTruoc = nodeThongTin.ChildNodes[2].InnerText;
@@ -1321,9 +1321,9 @@ namespace NTU.Webgen
            {
                strTabLink.Append("<tr><TD rowspan=2>"+i.ToString()+
                                   "<img src='courses/" + k.ChildNodes[1].InnerText + "/" + k.ChildNodes[4].InnerText +"' width=100px height=120px>"+
-                                  "</TD><td>Học phần: <a href='courses/"+k.ChildNodes[1].InnerText+"/index.html'>"+
+                                  "</TD><td  valign=\"top\"><b>Học phần</b>: <a href='courses/"+k.ChildNodes[1].InnerText+"/index.html'>"+
                                   k.ChildNodes[2].InnerText+" (Mã HP: "+k.ChildNodes[1].InnerText+")</a></td></tr>");
-               strTabLink.Append("<tr><td>Mục tiêu HP: " + k.ChildNodes[3].InnerText + "</td></tr>");
+               strTabLink.Append("<tr><td  valign=\"top\"><b>Nội dung tóm tắt</b>: " + k.ChildNodes[3].InnerText + "</td></tr>");
                i++;
                strTabLink.Append("<tr><td></td></tr>");
                strTabLink.Append("<tr><td></td></tr>");

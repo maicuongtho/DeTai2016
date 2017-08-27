@@ -1014,8 +1014,22 @@ namespace WinHtmlEditor
         /// Phuong thuc cap nhat them
         /// </sumary> 
 
-        public void save(String filePath) {
+        public void save(String filePath, String projectFolder) {
             var writer = new StreamWriter(filePath, true, Encoding.UTF8);
+            // xử lý link ảnh, và upload ảnh
+            //int vtriSRC=0;
+            //int vtriHetSRC=0; 
+            //while (true)
+            //{
+            //    vtriSRC = BodyHtml.IndexOf("src=\"");
+            //    if (vtriSRC == 0) break;
+            //    vtriSRC+=5;
+            //    vtriHetSRC = BodyHtml.IndexOf("\"", vtriSRC);
+            //    String nguonAnh = BodyHtml.Substring(vtriSRC, vtriHetSRC - vtriSRC);
+            //    String tenfileAnh = nguonAnh.Substring(nguonAnh.LastIndexOf("\\")+1);
+            //    File.Copy(nguonAnh,projectFolder+@"\assets\images\"+tenfileAnh,true);
+            //    BodyHtml = BodyHtml.Replace(nguonAnh, "M_A_I_C_U_O_N_G_T_H_O");
+            //}
             writer.Write(BodyHtml);
             writer.Close();
         }

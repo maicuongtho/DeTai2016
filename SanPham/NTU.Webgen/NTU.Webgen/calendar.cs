@@ -92,7 +92,7 @@ namespace NTU.Webgen
 
              
                 CongCu.RenameFile(subCarHTMLFile, subCarHTMLFile + ".bak");
-                htmlEditor1.save(subCarHTMLFile);
+                htmlEditor1.save(subCarHTMLFile, ProjectFolder);
                 //save the output to a file
               
                 isSua = false;
@@ -106,14 +106,15 @@ namespace NTU.Webgen
         {
             String noiDungMoi = "";
             StringBuilder result = new StringBuilder();
+            result.Append("<div id='lich0'><h2> Lịch của tôi</h2> ");
+            result.Append(CongCu.ReadHTMLFile(subCarHTMLFile) + "</div>");
             result.Append("<div id='lichgoogle'>");
-            result.Append("<h2>LỊCH GOOGLE</h2>");
+            result.Append("<h2>My Google Calendar</h2>");
             result.Append("<iframe src=\"");
             result.Append(CongCu.ReadHTMLFile(ggCarHTMLFile).Replace("<BODY scroll=auto>","").Replace("</BODY>",""));
             result.Append("\" style=\"border: 0\" width=\"100%\" height=\"600\" frameborder=\"0\" scrolling=\"no\"></iframe></div>");
 
-            result.Append("<div id='lich0'><h2> Thông tin thêm</h2> ");
-            result.Append(CongCu.ReadHTMLFile(subCarHTMLFile) + "</div>");
+            
         //     CongCu.AddMetaInfors(gioithieuHTMLFile, "author", txtHoTen.Text);
             // CongCu.AddMetaInfors(gioithieuHTMLFile, "keyword", txtMonHoc.Text);
          //   CongCu.AddMetaInfors(gioithieuHTMLFile, "keywords", txtMonHoc.Text);

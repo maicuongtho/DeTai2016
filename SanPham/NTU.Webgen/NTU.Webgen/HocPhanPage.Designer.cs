@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.txtDeCuong = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
@@ -69,6 +69,8 @@
             this.linkThemDanhGia = new System.Windows.Forms.LinkLabel();
             this.lblID = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtNoiDung = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
+            this.txtMucTieu = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
             this.txtTrinhDo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
@@ -129,8 +131,6 @@
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.txtMucTieu = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
-            this.txtNoiDung = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
             ((System.ComponentModel.ISupportInitialize)(this.grvDanhGia)).BeginInit();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
@@ -219,14 +219,14 @@
             this.MoTa,
             this.TrongSo,
             this.HinhThucThucHien});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grvDanhGia.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvDanhGia.DefaultCellStyle = dataGridViewCellStyle1;
             this.grvDanhGia.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grvDanhGia.Location = new System.Drawing.Point(20, 179);
             this.grvDanhGia.MultiSelect = false;
@@ -661,6 +661,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "THÔNG TIN CHUNG";
             // 
+            // txtNoiDung
+            // 
+            // 
+            // 
+            // 
+            this.txtNoiDung.BackgroundStyle.Class = "RichTextBoxBorder";
+            this.txtNoiDung.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtNoiDung.Enabled = false;
+            this.txtNoiDung.Location = new System.Drawing.Point(24, 265);
+            this.txtNoiDung.Name = "txtNoiDung";
+            this.txtNoiDung.ReadOnly = true;
+            this.txtNoiDung.Size = new System.Drawing.Size(428, 158);
+            this.txtNoiDung.TabIndex = 9;
+            // 
+            // txtMucTieu
+            // 
+            // 
+            // 
+            // 
+            this.txtMucTieu.BackgroundStyle.Class = "RichTextBoxBorder";
+            this.txtMucTieu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtMucTieu.Location = new System.Drawing.Point(24, 125);
+            this.txtMucTieu.Name = "txtMucTieu";
+            this.txtMucTieu.Size = new System.Drawing.Size(428, 108);
+            this.txtMucTieu.TabIndex = 8;
+            // 
             // txtTrinhDo
             // 
             // 
@@ -908,14 +934,14 @@
             this.TenChuDe,
             this.MoTaNoiDung,
             this.FileBaiGiang});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdBaiGiang.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdBaiGiang.DefaultCellStyle = dataGridViewCellStyle2;
             this.grdBaiGiang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.grdBaiGiang.Location = new System.Drawing.Point(13, 242);
             this.grdBaiGiang.MultiSelect = false;
@@ -1100,14 +1126,14 @@
             this.NamXuatBan,
             this.DiaChiKhaiThac,
             this.MucDichSuDung});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdvTaiLieuThamKhao.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdvTaiLieuThamKhao.DefaultCellStyle = dataGridViewCellStyle3;
             this.gdvTaiLieuThamKhao.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.gdvTaiLieuThamKhao.Location = new System.Drawing.Point(24, 215);
             this.gdvTaiLieuThamKhao.MultiSelect = false;
@@ -1371,32 +1397,6 @@
             // 
             this.openFileDialog2.Filter = "Tập tin pdf|*.pdf|Tập tin MS Word|*.docx|Tập tin MS Word|*.doc";
             this.openFileDialog2.Title = "Chọn đề cương học phần đăng tải";
-            // 
-            // txtMucTieu
-            // 
-            // 
-            // 
-            // 
-            this.txtMucTieu.BackgroundStyle.Class = "RichTextBoxBorder";
-            this.txtMucTieu.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMucTieu.Enabled = false;
-            this.txtMucTieu.Location = new System.Drawing.Point(24, 125);
-            this.txtMucTieu.Name = "txtMucTieu";
-            this.txtMucTieu.ReadOnly = true;
-            this.txtMucTieu.Size = new System.Drawing.Size(428, 108);
-            this.txtMucTieu.TabIndex = 8;
-            // 
-            // txtNoiDung
-            // 
-            // 
-            // 
-            // 
-            this.txtNoiDung.BackgroundStyle.Class = "RichTextBoxBorder";
-            this.txtNoiDung.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNoiDung.Location = new System.Drawing.Point(24, 265);
-            this.txtNoiDung.Name = "txtNoiDung";
-            this.txtNoiDung.Size = new System.Drawing.Size(428, 158);
-            this.txtNoiDung.TabIndex = 9;
             // 
             // HocPhanPage
             // 

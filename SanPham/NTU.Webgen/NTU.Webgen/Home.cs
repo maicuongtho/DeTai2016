@@ -112,7 +112,7 @@ namespace NTU.Webgen
 
                 root.ReplaceChild(newCd, oldCd);
                 CongCu.RenameFile(subgioithieuHTMLFile, subgioithieuHTMLFile+".bak");
-                htmlEditor1.save(subgioithieuHTMLFile);
+                htmlEditor1.save(subgioithieuHTMLFile,ProjectFolder);
                 //save the output to a file
                 doc.Save(homeXMLFile);
                 MessageBox.Show("Đã lưu xong", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -59,6 +59,19 @@ namespace NTU.Webgen
 
             XmlNodeList Nodes_TC = root.SelectNodes("/root/DSBaiBao/BaiBao");
             XmlNode[] tc = Nodes_TC.Cast<XmlNode>().ToArray();
+
+            //Sắp xếp
+            //Array.Sort(tc, (n1, n2) =>
+            //{
+            //    int res = String.CompareOrdinal(n1.ChildNodes[2].InnerText, n2.ChildNodes[2].InnerText);
+            //    if (res == 0)
+            //    {
+            //        return String.CompareOrdinal(n1.OuterXml, n2.OuterXml);
+            //    }
+            //    return res;
+            //});
+            // hết sx
+
             DataTable dt = CongCu.GetContentAsDataTable(dataGridViewX_DSTC);
             dt.Clear();
             foreach (XmlNode k in tc)
