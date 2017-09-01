@@ -732,6 +732,11 @@ namespace NTU.Webgen
             XuatWeb.XuatBaiGiang(MaHocPhan, fullXMLFile, fullHTMLFile);
         }
 
+        private void linkWebCourse_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
         
 
         //-----------------------

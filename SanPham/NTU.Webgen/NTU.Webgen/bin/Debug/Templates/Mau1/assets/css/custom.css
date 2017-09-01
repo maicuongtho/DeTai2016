@@ -1,35 +1,12 @@
 ﻿@charset "utf-8";
-body {
-    background: url(../images/NTUBG.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-@font-face {
-    font-family: myfont;
-    src: url("../fonts/UTM Helve.ttf");
-}
-.header {
-    background-color:red
-}
-.container-fluid {
-    background-color:#0186BD;
-     
-}
-.navbar-default .navbar-nav > li > a {
-    color:white
-}
-.navbar-default .navbar-brand {
-    color:white
-}
 /* CSS Document */
-.title h1{font-size:18px; padding-left:8px; color:#09F;}
+.title h1{font-size:18px; padding-left:8px; color:#4d5286;}
 .title h2{font-size:16px; padding-left:8px; color:#444; font-weight:bold}
 #tapchi h2{font-size:16px; padding-left:8px; color:#444; font-weight:bold}
 .bgWhite { background-color:#ffffff;}
-.firstCon { margin-top:-19px; min-height:460px}
-.page-footer {border-top:#DDD thin dashed; padding-top:5px; margin-top:5px; color:#0CF; font-size:12px; background-color:gray}
+.bgBlue {background-color: transparent; margin-top: -19px;}
+.firstCon { min-height:488px}
+.page-footer {border-top:#DDD thin dashed; padding-top:5px; margin-top:5px; color:#0CF; font-size:12px; background-color: #4d5286}
 
 /*CSS publication*/
 .citation_title {font-style:italic; color: darkorange;}
@@ -51,3 +28,37 @@ body {
         background:#667788;
         color:#000;
     }
+#TapChi li {
+    padding-top: 10px;
+}
+#BaoCao1 li {
+    padding-top: 10px;
+}
+#BaoCao0 li {
+    padding-top: 10px;
+}
+#Sach li {
+    padding-top: 10px;
+}
+.citation_title {color: #4d5286; font-style: italic;}
+#bangLyLich {width: 100% !important}
+table {width: 99%}
+th, td {padding: 5px;}
+#bangLyLich span {color: #4D5286; padding-left: 4px; padding-right: 2px;}
+.hang_muc_hoc_phan {background-color: #b0c1c7 !important; color: #fff}
+body {background-image: url("../images/NTUBg.png");   background-color: #003463;}
+#myLink {padding-left: 8px; color: #4d5286;}
+#myLink a { color: #4d5286;}
+
+@media (max-width: 568px) {
+    .col-md-2 {display: none;}
+}
+#subTitle {color: #08f8ce}
+.navbar-default {background-color: #4d5286; border: 0px; border-radius: 0px }
+.navbar-default .navbar-nav>li>a {color: white}
+.navbar-default .navbar-nav>li>a:hover {color: yellow}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {color: #04a503}
+
+.navbar-default .navbar-brand {
+     color: #18d8bf;}

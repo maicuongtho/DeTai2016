@@ -31,6 +31,7 @@ namespace NTU.Webgen
             thaydoi = false;
             LoadDSMonHoc();
             btnSave.Enabled = false;
+            linkLabelTeaching.Text = fullHTMLFile;
         }
 
         public CacMonHoc(string ProjectFolder)
@@ -42,6 +43,7 @@ namespace NTU.Webgen
             thaydoi = false;
             btnSave.Enabled = false;
             LoadDSMonHoc();
+            linkLabelTeaching.Text = fullHTMLFile;
         }
 
         public CacMonHoc(string ProjectFolder, ChuongTrinh parent)
@@ -54,6 +56,7 @@ namespace NTU.Webgen
             thaydoi = false;
             btnSave.Enabled = false;
             LoadDSMonHoc();
+            linkLabelTeaching.Text = fullHTMLFile;
         }
 
 
@@ -527,6 +530,11 @@ namespace NTU.Webgen
 
                 pictureBox1.ImageLocation = file;
             }
+        }
+
+        private void linkLabelTeaching_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CongCu.gotoSite(fullHTMLFile);
         }
     }
 }

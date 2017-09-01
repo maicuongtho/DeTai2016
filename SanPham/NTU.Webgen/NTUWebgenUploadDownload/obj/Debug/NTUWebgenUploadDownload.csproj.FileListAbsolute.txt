@@ -1,0 +1,9 @@
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTUWebgenUploadDownload\bin\Debug\NTUWebgenUploadDownload.exe.config
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTUWebgenUploadDownload\bin\Debug\NTUWebgenUploadDownload.exe
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTUWebgenUploadDownload\bin\Debug\NTUWebgenUploadDownload.pdb
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTUWebgenUploadDownload\obj\Debug\NTUWebgenUploadDownload.Form1.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTUWebgenUploadDownload\obj\Debug\NTUWebgenUploadDownload.NTUWebgenUpDownEr.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTUWebgenUploadDownload\obj\Debug\NTUWebgenUploadDownload.Properties.Resources.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTUWebgenUploadDownload\obj\Debug\NTUWebgenUploadDownload.csproj.GenerateResource.Cache
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTUWebgenUploadDownload\obj\Debug\NTUWebgenUploadDownload.exe
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTUWebgenUploadDownload\obj\Debug\NTUWebgenUploadDownload.pdb

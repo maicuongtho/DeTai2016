@@ -1360,6 +1360,7 @@
             this.linkWebCourse.TabIndex = 14;
             this.linkWebCourse.TabStop = true;
             this.linkWebCourse.Text = "index.html";
+            this.linkWebCourse.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebCourse_LinkClicked);
             // 
             // btnXuatWeb
             // 

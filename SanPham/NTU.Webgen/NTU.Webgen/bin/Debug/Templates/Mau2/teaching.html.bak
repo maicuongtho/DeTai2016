@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Giảng dạy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+ 
+</head>
+<body>
+ <div class="container">
+ 	<div class="row" style="padding-top:4px;padding-bottom:4px">
+    	<div class="col-md-1">
+        <img src="assets/images/NTUlogo.gif" alt="Logo Đại học Nha Trang" height="60px">
+        </div>
+        <div class="col-md-11">
+        	<H4 style="color:#EEE">TRƯỜNG ĐẠI HỌC NHA TRANG - WEBSITE CÁN BỘ VIÊN CHỨC </H4>
+            <span id="subTitle"> 02, Nguyễn Đình Chiểu - Nha Trang - Khánh Hòa</span>
+        </div>
+        
+     </div>
+  </div>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+     <a class="navbar-brand" href="#"><section id="nav3_ten">Mai Cường Thọ Mẫu 2</section></a>
+    </div>
+    <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">GIỚI THIỆU</a></li>
+      <li><a href="cv.html">LÝ LỊCH KHOA HỌC</a></li>
+      <li ><a href="publications.html">CÔNG BỐ KHOA HỌC</a></li>
+      <li class="active"><a href="teaching.html">GIẢNG DẠY</a></li>
+      <li><a href="calendar.html">LỊCH</a></li>
+      <li><a href="weblink.html">LIÊN KẾT</a></li>
+    </ul>
+    </div>
+  </div>
+</nav>
+ <div class="row bgBlue">
+  <div class="container bgWhite firstCon">
+  <div class="row">
+   <div class="col-md-2">
+          <section id="anhTrai">
+            <img src="assets/images/side.jpg" width="100%">
+          </section>
+          <section id="tenTrai"></section>
+     </div>
+     <div class="col-md-10" style="border-left: #0186BD thin dotted;"> 
+        <div class="row title">
+          <h1> CÁC HỌC PHẦN GIẢNG DẠY</h1>
+        </div>
+
+  <div class="row">
+  	   <section id="tabCacHocPhan"><table border=0><tr><TD rowspan=2>1<img src='courses/NEC111/vd.JPG' width=100px height=120px></TD><td>Học phần: <a href='courses/NEC111/index.html'>Lập trình mạng (Mã HP: NEC111)</a></td></tr><tr><td>Mục tiêu HP: HCHhjashd shdkjahs dkasd  cxc,xcx,cmx,cmcm.a sdasdas á d</td></tr><tr><td></td></tr><tr><td></td></tr><tr><TD rowspan=2>2<img src='courses/HD2/Jradio.JPG' width=100px height=120px></TD><td>Học phần: <a href='courses/HD2/index.html'>Kiếm tíc máu tnusj (Mã HP: HD2)</a></td></tr><tr><td>Mục tiêu HP: d f dsf sdhfks jahf k asdh vhkjhdhfkjdnj jh  akjh fj h df akfhdk fh shdfkdf d</td></tr><tr><td></td></tr><tr><td></td></tr><tr><TD rowspan=2>3<img src='courses/www/C:\Users\Mai Cuong Tho\Desktop\TestMau0\courses\www\phan-mem-quan-ly-diem-sv-java-5.jpg' width=100px height=120px></TD><td>Học phần: <a href='courses/www/index.html'>d sfdsf sdfsdf (Mã HP: www)</a></td></tr><tr><td>Mục tiêu HP: f sdfsd fds fdsfdsfsdf sdf</td></tr><tr><td></td></tr><tr><td></td></tr></table></section>
+  </div>
+  </div>
+  </div></div> </div>
+<div class="page-footer">
+	
+    <div class="container">
+     &copy; 2017 - Đại Học Nha Trang <span id="myLink">Tạo bởi <a href="http://centrasd.edu.vn"> NTUWebgen</a></span>
+    </div>
+</div>
+</body>
+</html>

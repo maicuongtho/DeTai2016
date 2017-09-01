@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Các công bố</title><meta name="descriptions" content="Nhận dạng tiếng Việt, IoT, Arduino"><meta name="keywords" content="Lập trình Java; Lập trình Andoird">
+<meta name="classification" content="Personal Website">
+<link rel="apple-touch-icon" sizes="144x144" href="http://www.cmadan.com/favicon.png">
+<link rel="shortcut icon" href="http://www.cmadan.com/favicon.png">
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+<link rel="stylesheet" href="assets/css/bootstrap-theme.css">
+<link rel="stylesheet" href="assets/css/owl.carousel.css">
+<link rel="stylesheet" href="assets/css/owl.theme.css">
+<link rel="stylesheet" href="assets/css/poole.css">
+<link rel="stylesheet" href="assets/css/hyde.css">
+<link rel="stylesheet" href="assets/css/academicons.css">
+<link rel="stylesheet" href="assets/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+
+<link rel="apple-touch-icon" sizes="57x57" href="assets/images/fav/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="assets/images/fav/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="assets/images/fav/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="assets/images/fav/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="assets/images/fav/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="assets/images/fav/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="assets/images/fav/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="assets/images/fav/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/fav/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="assets/images/fav/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="assets/images/fav/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/fav/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/owl.carousel.js"></script>
+<script src="assets/js/custom.js"></script>
+</head>
+
+<body cz-shortcut-listen="true">
+<div class="sidebar"> 
+    <div class="ntuHead">
+    <img src="assets/images/HeadGB.png" width="100%" />
+        </div>
+    <div class="container sidebar-sticky">
+       
+        <div class="sidebar-about">
+             <section id="anhTrai"><img src="assets/images/avatarTho.jpg" width=100% height=186px></section>
+             <section id="tenTrai">Thạc sĩ.Mai Cường Thọ Mẫu 4</section> 
+            <div class="row">
+                  <a href="index.html">
+                      <div class="navbar">
+                            <i class="fa fa-home fa-fw"></i>&nbsp;&nbsp;Giới thiệu
+                      </div>
+                  </a>
+                    <a href="teaching.html">
+                        <div class="navbar">
+                        <i class="fa fa-leanpub fa-fw"></i>&nbsp;&nbsp; Giảng dạy</div>
+
+                    </a>
+                    <a href="publications.html">
+                    <div class="navbar" style="background-color: rgba(0,0,0,.6);">
+                    <i class="fa fa-book fa-fw"></i>&nbsp;&nbsp;
+                    Công bố KH</div></a>
+
+                   
+
+                    <a href="cv.html">
+                    <div class="navbar">
+                    <i class="fa fa-university fa-fw"></i>&nbsp;&nbsp;
+                    Lý lịch khoa học</div></a>
+
+                    <a href="weblink.html">
+                    <div class="navbar">
+                    <i class="fa fa-slideshare fa-fw"></i>&nbsp;&nbsp;
+                   Liên kết</div></a>
+                   <a href="calendar.html">
+                    <div class="navbar">
+                    <i class="fa fa-calendar fa-fw"></i>&nbsp;&nbsp;
+                   Lịch</div></a>
+                  
+       
+        <br>
+ 
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="content container">
+<div class="row">
+    <div class="col-md-12">
+	   <h1>CÁC CÔNG BỐ KHOA HỌC </h1><hr>
+       <section id="TapChi"><b>Bài báo</b><ul><li>Tung Nguyen Van, Cuong Tho Mai, (2016), <span class='citation_title'>Measuring and Assessing the Quality of Information on the Annual Reports: The Case of Seafood’s Companies Listed on the Vietnam Stock Market</span>, International Research Journal of Finance and Economics (SCOPUS), Vol 2, Issue 2016, P 76, <a href="F:\LocalRepository\DeTai2016\TestMau4\data\dinhkem\VHVL.pdf"> pdf</a></li><li>Lê Văn Hảo, Mai Cường Thọ, (2017), <span class='citation_title'>Hoàn thiện hệ thống thoogn tin website Dại học đáp ứng yêu cầu kiểm đính chất lượng giáo dục đại học</span>, Tạp chí khoa học Đại học Văn Lang, Tập 2, Số 103, Trang 24, <a href="F:\LocalRepository\DeTai2016\TestMau4\data\dinhkem\"> pdf</a></li></ul></section>
+       <section id="BaoCao1"><b>Báo cáo hội thảo (có ấn phẩm)</b><ul><li>Mai Cường Thọ, (2015), <span class='citation_title'>Nhận dạng tiếng việt có dấu theo phương ngữ Nam Bộ</span>, Hội thảo Công nghệ thông tin và Truyền thông, 10/2016, Đại học Đà Lạt, Nhà xuất bản Thống Kê, Nha Trang, Trang 68, <a href="F:\LocalRepository\DeTai2016\TestMau4\data\dinhkem\Web1-04-Table.pdf"> pdf</a></li><li>Lê Văn Hảo, Mai Cường Thọ, (2015), <span class='citation_title'>Nâng cao thứ hạng web được đánh giá bởi webbomectruocs, và tổ chức QS</span>, Hội thảo nâng cao chất lượng giáo dục đại học , Thàng s, Đại học Đà Nẵng, Nhà xuất bản Đại Học Đà nẵng, Đà Nẵng, Trang 7, <a href="F:\LocalRepository\DeTai2016\TestMau4\data\dinhkem\E91(10)Serial.pdf"> pdf</a></li></ul></section>
+       <section id="BaoCao0"><b>Báo cáo hội thảo (KHÔNG có ấn phẩm)</b><ul><li>Mai Cường Thọ, Trần Văn ABC, (2004), <span class='citation_title'>Mạng cảm biến không dây ứng dụng trong giám sát môi trường ao nuôi thủy sản</span>, Hội thảo AHC MNA , 20/4/2004, Đại học Bôn Ba, <a href='Liên kết http://ntu.edu.vn'>Liên kết http://ntu.edu.vn</a></li><li>Mai Cường Thọ, (2011), <span class='citation_title'>Báo caocsca ác vấn đề ABC để kiểm tra xem thế nào</span>, FAOR 2011, Đại học Nha Trang, Tháng 10, <a href='Link '>Link </a></li></ul></section>
+       <section id="Sach"><b>Sách</b><ul></ul></section>
+    </div>
+</div>
+
+</div>
+
+</body></html>

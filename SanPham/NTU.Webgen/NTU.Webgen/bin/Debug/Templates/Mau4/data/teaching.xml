@@ -1,4 +1,118 @@
 <root>
   <DSHocPhan>
+    <HocPhan>
+      <id>NEC357</id>
+      <ThongTin>
+        <MaHP>NEC357</MaHP>
+        <TenHP>Lập trình mạng với Java</TenHP>
+        <HocPhan_HocTruoc>Mạng máy tính, Lập trình Java</HocPhan_HocTruoc>
+        <KhoiLuong>3(2+1)</KhoiLuong>
+        <DaoTaoTrinhDo>Đại học</DaoTaoTrinhDo>
+        <MucTieu>Học phần này cung cấp cho sinh viên kiến thức cơ bản về các khái niệm, nguyên lý
+của lập trình mạng và cách xây dựng ứng dụng mạng bằng ngôn ngữ Java. Sau khi học xong môn này, sinh viên có được những khả năng sau:
+- Trình bày được các kiểu kiến trúc chương trình.
+- Hiểu và vận dụng được đặc điểm của tiện ích lập trình mạng Socket trên TCP, TCP, multicast.
+- Hiểu rõ ý nghĩa về giao thức (protocol).
+- Thiết kế và cài đặt một ứng dụng theo một giao thức đã có.
+- Xây dựng được các giao thức mới giải quyết các vấn đề đặt ra.
+- Xây dựng được các ứng dụng Client-Server bằng ngôn ngữ Java với tiện ích Socket.
+- Khai thác được các lớp viết bằng Java để hỗ trợ dịch vụ mạng như Mail, SMB, Sniffer,</MucTieu>
+        <NoiDungVanTat>Học phần trang bị cho người học những kiến thức nền tảng của lập trình mạng và các kỹ năng cần thiết để thiết kế và cài đặt các ứng dụng mạng và các chuẩn ở mức ứng dụng dựa trên mô hình Client/Server, có sử dụng các giao tiếp chương trình dựa trên Sockets. Kết thúc học phần, sinh viên có thể viết các chương trình ứng dụng mạng với giao thức tầng Ứng dụng tự thiết kế. Cùng với đó học phần cung cấp các kỹ thuật lập trình mạng phân tán với RMI, và lập trình trên nền tảng giao thức HTTP</NoiDungVanTat>
+      </ThongTin>
+      <DanhGiaKetQua>
+        <HinhThuc>
+          <id>1</id>
+          <TenHinhThuc>Chuyên cần</TenHinhThuc>
+          <MoTaThem>
+          </MoTaThem>
+          <TrongSo>10%</TrongSo>
+          <HinhThucLamBai>Điểm danh, kiêm tra bài tập về nhà</HinhThucLamBai>
+        </HinhThuc>
+        <HinhThuc>
+          <id>2</id>
+          <TenHinhThuc>Kiểm tr giữa kỳ</TenHinhThuc>
+          <MoTaThem>Thực hiện theo qui tắc 15 tiết/bài</MoTaThem>
+          <TrongSo>40%</TrongSo>
+          <HinhThucLamBai>Kiểm tra trên máy</HinhThucLamBai>
+        </HinhThuc>
+        <HinhThuc>
+          <id>3</id>
+          <TenHinhThuc>Thi cuối kỳ</TenHinhThuc>
+          <MoTaThem>Thi theo dự án</MoTaThem>
+          <TrongSo>50%</TrongSo>
+          <HinhThucLamBai>Làm dự án</HinhThucLamBai>
+        </HinhThuc>
+      </DanhGiaKetQua>
+      <TaiLieuThamKhao>
+      </TaiLieuThamKhao>
+      <DeCuongHocPhan>Lap trinh Mang - 2016.doc</DeCuongHocPhan>
+      <BaiGiang>
+      </BaiGiang>
+      <ChinhSachKhac>chinhsachkhac.htm </ChinhSachKhac>
+      <DSThongBao>
+      </DSThongBao>
+    </HocPhan>
+    <HocPhan>
+      <id>NEC337</id>
+      <ThongTin>
+        <MaHP>NEC337</MaHP>
+        <TenHP>Quản trị mạng</TenHP>
+        <HocPhan_HocTruoc>
+        </HocPhan_HocTruoc>
+        <KhoiLuong>
+        </KhoiLuong>
+        <DaoTaoTrinhDo>
+        </DaoTaoTrinhDo>
+        <MucTieu>
+        </MucTieu>
+        <NoiDungVanTat>Học phần Quản trị mạng cung cấp kiến thức về:
+- Nghề nghiệp quản trị mạng và các yêu cầu
+- Cài đặt và cấu hình Active Directory
+- Quản trị Active Directory : đối tượng chứa, người dùng, nhóm người dùng, máy
+tính, chính sách…
+- Quản trị cơ sở hạ tầng mạng: dịch vụ cấu hình địa chỉ IP động, tên miền, cấp chứng
+nhận số và mạng riêng ảo…
+- Quản trị dịch vụ WEB, truyền tập tin, thư điện tử, chia sẻ tập tin và máy in</NoiDungVanTat>
+      </ThongTin>
+      <DanhGiaKetQua>
+      </DanhGiaKetQua>
+      <TaiLieuThamKhao>
+      </TaiLieuThamKhao>
+      <DeCuongHocPhan>
+      </DeCuongHocPhan>
+      <BaiGiang>
+      </BaiGiang>
+      <ChinhSachKhac>chinhsachkhac.htm </ChinhSachKhac>
+      <DSThongBao>
+      </DSThongBao>
+    </HocPhan>
+    <HocPhan>
+      <id>NEC368</id>
+      <ThongTin>
+        <MaHP>NEC368</MaHP>
+        <TenHP>Lập trình thiết bị di động</TenHP>
+        <HocPhan_HocTruoc>
+        </HocPhan_HocTruoc>
+        <KhoiLuong>
+        </KhoiLuong>
+        <DaoTaoTrinhDo>
+        </DaoTaoTrinhDo>
+        <MucTieu>
+        </MucTieu>
+        <NoiDungVanTat> Môn học nhằm cung cấp cho sinh viên những kiến thức cơ bản về lập trình ứng
+dụng trên thiết bị di động với nền tảng hệ điều hành Android, nắm được quy trình, các kiến thức, kĩ năng cần thiết đề phát triển ứng dụng Android.</NoiDungVanTat>
+      </ThongTin>
+      <DanhGiaKetQua>
+      </DanhGiaKetQua>
+      <TaiLieuThamKhao>
+      </TaiLieuThamKhao>
+      <DeCuongHocPhan>
+      </DeCuongHocPhan>
+      <BaiGiang>
+      </BaiGiang>
+      <ChinhSachKhac>chinhsachkhac.htm </ChinhSachKhac>
+      <DSThongBao>
+      </DSThongBao>
+    </HocPhan>
   </DSHocPhan>
 </root>

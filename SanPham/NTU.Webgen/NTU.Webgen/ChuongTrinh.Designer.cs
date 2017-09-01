@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChuongTrinh));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFile_New = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuFile_Open = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuFile_Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGioiThieu = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,24 +46,28 @@
             this.mnuGiangDay = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLich = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLienKet = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuXuatMauKhac = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuUpDownLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton_Open = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.superTabControlWindows = new DevComponents.DotNetBar.SuperTabControl();
-            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.mnuXuatSangMauKhac = new System.Windows.Forms.ToolStripMenuItem();
+            this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mnuFile_Open = new System.Windows.Forms.ToolStripMenuItem();
+            this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel3 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControlWindows)).BeginInit();
             this.superTabControlWindows.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -76,10 +80,11 @@
             this.mnuGiangDay,
             this.mnuLich,
             this.mnuLienKet,
-            this.mnuXuatSangMauKhac});
+            this.mnuXuatMauKhac,
+            this.mnuUpDownLoad});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(797, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(897, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -102,15 +107,6 @@
             this.mnuFile_New.Text = "TẠO MỚI";
             this.mnuFile_New.Click += new System.EventHandler(this.mởToolStripMenuItem_Click);
             // 
-            // mnuFile_Open
-            // 
-            this.mnuFile_Open.Image = global::NTU.Webgen.Properties.Resources._1491336216_folder;
-            this.mnuFile_Open.Name = "mnuFile_Open";
-            this.mnuFile_Open.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.mnuFile_Open.Size = new System.Drawing.Size(167, 22);
-            this.mnuFile_Open.Text = "MỞ";
-            this.mnuFile_Open.Click += new System.EventHandler(this.mỞToolStripMenuItem1_Click);
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -122,6 +118,7 @@
             this.mnuFile_Exit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
             this.mnuFile_Exit.Size = new System.Drawing.Size(167, 22);
             this.mnuFile_Exit.Text = "THOÁT";
+            this.mnuFile_Exit.Click += new System.EventHandler(this.mnuFile_Exit_Click);
             // 
             // mnuGioiThieu
             // 
@@ -218,13 +215,27 @@
             this.mnuLienKet.Text = "LIÊN KẾT";
             this.mnuLienKet.Click += new System.EventHandler(this.mnuLienKet_Click);
             // 
+            // mnuXuatMauKhac
+            // 
+            this.mnuXuatMauKhac.Name = "mnuXuatMauKhac";
+            this.mnuXuatMauKhac.Size = new System.Drawing.Size(148, 20);
+            this.mnuXuatMauKhac.Text = "XUẤT SANG MẪU KHÁC";
+            this.mnuXuatMauKhac.Click += new System.EventHandler(this.mnuXuatMauKhac_Click);
+            // 
+            // mnuUpDownLoad
+            // 
+            this.mnuUpDownLoad.Name = "mnuUpDownLoad";
+            this.mnuUpDownLoad.Size = new System.Drawing.Size(116, 20);
+            this.mnuUpDownLoad.Text = "Upload/Download";
+            this.mnuUpDownLoad.Click += new System.EventHandler(this.mnuUpDownLoad_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 412);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(797, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(897, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -234,37 +245,21 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(137, 17);
             this.toolStripStatusLabel1.Text = "thomc@ntu.edu.vn 2017";
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton_Open});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(797, 25);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton_Open
-            // 
-            this.toolStripButton_Open.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton_Open.Image = global::NTU.Webgen.Properties.Resources._1491336216_folder;
-            this.toolStripButton_Open.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton_Open.Name = "toolStripButton_Open";
-            this.toolStripButton_Open.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton_Open.Text = "toolStripButton2";
-            this.toolStripButton_Open.Click += new System.EventHandler(this.toolStripButton_Open_Click);
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 49);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.superTabControlWindows);
-            this.splitContainer1.Size = new System.Drawing.Size(797, 363);
-            this.splitContainer1.SplitterDistance = 640;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
+            this.splitContainer1.Size = new System.Drawing.Size(897, 388);
+            this.splitContainer1.SplitterDistance = 720;
             this.splitContainer1.TabIndex = 3;
             this.splitContainer1.SplitterMoving += new System.Windows.Forms.SplitterCancelEventHandler(this.splitContainer1_SplitterMoving);
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
@@ -287,6 +282,8 @@
             this.superTabControlWindows.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabControlWindows.ControlBox.MenuBox,
             this.superTabControlWindows.ControlBox.CloseBox});
+            this.superTabControlWindows.Controls.Add(this.superTabControlPanel3);
+            this.superTabControlWindows.Controls.Add(this.superTabControlPanel2);
             this.superTabControlWindows.Controls.Add(this.superTabControlPanel1);
             this.superTabControlWindows.Dock = System.Windows.Forms.DockStyle.Fill;
             this.superTabControlWindows.Location = new System.Drawing.Point(0, 0);
@@ -294,45 +291,77 @@
             this.superTabControlWindows.ReorderTabsEnabled = true;
             this.superTabControlWindows.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.superTabControlWindows.SelectedTabIndex = 0;
-            this.superTabControlWindows.Size = new System.Drawing.Size(640, 363);
+            this.superTabControlWindows.Size = new System.Drawing.Size(720, 388);
             this.superTabControlWindows.TabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.superTabControlWindows.TabIndex = 0;
             this.superTabControlWindows.Tabs.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabItem1});
             this.superTabControlWindows.Text = "superTabControl1";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "config.ntu";
+            this.openFileDialog1.Filter = "NTU Webgen file | *.ntu";
+            this.openFileDialog1.Title = "Mở THƯ MỤC web đã tạo";
+            // 
+            // superTabControlPanel2
+            // 
+            this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel2.Location = new System.Drawing.Point(0, 10);
+            this.superTabControlPanel2.Name = "superTabControlPanel2";
+            this.superTabControlPanel2.Size = new System.Drawing.Size(720, 378);
+            this.superTabControlPanel2.TabIndex = 2;
+            // 
             // superTabControlPanel1
             // 
+            this.superTabControlPanel1.BackgroundImage = global::NTU.Webgen.Properties.Resources.NTUBg;
             this.superTabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 30);
+            this.superTabControlPanel1.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel1.Name = "superTabControlPanel1";
-            this.superTabControlPanel1.Size = new System.Drawing.Size(640, 333);
+            this.superTabControlPanel1.Size = new System.Drawing.Size(720, 388);
             this.superTabControlPanel1.TabIndex = 1;
-            this.superTabControlPanel1.TabItem = this.superTabItem1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(173, 388);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // mnuFile_Open
+            // 
+            this.mnuFile_Open.Image = global::NTU.Webgen.Properties.Resources._1491336216_folder;
+            this.mnuFile_Open.Name = "mnuFile_Open";
+            this.mnuFile_Open.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.mnuFile_Open.Size = new System.Drawing.Size(167, 22);
+            this.mnuFile_Open.Text = "MỞ";
+            this.mnuFile_Open.Click += new System.EventHandler(this.mỞToolStripMenuItem1_Click);
             // 
             // superTabItem1
             // 
-            this.superTabItem1.AttachedControl = this.superTabControlPanel1;
+            this.superTabItem1.AttachedControl = this.superTabControlPanel3;
+            this.superTabItem1.CloseButtonVisible = false;
             this.superTabItem1.GlobalItem = false;
             this.superTabItem1.Name = "superTabItem1";
-            this.superTabItem1.Text = "Dasdboard";
             // 
-            // openFileDialog1
+            // superTabControlPanel3
             // 
-            this.openFileDialog1.FileName = "Mở Project đã có";
-            this.openFileDialog1.Filter = "NTU Webgen file | *.ntu";
-            // 
-            // mnuXuatSangMauKhac
-            // 
-            this.mnuXuatSangMauKhac.Name = "mnuXuatSangMauKhac";
-            this.mnuXuatSangMauKhac.Size = new System.Drawing.Size(148, 20);
-            this.mnuXuatSangMauKhac.Text = "XUẤT SANG MẪU KHÁC";
+            this.superTabControlPanel3.BackgroundImage = global::NTU.Webgen.Properties.Resources.NTUBg;
+            this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel3.Name = "superTabControlPanel3";
+            this.superTabControlPanel3.Size = new System.Drawing.Size(720, 363);
+            this.superTabControlPanel3.TabIndex = 3;
+            this.superTabControlPanel3.TabItem = this.superTabItem1;
             // 
             // ChuongTrinh
             // 
-            this.ClientSize = new System.Drawing.Size(797, 434);
+            this.ClientSize = new System.Drawing.Size(897, 434);
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -344,13 +373,13 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControlWindows)).EndInit();
             this.superTabControlWindows.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,15 +389,12 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuFile;
         private System.Windows.Forms.ToolStripMenuItem mnuFile_New;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton_Open;
         private System.Windows.Forms.SplitContainer splitContainer1;
         public DevComponents.DotNetBar.SuperTabControl superTabControlWindows;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
-        private DevComponents.DotNetBar.SuperTabItem superTabItem1;
         private System.Windows.Forms.ToolStripMenuItem mnuFile_Open;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mnuFile_Exit;
@@ -385,6 +411,11 @@
         private System.Windows.Forms.ToolStripMenuItem côngBốKhácToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem mnuLienKet;
-        private System.Windows.Forms.ToolStripMenuItem mnuXuatSangMauKhac;
+        private System.Windows.Forms.ToolStripMenuItem mnuXuatMauKhac;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem mnuUpDownLoad;
+        private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel2;
+        private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel3;
+        private DevComponents.DotNetBar.SuperTabItem superTabItem1;
     }
 }

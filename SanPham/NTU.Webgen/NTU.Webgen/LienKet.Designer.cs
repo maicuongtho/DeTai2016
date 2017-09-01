@@ -33,10 +33,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LienKet));
             this.dataGridViewX_DSLienKet = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.STTlk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CotMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cotDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.lblHangChon_LK = new System.Windows.Forms.Label();
+            this.btnThem = new DevComponents.DotNetBar.ButtonX();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.linkHuy = new System.Windows.Forms.LinkLabel();
+            this.linkSua = new System.Windows.Forms.LinkLabel();
+            this.linkXoa = new System.Windows.Forms.LinkLabel();
+            this.linkThem = new System.Windows.Forms.LinkLabel();
+            this.btnXoa = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -48,30 +60,19 @@
             this.txtDC = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
             this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
-            this.btnThem = new DevComponents.DotNetBar.ButtonX();
-            this.btnXoa = new DevComponents.DotNetBar.ButtonX();
-            this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnXuatWeb = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.linkThem = new System.Windows.Forms.LinkLabel();
-            this.linkXoa = new System.Windows.Forms.LinkLabel();
-            this.linkSua = new System.Windows.Forms.LinkLabel();
-            this.linkHuy = new System.Windows.Forms.LinkLabel();
-            this.lblHangChon_LK = new System.Windows.Forms.Label();
-            this.STTlk = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CotMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cotDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX_DSLienKet)).BeginInit();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelEx3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewX_DSLienKet
@@ -120,6 +121,30 @@
             this.dataGridViewX_DSLienKet.TabIndex = 0;
             this.dataGridViewX_DSLienKet.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX_DSLienKet_CellClick);
             this.dataGridViewX_DSLienKet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX_DSLienKet_CellContentClick);
+            // 
+            // STTlk
+            // 
+            this.STTlk.DataPropertyName = "STTlk";
+            this.STTlk.HeaderText = "STT";
+            this.STTlk.Name = "STTlk";
+            this.STTlk.ReadOnly = true;
+            this.STTlk.Width = 40;
+            // 
+            // CotMoTa
+            // 
+            this.CotMoTa.DataPropertyName = "CotMoTa";
+            this.CotMoTa.HeaderText = "Mô tả liên kết";
+            this.CotMoTa.Name = "CotMoTa";
+            this.CotMoTa.ReadOnly = true;
+            this.CotMoTa.Width = 200;
+            // 
+            // cotDiaChi
+            // 
+            this.cotDiaChi.DataPropertyName = "cotDiaChi";
+            this.cotDiaChi.HeaderText = "Địa chỉ liên kết";
+            this.cotDiaChi.Name = "cotDiaChi";
+            this.cotDiaChi.ReadOnly = true;
+            this.cotDiaChi.Width = 480;
             // 
             // panelEx1
             // 
@@ -195,6 +220,107 @@
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.superTabItem1;
             // 
+            // lblHangChon_LK
+            // 
+            this.lblHangChon_LK.AutoSize = true;
+            this.lblHangChon_LK.Location = new System.Drawing.Point(823, 304);
+            this.lblHangChon_LK.Name = "lblHangChon_LK";
+            this.lblHangChon_LK.Size = new System.Drawing.Size(16, 13);
+            this.lblHangChon_LK.TabIndex = 23;
+            this.lblHangChon_LK.Text = "-1";
+            this.lblHangChon_LK.Visible = false;
+            // 
+            // btnThem
+            // 
+            this.btnThem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThem.Image = global::NTU.Webgen.Properties.Resources.Add_16x16;
+            this.btnThem.Location = new System.Drawing.Point(819, 203);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(101, 24);
+            this.btnThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnThem.TabIndex = 10;
+            this.btnThem.Text = "Thêm mới";
+            this.btnThem.Visible = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.groupBox1.Controls.Add(this.linkHuy);
+            this.groupBox1.Controls.Add(this.linkSua);
+            this.groupBox1.Controls.Add(this.linkXoa);
+            this.groupBox1.Controls.Add(this.linkThem);
+            this.groupBox1.Location = new System.Drawing.Point(843, 1);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(147, 142);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thao tác";
+            // 
+            // linkHuy
+            // 
+            this.linkHuy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.linkHuy.Location = new System.Drawing.Point(25, 108);
+            this.linkHuy.Name = "linkHuy";
+            this.linkHuy.Size = new System.Drawing.Size(104, 23);
+            this.linkHuy.TabIndex = 0;
+            this.linkHuy.TabStop = true;
+            this.linkHuy.Text = "Hủy";
+            this.linkHuy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkHuy.Visible = false;
+            this.linkHuy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkHuy_LinkClicked);
+            // 
+            // linkSua
+            // 
+            this.linkSua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.linkSua.Location = new System.Drawing.Point(25, 80);
+            this.linkSua.Name = "linkSua";
+            this.linkSua.Size = new System.Drawing.Size(104, 23);
+            this.linkSua.TabIndex = 0;
+            this.linkSua.TabStop = true;
+            this.linkSua.Text = "Sửa";
+            this.linkSua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkSua.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSua_LinkClicked);
+            // 
+            // linkXoa
+            // 
+            this.linkXoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.linkXoa.Location = new System.Drawing.Point(25, 52);
+            this.linkXoa.Name = "linkXoa";
+            this.linkXoa.Size = new System.Drawing.Size(104, 23);
+            this.linkXoa.TabIndex = 0;
+            this.linkXoa.TabStop = true;
+            this.linkXoa.Text = "Xóa";
+            this.linkXoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkXoa.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkXoa_LinkClicked);
+            // 
+            // linkThem
+            // 
+            this.linkThem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.linkThem.Location = new System.Drawing.Point(25, 24);
+            this.linkThem.Name = "linkThem";
+            this.linkThem.Size = new System.Drawing.Size(104, 23);
+            this.linkThem.TabIndex = 0;
+            this.linkThem.TabStop = true;
+            this.linkThem.Text = "Thêm mới";
+            this.linkThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.linkThem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkThem_LinkClicked);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnXoa.Image = global::NTU.Webgen.Properties.Resources.Delete_16x16;
+            this.btnXoa.Location = new System.Drawing.Point(819, 263);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(101, 24);
+            this.btnXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnXoa.TabIndex = 11;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Visible = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -206,6 +332,20 @@
             this.pictureBox3.TabIndex = 19;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnSua.Image = global::NTU.Webgen.Properties.Resources.Edit_16x16;
+            this.btnSua.Location = new System.Drawing.Point(819, 233);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(101, 24);
+            this.btnSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnSua.TabIndex = 12;
+            this.btnSua.Text = "Sửa dữ liệu";
+            this.btnSua.Visible = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // pictureBox2
             // 
@@ -328,6 +468,7 @@
             // 
             this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.linkLabel1);
             this.panelEx3.Controls.Add(this.btnXuatWeb);
             this.panelEx3.Controls.Add(this.btnSave);
             this.panelEx3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -342,48 +483,6 @@
             this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx3.Style.GradientAngle = 90;
             this.panelEx3.TabIndex = 17;
-            // 
-            // btnThem
-            // 
-            this.btnThem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnThem.Image = global::NTU.Webgen.Properties.Resources.Add_16x16;
-            this.btnThem.Location = new System.Drawing.Point(819, 203);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(101, 24);
-            this.btnThem.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnThem.TabIndex = 10;
-            this.btnThem.Text = "Thêm mới";
-            this.btnThem.Visible = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnXoa.Image = global::NTU.Webgen.Properties.Resources.Delete_16x16;
-            this.btnXoa.Location = new System.Drawing.Point(819, 263);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(101, 24);
-            this.btnXoa.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnXoa.TabIndex = 11;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.Visible = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSua.Image = global::NTU.Webgen.Properties.Resources.Edit_16x16;
-            this.btnSua.Location = new System.Drawing.Point(819, 233);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(101, 24);
-            this.btnSua.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnSua.TabIndex = 12;
-            this.btnSua.Text = "Sửa dữ liệu";
-            this.btnSua.Visible = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXuatWeb
             // 
@@ -412,102 +511,16 @@
             this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // groupBox1
+            // linkLabel1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.groupBox1.Controls.Add(this.linkHuy);
-            this.groupBox1.Controls.Add(this.linkSua);
-            this.groupBox1.Controls.Add(this.linkXoa);
-            this.groupBox1.Controls.Add(this.linkThem);
-            this.groupBox1.Location = new System.Drawing.Point(843, 1);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(147, 142);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thao tác";
-            // 
-            // linkThem
-            // 
-            this.linkThem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkThem.Location = new System.Drawing.Point(25, 24);
-            this.linkThem.Name = "linkThem";
-            this.linkThem.Size = new System.Drawing.Size(104, 23);
-            this.linkThem.TabIndex = 0;
-            this.linkThem.TabStop = true;
-            this.linkThem.Text = "Thêm mới";
-            this.linkThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkThem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkThem_LinkClicked);
-            // 
-            // linkXoa
-            // 
-            this.linkXoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkXoa.Location = new System.Drawing.Point(25, 52);
-            this.linkXoa.Name = "linkXoa";
-            this.linkXoa.Size = new System.Drawing.Size(104, 23);
-            this.linkXoa.TabIndex = 0;
-            this.linkXoa.TabStop = true;
-            this.linkXoa.Text = "Xóa";
-            this.linkXoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkXoa.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkXoa_LinkClicked);
-            // 
-            // linkSua
-            // 
-            this.linkSua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkSua.Location = new System.Drawing.Point(25, 80);
-            this.linkSua.Name = "linkSua";
-            this.linkSua.Size = new System.Drawing.Size(104, 23);
-            this.linkSua.TabIndex = 0;
-            this.linkSua.TabStop = true;
-            this.linkSua.Text = "Sửa";
-            this.linkSua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkSua.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSua_LinkClicked);
-            // 
-            // linkHuy
-            // 
-            this.linkHuy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linkHuy.Location = new System.Drawing.Point(25, 108);
-            this.linkHuy.Name = "linkHuy";
-            this.linkHuy.Size = new System.Drawing.Size(104, 23);
-            this.linkHuy.TabIndex = 0;
-            this.linkHuy.TabStop = true;
-            this.linkHuy.Text = "Hủy";
-            this.linkHuy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.linkHuy.Visible = false;
-            this.linkHuy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkHuy_LinkClicked);
-            // 
-            // lblHangChon_LK
-            // 
-            this.lblHangChon_LK.AutoSize = true;
-            this.lblHangChon_LK.Location = new System.Drawing.Point(823, 304);
-            this.lblHangChon_LK.Name = "lblHangChon_LK";
-            this.lblHangChon_LK.Size = new System.Drawing.Size(16, 13);
-            this.lblHangChon_LK.TabIndex = 23;
-            this.lblHangChon_LK.Text = "-1";
-            this.lblHangChon_LK.Visible = false;
-            // 
-            // STTlk
-            // 
-            this.STTlk.DataPropertyName = "STTlk";
-            this.STTlk.HeaderText = "STT";
-            this.STTlk.Name = "STTlk";
-            this.STTlk.ReadOnly = true;
-            this.STTlk.Width = 40;
-            // 
-            // CotMoTa
-            // 
-            this.CotMoTa.DataPropertyName = "CotMoTa";
-            this.CotMoTa.HeaderText = "Mô tả liên kết";
-            this.CotMoTa.Name = "CotMoTa";
-            this.CotMoTa.ReadOnly = true;
-            this.CotMoTa.Width = 200;
-            // 
-            // cotDiaChi
-            // 
-            this.cotDiaChi.DataPropertyName = "cotDiaChi";
-            this.cotDiaChi.HeaderText = "Địa chỉ liên kết";
-            this.cotDiaChi.Name = "cotDiaChi";
-            this.cotDiaChi.ReadOnly = true;
-            this.cotDiaChi.Width = 480;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(281, 11);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(55, 13);
+            this.linkLabel1.TabIndex = 14;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "linkLabel1";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // LienKet
             // 
@@ -522,11 +535,12 @@
             this.superTabControl1.ResumeLayout(false);
             this.superTabControlPanel1.ResumeLayout(false);
             this.superTabControlPanel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelEx3.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.panelEx3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -563,5 +577,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn STTlk;
         private System.Windows.Forms.DataGridViewTextBoxColumn CotMoTa;
         private System.Windows.Forms.DataGridViewTextBoxColumn cotDiaChi;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

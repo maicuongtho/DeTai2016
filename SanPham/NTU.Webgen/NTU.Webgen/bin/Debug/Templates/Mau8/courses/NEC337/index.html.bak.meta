@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quản trị mạng</title><meta name="keywords" content="Quản trị mạng"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../assets/css/custom.css">
+  <script src="../../assets/js/jquery.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+ 
+</head>
+<body>
+  <div class="row ntnBanner">
+       <div class="container ">
+        
+           <div style="float: right; width: 300px"> <b>TRƯỜNG ĐẠI HỌC NHA TRANG</b><BR> WEBSITE CÁN BỘ GIẢNG VIÊN </div>
+          <div style="float: left;"> <img src="../../assets/images/NTUlogo.gif" width="50px"></div>
+           </div>
+  </div>
+  <div class="container" style="padding-right: 0px; padding-left: 0px">
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+      <a class="navbar-brand" href="#"><section id="nav3_ten">Mai Cường Thọ Mẫu 8</section></a>
+    </div>
+    <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li ><a href="../../index.html">GIỚI THIỆU</a></li>
+      <li><a href="../../cv.html">LÝ LỊCH KHOA HỌC</a></li>
+      <li ><a href="../../publications.html">CÔNG BỐ KHOA HỌC</a></li>
+      <li class="active" ><a href="../../teaching.html">GIẢNG DẠY</a></li>
+      <li><a href="../../calendar.html">LỊCH</a></li>
+      <li><a href="../../webLink.html">LIÊN KẾT</a></li>
+    </ul>
+    </div>
+  </div>
+</nav>
+</div>
+ 
+ 
+  
+ <div class="row">
+  <div class="container bgWhite firstCon">
+  <div class="row">
+      <div class="col-md-2">
+       <img src="../../assets/images/side.jpg" width="100%" style="border-left: tan thin dotted">
+     </div>
+     <div class="col-md-10">
+         <div class="title"> 
+         <h1> CHI TIẾT HỌC PHẦN</h1></div>
+          
+         <div class="row">
+
+               <section id='HocPhan'>
+        <table id='ThongTinHocPhan'>
+            <tr><td>
+                <h1>
+                  <span id="MAHOCPHAN">NEC337</span> <span id="TENHOCPHAN">Quản trị mạng</span>  </h1>
+              </td>
+            </tr>
+            <tr><td class="hang_muc_hoc_phan">
+              THÔNG TIN HỌC PHẦN
+              </td>
+            </tr>
+            <tr>
+             <td>
+                <b>Tên học phần:</b> <span id="tenHocPhan">Quản trị mạng</span></td>
+            </tr>
+            <tr>
+                <td><b>Mã học phần:</b> <span id="maHocPhan">NEC337</span>; <b>Khối lượng:</b><span id="khoiluong"></span></td>
+            </tr>
+            <tr>
+                <td><b>Học phần học trước:</b> <span id="hpHocTruoc"></span></td>
+            </tr>
+            <tr>
+                <td><b>Mục tiêu:</b> <span id="muctieuHP"></span></td>
+            </tr>
+             <tr>
+                <td><b>Nội dung vắn tắt:</b> <span id="noiDungVanTat">Học phần Quản trị mạng cung cấp kiến thức về:
+- Nghề nghiệp quản trị mạng và các yêu cầu
+- Cài đặt và cấu hình Active Directory
+- Quản trị Active Directory : đối tượng chứa, người dùng, nhóm người dùng, máy
+tính, chính sách…
+- Quản trị cơ sở hạ tầng mạng: dịch vụ cấu hình địa chỉ IP động, tên miền, cấp chứng
+nhận số và mạng riêng ảo…
+- Quản trị dịch vụ WEB, truyền tập tin, thư điện tử, chia sẻ tập tin và máy in</span></td>
+            </tr>
+            <tr>
+              <td class="hang_muc_hoc_phan">
+                ĐÁNH GIÁ KẾT QUẢ
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <section id="DanhGiaKetQua"><ul></ul></section>
+              </td>
+            </tr>
+            <tr>
+              <td class="hang_muc_hoc_phan">
+                TÀI LIỆU THAM KHẢO
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <section id="TaiLieuThamKhao"></section>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="hang_muc_hoc_phan">
+                ĐỀ CƯƠNG HỌC PHẦN + BÀI GIẢNG: 
+              </td>
+
+            </tr>
+            <tr>
+              <td>ĐỀ CƯƠNG HỌC PHẦN: <span id="DeCuongHP"><a href="Lap trinh Mang - 2016.doc">Xem tại đây</a></span></td>
+            </tr>
+            
+            <tr>
+              <td>BÀI GIẢNG<section id="BaiGiang"><table></table></section></td>
+            </tr>
+            <tr>
+              <td class="hang_muc_hoc_phan">
+                THÔNG TIN KHÁC
+              </td>
+            </tr>
+            <tr>
+              <td ><section id="ChinhSachKhac"></section></td>
+            </tr>
+
+
+        </table>
+
+     </section>
+
+
+
+         </div>
+
+
+
+
+         
+     </div>
+ </div>
+ </div>
+ </div>
+<div class="page-footer">
+  
+    <div class="container">
+    &copy; 2017 - Đại Học Nha Trang <span id="myLink">Tạo bởi <a href="http://centrasd.edu.vn"> NTUWebgen</a></span>
+    </div>
+</div>
+</body>
+</html>

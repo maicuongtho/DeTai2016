@@ -45,26 +45,6 @@ namespace NTU.Webgen
         // Tải dữ liệu lên điều khiển
         private void mnuLL_btnTaiLaiXML_Click(object sender, EventArgs e)
         {
-            //XmlReader xmlReader = XmlReader.Create(cvXMLFile);
-            //StringBuilder s = new StringBuilder();
-            //while (xmlReader.Read())
-            //{
-            //    if (xmlReader.NodeType == XmlNodeType.Element) {
-            //        switch (xmlReader.Name) {
-            //            case "HoVaTen": ll_txtHoTen.Text = xmlReader.ReadInnerXml(); break;
-            //            case "NamSinh": ll_txtNamSinh.Text = xmlReader.ReadInnerXml(); break;
-            //            case "GioiTinh": ll_txtGioiTinh.Text = xmlReader.ReadInnerXml(); break;
-            //            case "LoaiHocVi": ll_txtHocvi.Text = xmlReader.ReadInnerXml(); break;
-            //            case "NamDatHocVi": ll_txtHocviNamDat.Text = xmlReader.ReadInnerXml(); break;
-            //            case "HocHam": ll_txtHocHam.Text = xmlReader.ReadInnerXml(); break;
-            //            case "ChucDanh": ll_txtChucDanh.Text = xmlReader.ReadInnerXml(); break;
-            //            case "NN1": ll_txtNgoaiNgu.Text = xmlReader.ReadInnerXml(); break;
-            //        }
-            //    }
-                  
-            //}
-            //xmlReader.Close();
-            //MessageBox.Show("Tải thành công!");
 
        
         }
@@ -76,18 +56,8 @@ namespace NTU.Webgen
             XmlNode newXMLNode = xmlDom.SelectSingleNode("root/ThongTinChung/HoVaTen");
             newXMLNode.InnerText = "ok nè";
             xmlDom.Save(cvXMLFile);
-
-            
-            //XElement xelement = XElement.Load(cvXMLFile);
-            //IEnumerable<XElement> settings = xelement.Elements();
-
-            //settings.FirstOrDefault(x => x.Name == "HoVaTen").SetValue("treeee");
-
-            //xelement.Save(cvXMLFile);
-
-
         }
-        // note - just a string (name) passed in
+
         public XElement Get(string name, string xmlfile)
         {
             XElement xelement = XElement.Load(xmlfile);
@@ -98,10 +68,7 @@ namespace NTU.Webgen
 
         private void mnuWeb_TaoMoi_Click(object sender, EventArgs e)
         {
-           // ChonMau ctrlChonMau = new ChonMau(this);
-           // CongCu.AddTab("tabChonMau", "Tạo mới website", superTabControlWindows, ctrlChonMau, true,30);
-
-        }
+            }
         
         // Mở lại website đã có trên máy cục bộ
         private void mnuWeb_MoLai_Click(object sender, EventArgs e)
@@ -182,16 +149,6 @@ namespace NTU.Webgen
 
         private void ribbonTabItemGioiThieu_Button_Click(object sender, EventArgs e)
         {
-            if (superTabControlWindows.Tabs.Contains("tabGIoiThieu"))
-            {
-                var t = (SuperTabItem)superTabControlWindows.Tabs["tabGIoiThieu"];
-                superTabControlWindows.SelectedTab = t;
-            }
-            else
-            {
-                GioiThieu sc = new GioiThieu();
-                CongCu.AddTab("tabGIoiThieu", "Giới thiệu", superTabControlWindows, sc, true, 10);
-            }
         }
     }
    

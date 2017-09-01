@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Giới thiệu -Mai Cường Thọ Mẫu 9</title><meta name="descriptions" content="Nhận dạng tiếng nói, Mạng cảm biến không dây"><meta name="keywords" content="Kiến trúc máy tính, Lập trình hệ thống nhúng, Lập trình di động, Lập trình Java, Lập trình mạng và Quản trị mạng"><meta name="author" content="Mai Cường Thọ Mẫu 9">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+ 
+</head>
+<body>
+ <div class="container">
+  <div class="row">
+      <img src="assets/images/HeadGB.png" width="100%" >
+  </div>
+ </div>
+ <div class="row bgBlue">
+  <div class="container bgWhite firstCon">
+  <div style="height: 2px; background-color: red; margin-left: -15px; margin-right: -15px"></div>
+  <div class="row">
+     
+     <div class="col-sm-2 menuDung">
+       <table>
+          <tr><td>
+            <section id="anhTrai"><img src="assets/images/avatarTho.jpg" width=100% height=186px></section>
+          </td></tr>
+          <tr><td>
+            <section id="tenTrai">Thạc sĩ.Mai Cường Thọ Mẫu 9</section>
+          </td></tr>
+          <tr><td>
+             <a href="index.html">GIỚI THIỆU</a>
+          </td></tr>
+          <tr><td>
+             <a href="cv.html">LÝ LỊCH KHOA HỌC</a>
+          </td></tr>
+          <tr><td>
+             <a href="publications.html">CÔNG BỐ KHOA HỌC</a>
+          </td></tr>
+          <tr><td>
+             <a href="teaching.html">GIẢNG DẠY</a>
+          </td></tr>
+          <tr><td>
+            <a href="calendar.html">LỊCH</a>
+          </td></tr>
+           <tr><td>
+            <a href="webLink.html">LIÊN KẾT</a>
+          </td></tr>
+       </table>  
+     
+     </div>
+     <div class="col-md-10" style="border-left: #0186BD thin dotted;">
+         <div class="title">  
+         <h1> GIỚI THIỆU</h1></div>
+         <section id="gioithieu"><div class='col-sm-3'><h3><center><img src='assets/images/avatarTho.jpg' width=90% height=196px></center></h3></div><div class='col-sm-5'><h3>Thông tin chung</h3><b>Thạc sĩ.</b> Mai Cường Thọ Mẫu 9<br><b>Đơn vị: </b>Khoa Công nghệ Thông tin<br><b>Tổ/Bộ môn: </b>Mạng máy tính và Truyền thông<br><b>Các môn học đảm nhận: </b><p>Kiến trúc máy tính, Lập trình hệ thống nhúng, Lập trình di động, Lập trình Java, Lập trình mạng và Quản trị mạng</p><b>Định hướng nghiên cứu chính: </b><p>Nhận dạng tiếng nói, Mạng cảm biến không dây</p></div><div class='col-sm-4'><h3> Thông tin liên hệ </h3><b>Địa chỉ:</b> 02, Trần Phú, Nha Trang, Khánh Hòa<br><b>Email: </b>thomc@ntu.edu.vn<br><b>Số điện thoại:</b> 0915311008<br><b>Mạng xã hội: </b>facebook.com/maicuongtho<br><b>Website: </b> <a href="http://ntu.edu.vn/~thomc">ntu.edu.vn/~thomc</a><br></div><div class='col-md-12' style='padding-top:10px'> <h3>Thông tin khác</h3><BODY scroll=auto><P><STRONG>Danh ngôn</STRONG><BR>Ngay cả đến vạn lý trường thành cũng được xây từ những viên gạch nhỏ, Vậy nên Lập trình cũng phải từ từng dòng lệnh một 
+<P>Nhà trường chỉ cho chúng ta chiếc chìa khóa tri thức, học trong cuộc sống là công việc cả đời. (<STRONG>Bill Gate</STRONG>)</P>
+<P>&nbsp;Học kiến thức phải giỏi suy nghĩ, suy nghĩ, lại suy nghĩ. Chính nhờ cách&nbsp;ấy tôi&nbsp;đã trở thành nhà khoa học (<STRONG>A. Einstein</STRONG>)</P></BODY></div></section>
+     </div>
+ </div>
+ </div>
+ </div>
+<div class="page-footer">
+  
+    <div class="container">
+    &copy; 2017 - Đại Học Nha Trang <span id="myLink">Tạo bởi <a href="http://centrasd.edu.vn"> NTUWebgen</a></span>
+    </div>
+</div>
+</body>
+</html>

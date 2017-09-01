@@ -246,9 +246,9 @@
             this.superTabControlPanel3.Controls.Add(this.txtBaoCao_TacGia);
             this.superTabControlPanel3.Controls.Add(this.labelX23);
             this.superTabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 25);
+            this.superTabControlPanel3.Location = new System.Drawing.Point(0, 0);
             this.superTabControlPanel3.Name = "superTabControlPanel3";
-            this.superTabControlPanel3.Size = new System.Drawing.Size(994, 511);
+            this.superTabControlPanel3.Size = new System.Drawing.Size(994, 536);
             this.superTabControlPanel3.TabIndex = 0;
             this.superTabControlPanel3.TabItem = this.superTabItem3;
             // 
@@ -1188,6 +1188,7 @@
             this.linkWebCourse.TabIndex = 14;
             this.linkWebCourse.TabStop = true;
             this.linkWebCourse.Text = "publications.html";
+            this.linkWebCourse.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkWebCourse_LinkClicked);
             // 
             // panelEx3
             // 
@@ -1281,8 +1282,8 @@
             this.superTabControl1.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.superTabControl1.ControlBox.MenuBox,
             this.superTabControl1.ControlBox.CloseBox});
-            this.superTabControl1.Controls.Add(this.superTabControlPanel3);
             this.superTabControl1.Controls.Add(this.superTabControlPanel1);
+            this.superTabControl1.Controls.Add(this.superTabControlPanel3);
             this.superTabControl1.Controls.Add(this.superTabControlPanel2);
             this.superTabControl1.Controls.Add(this.superTabControlPanel4);
             this.superTabControl1.Location = new System.Drawing.Point(16, 41);

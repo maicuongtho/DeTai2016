@@ -34,6 +34,7 @@ namespace NTU.Webgen
             htmlEditor1.setButtonVisible("tsbFind");
             htmlEditor1.setButtonVisible("tsbAbout");
             htmlEditor1.setButtonVisible("tsbRemoveFormat");
+            linkLabel1.Text = carHTMLFile;
         }
 
         public calendar(String ProjectFolder)
@@ -59,6 +60,7 @@ namespace NTU.Webgen
             htmlEditor1.setButtonVisible("tsbRemoveFormat");
             txtURLLich.Text = CongCu.ReadHTMLFile(ggCarHTMLFile);
             htmlEditor1.BodyInnerHTML = CongCu.ReadHTMLFile(subCarHTMLFile);
+            linkLabel1.Text = carHTMLFile;
         }
 
 
@@ -131,6 +133,11 @@ namespace NTU.Webgen
             // Thêm tiêu đề
           //  CongCu.ReplaceTite(carHTMLFile, "Lịch-" + u.HoTen + "NTUWebgen");
             MessageBox.Show("Đã xuất thành công sang trang web: \n" + carHTMLFile, "NTUWebgen", MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CongCu.gotoSite(carHTMLFile);
         }
     }
 }

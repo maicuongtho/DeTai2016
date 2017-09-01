@@ -18,7 +18,7 @@ namespace NTU.Webgen
         String ProjectFolder;
         String fullXMLFile;
         String fullHTMLFile;
-        bool isThemMoi, isSua;
+        
         public LienKet()
         {
             InitializeComponent();
@@ -28,6 +28,7 @@ namespace NTU.Webgen
             this.fullHTMLFile = (ProjectFolder + htmlFile);
            // CongCu.XML2_LienKetGrid(fullXMLFile, dataGridViewX_DSLienKet);
              LoadLienKet();
+             linkLabel1.Text = fullHTMLFile;
         }
 
         public LienKet(String ProjectFolder)
@@ -39,6 +40,7 @@ namespace NTU.Webgen
              this.fullHTMLFile = (ProjectFolder + htmlFile);
             //CongCu.XML2_LienKetGrid(fullXMLFile, dataGridViewX_DSLienKet);
              LoadLienKet();
+             linkLabel1.Text = fullHTMLFile;
         }
         void XoaInput() {
             txtLK.Text = "";
@@ -52,7 +54,7 @@ namespace NTU.Webgen
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            isThemMoi = true;
+          //  isThemMoi = true;
             txtDC.Enabled = true;
             txtLK.Enabled = true;
             btnSave.Enabled = true;
@@ -92,7 +94,7 @@ namespace NTU.Webgen
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            isSua = true;
+        
             btnSave.Enabled = true;
             txtDC.Enabled = true;
             txtLK.Enabled = true;
@@ -424,6 +426,11 @@ namespace NTU.Webgen
             doc.Save(fullXMLFile);
             MessageBox.Show("Lưu thành công", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
         
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CongCu.gotoSite(fullHTMLFile);
         }
     }
 }

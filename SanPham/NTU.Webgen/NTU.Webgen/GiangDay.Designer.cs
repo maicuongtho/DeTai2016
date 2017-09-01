@@ -140,7 +140,7 @@
             // 
             this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnXoa.Image = global::NTU.Webgen.Properties.Resources.Delete_16x16;
+           this.btnXoa.Image = global::NTU.Webgen.Properties.Resources.Delete_16x16;
             this.btnXoa.Location = new System.Drawing.Point(118, 6);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(101, 24);

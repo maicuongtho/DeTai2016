@@ -1,0 +1,66 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.title h1{font-size:18px; padding-left:8px; color:#4d5286;}
+.title h2{font-size:16px; padding-left:8px; color:#444; font-weight:bold}
+#tapchi h2{font-size:16px; padding-left:8px; color:#444; font-weight:bold}
+.bgWhite { background-color:#ffffff;}
+.bgBlue {background-color: transparent; padding-top: 2px}
+.firstCon { min-height:488px; margin-top: 19px border: tan 1px solid;}
+.page-footer {border-top:#DDD thin dashed; padding-top:5px; margin-top:5px; color:#0CF; font-size:12px; background-color: #7b0404}
+
+/*CSS publication*/
+.citation_title {font-style:italic; color: darkorange;}
+
+.tabs li {
+        list-style:none;
+        display:inline;
+    }
+ 
+    .tabs a {
+        padding:5px 10px;
+        display:inline-block;
+        background:#666;
+        color:#fff;
+        text-decoration:none;
+    }
+ 
+    .tabs a.active {
+        background:#667788;
+        color:#000;
+    }
+#TapChi li {
+    padding-top: 10px;
+}
+#BaoCao1 li {
+    padding-top: 10px;
+}
+#BaoCao0 li {
+    padding-top: 10px;
+}
+#Sach li {
+    padding-top: 10px;
+}
+.citation_title {color: #7b0404; font-style: italic;}
+#bangLyLich {width: 100% !important}
+table {width: 99%}
+th, td {padding: 5px;}
+#bangLyLich span {color: #a94442; padding-left: 4px; padding-right: 2px;}
+.hang_muc_hoc_phan {background-color: #b0c1c7 !important; color: #fff}
+body {background-image: url("../images/NTUBg.png");   background-color: #003463;}
+#myLink {padding-left: 8px; color: #7b0404;}
+#myLink a { color: #7b0404;}
+
+@media (max-width: 568px) {
+    .col-md-2 {display: none;}
+}
+#subTitle {color: #08f8ce}
+.navbar-default {background-color: #4d5286; border: 0px; border-radius: 0px }
+.navbar-default .navbar-nav>li>a {color: white}
+.navbar-default .navbar-nav>li>a:hover {color: yellow}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {color: #04a503}
+
+.navbar-default .navbar-brand {
+     color: #18d8bf;}
+
+.activeLink a{color: #7b0404; font-weight: bold;}

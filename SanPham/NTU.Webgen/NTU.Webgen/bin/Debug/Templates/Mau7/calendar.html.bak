@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lịch công tác</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+ 
+</head>
+<body>
+  <div class="row ntnBanner">
+       <div class="container ">
+        
+           <div style="float: right; width: 300px"> <b>TRƯỜNG ĐẠI HỌC NHA TRANG</b><BR> WEBSITE CÁN BỘ GIẢNG VIÊN </div>
+          <div style="float: left;"> <img src="assets/images/NTUlogo.gif" width="50px"></div>
+           </div>
+  </div>
+  <div class="container" style="padding-right: 0px; padding-left: 0px">
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+      <a class="navbar-brand" href="#"><section id="nav3_ten">Mai Cường Thọ Mẫu 8</section></a>
+    </div>
+    <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li ><a href="index.html">GIỚI THIỆU</a></li>
+      <li><a href="cv.html">LÝ LỊCH KHOA HỌC</a></li>
+      <li ><a href="publications.html">CÔNG BỐ KHOA HỌC</a></li>
+      <li ><a href="teaching.html">GIẢNG DẠY</a></li>
+      <li class="active" ><a href="calendar.html">LỊCH</a></li>
+      <li><a href="webLink.html">LIÊN KẾT</a></li>
+    </ul>
+    </div>
+  </div>
+</nav>
+</div>
+ 
+ 
+  
+ <div class="row">
+  <div class="container bgWhite firstCon">
+  <div class="row">
+       
+     <div class="col-md-10">
+         <div class="title">
+          <h1> LỊCH CÔNG TÁC</h1>
+        </div>
+
+                          <section id="lich"><div id='lich0'><h2> Lịch của tôi</h2> <BODY scroll=auto><TABLE style="HEIGHT: 159px; WIDTH: 754px" cellSpacing=0 cols=7 cellPadding=2 width=754 border=1>
+                      <CAPTION></CAPTION>
+                      <TBODY>
+                      <TR>
+                      <TD><STRONG>Thứ 2</STRONG></TD>
+                      <TD><STRONG>Thứ 3</STRONG></TD>
+                      <TD><STRONG>Thứ 4</STRONG></TD>
+                      <TD><STRONG>Thứ 5</STRONG></TD>
+                      <TD><STRONG>Thứ 6</STRONG></TD>
+                      <TD><STRONG>Thứ 7</STRONG></TD>
+                      <TD><STRONG>Chủ Nhật</STRONG></TD></TR>
+                      <TR>
+                      <TD></TD>
+                      <TD>123</TD>
+                      <TD>123</TD>
+                      <TD>213</TD>
+                      <TD>789</TD>
+                      <TD></TD>
+                      <TD></TD></TR>
+                      <TR>
+                      <TD>798</TD>
+                      <TD>789</TD>
+                      <TD></TD>
+                      <TD></TD>
+                      <TD></TD>
+                      <TD></TD>
+                      <TD></TD></TR>
+                      <TR>
+                      <TD></TD>
+                      <TD></TD>
+                      <TD></TD>
+                      <TD></TD>
+                      <TD>123</TD>
+                      <TD></TD>
+                      <TD></TD></TR></TBODY></TABLE></BODY></div><div id='lichgoogle'><h2>My Google Calendar</h2><iframe src="https://calendar.google.com/calendar/embed?src=ntu.edu.vn_o6fivbsn3e5gf0f1jdfv23ec1g%40group.calendar.google.com&ctz=Asia/Saigon" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe></div></section>
+
+  </div>
+
+     <div class="col-md-2">
+       <img src="assets/images/side.jpg" width="100%" style="border-left: tan thin dotted">
+     </div>
+  </div>
+
+  </div>
+ </div>
+<div class="page-footer">
+	
+    <div class="container">
+    &copy; 2017 - Đại Học Nha Trang <span id="myLink">Tạo bởi <a href="http://centrasd.edu.vn"> NTUWebgen</a></span>
+    </div>
+</div>
+</body>
+</html>

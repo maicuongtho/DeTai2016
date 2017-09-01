@@ -25,6 +25,7 @@ namespace NTU.Webgen
             fullXMLFile = ProjectFolder + xmlLyLichFile;
             fullHTMLFile = ProjectFolder + htmlLyLichFile;
             LoadLyLich(fullXMLFile);
+            linkWebCourse.Text = fullHTMLFile;
 
         }
         public LyLichKH(String ProjectFolder)
@@ -34,6 +35,7 @@ namespace NTU.Webgen
             fullXMLFile = ProjectFolder + xmlLyLichFile;
             fullHTMLFile = ProjectFolder + htmlLyLichFile;
             LoadLyLich(fullXMLFile);
+            linkWebCourse.Text = fullHTMLFile;
         }
         private void LoadLyLich(String xmlLyLichFile) {
             // Đọc file XML
@@ -932,6 +934,11 @@ namespace NTU.Webgen
 
 
             linkQTCT_Huy.Visible = false;
+        }
+
+        private void linkWebCourse_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CongCu.gotoSite(fullHTMLFile);
         }
 
        

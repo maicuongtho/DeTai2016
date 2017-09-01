@@ -143,28 +143,38 @@ namespace NTU.Webgen
             menuStrip1.Items["mnuGiangDay"].Visible = value;
             menuStrip1.Items["mnuLich"].Visible = value;
             menuStrip1.Items["mnuLienKet"].Visible = value;
-
-        
+            menuStrip1.Items["mnuXuatMauKhac"].Visible = value;
         }
 
         // Tạo mới
         private void mởToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Mời chọn một mẫu dưới đây");
-            if (superTabControlWindows.Tabs.Contains("tabChonMau"))
+
+            DialogResult rs= MessageBox.Show("Mời chọn một mẫu dưới đây","NTUWebgen", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (rs == DialogResult.OK)
             {
-                var t = (SuperTabItem)superTabControlWindows.Tabs["tabChonMau"];
-                superTabControlWindows.SelectedTab = t;
-            }
-            else
-            {
-                ChonMau sc = new ChonMau(this);
-                CongCu.AddTab("tabChonMau", "Chọn mẫu", superTabControlWindows, sc, false, 10);
-                // Cập nhật thư mục làm việc, bật project explorer
-                setMainTabVisible(true); 
+                closeAllTab();
+                setMainTabVisible(false);
+                if (superTabControlWindows.Tabs.Contains("tabChonMau"))
+                {
+                    var t = (SuperTabItem)superTabControlWindows.Tabs["tabChonMau"];
+                    superTabControlWindows.SelectedTab = t;
+                }
+                else
+                {
+                    ChonMau sc = new ChonMau(this);
+                    CongCu.AddTab("tabChonMau", "Chọn mẫu", superTabControlWindows, sc, false, 10);
+                    // Cập nhật thư mục làm việc, bật project explorer
+                //    setMainTabVisible(true);
+                }
             }
         }
+        void closeAllTab()
+        { 
+            for (int i=0; i<superTabControlWindows.Tabs.Count; i++)
+                     superTabControlWindows.Tabs.Remove(i);
 
+        }
 
         //Mở
         private void mỞToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -173,6 +183,8 @@ namespace NTU.Webgen
            //Đọc file cấu hình để nạp thư mục tương ứng
            if (rs == DialogResult.OK)
            {
+               closeAllTab();
+               setMainTabVisible(false);
                String fileCauHinh = openFileDialog1.FileName;
                FileStream fs =File.Open(fileCauHinh,FileMode.Open);
                StreamReader rd = new StreamReader(fs);
@@ -183,10 +195,10 @@ namespace NTU.Webgen
               // projectFolder = thumucChon.Substring(0, thumucChon.Length - 11);
                projectFolder = thumucChon.Substring(0, thumucChon.LastIndexOf("\\"));
                
-               ProjectExplorer pj = new ProjectExplorer(projectFolder);
+              // ProjectExplorer pj = new ProjectExplorer(projectFolder);
                MessageBox.Show(projectFolder);
-               splitContainer1.Panel2.Controls.Clear();
-               splitContainer1.Panel2.Controls.Add(pj);
+              // splitContainer1.Panel2.Controls.Clear();
+              // splitContainer1.Panel2.Controls.Add(pj);
                this.Update();
                setMainTabVisible(true);
            }
@@ -238,6 +250,23 @@ namespace NTU.Webgen
         private void toolStripButton_Open_Click(object sender, EventArgs e)
         {
             mỞToolStripMenuItem1_Click(sender, e);
+        }
+
+        private void mnuFile_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void mnuXuatMauKhac_Click(object sender, EventArgs e)
+        {
+            XuatSangMauKhac m = new XuatSangMauKhac(projectFolder,idMau);
+            m.ShowDialog();
+
+        }
+
+        private void mnuUpDownLoad_Click(object sender, EventArgs e)
+        {
+            new Login().ShowDialog();
         }
     }
 }

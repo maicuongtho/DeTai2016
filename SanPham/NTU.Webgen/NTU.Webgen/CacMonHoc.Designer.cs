@@ -48,6 +48,12 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtHP_Id = new System.Windows.Forms.TextBox();
             this.dataGridViewX_DSHP = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.STThp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoiDungHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BienTapHP = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.AnhCover = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
@@ -55,12 +61,7 @@
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.STThp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoiDungHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BienTapHP = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.AnhCover = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linkLabelTeaching = new System.Windows.Forms.LinkLabel();
             this.panelEx3.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,6 +76,7 @@
             // 
             this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.linkLabelTeaching);
             this.panelEx3.Controls.Add(this.btnCacHocPhanXuatWeb);
             this.panelEx3.Controls.Add(this.btnSave);
             this.panelEx3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -336,6 +338,57 @@
             this.dataGridViewX_DSHP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX_DSHP_CellClick);
             this.dataGridViewX_DSHP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX_DSHP_CellContentClick);
             // 
+            // STThp
+            // 
+            this.STThp.DataPropertyName = "STThp";
+            this.STThp.HeaderText = "STT";
+            this.STThp.Name = "STThp";
+            this.STThp.ReadOnly = true;
+            this.STThp.Width = 40;
+            // 
+            // MaHP
+            // 
+            this.MaHP.DataPropertyName = "MaHP";
+            this.MaHP.HeaderText = "Mã HP";
+            this.MaHP.Name = "MaHP";
+            this.MaHP.ReadOnly = true;
+            this.MaHP.Width = 80;
+            // 
+            // TenHP
+            // 
+            this.TenHP.DataPropertyName = "TenHP";
+            this.TenHP.HeaderText = "Tên học phần";
+            this.TenHP.Name = "TenHP";
+            this.TenHP.ReadOnly = true;
+            this.TenHP.Width = 180;
+            // 
+            // NoiDungHP
+            // 
+            this.NoiDungHP.DataPropertyName = "NoiDungHP";
+            this.NoiDungHP.HeaderText = "Nội dung tóm tắt";
+            this.NoiDungHP.Name = "NoiDungHP";
+            this.NoiDungHP.ReadOnly = true;
+            this.NoiDungHP.Width = 390;
+            // 
+            // BienTapHP
+            // 
+            this.BienTapHP.DataPropertyName = "BienTapHP";
+            this.BienTapHP.HeaderText = "Thao tác";
+            this.BienTapHP.Name = "BienTapHP";
+            this.BienTapHP.ReadOnly = true;
+            this.BienTapHP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.BienTapHP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.BienTapHP.Text = "Thêm thông tin";
+            this.BienTapHP.Width = 78;
+            // 
+            // AnhCover
+            // 
+            this.AnhCover.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AnhCover.DataPropertyName = "AnhCover";
+            this.AnhCover.HeaderText = "Ảnh cover";
+            this.AnhCover.Name = "AnhCover";
+            this.AnhCover.ReadOnly = true;
+            // 
             // labelX2
             // 
             // 
@@ -433,56 +486,16 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // STThp
+            // linkLabelTeaching
             // 
-            this.STThp.DataPropertyName = "STThp";
-            this.STThp.HeaderText = "STT";
-            this.STThp.Name = "STThp";
-            this.STThp.ReadOnly = true;
-            this.STThp.Width = 40;
-            // 
-            // MaHP
-            // 
-            this.MaHP.DataPropertyName = "MaHP";
-            this.MaHP.HeaderText = "Mã HP";
-            this.MaHP.Name = "MaHP";
-            this.MaHP.ReadOnly = true;
-            this.MaHP.Width = 80;
-            // 
-            // TenHP
-            // 
-            this.TenHP.DataPropertyName = "TenHP";
-            this.TenHP.HeaderText = "Tên học phần";
-            this.TenHP.Name = "TenHP";
-            this.TenHP.ReadOnly = true;
-            this.TenHP.Width = 180;
-            // 
-            // NoiDungHP
-            // 
-            this.NoiDungHP.DataPropertyName = "NoiDungHP";
-            this.NoiDungHP.HeaderText = "Nội dung tóm tắt";
-            this.NoiDungHP.Name = "NoiDungHP";
-            this.NoiDungHP.ReadOnly = true;
-            this.NoiDungHP.Width = 390;
-            // 
-            // BienTapHP
-            // 
-            this.BienTapHP.DataPropertyName = "BienTapHP";
-            this.BienTapHP.HeaderText = "Thao tác";
-            this.BienTapHP.Name = "BienTapHP";
-            this.BienTapHP.ReadOnly = true;
-            this.BienTapHP.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.BienTapHP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.BienTapHP.Text = "Thêm thông tin";
-            this.BienTapHP.Width = 78;
-            // 
-            // AnhCover
-            // 
-            this.AnhCover.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AnhCover.DataPropertyName = "AnhCover";
-            this.AnhCover.HeaderText = "Ảnh cover";
-            this.AnhCover.Name = "AnhCover";
-            this.AnhCover.ReadOnly = true;
+            this.linkLabelTeaching.AutoSize = true;
+            this.linkLabelTeaching.Location = new System.Drawing.Point(275, 10);
+            this.linkLabelTeaching.Name = "linkLabelTeaching";
+            this.linkLabelTeaching.Size = new System.Drawing.Size(55, 13);
+            this.linkLabelTeaching.TabIndex = 15;
+            this.linkLabelTeaching.TabStop = true;
+            this.linkLabelTeaching.Text = "linkLabel1";
+            this.linkLabelTeaching.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTeaching_LinkClicked);
             // 
             // CacMonHoc
             // 
@@ -492,6 +505,7 @@
             this.Name = "CacMonHoc";
             this.Size = new System.Drawing.Size(1024, 600);
             this.panelEx3.ResumeLayout(false);
+            this.panelEx3.PerformLayout();
             this.superTabControlPanel1.ResumeLayout(false);
             this.superTabControlPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -536,5 +550,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiDungHP;
         private System.Windows.Forms.DataGridViewLinkColumn BienTapHP;
         private System.Windows.Forms.DataGridViewTextBoxColumn AnhCover;
+        private System.Windows.Forms.LinkLabel linkLabelTeaching;
     }
 }

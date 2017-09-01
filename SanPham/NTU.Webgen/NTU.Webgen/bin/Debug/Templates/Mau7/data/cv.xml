@@ -1,0 +1,158 @@
+<root>
+  <TuThuat>
+    <HoTen>Mai Cường Thọ LL7</HoTen>
+    <GioiTinh>Nam</GioiTinh>
+    <NgaySinh>25/10/1980</NgaySinh>
+    <NoiSinh>Thanh Hóa</NoiSinh>
+    <QueQuan>Hà Hải - Hà Trung - Thanh Hóa</QueQuan>
+    <DanToc> Kinh </DanToc>
+    <HocViCaoNhat>
+      <TenHocViCaoNhat>Thạc sĩ</TenHocViCaoNhat>
+      <NamNhanHV>2011</NamNhanHV>
+      <NuocNhanHV>Việt Nam</NuocNhanHV>
+    </HocViCaoNhat>
+    <ChucDanhKhoaHoc>
+      <TenChucDanhCaoNhat>
+      </TenChucDanhCaoNhat>
+      <NamBoNhiem>
+      </NamBoNhiem>
+    </ChucDanhKhoaHoc>
+    <DonViCongTac> <TenDonVi>Khoa Công nghệ Thông tin - Đại học Nha Trang</TenDonVi><ChucVu>Giảng viên</ChucVu></DonViCongTac>
+    <LienLac>
+      <NoiOHienNay>Tô 25, Hòn Chồng, Vĩnh Phước, Nha Trang</NoiOHienNay>
+      <DiaChi>Số nhà 68, Tô 25, Hòn Chồng, Vĩnh Phước, Nha Trang</DiaChi>
+      <DTCoQuan>0583831148</DTCoQuan>
+      <DTNhaRieng>
+      </DTNhaRieng>
+      <DTDiDong>0915311008</DTDiDong>
+      <fax>
+      </fax>
+      <Email>thomc@ntu.edu.vn</Email>
+    </LienLac>
+  </TuThuat>
+  <QuaTrinhDaoTao>
+    <DaiHoc1>
+      <HeDT>Chính qui</HeDT>
+      <NoiDaoTao>Đại học Bách Khoa Hà Nội</NoiDaoTao>
+      <NuocDaoTao>Việt Nam</NuocDaoTao>
+      <ChuyenNganh>Công nghệ Thông tin</ChuyenNganh>
+      <NamTotNghiep>2003</NamTotNghiep>
+    </DaiHoc1>
+    <DaiHoc2>
+      <ChuyenNganh>
+      </ChuyenNganh>
+      <NamTotNghiep>
+      </NamTotNghiep>
+    </DaiHoc2>
+    <ThacSi>
+      <NoiDaoTao>Đại học Bách Khoa Hà Nội</NoiDaoTao>
+      <NuocDaoTao>Việt Nam</NuocDaoTao>
+      <ChuyenNganh>Kỹ thuật máy tính và Truyền thông</ChuyenNganh>
+      <NamCapBang>2011</NamCapBang>
+    </ThacSi>
+    <TienSi>
+      <NoiDaoTao>
+      </NoiDaoTao>
+      <NuocDaoTao>
+      </NuocDaoTao>
+      <ChuyenNganh>
+      </ChuyenNganh>
+      <ThoiGianDaoTao>
+      </ThoiGianDaoTao>
+      <NamCapBang>
+      </NamCapBang>
+      <TenLuanAn>
+      </TenLuanAn>
+    </TienSi>
+    <NgoaiNgu1>
+      <id>1</id>
+      <TenNN>1</TenNN>
+      <TrinhDo>1</TrinhDo>
+    </NgoaiNgu1>
+    <NgoaiNgu2>
+      <id>2</id>
+      <TenNN>2</TenNN>
+      <TrinhDo>2</TrinhDo>
+    </NgoaiNgu2>
+    <DSTinHoc>
+      <TinHoc>
+        <id>1</id>
+        <TenChungChi>
+        </TenChungChi>
+      </TinHoc>
+      <TinHoc>
+        <id>2</id>
+        <TenChungChi>
+        </TenChungChi>
+      </TinHoc>
+    </DSTinHoc>
+  </QuaTrinhDaoTao>
+  <DSQuaTrinhCongTac>
+    <QuaTrinhCongTac>
+      <id>1</id>
+      <TuNgay>2/2000</TuNgay>
+      <DenNgay>2/2004</DenNgay>
+      <DonViCongTac>Trung tâm Phần mềm - Đại học Nha Trang</DonViCongTac>
+      <CongViecDamNhiem>Lập trình viên</CongViecDamNhiem>
+    </QuaTrinhCongTac>
+    <QuaTrinhCongTac>
+      <id>2</id>
+      <TuNgay>10/2004</TuNgay>
+      <DenNgay>10/2005</DenNgay>
+      <DonViCongTac>Khoa Công nghệ Thông tin - Đại học Nha Trang</DonViCongTac>
+      <CongViecDamNhiem>Giảng viên tập sự</CongViecDamNhiem>
+    </QuaTrinhCongTac>
+    <QuaTrinhCongTac>
+      <id>3</id>
+      <TuNgay>2/2005</TuNgay>
+      <DenNgay>2006</DenNgay>
+      <DonViCongTac>FPT sô</DonViCongTac>
+      <CongViecDamNhiem>Teamleader</CongViecDamNhiem>
+    </QuaTrinhCongTac>
+  </DSQuaTrinhCongTac>
+  <NghienCuuKhoaHoc>
+    <DSDeTaiKH>
+      <DeTaiKH>
+        <id>1</id>
+        <TenDeTai>Giải pháp nâng cao thứ hạng web đại học được đánh giá bởi webometrics và QS</TenDeTai>
+        <NamBatDau>2015</NamBatDau>
+        <NamHoanThanh>2016</NamHoanThanh>
+        <DeTaiCap>Trường</DeTaiCap>
+        <TrachNhiem>Cộng tác viên</TrachNhiem>
+      </DeTaiKH>
+      <DeTaiKH>
+        <id>2</id>
+        <TenDeTai>Công cụ sinh website tĩnh cho giảng viên các trường đại học cao đẳng</TenDeTai>
+        <NamBatDau>2016</NamBatDau>
+        <NamHoanThanh>2017</NamHoanThanh>
+        <DeTaiCap>Trường</DeTaiCap>
+        <TrachNhiem>Chủ nhiệm</TrachNhiem>
+      </DeTaiKH>
+      <DeTaiKH>
+        <id>3</id>
+        <TenDeTai>Xây dựng công cụ tích hợp nhập điểm bằng giọng nói</TenDeTai>
+        <NamBatDau>2008</NamBatDau>
+        <NamHoanThanh>2009</NamHoanThanh>
+        <DeTaiCap>Trường</DeTaiCap>
+        <TrachNhiem>Chủ nhiệm</TrachNhiem>
+      </DeTaiKH>
+    </DSDeTaiKH>
+    <DSCongTrinhKhoaHoc>
+      <CongBo>
+        <id>1</id>
+        <TenCongTrinh>Truy vấn thông tin trong tiếng nói tiếng Việt</TenCongTrinh>
+        <NamCongBo>2011</NamCongBo>
+        <NoiCongBo>Tạp chí KHCN Đại học Đà Lạt</NoiCongBo>
+        <LoaiCongBo>Tạp chí</LoaiCongBo>
+      </CongBo>
+      <CongBo>
+        <id>2</id>
+        <TenCongTrinh>Giải pháp nâng cao chât lượng nhận dạng tiếng việt có dấu theo phương ngữ</TenCongTrinh>
+        <NamCongBo>2010</NamCongBo>
+        <NoiCongBo>Tạp chí Khoa học ĐH Bách Khoa HCM</NoiCongBo>
+        <LoaiCongBo>
+        </LoaiCongBo>
+      </CongBo>
+    </DSCongTrinhKhoaHoc>
+  </NghienCuuKhoaHoc>
+</root>

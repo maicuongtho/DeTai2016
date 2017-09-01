@@ -264,8 +264,9 @@ namespace NTU.Webgen
         }
         public static void gotoSite(string url)
         {
-           
+               
                 System.Diagnostics.Process.Start(url);
+                MessageBox.Show("Vui lòng đợi khởi động trình duyệt web");
             
         }
 

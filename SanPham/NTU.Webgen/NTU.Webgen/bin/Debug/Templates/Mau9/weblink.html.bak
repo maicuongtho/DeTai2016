@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Liên kết học thuật</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+ 
+</head>
+<body>
+ <div class="container">
+  <div class="row">
+      <img src="assets/images/HeadGB.png" width="100%" >
+  </div>
+ </div>
+ <div class="row bgBlue">
+  <div class="container bgWhite firstCon">
+  <div style="height: 2px; background-color: red; margin-left: -15px; margin-right: -15px"></div>
+  <div class="row">
+     
+     <div class="col-sm-2 menuDung">
+       <table>
+          <tr><td><B>WEBSITE GIẢNG VIÊN</B></td></tr>
+          <tr><td>
+            <section id="anhTrai"><img src="assets/images/avatarTho.jpg" width=100% height=186px></section>
+          </td></tr>
+          <tr><td>
+            <section id="tenTrai">Thạc sĩ.Mai Cường Thọ Mẫu 9</section>
+          </td></tr>
+          <tr><td>
+             <a href="index.html">GIỚI THIỆU</a>
+          </td></tr>
+          <tr><td>
+             <a href="cv.html">LÝ LỊCH KHOA HỌC</a>
+          </td></tr>
+          <tr><td>
+             <a href="publications.html">CÔNG BỐ KHOA HỌC</a>
+          </td></tr>
+          <tr><td>
+             <a href="teaching.html">GIẢNG DẠY</a>
+          </td></tr>
+          <tr><td>
+            <a href="calendar.html">LỊCH</a>
+          </td></tr>
+           <tr><td><span class="activeLink">
+            <a href="webLink.html">LIÊN KẾT</a></span>
+          </td></tr>
+       </table>  
+     
+     </div>
+     <div class="col-md-10" style="border-left: #0186BD thin dotted;">
+         <div class="title">  
+         <h1> CÁC LIÊN KẾT HỌC THUẬT</h1></div>
+          
+         
+                <div class="row">
+      <section id="LienKet"><ul style="padding-left: 21px;"><li style="padding-bottom: 10px;">Đại học Nha Trang : <a href="http://ntu/edu/vn"> http://ntu/edu/vn  </a></li><li style="padding-bottom: 10px;">Fanpage Khoa Công nghệ Thông tin : <a href="https://www.facebook.com/infotechntu/"> https://www.facebook.com/infotechntu/  </a></li><li style="padding-bottom: 10px;">Google Scholar thầy Nguyễn Văn Duy, Khoa Công nghệ Sinh học và Môi trường : <a href="https://scholar.google.com.vn/citations?user=iF-COXoAAAAJ&hl=vi&oi=sra"> https://scholar.google.com.vn/citations?user=iF-COXoAAAAJ&hl=vi&oi=sra  </a></li><li style="padding-bottom: 10px;">thầy Nguyễn Văn Tặng, Công nghệ chế biến : <a href="https://scholar.google.com.vn/citations?user=NDN8Yl4AAAAJ&hl=vi"> https://scholar.google.com.vn/citations?user=NDN8Yl4AAAAJ&hl=vi  </a></li><li style="padding-bottom: 10px;">www.researchgate.net  thầy Nguyễn Văn Hòa, Chế Biến : <a href="https://www.researchgate.net/profile/Van_Hoa_Nguyen"> https://www.researchgate.net/profile/Van_Hoa_Nguyen  </a></li></ul></section>
+   </div>
+
+
+
+
+         
+     </div>
+ </div>
+ </div>
+ </div>
+<div class="page-footer">
+  
+    <div class="container">
+    &copy; 2017 - Đại Học Nha Trang <span id="myLink">Tạo bởi <a href="http://centrasd.edu.vn"> NTUWebgen</a></span>
+    </div>
+</div>
+</body>
+</html>

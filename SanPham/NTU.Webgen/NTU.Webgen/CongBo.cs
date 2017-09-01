@@ -35,6 +35,7 @@ namespace NTU.Webgen
             LoadBaoCao();
             LoadBaoCao0();
             LoadSach();
+            linkWebCourse.Text = fullHTMLFile;
           
         }
         public CongBo(String ProjectFolder) {
@@ -46,6 +47,7 @@ namespace NTU.Webgen
             LoadBaoCao();
             LoadBaoCao0();
             LoadSach();
+            linkWebCourse.Text = fullHTMLFile;
         }
         void LoadTapChi()
         {
@@ -1392,6 +1394,11 @@ namespace NTU.Webgen
             //// Thêm tiêu đề
             //CongCu.ReplaceTite(pubHTMLFile, "NTU. " + u.HoTen + "-Báo cáo hội thảo");
             MessageBox.Show("Đã xuất thành công sang trang web: \n" + fullHTMLFile, "Thông báo");
+        }
+
+        private void linkWebCourse_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CongCu.gotoSite(fullHTMLFile);
         }
 
 

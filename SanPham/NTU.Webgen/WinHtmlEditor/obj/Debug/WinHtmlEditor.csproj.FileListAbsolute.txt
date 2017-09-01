@@ -27,4 +27,3 @@ F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlE
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.csproj.GenerateResource.Cache
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.dll
 F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.pdb
-F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.csprojResolveAssemblyReference.cache

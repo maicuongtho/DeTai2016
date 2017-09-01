@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lịch công tác</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+ 
+</head>
+<body>
+ <div class="container">
+  <div class="row">
+      <img src="assets/images/NTUlogo.gif" width="60px"> <b>TRƯỜNG ĐẠI HỌC NHA TRANG</b> - WEBSITE CÁN BỘ GIẢNG VIÊN
+  </div>
+ </div>
+ <div class="row bgBlue">
+  <div class="container bgWhite firstCon">
+  <div style="height: 2px; background-color: #7b0404; margin-left: -15px; margin-right: -15px"></div>
+  <div class="row">
+     
+     <div class="col-md-2 menuDung">
+       <table>
+          <tr><td>
+            <section id="anhTrai"><img src="assets/images/avatarTho.jpg" width=100% height=186px></section>
+          </td></tr>
+          <tr><td>
+            <section id="tenTrai">Thạc sĩ.Mai Cường Thọ Mẫu 10</section>
+          </td></tr>
+          <tr><td><span >
+             <a href="index.html">GIỚI THIỆU</a></span>
+          </td></tr>
+          <tr><td>
+             <a href="cv.html">LÝ LỊCH KHOA HỌC</a>
+          </td></tr>
+          <tr><td>
+             <a href="publications.html">CÔNG BỐ KHOA HỌC</a>
+          </td></tr>
+          <tr><td>
+             <a href="teaching.html">GIẢNG DẠY</a>
+          </td></tr>
+          <tr><td><span class="activeLink">
+            <a href="calendar.html">LỊCH</a> </span>
+          </td></tr>
+           <tr><td>
+            <a href="webLink.html">LIÊN KẾT</a>
+          </td></tr>
+       </table>  
+     
+     </div>
+     <div class="col-md-8" style="border-left: #0186BD thin dotted;">
+         <div class="title">  
+          <h1> LỊCH CÔNG TÁC</h1>
+        </div>
+
+    <section id="lich"><div id='lich0'><h2> Lịch của tôi</h2> <BODY scroll=auto><TABLE style="HEIGHT: 159px; WIDTH: 754px" cellSpacing=0 cols=7 cellPadding=2 width=754 border=1>
+<CAPTION></CAPTION>
+<TBODY>
+<TR>
+<TD><STRONG>Thứ 2</STRONG></TD>
+<TD><STRONG>Thứ 3</STRONG></TD>
+<TD><STRONG>Thứ 4</STRONG></TD>
+<TD><STRONG>Thứ 5</STRONG></TD>
+<TD><STRONG>Thứ 6</STRONG></TD>
+<TD><STRONG>Thứ 7</STRONG></TD>
+<TD><STRONG>Chủ Nhật</STRONG></TD></TR>
+<TR>
+<TD></TD>
+<TD>123</TD>
+<TD>123</TD>
+<TD>213</TD>
+<TD>789</TD>
+<TD></TD>
+<TD></TD></TR>
+<TR>
+<TD>798</TD>
+<TD>789</TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD></TR>
+<TR>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD>123</TD>
+<TD></TD>
+<TD></TD></TR></TBODY></TABLE></BODY></div><div id='lichgoogle'><h2>LỊCH GOOGLE</h2><iframe src="https://calendar.google.com/calendar/embed?src=ntu.edu.vn_o6fivbsn3e5gf0f1jdfv23ec1g%40group.calendar.google.com&ctz=Asia/Saigon" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe></div></section>
+
+  
+         </div>
+     <DIV class="col-md-2">
+       <img src="assets/images/side.jpg" width="100%">
+     </DIV>
+ </div>
+ </div>
+ </div>
+<div class="page-footer">
+  
+    <div class="container">
+    &copy; 2017 - Đại Học Nha Trang <span id="myLink">Tạo bởi <a href="http://centrasd.edu.vn"> NTUWebgen</a></span>
+    </div>
+</div>
+</body>
+</html>

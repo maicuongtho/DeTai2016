@@ -110,12 +110,6 @@
     <Compile Include="GiangDay.Designer.cs">
       <DependentUpon>GiangDay.cs</DependentUpon>
     </Compile>
-    <Compile Include="GioiThieu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GioiThieu.Designer.cs">
-      <DependentUpon>GioiThieu.cs</DependentUpon>
-    </Compile>
     <Compile Include="HocPhanPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -133,6 +127,12 @@
     </Compile>
     <Compile Include="LienKet.Designer.cs">
       <DependentUpon>LienKet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -154,6 +154,11 @@
       <DependentUpon>ProjectExplorer.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Publication_BaoCaoHoiThao.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,11 +183,29 @@
     <Compile Include="Publication_TapChi.Designer.cs">
       <DependentUpon>Publication_TapChi.cs</DependentUpon>
     </Compile>
+    <Compile Include="UploadDownload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UploadDownload.Designer.cs">
+      <DependentUpon>UploadDownload.cs</DependentUpon>
+    </Compile>
     <Compile Include="VideoPlayer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VideoPlayer.Designer.cs">
       <DependentUpon>VideoPlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Welcome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XuatSangMauKhac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XuatSangMauKhac.Designer.cs">
+      <DependentUpon>XuatSangMauKhac.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AAAFunctionTest.resx">
       <DependentUpon>AAAFunctionTest.cs</DependentUpon>
@@ -211,9 +234,6 @@
     <EmbeddedResource Include="GiangDay.resx">
       <DependentUpon>GiangDay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GioiThieu.resx">
-      <DependentUpon>GioiThieu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HocPhanPage.resx">
       <DependentUpon>HocPhanPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LienKet.resx">
       <DependentUpon>LienKet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -234,14 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Publication_BaoCaoHoiThao.resx">
       <DependentUpon>Publication_BaoCaoHoiThao.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,8 +272,17 @@
     <EmbeddedResource Include="Publication_TapChi.resx">
       <DependentUpon>Publication_TapChi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UploadDownload.resx">
+      <DependentUpon>UploadDownload.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VideoPlayer.resx">
       <DependentUpon>VideoPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XuatSangMauKhac.resx">
+      <DependentUpon>XuatSangMauKhac.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -404,6 +431,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\NoPhoto.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Mau0.JPG" />
+    <Content Include="Resources\Mau11.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

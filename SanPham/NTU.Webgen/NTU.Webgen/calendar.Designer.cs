@@ -31,29 +31,30 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.balloonTipAnhDaiDien = new DevComponents.DotNetBar.BalloonTip();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
-            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtURLLich = new System.Windows.Forms.TextBox();
-            this.btnHelp = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.htmlEditor1 = new WinHtmlEditor.HtmlEditor();
             this.superTabControl1 = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnHelp = new System.Windows.Forms.Button();
+            this.txtURLLich = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.superTabItem1 = new DevComponents.DotNetBar.SuperTabItem();
+            this.panelEx3 = new DevComponents.DotNetBar.PanelEx();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnXuatWeb = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
+            this.htmlEditor1 = new WinHtmlEditor.HtmlEditor();
             this.panelEx1.SuspendLayout();
-            this.panelEx3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).BeginInit();
             this.superTabControl1.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelEx3.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -78,100 +79,6 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 5;
-            // 
-            // panelEx3
-            // 
-            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx3.Controls.Add(this.btnSua);
-            this.panelEx3.Controls.Add(this.btnXuatWeb);
-            this.panelEx3.Controls.Add(this.btnSave);
-            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelEx3.Location = new System.Drawing.Point(0, 0);
-            this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(1024, 35);
-            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.panelEx3.Style.GradientAngle = 90;
-            this.panelEx3.TabIndex = 18;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Địa chỉ lịch:";
-            // 
-            // txtURLLich
-            // 
-            this.txtURLLich.Location = new System.Drawing.Point(116, 31);
-            this.txtURLLich.Name = "txtURLLich";
-            this.txtURLLich.Size = new System.Drawing.Size(476, 20);
-            this.txtURLLich.TabIndex = 3;
-            // 
-            // btnHelp
-            // 
-            this.btnHelp.Location = new System.Drawing.Point(453, 57);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(139, 51);
-            this.btnHelp.TabIndex = 4;
-            this.btnHelp.Text = "Chưa biết tạo lịch, mời xem hướng dẫn";
-            this.btnHelp.UseVisualStyleBackColor = true;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnHelp);
-            this.groupBox1.Controls.Add(this.txtURLLich);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(15, 15);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(602, 116);
-            this.groupBox1.TabIndex = 19;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Lịch Google Calendar";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nội dung";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.htmlEditor1);
-            this.groupBox2.Location = new System.Drawing.Point(15, 141);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(915, 281);
-            this.groupBox2.TabIndex = 20;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Lịch công tác ( tự biên tập)";
-            // 
-            // htmlEditor1
-            // 
-            this.htmlEditor1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.htmlEditor1.BodyInnerHTML = null;
-            this.htmlEditor1.BodyInnerText = null;
-            this.htmlEditor1.EnterToBR = false;
-            this.htmlEditor1.FontSize = WinHtmlEditor.FontSize.Three;
-            this.htmlEditor1.Location = new System.Drawing.Point(71, 20);
-            this.htmlEditor1.Name = "htmlEditor1";
-            this.htmlEditor1.ShowStatusBar = false;
-            this.htmlEditor1.ShowToolBar = true;
-            this.htmlEditor1.ShowWb = true;
-            this.htmlEditor1.Size = new System.Drawing.Size(838, 252);
-            this.htmlEditor1.TabIndex = 1;
-            this.htmlEditor1.WebBrowserShortcutsEnabled = true;
             // 
             // superTabControl1
             // 
@@ -215,6 +122,64 @@
             this.superTabControlPanel1.TabIndex = 1;
             this.superTabControlPanel1.TabItem = this.superTabItem1;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnHelp);
+            this.groupBox1.Controls.Add(this.txtURLLich);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(15, 15);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(602, 116);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Lịch Google Calendar";
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.Location = new System.Drawing.Point(453, 57);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(139, 51);
+            this.btnHelp.TabIndex = 4;
+            this.btnHelp.Text = "Chưa biết tạo lịch, mời xem hướng dẫn";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
+            // txtURLLich
+            // 
+            this.txtURLLich.Location = new System.Drawing.Point(116, 31);
+            this.txtURLLich.Name = "txtURLLich";
+            this.txtURLLich.Size = new System.Drawing.Size(476, 20);
+            this.txtURLLich.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(48, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Địa chỉ lịch:";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.htmlEditor1);
+            this.groupBox2.Location = new System.Drawing.Point(15, 141);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(915, 281);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Lịch công tác ( tự biên tập)";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nội dung";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::NTU.Webgen.Properties.Resources.google_calendar_2;
@@ -232,6 +197,38 @@
             this.superTabItem1.Image = global::NTU.Webgen.Properties.Resources.iconcalendar;
             this.superTabItem1.Name = "superTabItem1";
             this.superTabItem1.Text = "Lịch công tác";
+            // 
+            // panelEx3
+            // 
+            this.panelEx3.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx3.Controls.Add(this.linkLabel1);
+            this.panelEx3.Controls.Add(this.btnSua);
+            this.panelEx3.Controls.Add(this.btnXuatWeb);
+            this.panelEx3.Controls.Add(this.btnSave);
+            this.panelEx3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelEx3.Location = new System.Drawing.Point(0, 0);
+            this.panelEx3.Name = "panelEx3";
+            this.panelEx3.Size = new System.Drawing.Size(1024, 35);
+            this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.panelEx3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.panelEx3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.panelEx3.Style.GradientAngle = 90;
+            this.panelEx3.TabIndex = 18;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(410, 11);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(55, 13);
+            this.linkLabel1.TabIndex = 16;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "linkLabel1";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btnSua
             // 
@@ -273,6 +270,22 @@
             this.btnSave.Text = "Lưu";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // htmlEditor1
+            // 
+            this.htmlEditor1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.htmlEditor1.BodyInnerHTML = null;
+            this.htmlEditor1.BodyInnerText = null;
+            this.htmlEditor1.EnterToBR = false;
+            this.htmlEditor1.FontSize = WinHtmlEditor.FontSize.Three;
+            this.htmlEditor1.Location = new System.Drawing.Point(71, 20);
+            this.htmlEditor1.Name = "htmlEditor1";
+            this.htmlEditor1.ShowStatusBar = false;
+            this.htmlEditor1.ShowToolBar = true;
+            this.htmlEditor1.ShowWb = true;
+            this.htmlEditor1.Size = new System.Drawing.Size(838, 252);
+            this.htmlEditor1.TabIndex = 1;
+            this.htmlEditor1.WebBrowserShortcutsEnabled = true;
+            // 
             // calendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,15 +295,16 @@
             this.Size = new System.Drawing.Size(1024, 600);
             this.Load += new System.EventHandler(this.calendar_Load);
             this.panelEx1.ResumeLayout(false);
-            this.panelEx3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
+            this.superTabControl1.ResumeLayout(false);
+            this.superTabControlPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.superTabControl1)).EndInit();
-            this.superTabControl1.ResumeLayout(false);
-            this.superTabControlPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelEx3.ResumeLayout(false);
+            this.panelEx3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -315,5 +329,6 @@
         private DevComponents.DotNetBar.SuperTabControl superTabControl1;
         private DevComponents.DotNetBar.SuperTabControlPanel superTabControlPanel1;
         private DevComponents.DotNetBar.SuperTabItem superTabItem1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

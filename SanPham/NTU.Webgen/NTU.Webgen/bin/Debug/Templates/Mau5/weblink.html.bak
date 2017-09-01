@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Liên kết học thuật</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+ 
+</head>
+<body>
+ 
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+      <a class="navbar-brand" href="#"><section id="nav3_ten">Mai Cường Thọ</section></a>
+    </div>
+    <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li ><a href="index.html">GIỚI THIỆU</a></li>
+      <li><a href="cv.html">LÝ LỊCH KHOA HỌC</a></li>
+      <li ><a href="publications.html">CÔNG BỐ KHOA HỌC</a></li>
+      <li><a href="teaching.html">GIẢNG DẠY</a></li>
+      <li><a href="calendar.html">LỊCH</a></li>
+      <li class="active"><a href="webLink.html">LIÊN KẾT</a></li>
+    </ul>
+    </div>
+  </div>
+</nav>
+ 
+  <div class="row" style="height: 66px; background-color: gray; margin-top: -20px; text-align: right; padding-top: 10px">
+       <div class="container">
+        
+           <div style="float: right; width: 300px"> <b>TRƯỜNG ĐẠI HỌC NHA TRANG</b><BR> WEBSITE CÁN BỘ GIẢNG VIÊN </div>
+          <div style="float: left;"> <img src="assets/images/NTUlogo.gif" width="50px"></div>
+           </div>
+  </div>
+  
+ <div class="row">
+  <div class="container bgWhite firstCon">
+  <div class="row">
+     
+     <div class="col-md-12" style="border-left: #0186BD thin dotted;">
+         <div class="title">  
+         <h1> CÁC LIÊN KẾT HỌC THUẬT</h1></div>
+         <!--  ==============================================================  -->
+
+
+          
+          <div class="row">
+              <section id="LienKet"><ul style="padding-left: 21px;"><li style="padding-bottom: 10px;">Đại học Nha Trang (NTU) : <br><a href="http://ntu/edu/vn"> http://ntu/edu/vn  </a></li><li style="padding-bottom: 10px;">Fanpage Khoa Công nghệ Thông tin : <br><a href="https://www.facebook.com/infotechntu/"> https://www.facebook.com/infotechntu/  </a></li><li style="padding-bottom: 10px;">Google Scholar thầy Nguyễn Văn Duy, Khoa Công nghệ Sinh học và Môi trường : <br><a href="https://scholar.google.com.vn/citations?user=iF-COXoAAAAJ&hl=vi&oi=sra"> https://scholar.google.com.vn/citations?user=iF-COXoAAAAJ&hl=vi&oi=sra  </a></li><li style="padding-bottom: 10px;">thầy Nguyễn Văn Tặng, Công nghệ chế biến : <br><a href="https://scholar.google.com.vn/citations?user=NDN8Yl4AAAAJ&hl=vi"> https://scholar.google.com.vn/citations?user=NDN8Yl4AAAAJ&hl=vi  </a></li><li style="padding-bottom: 10px;">www.researchgate.net  thầy Nguyễn Văn Hòa, Chế Biến : <br><a href="https://www.researchgate.net/profile/Van_Hoa_Nguyen"> https://www.researchgate.net/profile/Van_Hoa_Nguyen  </a></li></ul></section>
+           </div>
+
+         
+         <!--  ==============================================================  -->
+     </div>
+ </div>
+ </div>
+ </div>
+<div class="page-footer">
+  
+    <div class="container">
+    &copy; 2017 - Đại Học Nha Trang <span id="myLink">Tạo bởi <a href="http://centrasd.edu.vn"> NTUWebgen</a></span>
+    </div>
+</div>
+</body>
+</html>
+ 

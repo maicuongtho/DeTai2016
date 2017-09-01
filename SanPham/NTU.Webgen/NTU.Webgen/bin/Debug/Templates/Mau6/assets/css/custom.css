@@ -1,0 +1,69 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.title h1{font-size:18px; padding-left:8px; color:#4d5286;}
+.title h2{font-size:16px; padding-left:8px; color:#444; font-weight:bold}
+#tapchi h2{font-size:16px; padding-left:8px; color:#444; font-weight:bold}
+.bgWhite { background-color:#ffffff;}
+.bgBlue {background-color: transparent; margin-top: -19px;}
+.firstCon { min-height:488px}
+.page-footer {border-top:#DDD thin dashed; padding-top:5px; margin-top:0px; color:#000; font-size:12px; background-color: #C4E1F4}
+
+/*CSS publication*/
+ 
+
+.tabs li {
+        list-style:none;
+        display:inline;
+    }
+ 
+    .tabs a {
+        padding:5px 10px;
+        display:inline-block;
+        background:#666;
+        color:#fff;
+        text-decoration:none;
+    }
+ 
+    .tabs a.active {
+        background:#667788;
+        color:#000;
+    }
+#TapChi li {
+    padding-top: 10px;
+}
+#BaoCao1 li {
+    padding-top: 10px;
+}
+#BaoCao0 li {
+    padding-top: 10px;
+}
+#Sach li {
+    padding-top: 10px;
+}
+.citation_title {color: #003463; font-style: italic;}
+#bangLyLich {width: 100% !important}
+table {width: 99%}
+th, td {padding: 5px;}
+#bangLyLich span {color: #003463; padding-left: 4px; padding-right: 2px;}
+.hang_muc_hoc_phan {background-color: #b0c1c7 !important; color: #fff}
+body {background-image: url("../images/NTUBg.png") no-repeat;   background-color: #003463;}
+#myLink {padding-left: 8px; color: #C4E1F4;}
+#myLink a { color: #C4E1F4;}
+
+@media (max-width: 568px) {
+    .col-md-2 {display: none;}
+}
+#subTitle {color: #08f8ce}
+.navbar-default {background-color: #000; border: 0px; border-radius: 0px;  }
+.navbar-default .navbar-nav>li>a {color: white}
+.navbar-default .navbar-nav>li>a:hover {color: yellow}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {color: #04a503}
+
+.navbar-default .navbar-brand {
+     color: #18d8bf;}
+.ntnBanner {  
+    background: url(../images/background.jpg) no-repeat center;
+    background-size: 100%
+    height: 116px; background-color: #C4E1F4; margin-top: -20px; text-align: right; padding-top: 10px
+}

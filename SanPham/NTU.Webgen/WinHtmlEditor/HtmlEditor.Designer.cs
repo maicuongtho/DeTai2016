@@ -193,7 +193,7 @@
             this.tsmiTable.Name = "tsmiTable";
             this.tsmiTable.Size = new System.Drawing.Size(122, 22);
             this.tsmiTable.Tag = "Table";
-            this.tsmiTable.Text = "表格";
+            this.tsmiTable.Text = "Bảng";
             // 
             // tsmiTableModify
             // 
@@ -201,7 +201,7 @@
             this.tsmiTableModify.Name = "tsmiTableModify";
             this.tsmiTableModify.Size = new System.Drawing.Size(148, 22);
             this.tsmiTableModify.Tag = "TableModify";
-            this.tsmiTableModify.Text = "编辑表格属性";
+            this.tsmiTableModify.Text = "Định dạng bảng";
             this.tsmiTableModify.Click += new System.EventHandler(this.ContextEditorClick);
             // 
             // tsmiTableInsertRow
@@ -209,7 +209,7 @@
             this.tsmiTableInsertRow.Name = "tsmiTableInsertRow";
             this.tsmiTableInsertRow.Size = new System.Drawing.Size(148, 22);
             this.tsmiTableInsertRow.Tag = "TableInsertRow";
-            this.tsmiTableInsertRow.Text = "插入行";
+            this.tsmiTableInsertRow.Text = "Chèn dòng";
             this.tsmiTableInsertRow.Click += new System.EventHandler(this.ContextEditorClick);
             // 
             // tsmiTableDeleteRow
@@ -217,7 +217,7 @@
             this.tsmiTableDeleteRow.Name = "tsmiTableDeleteRow";
             this.tsmiTableDeleteRow.Size = new System.Drawing.Size(148, 22);
             this.tsmiTableDeleteRow.Tag = "TableDeleteRow";
-            this.tsmiTableDeleteRow.Text = "删除行";
+            this.tsmiTableDeleteRow.Text = "Xóa dòng";
             this.tsmiTableDeleteRow.Click += new System.EventHandler(this.ContextEditorClick);
             // 
             // tsmiSelectAll
@@ -225,7 +225,7 @@
             this.tsmiSelectAll.Name = "tsmiSelectAll";
             this.tsmiSelectAll.Size = new System.Drawing.Size(122, 22);
             this.tsmiSelectAll.Tag = "SelectAll";
-            this.tsmiSelectAll.Text = "全选";
+            this.tsmiSelectAll.Text = "Chọn cả";
             this.tsmiSelectAll.Click += new System.EventHandler(this.ContextEditorClick);
             // 
             // tsmiCopy
@@ -234,7 +234,7 @@
             this.tsmiCopy.Name = "tsmiCopy";
             this.tsmiCopy.Size = new System.Drawing.Size(122, 22);
             this.tsmiCopy.Tag = "Copy";
-            this.tsmiCopy.Text = "复制";
+            this.tsmiCopy.Text = "Sao chép";
             this.tsmiCopy.Click += new System.EventHandler(this.ContextEditorClick);
             // 
             // tsmiCut
@@ -243,7 +243,7 @@
             this.tsmiCut.Name = "tsmiCut";
             this.tsmiCut.Size = new System.Drawing.Size(122, 22);
             this.tsmiCut.Tag = "Cut";
-            this.tsmiCut.Text = "剪切";
+            this.tsmiCut.Text = "Cắt";
             this.tsmiCut.Click += new System.EventHandler(this.ContextEditorClick);
             // 
             // tsmiPaste
@@ -252,7 +252,7 @@
             this.tsmiPaste.Name = "tsmiPaste";
             this.tsmiPaste.Size = new System.Drawing.Size(122, 22);
             this.tsmiPaste.Tag = "Paste";
-            this.tsmiPaste.Text = "粘贴";
+            this.tsmiPaste.Text = "Dán";
             this.tsmiPaste.Click += new System.EventHandler(this.ContextEditorClick);
             // 
             // tsmiDelete
@@ -261,7 +261,7 @@
             this.tsmiDelete.Name = "tsmiDelete";
             this.tsmiDelete.Size = new System.Drawing.Size(122, 22);
             this.tsmiDelete.Tag = "Delete";
-            this.tsmiDelete.Text = "删除";
+            this.tsmiDelete.Text = "Xóa";
             this.tsmiDelete.Click += new System.EventHandler(this.ContextEditorClick);
             // 
             // tsmiFind
@@ -270,7 +270,7 @@
             this.tsmiFind.Name = "tsmiFind";
             this.tsmiFind.Size = new System.Drawing.Size(122, 22);
             this.tsmiFind.Tag = "Find";
-            this.tsmiFind.Text = "查找";
+            this.tsmiFind.Text = "Tìm kiếm";
             this.tsmiFind.Click += new System.EventHandler(this.ContextEditorClick);
             // 
             // tsmiRemoveFormat
@@ -279,13 +279,14 @@
             this.tsmiRemoveFormat.Name = "tsmiRemoveFormat";
             this.tsmiRemoveFormat.Size = new System.Drawing.Size(122, 22);
             this.tsmiRemoveFormat.Tag = "RemoveFormat";
-            this.tsmiRemoveFormat.Text = "清除格式";
+            this.tsmiRemoveFormat.Text = "Bỏ định dạng";
             this.tsmiRemoveFormat.Click += new System.EventHandler(this.ContextEditorClick);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator5.Visible = false;
             // 
             // tsmiSave
             // 
@@ -293,7 +294,8 @@
             this.tsmiSave.Name = "tsmiSave";
             this.tsmiSave.Size = new System.Drawing.Size(122, 22);
             this.tsmiSave.Tag = "Save";
-            this.tsmiSave.Text = "保存";
+            this.tsmiSave.Text = "Lưu";
+            this.tsmiSave.Visible = false;
             this.tsmiSave.Click += new System.EventHandler(this.ContextEditorClick);
             // 
             // tsTopToolBar

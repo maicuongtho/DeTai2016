@@ -31,7 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.cacMonHoc1 = new NTU.Webgen.CacMonHoc();
+            this.htmlEditor1 = new WinHtmlEditor.HtmlEditor();
             this.SuspendLayout();
             // 
             // button1
@@ -64,19 +64,28 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // cacMonHoc1
+            // htmlEditor1
             // 
-            this.cacMonHoc1.Location = new System.Drawing.Point(12, 101);
-            this.cacMonHoc1.Name = "cacMonHoc1";
-            this.cacMonHoc1.Size = new System.Drawing.Size(1024, 600);
-            this.cacMonHoc1.TabIndex = 3;
+            this.htmlEditor1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.htmlEditor1.BodyInnerHTML = null;
+            this.htmlEditor1.BodyInnerText = null;
+            this.htmlEditor1.EnterToBR = false;
+            this.htmlEditor1.FontSize = WinHtmlEditor.FontSize.Three;
+            this.htmlEditor1.Location = new System.Drawing.Point(57, 103);
+            this.htmlEditor1.Name = "htmlEditor1";
+            this.htmlEditor1.ShowStatusBar = true;
+            this.htmlEditor1.ShowToolBar = true;
+            this.htmlEditor1.ShowWb = true;
+            this.htmlEditor1.Size = new System.Drawing.Size(455, 249);
+            this.htmlEditor1.TabIndex = 3;
+            this.htmlEditor1.WebBrowserShortcutsEnabled = true;
             // 
             // AAAFunctionTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 527);
-            this.Controls.Add(this.cacMonHoc1);
+            this.Controls.Add(this.htmlEditor1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -92,7 +101,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private CacMonHoc cacMonHoc1;
+        private WinHtmlEditor.HtmlEditor htmlEditor1;
+      
 
 
 

@@ -22,12 +22,10 @@ namespace NTU.Webgen
         String avatar;
         int idMau;
         String htmlAvatarFile;
-        bool isThemMoi, isSua;
+    
         public Home()
         {
             InitializeComponent();
-            isSua = false;
-          //  EnableTextBox(false);
             htmlEditor1.setButtonVisible("tsbNew");
             htmlEditor1.setButtonVisible("tsbOpen");
             htmlEditor1.setButtonVisible("tsbSave");
@@ -48,8 +46,8 @@ namespace NTU.Webgen
             this.subgioithieuHTMLFile = ProjectFolder + "\\subindex.htm";
             this.pubHTMLFolder = ProjectFolder.Replace("\\","/");
             this.idMau = idMau;
-            isSua = false;
-          //  EnableTextBox(false);
+            link2Index.Text = gioithieuHTMLFile;
+
             htmlEditor1.setButtonVisible("tsbNew");
             htmlEditor1.setButtonVisible("tsbOpen");
             htmlEditor1.setButtonVisible("tsbSave");
@@ -138,7 +136,7 @@ namespace NTU.Webgen
         private void btnSua_Click(object sender, EventArgs e)
         {
             EnableTextBox(true);
-            isSua = true;
+          //  isSua = true;
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -242,7 +240,12 @@ namespace NTU.Webgen
         {
             LoadXML2Form();
             EnableTextBox(false);
-            isSua = false;
+           // isSua = false;
+        }
+
+        private void link2Index_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CongCu.gotoSite(gioithieuHTMLFile);
         }
 
        
