@@ -857,13 +857,13 @@ namespace NTU.Webgen
         private void btnXuatWeb_Click(object sender, EventArgs e)
         {
             XuatWeb.XuatCV(fullXMLFile, fullHTMLFile);
-
+            MessageBox.Show("Xuất xong. Trang của bạn là" + (char)10 + (char)13 + fullHTMLFile, "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //// Dành cho mẫu 4
             //UserInfo u = CongCu.getUserInfo(ProjectFolder + "\\data\\index.xml");
             //CongCu.ReplaceContent(fullHTMLFile, "anhTrai", "<img src=\"" + u.HinhAnh + "\" width=100% height=186px>");
             //CongCu.ReplaceContent(fullHTMLFile, "tenTrai", "website của " + u.HoTen);
             ////----------------------
-            MessageBox.Show("Đã xuất xong!", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             //CongCu.gotoSite(fullHTMLFile);
 
         }

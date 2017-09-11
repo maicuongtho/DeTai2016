@@ -200,6 +200,7 @@ namespace NTU.Webgen
         private void btnXuatWeb_Click(object sender, EventArgs e)
         {
             XuatWeb.XuatLienKet(fullXMLFile, fullHTMLFile);
+            MessageBox.Show("Xuất xong. Trang của bạn là" + (char)10 + (char)13 + fullHTMLFile, "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void dataGridViewX_DSLienKet_CellContentClick(object sender, DataGridViewCellEventArgs e)

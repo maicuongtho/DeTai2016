@@ -1393,7 +1393,7 @@ namespace NTU.Webgen
             //CongCu.ReplaceContent(pubHTMLFile, "tenTrai", "website của " + u.HoTen);
             //// Thêm tiêu đề
             //CongCu.ReplaceTite(pubHTMLFile, "NTU. " + u.HoTen + "-Báo cáo hội thảo");
-            MessageBox.Show("Đã xuất thành công sang trang web: \n" + fullHTMLFile, "Thông báo");
+              MessageBox.Show("Xuất xong. Trang của bạn là" + (char)10 + (char)13 + fullHTMLFile, "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void linkWebCourse_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -730,6 +730,7 @@ namespace NTU.Webgen
         private void btnXuatWeb_Click(object sender, EventArgs e)
         {
             XuatWeb.XuatBaiGiang(MaHocPhan, fullXMLFile, fullHTMLFile);
+            MessageBox.Show("Xuất xong. Trang của bạn là" + (char)10 + (char)13 + fullHTMLFile, "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void linkWebCourse_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -94,6 +94,8 @@ namespace NTU.Webgen
                     chuongtrinhChinh.setMainTabVisible(true);
 
                     this.Visible = false;
+                    chuongtrinhChinh.Text = projectFolder;
+                    chuongtrinhChinh.toolStripStatusLabel1.Text = "Thư mục hiện tại bạn đang làm việc là: " + projectFolder;
                     chuongtrinhChinh.superTabControlWindows.Tabs.Remove("tabChonMau");
                     chuongtrinhChinh.Update();
 
@@ -105,9 +107,7 @@ namespace NTU.Webgen
         }
 
         void XemMau(int id) {
-           // String thumucGoc1 = System.AppDomain.CurrentDomain.BaseDirectory;
-           // TempPath = thumucGoc + "Templates\\";
-            CongCu.gotoSite(TempPath+"Mau"+id.ToString()+"\\index.html");
+            CongCu.gotoSite(thumucGoc + "\\TemplatesWithData\\Mau" + id.ToString() + "\\index.html");
         }
         private void btnChon1_Click(object sender, EventArgs e)
         {

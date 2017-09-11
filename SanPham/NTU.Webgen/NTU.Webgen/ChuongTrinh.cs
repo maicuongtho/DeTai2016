@@ -199,6 +199,8 @@ namespace NTU.Webgen
                MessageBox.Show(projectFolder);
               // splitContainer1.Panel2.Controls.Clear();
               // splitContainer1.Panel2.Controls.Add(pj);
+               this.Text = projectFolder;
+               this.toolStripStatusLabel1.Text = "Thư mục hiện tại bạn đang làm việc là: " + projectFolder;
                this.Update();
                setMainTabVisible(true);
            }

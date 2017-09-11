@@ -132,7 +132,7 @@ namespace NTU.Webgen
             
             // Thêm tiêu đề
           //  CongCu.ReplaceTite(carHTMLFile, "Lịch-" + u.HoTen + "NTUWebgen");
-            MessageBox.Show("Đã xuất thành công sang trang web: \n" + carHTMLFile, "NTUWebgen", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("Xuất xong. Trang của bạn là" + (char)10 + (char)13 + carHTMLFile, "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

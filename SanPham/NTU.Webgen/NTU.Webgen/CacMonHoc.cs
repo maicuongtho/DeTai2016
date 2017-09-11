@@ -518,6 +518,7 @@ namespace NTU.Webgen
         private void btnCacHocPhanXuatWeb_Click(object sender, EventArgs e)
         {
             XuatWeb.XuatDSBaiGiang(fullXMLFile, fullHTMLFile);
+            MessageBox.Show("Xuất xong. Trang của bạn là" + (char)10+(char)13 + fullHTMLFile,"NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -50,38 +50,6 @@ namespace NTU.Webgen
 
         void ChonMauKhac(int IdMauMoi)
         {
-
-            //DialogResult chon = MessageBox.Show("Bạn muốn ghi đè lên thư mục cũ không ?", "NTUWebgen", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //if (chon == DialogResult.Yes) // GHi đè
-            //{
-            //    // Cập nhật lại file config
-            //    String fileConf = ProjectFolder + "\\config.ntu";
-            //    File.Delete(fileConf);
-            //    FileStream fs = File.OpenWrite(fileConf);
-            //    StreamWriter outputFile = new StreamWriter(fs);
-            //    outputFile.WriteLine(fileConf);
-            //    outputFile.WriteLine(IdMauMoi);   
-            //    outputFile.Close();
-            //    fs.Close();
-            //    //Directory.Delete(ProjectFolder + "\\assets", true); // Xóa assserr
-
-            //   // Directory.Delete(ProjectFolder + "\\courses", true); // Xóa courses
-            //    // xóa các file cấp 1
-            //    DirectoryInfo dir = new DirectoryInfo(ProjectFolder);
-            //    FileInfo[] files = dir.GetFiles();
-            //    for (int i = 0; i < files.Length; i++) File.Delete(files[i].FullName);
-
-            //    // chỉ cần chép các mục khác , trừ phần data
-            //    CongCu.DirectoryCopy(TempPath + "Mau" + IdMauMoi.ToString(), ProjectFolder, true, "data");
-            //    MessageBox.Show("Chuyển sang mẫu mới xong", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            //}// không ghi đề
-            //else
-            //{ 
-            
-            //}
-
-
             folderBrowserDialog1.Description = "Chọn nơi lưu website mới";
             DialogResult rs = folderBrowserDialog1.ShowDialog();
             if (rs == DialogResult.OK)
@@ -94,7 +62,7 @@ namespace NTU.Webgen
                     FileStream fs = File.Create(fileCauHinh);
                     StreamWriter outputFile = new StreamWriter(fs);
                     outputFile.WriteLine(fileCauHinh);
-                    outputFile.WriteLine(IdMauMoi);  // mẫu 4
+                    outputFile.WriteLine(IdMauMoi);   
                     outputFile.Close();
                     fs.Close();
 
@@ -103,40 +71,49 @@ namespace NTU.Webgen
                     CongCu.DirectoryCopy(thuMucDuocCop, thumucChon, true);
                     this.Enabled = true;
 
-                 
+                    //chep du lieu
+                    CongCu.DirectoryCopy(ProjectFolder+"\\data", thumucChon+"\\data", true);
+                    File.Copy(ProjectFolder + "\\subindex.htm", thumucChon + "\\subindex.htm",true);
+                    File.Copy(ProjectFolder + "\\subCalendar.htm", thumucChon + "\\subCalendar.htm",true);
+                    File.Copy(ProjectFolder + "\\ggCalendar.htm", thumucChon + "\\ggCalendar.htm", true);
+  
                     //Copy tai nguyen trong thu muc cousre, tru file index
                     String thumucKhoaHocGoc = ProjectFolder + "\\courses";
                     String thumucKhoaHocMoi = thumucChon + "\\courses";
                     CongCu.DirectoryCopy(thumucKhoaHocGoc,thumucKhoaHocMoi , true);
                     // Copy lai file temlate khoas hoc
-                    String fileMauKhoaHocGoc = thumucKhoaHocGoc+ "\\courseTemplate-empty.html";
+                    String fileMauKhoaHocGoc = thuMucDuocCop + "\\courses\\courseTemplate-empty.html";
                     String fileMauKhoaHocMoi = thumucKhoaHocMoi + "\\courseTemplate-empty.html";
 
                     File.Copy(fileMauKhoaHocGoc,fileMauKhoaHocMoi,true);
 
 
-                    String[] dirC = Directory.GetDirectories(thumucKhoaHocGoc);
+                    String[] dirC = Directory.GetDirectories(thumucKhoaHocMoi);
                     for (int i = 0; i < dirC.Length; i++)
                     {
-                        String indexFile = thuMucDuocCop + "\\courses\\courseTemplate-empty.html";
                         String indexMoi = dirC[i] + "\\index.html";
-                        File.Copy(indexFile, indexMoi, true);
+                        File.Copy(fileMauKhoaHocMoi, indexMoi, true);
                     }
-                  //  XuatWeb.XuatIndex(
-                    // Goi ham xuat lai cac trang web
-                    MessageBox.Show("Chuyển sang mẫu mới xong", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    chuongtrinhChinh.projectFolder = thumucChon;
-                    chuongtrinhChinh.Update();
-
-                    // ĐÓng sạch Tab
-                    chuongtrinhChinh.superTabControlWindows.Tabs.Clear();
-                    for (int i = 0; i < chuongtrinhChinh.superTabControlWindows.Tabs.Count; i++)
-                    {
-                        chuongtrinhChinh.superTabControlWindows.Tabs.Remove(i);
+                  
+                  
+                    XuatWeb.XuatIndex(thumucChon + "\\data\\index.xml", thumucChon + "\\index.html", thumucChon + "\\subindex.htm", thumucChon, IdMauMoi);
+                    XuatWeb.XuatCV(thumucChon + "\\data\\cv.xml", thumucChon + "\\cv.html");
+                    XuatWeb.XuatCongBo(thumucChon + "\\data\\congbo.xml", thumucChon + "\\publications.html", thumucChon);
+                    XuatWeb.XuatLienKet(thumucChon + "\\data\\LienKet.xml", thumucChon + "\\weblink.html");
+                    XuatWeb.XuatLich(thumucChon);
+                   
+                    XuatWeb.XuatDSBaiGiang(thumucChon + "\\data\\teaching_list.xml", thumucChon + "\\teaching.html");
+                   
+                    String[] dsKhoaHoc = Directory.GetDirectories(thumucKhoaHocGoc);
                     
+                    for (int i=0; i<dsKhoaHoc.Length; i++)
+                    {
+                        String makhoahoc = dsKhoaHoc[i].Substring(dsKhoaHoc[i].LastIndexOf("\\")+1);
+                        XuatWeb.XuatBaiGiang(makhoahoc, thumucChon + "\\data\\teaching.xml", thumucChon + "\\courses\\" + makhoahoc + "\\index.html");
                     }
-                        // 
-
+                   
+                    MessageBox.Show("Chuyển sang mẫu mới xong", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 else
                     MessageBox.Show("Bạn đã chọn mẫu này", "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -147,9 +124,7 @@ namespace NTU.Webgen
 
         void XemMau(int id)
         {
-            // String thumucGoc1 = System.AppDomain.CurrentDomain.BaseDirectory;
-            // TempPath = thumucGoc + "Templates\\";
-            CongCu.gotoSite(TempPath + "Mau" + id.ToString() + "\\index.html");
+            CongCu.gotoSite(thumucGoc + "\\TemplatesWithData\\Mau" + id.ToString() + "\\index.html");
         }
         private void linkMau0_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

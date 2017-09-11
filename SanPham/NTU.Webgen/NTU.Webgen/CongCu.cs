@@ -60,13 +60,16 @@ namespace NTU.Webgen
            String strHTMLPage = sr.ReadToEnd();
            sr.Close();
            int intStartIndex = strHTMLPage.IndexOf("<title>",0);
-           int intEndIndex = strHTMLPage.IndexOf("</title>", intStartIndex);
-           String strNewHTMLPage = strHTMLPage.Substring(0, intStartIndex+7);
-           strNewHTMLPage += newTitle;
-           strNewHTMLPage += strHTMLPage.Substring(intEndIndex);
-           StreamWriter sw = new System.IO.StreamWriter(htmlFilePath, false, Encoding.UTF8);
-           sw.Write(strNewHTMLPage);
-           sw.Close();
+           if (intStartIndex >= 30)
+           {
+               int intEndIndex = strHTMLPage.IndexOf("</title>", intStartIndex);
+               String strNewHTMLPage = strHTMLPage.Substring(0, intStartIndex + 7);
+               strNewHTMLPage += newTitle;
+               strNewHTMLPage += strHTMLPage.Substring(intEndIndex);
+               StreamWriter sw = new System.IO.StreamWriter(htmlFilePath, false, Encoding.UTF8);
+               sw.Write(strNewHTMLPage);
+               sw.Close();
+           }
 
        }
 
@@ -929,14 +932,13 @@ namespace NTU.Webgen
            // Thêm tiêu đề
            CongCu.ReplaceTite(htmlIndex, "Giới thiệu -"+hoten);
            //----------------------------
-           MessageBox.Show("Đã xuất thành công sang trang web: \n" + htmlIndex, "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+       
       
        }
        public static bool XuatLienKet(String xmlLienKetPath, String htmlLienKetPath)
        {
            String noiDungMoi = CongCu.XML2HTML_LieKet(xmlLienKetPath).ToString();
            CongCu.ReplaceContent(htmlLienKetPath, "LienKet", noiDungMoi);
-           MessageBox.Show("Đã xuất thành công sang trang web: \n" + htmlLienKetPath, "Thông báo");
            return true; 
        }
        public static String ThayNoiDungTrongTheSpan(String NoiDungFileCu, String idThe, String noiDungThe) {
@@ -1343,8 +1345,7 @@ namespace NTU.Webgen
 
                #endregion
 
-
-               MessageBox.Show("Xuất xong bài giảng", "NTUWebgen", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            
            return true;
        }
 
@@ -1383,13 +1384,32 @@ namespace NTU.Webgen
            CongCu.ReplaceContent(htmlTeachFile, "tabCacHocPhan", strTabLink.ToString());
                 
        }
-       public static bool XuatCongBo(String xmlPub, String htmlPub)
+       public static void XuatCongBo(String fullXMLFile, String fullHTMLFile, String ProjectFolder)
        {
-           
+           String noiDungMoi = CongCu.XML2HTML_TapChi1(fullXMLFile, ProjectFolder).ToString();
+           CongCu.ReplaceContent(fullHTMLFile, "TapChi", noiDungMoi);
 
-           return true;
-       
+           noiDungMoi = CongCu.XML2HTML_BaoCaoHoiThao1(fullXMLFile, ProjectFolder).ToString();
+           CongCu.ReplaceContent(fullHTMLFile, "BaoCao1", noiDungMoi);
+
+           noiDungMoi = CongCu.XML2HTML_BaoCaoHoiThao0(fullXMLFile).ToString();
+           CongCu.ReplaceContent(fullHTMLFile, "BaoCao0", noiDungMoi);
+
+           noiDungMoi = CongCu.XML2HTML_Sach(fullXMLFile).ToString();
+           CongCu.ReplaceContent(fullHTMLFile, "Sach", noiDungMoi);
        }
-   
+
+       public static void XuatLich(String ProjectFolder)
+       {
+           StringBuilder result = new StringBuilder();
+           result.Append("<div id='lich0'><h2> Lịch của tôi</h2> ");
+           result.Append(CongCu.ReadHTMLFile(ProjectFolder+"\\subCalendar.htm") + "</div>");
+           result.Append("<div id='lichgoogle'>");
+           result.Append("<h2>My Google Calendar</h2>");
+           result.Append("<iframe src=\"");
+           result.Append(CongCu.ReadHTMLFile(ProjectFolder+"\\ggCalendar.htm").Replace("<BODY scroll=auto>", "").Replace("</BODY>", ""));
+           result.Append("\" style=\"border: 0\" width=\"100%\" height=\"600\" frameborder=\"0\" scrolling=\"no\"></iframe></div>");
+           CongCu.ReplaceContent(ProjectFolder+"\\calendar.html", "lich", result.ToString());
+          }
    }
 }

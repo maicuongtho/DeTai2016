@@ -234,6 +234,7 @@ namespace NTU.Webgen
         //    MessageBox.Show("Đã xuất thành công sang trang web: \n" + gioithieuHTMLFile, "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
         //
             XuatWeb.XuatIndex(homeXMLFile, gioithieuHTMLFile, subgioithieuHTMLFile, ProjectFolder, idMau);
+            MessageBox.Show("Xuất xong. Trang của bạn là" + (char)10 + (char)13 + gioithieuHTMLFile, "NTUWebgen", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
