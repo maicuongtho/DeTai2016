@@ -1,33 +1,4 @@
 <root>
   <DSHocPhan>
-    <HocPhan>
-      <id>1</id>
-      <MaHP>NEC357</MaHP>
-      <Ten>Lập trình mạng với Java</Ten>
-      <NoiDungTT>Học phần trang bị cho người học những kiến thức nền tảng của lập trình mạng và các kỹ năng cần thiết để thiết kế và cài đặt các ứng dụng mạng và các chuẩn ở mức ứng dụng dựa trên mô hình Client/Server, có sử dụng các giao tiếp chương trình dựa trên Sockets. Kết thúc học phần, sinh viên có thể viết các chương trình ứng dụng mạng với giao thức tầng Ứng dụng tự thiết kế. Cùng với đó học phần cung cấp các kỹ thuật lập trình mạng phân tán với RMI, và lập trình trên nền tảng giao thức HTTP</NoiDungTT>
-      <AnhCover>javaNet.jpg</AnhCover>
-    </HocPhan>
-    <HocPhan>
-      <id>2</id>
-      <MaHP>NEC337</MaHP>
-      <Ten>Quản trị mạng</Ten>
-      <NoiDungTT>Học phần Quản trị mạng cung cấp kiến thức về:
-- Nghề nghiệp quản trị mạng và các yêu cầu
-- Cài đặt và cấu hình Active Directory
-- Quản trị Active Directory : đối tượng chứa, người dùng, nhóm người dùng, máy
-tính, chính sách…
-- Quản trị cơ sở hạ tầng mạng: dịch vụ cấu hình địa chỉ IP động, tên miền, cấp chứng
-nhận số và mạng riêng ảo…
-- Quản trị dịch vụ WEB, truyền tập tin, thư điện tử, chia sẻ tập tin và máy in</NoiDungTT>
-      <AnhCover>qtm.jpg</AnhCover>
-    </HocPhan>
-    <HocPhan>
-      <id>3</id>
-      <MaHP>NEC368</MaHP>
-      <Ten>Lập trình thiết bị di động</Ten>
-      <NoiDungTT> Môn học nhằm cung cấp cho sinh viên những kiến thức cơ bản về lập trình ứng
-dụng trên thiết bị di động với nền tảng hệ điều hành Android, nắm được quy trình, các kiến thức, kĩ năng cần thiết đề phát triển ứng dụng Android.</NoiDungTT>
-      <AnhCover>didong.jpg</AnhCover>
-    </HocPhan>
   </DSHocPhan>
 </root>

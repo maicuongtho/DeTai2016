@@ -1,0 +1,24 @@
+<DSBaoCao1>
+     <BaoCao1>
+	<TacGia></TacGia>
+	<Nam></Nam>
+	<TenBaoCao></TenBaoCao>
+	<TenHoiThao></TenHoiThao>
+	<DiaDiem></DiaDiem>
+	<NgayToChuc></NgayToChuc>
+	<NhaXuatBan></NhaXuatBan>
+	<NoiXuatBan></NoiXuatBan>
+	<Trang></Trang>
+       </BaoCao1>
+</DSBaoCao1>
+<DSBaoCao0>
+  <BaoCao0>
+	<TacGia></TacGia>
+	<Nam></Nam>
+	<TenBaoCao></TenBaoCao>
+	<TenHoiThao></TenHoiThao>
+	<DiaDiem></DiaDiem>
+	<NgayToChuc></NgayToChuc>
+	<URL></URL>
+   </BaoCao0>
+</DSBaoCao0>

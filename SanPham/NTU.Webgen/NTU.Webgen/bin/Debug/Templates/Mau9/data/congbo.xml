@@ -1,98 +1,10 @@
 <root>
   <DSBaiBao>
-    <BaiBao>
-      <id>1</id>
-      <TacGia>Tung Nguyen Van</TacGia>
-      <Ngay>2016</Ngay>
-      <TieuDeBaiBao>Measuring and Assessing the Quality of Information on the Annual Reports: The Case of Seafood’s Companies Listed on the Vietnam Stock Market</TieuDeBaiBao>
-      <TenTapChi>International Research Journal of Finance and Economics (SCOPUS)</TenTapChi>
-      <Tap>2</Tap>
-      <So>2016</So>
-      <Trang>76</Trang>
-      <NgonNgu>Tiếng Anh</NgonNgu>
-      <DinhKem>VHVL.pdf</DinhKem>
-    </BaiBao>
-    <BaiBao>
-      <id>2</id>
-      <TacGia>Lê Văn Hảo, Mai Cường Thọ</TacGia>
-      <Ngay>2017</Ngay>
-      <TieuDeBaiBao>Hoàn thiện hệ thống thoogn tin website Dại học đáp ứng yêu cầu kiểm đính chất lượng giáo dục đại học</TieuDeBaiBao>
-      <TenTapChi>Tạp chí khoa học Đại học Văn Lang</TenTapChi>
-      <Tap>2</Tap>
-      <So>103</So>
-      <Trang>24</Trang>
-      <NgonNgu>Tiếng Việt</NgonNgu>
-      <DinhKem>
-      </DinhKem>
-    </BaiBao>
   </DSBaiBao>
   <DSBaoCao1>
-    <BaoCao1>
-      <id>1</id>
-      <TacGia>Mai Cường Thọ</TacGia>
-      <Nam>2015</Nam>
-      <TenBaoCao>Nhận dạng tiếng việt có dấu theo phương ngữ Nam Bộ</TenBaoCao>
-      <TenHoiThao>Hội thảo Công nghệ thông tin và Truyền thông</TenHoiThao>
-      <ThoiGianDiaDiem>10/2016, Đại học Đà Lạt</ThoiGianDiaDiem>
-      <NhaXuatBan>Thống Kê</NhaXuatBan>
-      <NoiXuatBan>Nha Trang</NoiXuatBan>
-      <Trang>68</Trang>
-      <NgonNgu>Tiếng Việt</NgonNgu>
-      <DinhKem>Web1-04-Table.pdf</DinhKem>
-    </BaoCao1>
-    <BaoCao1>
-      <id>2</id>
-      <TacGia>Lê Văn Hảo, Mai Cường Thọ</TacGia>
-      <Nam>2015</Nam>
-      <TenBaoCao>Nâng cao thứ hạng web được đánh giá bởi webbomectruocs, và tổ chức QS</TenBaoCao>
-      <TenHoiThao>Hội thảo nâng cao chất lượng giáo dục đại học </TenHoiThao>
-      <ThoiGianDiaDiem>Thàng s, Đại học Đà Nẵng</ThoiGianDiaDiem>
-      <NhaXuatBan>Đại Học Đà nẵng</NhaXuatBan>
-      <NoiXuatBan>Đà Nẵng</NoiXuatBan>
-      <Trang>7</Trang>
-      <NgonNgu>Tiếng Việt</NgonNgu>
-      <DinhKem>E91(10)Serial.pdf</DinhKem>
-    </BaoCao1>
   </DSBaoCao1>
   <DSBaoCao0>
-    <BaoCao0>
-      <id>1</id>
-      <TacGia>Mai Cường Thọ, Trần Văn ABC</TacGia>
-      <Nam>2004</Nam>
-      <TenBaoCao>Mạng cảm biến không dây ứng dụng trong giám sát môi trường ao nuôi thủy sản</TenBaoCao>
-      <TenHoiThao>Hội thảo AHC MNA </TenHoiThao>
-      <ThoiGianDiaDiem>20/4/2004, Đại học Bôn Ba</ThoiGianDiaDiem>
-      <NgonNgu>Tiếng Việt</NgonNgu>
-      <URL>http://ntu.edu.vn</URL>
-    </BaoCao0>
-    <BaoCao0>
-      <id>2</id>
-      <TacGia>Mai Cường Thọ</TacGia>
-      <Nam>2011</Nam>
-      <TenBaoCao>Báo caocsca ác vấn đề ABC để kiểm tra xem thế nào</TenBaoCao>
-      <TenHoiThao>FAOR 2011</TenHoiThao>
-      <ThoiGianDiaDiem>Đại học Nha Trang, Tháng 10</ThoiGianDiaDiem>
-      <NgonNgu>Tiếng Anh</NgonNgu>
-      <URL>
-      </URL>
-    </BaoCao0>
   </DSBaoCao0>
   <DSSach>
-    <Sach>
-      <id>1</id>
-      <TacGia>Mai Cương Thọ, Đinh Đồng Lưỡng</TacGia>
-      <NamXB>2011</NamXB>
-      <TenSach>Kiến trúc máy tính căn bản</TenSach>
-      <NhaXB>Khoa học Kỹ thuật</NhaXB>
-      <NoiXB>Khánh Hòa</NoiXB>
-    </Sach>
-    <Sach>
-      <id>2</id>
-      <TacGia>Đinh Đồng Lưỡng</TacGia>
-      <NamXB>2017</NamXB>
-      <TenSach>Book Chapper 3: Computer Vision</TenSach>
-      <NhaXB>Spingrer</NhaXB>
-      <NoiXB>AUS</NoiXB>
-    </Sach>
   </DSSach>
-</root>
+ </root>

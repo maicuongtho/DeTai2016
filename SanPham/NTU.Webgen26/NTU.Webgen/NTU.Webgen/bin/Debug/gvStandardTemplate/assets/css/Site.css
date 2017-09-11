@@ -1,0 +1,64 @@
+@charset "utf-8";
+body {
+	background-image:url(../images/NTUBg.png);
+	background-color: #aad5f2;
+	margin:0px;
+	padding:0px
+}
+body,td,th {
+	font-family: "UTM Centur";
+	font-size: 14px;
+	text-align: left;
+	
+}
+.wrapper {
+	-webkit-box-shadow: 0px 0px 6px 1px rgba(102,102,102,1);
+-moz-box-shadow: 0px 0px 6px 1px rgba(102,102,102,1);
+box-shadow: 0px 0px 6px 1px rgba(102,102,102,1);	
+}
+.canGiua {
+	text-align: center;
+}
+.gvInfos {
+	font-weight: bold; text-align:center
+}
+.avatar {
+	text-align:center;
+	border: 1px dotted gray;
+}
+.avatar img {
+	border: tan thin solid; padding:1px}
+.mnu table tr td {text-align:center}	
+.mnu a {color: #EEE; text-decoration:none}
+.mnu a:hover {
+	color: #F03;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+	 border: 1px solid  #3CC;
+}
+.sidebar li {
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+.sidebar li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+.sidebar li a:hover {
+    background-color: #555;
+    color: white;
+}
+.sidebar li:last-child {
+    border-bottom: none;
+}

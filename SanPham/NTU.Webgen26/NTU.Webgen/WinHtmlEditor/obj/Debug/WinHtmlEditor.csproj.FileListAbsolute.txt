@@ -1,0 +1,30 @@
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\bin\Debug\WinHtmlEditor.dll
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\bin\Debug\WinHtmlEditor.pdb
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\obj\Debug\WinHtmlEditor.csprojResolveAssemblyReference.cache
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\obj\Debug\WinHtmlEditor.ContextMenuForm.resources
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\obj\Debug\WinHtmlEditor.OfficeColorPicker.resources
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\obj\Debug\WinHtmlEditor.ToolStripColorPicker.resources
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\obj\Debug\WinHtmlEditor.EditHtmlForm.resources
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\obj\Debug\WinHtmlEditor.FindReplaceForm.resources
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\obj\Debug\WinHtmlEditor.HtmlEditor.resources
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\obj\Debug\WinHtmlEditor.Properties.Resources.resources
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\obj\Debug\WinHtmlEditor.TablePropertyForm.resources
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\obj\Debug\WinHtmlEditor.csproj.GenerateResource.Cache
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\obj\Debug\WinHtmlEditor.dll
+C:\Users\Mai Cuong Tho\Downloads\WinHtmlEditor-master\WinHtmlEditor\obj\Debug\WinHtmlEditor.pdb
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\bin\Debug\WinHtmlEditor.dll
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\bin\Debug\WinHtmlEditor.pdb
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\bin\Debug\Microsoft.mshtml.dll
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.ContextMenuForm.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.OfficeColorPicker.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.ToolStripColorPicker.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.EditHtmlForm.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.FindReplaceForm.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.HtmlEditor.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.Properties.Resources.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.TablePropertyForm.resources
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.csproj.GenerateResource.Cache
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.dll
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.pdb
+F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\WinHtmlEditor\obj\Debug\WinHtmlEditor.csprojResolveAssemblyReference.cache

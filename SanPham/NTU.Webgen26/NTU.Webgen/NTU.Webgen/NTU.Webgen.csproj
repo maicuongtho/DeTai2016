@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39FA4927-0E81-4E84-8EE4-C7B6C9027D79}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NTU.Webgen</RootNamespace>
+    <AssemblyName>NTU.Webgen</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.Instrumentation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=bc4a9d761ea44ef0" />
+    <Reference Include="DevComponents.TreeGX, Version=11.0.0.0, Culture=neutral, PublicKeyToken=cfcbd7476b2389d1, processorArchitecture=MSIL" />
+    <Reference Include="itextsharp">
+      <HintPath>C:\Users\Mai Cuong Tho\Downloads\itextsharp-all-5.5.10\itextsharp-dll-core\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AAAFunctionTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AAAFunctionTest.Designer.cs">
+      <DependentUpon>AAAFunctionTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BLL.cs" />
+    <Compile Include="CacMonHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CacMonHoc.Designer.cs">
+      <DependentUpon>CacMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="calendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="calendar.Designer.cs">
+      <DependentUpon>calendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChonMau.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChonMau.Designer.cs">
+      <DependentUpon>ChonMau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChuongTrinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChuongTrinh.Designer.cs">
+      <DependentUpon>ChuongTrinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CongBo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CongBo.Designer.cs">
+      <DependentUpon>CongBo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CongCu.cs" />
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiangDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GiangDay.Designer.cs">
+      <DependentUpon>GiangDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GioiThieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GioiThieu.Designer.cs">
+      <DependentUpon>GioiThieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HocPhanPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HocPhanPage.Designer.cs">
+      <DependentUpon>HocPhanPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LienKet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LienKet.Designer.cs">
+      <DependentUpon>LienKet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LyLichKH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LyLichKH.Designer.cs">
+      <DependentUpon>LyLichKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectExplorer.Designer.cs">
+      <DependentUpon>ProjectExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Publication_BaoCaoHoiThao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Publication_BaoCaoHoiThao.Designer.cs">
+      <DependentUpon>Publication_BaoCaoHoiThao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publication_BaoCaoHoiThao0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Publication_BaoCaoHoiThao0.Designer.cs">
+      <DependentUpon>Publication_BaoCaoHoiThao0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publication_Sach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Publication_Sach.Designer.cs">
+      <DependentUpon>Publication_Sach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Publication_TapChi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Publication_TapChi.Designer.cs">
+      <DependentUpon>Publication_TapChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VideoPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VideoPlayer.Designer.cs">
+      <DependentUpon>VideoPlayer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AAAFunctionTest.resx">
+      <DependentUpon>AAAFunctionTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CacMonHoc.resx">
+      <DependentUpon>CacMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="calendar.resx">
+      <DependentUpon>calendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChonMau.resx">
+      <DependentUpon>ChonMau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChuongTrinh.resx">
+      <DependentUpon>ChuongTrinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CongBo.resx">
+      <DependentUpon>CongBo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GiangDay.resx">
+      <DependentUpon>GiangDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GioiThieu.resx">
+      <DependentUpon>GioiThieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HocPhanPage.resx">
+      <DependentUpon>HocPhanPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LienKet.resx">
+      <DependentUpon>LienKet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LyLichKH.resx">
+      <DependentUpon>LyLichKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectExplorer.resx">
+      <DependentUpon>ProjectExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Publication_BaoCaoHoiThao.resx">
+      <DependentUpon>Publication_BaoCaoHoiThao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publication_BaoCaoHoiThao0.resx">
+      <DependentUpon>Publication_BaoCaoHoiThao0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publication_Sach.resx">
+      <DependentUpon>Publication_Sach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Publication_TapChi.resx">
+      <DependentUpon>Publication_TapChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoPlayer.resx">
+      <DependentUpon>VideoPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491336216_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491336195_domain_template.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491336378_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491336233_www_page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491336610_icon-93-inbox-upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491336673_icon-92-inbox-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NTUBg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mau1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491341215_Download_downloading_data_storage_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1491341321_compose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WinHtmlEditor\WinHtmlEditor.csproj">
+      <Project>{1d1ef0a4-1d49-4d42-9295-e3b28359389a}</Project>
+      <Name>WinHtmlEditor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\google-calendar-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons8-Windows-8-Editing-Attach.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconcalendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ico-account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NoPhoto.JPG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

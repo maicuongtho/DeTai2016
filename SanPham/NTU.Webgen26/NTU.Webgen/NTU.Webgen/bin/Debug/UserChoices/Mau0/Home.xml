@@ -1,0 +1,18 @@
+<root>
+  <Home>
+    <id>1</id>
+    <HoTen>Mai Cường Thọ</HoTen>
+    <TrinhDo> Thạc sĩ </TrinhDo>
+    <Khoa>Công nghệ Thông tin </Khoa>
+    <BoMon>Mạng máy tính </BoMon>
+    <CacMonHocDamNhan>Lập trình Java; Lập trình Andoird </CacMonHocDamNhan>
+    <DinhHuongNghienCuu>Nhận dạng tiếng Việt, IoT, Arduino </DinhHuongNghienCuu>
+    <DiaChi>02 Nguyễn Đình Chiểu, Nha Trang</DiaChi>
+    <Email>maicuongtho@gmail.com</Email>
+    <SoDienThoai>0915311008</SoDienThoai>
+    <FB>maicuongtho</FB>
+    <Web>thomc.ntu.edu.vn</Web>
+    <Others>SubHome.htm</Others>
+    <Avatar>F:\LocalRepository\DeTai2016\SanPham\NTU.Webgen\NTU.Webgen\bin\Debug\UserChoices\Mau0\assets\images\goldeen.jpg</Avatar>
+  </Home>
+</root>

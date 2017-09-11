@@ -259,7 +259,7 @@ namespace NTU.Webgen
 
         private void mnuXuatMauKhac_Click(object sender, EventArgs e)
         {
-            XuatSangMauKhac m = new XuatSangMauKhac(projectFolder,idMau);
+            XuatSangMauKhac m = new XuatSangMauKhac(projectFolder,idMau, this);
             m.ShowDialog();
 
         }

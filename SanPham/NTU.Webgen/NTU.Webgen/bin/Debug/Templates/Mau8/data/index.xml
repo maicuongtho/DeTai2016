@@ -1,18 +1,18 @@
 <root>
   <Home>
     <id>1</id>
-    <HoTen>Mai Cường Thọ Mẫu 8</HoTen>
-    <TrinhDo> Thạc sĩ </TrinhDo>
-    <Khoa>Khoa Công nghệ Thông tin </Khoa>
-    <BoMon>Mạng máy tính và Truyền thông </BoMon>
-    <CacMonHocDamNhan>Kiến trúc máy tính, Lập trình hệ thống nhúng, Lập trình di động, Lập trình Java, Lập trình mạng và Quản trị mạng </CacMonHocDamNhan>
-    <DinhHuongNghienCuu>Nhận dạng tiếng nói, Mạng cảm biến không dây </DinhHuongNghienCuu>
-    <DiaChi>02, Trần Phú, Nha Trang, Khánh Hòa</DiaChi>
-    <Email>thomc@ntu.edu.vn</Email>
-    <SoDienThoai>0915311008</SoDienThoai>
-    <FB>facebook.com/maicuongtho</FB>
-    <Web>ntu.edu.vn/~thomc</Web>
+    <HoTen> </HoTen>
+    <TrinhDo>  </TrinhDo>
+    <Khoa>  </Khoa>
+    <BoMon> </BoMon>
+    <CacMonHocDamNhan> </CacMonHocDamNhan>
+    <DinhHuongNghienCuu>  </DinhHuongNghienCuu>
+    <DiaChi> </DiaChi>
+    <Email> </Email>
+    <SoDienThoai></SoDienThoai>
+    <FB> </FB>
+    <Web> </Web>
     <Others>subindex.htm</Others>
-    <Avatar>avatarTho.jpg</Avatar>
+    <Avatar></Avatar>
   </Home>
 </root>

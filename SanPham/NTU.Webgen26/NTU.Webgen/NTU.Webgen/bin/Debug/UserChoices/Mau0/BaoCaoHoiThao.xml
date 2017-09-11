@@ -1,0 +1,39 @@
+<DSBaoCao1>
+  <BaoCao1>
+    <id>1</id>
+    <TacGia>Mai Cường Thọ</TacGia>
+    <Nam>2016</Nam>
+    <TenBaoCao>Nhận dạng tiếng việt có dấu</TenBaoCao>
+    <NgonNgu>Tiếng Việt</NgonNgu>
+    <TenHoiThao>Hội thảo Công nghệ thông tin và Truyền thông</TenHoiThao>
+    <ThoiGianDiaDiem>10/2016, đẠI HỌC nHA tRANG</ThoiGianDiaDiem>
+    <NhaXuatBan>Thống kê</NhaXuatBan>
+    <NoiXuatBan>NHA TRANG</NoiXuatBan>
+    <Trang>90-100</Trang>
+  </BaoCao1>
+  <BaoCao1>
+    <id>3</id>
+    <TacGia>Tho. Mai Cuong</TacGia>
+    <Nam>2017</Nam>
+    <TenBaoCao>New tech in IoT</TenBaoCao>
+    <NgonNgu>Tiếng Anh</NgonNgu>
+    <TenHoiThao>@ Conference</TenHoiThao>
+    <ThoiGianDiaDiem>10 Sept 2017, Ha Noi</ThoiGianDiaDiem>
+    <NhaXuatBan>Thong Ky</NhaXuatBan>
+    <NoiXuatBan>Ha Noi</NoiXuatBan>
+    <Trang>
+    </Trang>
+  </BaoCao1>
+  <BaoCao1>
+    <id>4</id>
+    <TacGia>Tho Mai Cuong</TacGia>
+    <Nam>2015</Nam>
+    <TenBaoCao>Advence in Hypbiittt</TenBaoCao>
+    <NgonNgu>Tiếng Anh</NgonNgu>
+    <TenHoiThao>Asia Adsafsdf dfsdkflksdfksdf ksd;f sd;fksd; fksd;lf</TenHoiThao>
+    <ThoiGianDiaDiem>Korean</ThoiGianDiaDiem>
+    <NhaXuatBan>Nord Acelen</NhaXuatBan>
+    <NoiXuatBan>Aicelnen</NoiXuatBan>
+    <Trang>90</Trang>
+  </BaoCao1>
+</DSBaoCao1>

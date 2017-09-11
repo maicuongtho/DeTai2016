@@ -1,29 +1,4 @@
 <root>
-  <DSLienKet>
-    <LienKet>
-      <id>4</id>
-      <TieuDe>Đại học Nha Trang</TieuDe>
-      <DiaChi>http%3a%2f%2fntu%2fedu%2fvn</DiaChi>
-    </LienKet>
-    <LienKet>
-      <id>5</id>
-      <TieuDe>Fanpage Khoa Công nghệ Thông tin</TieuDe>
-      <DiaChi>https%3a%2f%2fwww.facebook.com%2finfotechntu%2f</DiaChi>
-    </LienKet>
-    <LienKet>
-      <id>3</id>
-      <TieuDe>Google Scholat thầy Nguyễn Văn Duy, Công nghệ chế biến</TieuDe>
-      <DiaChi>https%3a%2f%2fscholar.google.com.vn%2fcitations%3fuser%3diF-COXoAAAAJ%26hl%3dvi%26oi%3dsra</DiaChi>
-    </LienKet>
-    <LienKet>
-      <id>4</id>
-      <TieuDe>thầy Nguyễn Văn Tặng, Công nghệ chế biến</TieuDe>
-      <DiaChi>https%3a%2f%2fscholar.google.com.vn%2fcitations%3fuser%3dNDN8Yl4AAAAJ%26hl%3dvi</DiaChi>
-    </LienKet>
-    <LienKet>
-      <id>4</id>
-      <TieuDe>www.researchgate.net  thầy Nguyễn Văn Hòa, Chế Biến</TieuDe>
-      <DiaChi>https%3a%2f%2fwww.researchgate.net%2fprofile%2fVan_Hoa_Nguyen</DiaChi>
-    </LienKet>
+  <DSLienKet>    
   </DSLienKet>
 </root>

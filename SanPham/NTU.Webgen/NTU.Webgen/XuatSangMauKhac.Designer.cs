@@ -118,6 +118,7 @@
             this.linkMau8.TabIndex = 2;
             this.linkMau8.TabStop = true;
             this.linkMau8.Text = "Xem trước";
+            this.linkMau8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMau8_LinkClicked);
             // 
             // btnChon8
             // 
@@ -127,6 +128,7 @@
             this.btnChon8.TabIndex = 1;
             this.btnChon8.Text = "Chọn";
             this.btnChon8.UseVisualStyleBackColor = true;
+            this.btnChon8.Click += new System.EventHandler(this.btnChon8_Click);
             // 
             // groupPanel10
             // 
@@ -178,6 +180,7 @@
             this.linkMau9.TabIndex = 2;
             this.linkMau9.TabStop = true;
             this.linkMau9.Text = "Xem trước";
+            this.linkMau9.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMau9_LinkClicked);
             // 
             // btnChon9
             // 
@@ -187,6 +190,7 @@
             this.btnChon9.TabIndex = 1;
             this.btnChon9.Text = "Chọn";
             this.btnChon9.UseVisualStyleBackColor = true;
+            this.btnChon9.Click += new System.EventHandler(this.btnChon9_Click);
             // 
             // saveFileDialog1
             // 
@@ -244,6 +248,7 @@
             this.linkMau10.TabIndex = 2;
             this.linkMau10.TabStop = true;
             this.linkMau10.Text = "Xem trước";
+            this.linkMau10.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMau10_LinkClicked);
             // 
             // btnChon10
             // 
@@ -253,6 +258,7 @@
             this.btnChon10.TabIndex = 1;
             this.btnChon10.Text = "Chọn";
             this.btnChon10.UseVisualStyleBackColor = true;
+            this.btnChon10.Click += new System.EventHandler(this.btnChon10_Click);
             // 
             // pictureBox11
             // 
@@ -394,6 +400,7 @@
             this.linkMau7.TabIndex = 2;
             this.linkMau7.TabStop = true;
             this.linkMau7.Text = "Xem trước";
+            this.linkMau7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMau7_LinkClicked);
             // 
             // linkMau0
             // 
@@ -404,6 +411,7 @@
             this.linkMau0.TabIndex = 2;
             this.linkMau0.TabStop = true;
             this.linkMau0.Text = "Xem trước";
+            this.linkMau0.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMau0_LinkClicked);
             // 
             // btnChon0
             // 
@@ -413,6 +421,7 @@
             this.btnChon0.TabIndex = 1;
             this.btnChon0.Text = "Chọn";
             this.btnChon0.UseVisualStyleBackColor = true;
+            this.btnChon0.Click += new System.EventHandler(this.btnChon0_Click);
             // 
             // pictureBox8
             // 
@@ -474,6 +483,7 @@
             this.linkMau1.TabIndex = 2;
             this.linkMau1.TabStop = true;
             this.linkMau1.Text = "Xem trước";
+            this.linkMau1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMau1_LinkClicked);
             // 
             // btnChon1
             // 
@@ -483,6 +493,7 @@
             this.btnChon1.TabIndex = 1;
             this.btnChon1.Text = "Chọn";
             this.btnChon1.UseVisualStyleBackColor = true;
+            this.btnChon1.Click += new System.EventHandler(this.btnChon1_Click);
             // 
             // groupPanel1
             // 
@@ -575,6 +586,7 @@
             this.linkMau2.TabIndex = 2;
             this.linkMau2.TabStop = true;
             this.linkMau2.Text = "Xem trước";
+            this.linkMau2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMau2_LinkClicked);
             // 
             // btnChon2
             // 
@@ -584,6 +596,7 @@
             this.btnChon2.TabIndex = 1;
             this.btnChon2.Text = "Chọn";
             this.btnChon2.UseVisualStyleBackColor = true;
+            this.btnChon2.Click += new System.EventHandler(this.btnChon2_Click);
             // 
             // groupPanel4
             // 
@@ -635,6 +648,7 @@
             this.linkMau3.TabIndex = 2;
             this.linkMau3.TabStop = true;
             this.linkMau3.Text = "Xem trước";
+            this.linkMau3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMau3_LinkClicked);
             // 
             // btnChon3
             // 
@@ -644,6 +658,7 @@
             this.btnChon3.TabIndex = 1;
             this.btnChon3.Text = "Chọn";
             this.btnChon3.UseVisualStyleBackColor = true;
+            this.btnChon3.Click += new System.EventHandler(this.btnChon3_Click);
             // 
             // groupPanel5
             // 
@@ -695,6 +710,7 @@
             this.linkMau4.TabIndex = 2;
             this.linkMau4.TabStop = true;
             this.linkMau4.Text = "Xem trước";
+            this.linkMau4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMau4_LinkClicked);
             // 
             // btnChon4
             // 
@@ -704,6 +720,7 @@
             this.btnChon4.TabIndex = 1;
             this.btnChon4.Text = "Chọn";
             this.btnChon4.UseVisualStyleBackColor = true;
+            this.btnChon4.Click += new System.EventHandler(this.btnChon4_Click);
             // 
             // groupPanel6
             // 
@@ -755,6 +772,7 @@
             this.linkMau5.TabIndex = 2;
             this.linkMau5.TabStop = true;
             this.linkMau5.Text = "Xem trước";
+            this.linkMau5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMau5_LinkClicked);
             // 
             // btnChon5
             // 
@@ -764,6 +782,7 @@
             this.btnChon5.TabIndex = 1;
             this.btnChon5.Text = "Chọn";
             this.btnChon5.UseVisualStyleBackColor = true;
+            this.btnChon5.Click += new System.EventHandler(this.btnChon5_Click);
             // 
             // groupPanel7
             // 
@@ -815,6 +834,7 @@
             this.linkMau6.TabIndex = 2;
             this.linkMau6.TabStop = true;
             this.linkMau6.Text = "Xem trước";
+            this.linkMau6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkMau6_LinkClicked);
             // 
             // btnChon6
             // 
@@ -824,6 +844,7 @@
             this.btnChon6.TabIndex = 1;
             this.btnChon6.Text = "Chọn";
             this.btnChon6.UseVisualStyleBackColor = true;
+            this.btnChon6.Click += new System.EventHandler(this.btnChon6_Click);
             // 
             // btnChon7
             // 
@@ -833,6 +854,7 @@
             this.btnChon7.TabIndex = 1;
             this.btnChon7.Text = "Chọn";
             this.btnChon7.UseVisualStyleBackColor = true;
+            this.btnChon7.Click += new System.EventHandler(this.btnChon7_Click);
             // 
             // groupPanel8
             // 
